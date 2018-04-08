@@ -22,6 +22,7 @@
             app:srcCompat="@drawable/icon_mine_discount" />
 
         <TextView
+            android:textColor="@color/alpha_95_black"
             android:textSize="@dimen/comment_12_size"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -49,6 +50,7 @@
             app:srcCompat="@drawable/icon_mine_invincible" />
 
         <TextView
+            android:textColor="@color/alpha_95_black"
             android:textSize="@dimen/comment_12_size"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -78,6 +80,7 @@
             app:srcCompat="@drawable/icon_mine_queen" />
 
         <TextView
+            android:textColor="@color/alpha_95_black"
             android:textSize="@dimen/comment_12_size"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -106,6 +109,7 @@
             app:srcCompat="@drawable/icon_mine_wallet" />
 
         <TextView
+            android:textColor="@color/alpha_95_black"
             android:textSize="@dimen/comment_12_size"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -126,7 +130,7 @@
         android:layout_marginTop="@dimen/comment_5_dip"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:layout_marginLeft="@dimen/comment_20_dip"
+        android:layout_marginLeft="@dimen/comment_25_dip"
         android:gravity="center"
         android:orientation="vertical">
 
@@ -137,10 +141,11 @@
             app:srcCompat="@drawable/icon_mine_magic" />
 
         <TextView
-            android:textSize="@dimen/comment_12_size"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/my_magic_beans" />
+            android:text="@string/my_magic_beans"
+            android:textColor="@color/alpha_95_black"
+            android:textSize="@dimen/comment_12_size" />
 
         <TextView
             android:layout_width="wrap_content"

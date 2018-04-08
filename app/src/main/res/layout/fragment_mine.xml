@@ -161,7 +161,7 @@
         android:layout_below="@+id/re_friends">
 
         <TextView
-            android:layout_marginTop="@dimen/comment_17_dip"
+            android:layout_marginTop="@dimen/comment_5_dip"
             android:id="@+id/tv_assets"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -193,6 +193,7 @@
     <RelativeLayout
         android:layout_marginTop="@dimen/comment_10_dip"
         android:background="@color/white"
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/re_layout">
@@ -201,6 +202,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
+            android:layout_marginTop="@dimen/comment_5_dip"
+            android:textSize="@dimen/comment_12_size"
             android:layout_marginLeft="@dimen/comment_10_dip"
             android:text="@string/more_recommendation" />
 
@@ -208,7 +211,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/tv_head"
-            android:layout_marginTop="@dimen/comment_20_dip">
+            android:layout_marginTop="@dimen/comment_10_dip">
 
             <include layout="@layout/layout_mine_recommend" />
         </RelativeLayout>
