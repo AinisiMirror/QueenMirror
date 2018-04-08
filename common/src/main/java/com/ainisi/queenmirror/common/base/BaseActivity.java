@@ -345,10 +345,10 @@ public abstract class BaseActivity<T extends BasePresenter, E extends BaseModel>
     }
 
     private void init() {
-        int flag = View.SYSTEM_UI_FLAG_LAYOUT_STABLE
-                | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
-                | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
-                | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION // hide
+        int flag = View.SYSTEM_UI_FLAG_LAYOUT_STABLE                      //SYSTEM_UI_FLAG_LAYOUT_STABLE:防止系统栏隐藏时内容区域大小发生变化
+                | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION              //Activity全屏显示，但状态栏不会被隐藏覆盖，状态栏依然可见，Activity顶端布局部分会被状态遮住
+                | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN                   //Activity全屏显示，但状态栏不会被隐藏覆盖，状态栏依然可见，Activity顶端布局部分会被状态遮住
+                //| View.SYSTEM_UI_FLAG_HIDE_NAVIGATION    // hide
 //                | View.SYSTEM_UI_FLAG_FULLSCREEN // hide status bar
                 | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY;
         //判断当前版本在4.0以上并且存在虚拟按键，否则不做操作
