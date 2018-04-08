@@ -23,10 +23,7 @@
         <item name="android:layout_width">0dp</item>
         <item name="android:button">@null</item>
         <item name="android:gravity">center</item>
-    </style>
-    <!--  //设置tablayout字体大小和背景 -->
-    <style name="MyTabLayoutTextAppearance" parent="TextAppearance.AppCompat.Widget.ActionBar.Title">
-        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/radiobutton_textcolor</item>
     </style>
 
     <!--//定义style：-->

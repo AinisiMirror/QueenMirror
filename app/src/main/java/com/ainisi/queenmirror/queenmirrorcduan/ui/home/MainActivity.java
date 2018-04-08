@@ -61,8 +61,6 @@ public class MainActivity extends BaseActivity {
         transaction.commit();
         mHomeBtn.setChecked(true);
 
-
-
     }
 
     @OnClick({R.id.rb_home, R.id.rb_shop_mall, R.id.rb_order, R.id.rb_master, R.id.rb_mine})

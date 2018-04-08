@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -12,7 +13,7 @@
         <com.youth.banner.Banner
             android:id="@+id/banner"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/comment_200_dip" />
+            android:layout_height="@dimen/comment_240_dip"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -31,16 +32,26 @@
                     android:layout_width="@dimen/comment_85_dip"
                     android:layout_height="@dimen/comment_25_dip"
                     android:src="@drawable/icon_home_ancrown" />
+                <View
+                    android:id="@+id/view_homeshop_view"
+                    android:layout_width="@dimen/comment_2_dip"
+                    android:layout_height="18dp"
+                    android:layout_toEndOf="@id/imageView"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/comment_8_dip"
+                    android:background="@color/alpha_05_black">
+                </View>
+
                 <com.ainisi.queenmirror.queenmirrorcduan.utils.MarqueeView
                     android:id="@+id/marqueeview"
-                    android:layout_toRightOf="@id/imageView"
+                    android:layout_toEndOf="@id/view_homeshop_view"
                     android:layout_width="wrap_content"
                     android:layout_height="@dimen/comment_25_dip"
-                    android:layout_marginRight="@dimen/comment_10_dip"
-                    android:layout_marginLeft="@dimen/comment_8_dip"
+                    android:layout_marginEnd="@dimen/comment_10_dip"
+                    android:layout_marginStart="@dimen/comment_8_dip"
                     android:background="@color/white"
                     app:textSize="@dimen/comment_14_size"
-                    app:textColor="@color/alpha_95_black"
+                    app:textColor="@color/home_queen_text_color"
                     app:paddingLeft="@dimen/comment_5_dip"
                     app:paddingTopBottom="@dimen/comment_5_dip"
                     app:startDelayTime="2000"
@@ -76,10 +87,12 @@
                         android:src="@drawable/icon_home_meixuehui" />
 
                     <TextView
-                        android:textSize="@dimen/comment_14_size"
+                        android:textSize="@dimen/comment_12_size"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/comment_2_dip"
                         android:gravity="center"
+                        android:textColor="@color/home_queen_middle_color"
                         android:text="@string/aesthetic_remittance" />
                 </LinearLayout>
 
@@ -96,10 +109,12 @@
                         android:src="@drawable/icon_home_manicure" />
 
                     <TextView
-                        android:textSize="@dimen/comment_14_size"
+                        android:textSize="@dimen/comment_12_size"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/comment_2_dip"
                         android:gravity="center"
+                        android:textColor="@color/home_queen_middle_color"
                         android:text="@string/manicure" />
                 </LinearLayout>
 
@@ -116,10 +131,12 @@
                         android:src="@drawable/icon_home_hairdcus" />
 
                     <TextView
-                        android:textSize="@dimen/comment_14_size"
+                        android:textSize="@dimen/comment_12_size"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center"
+                        android:textColor="@color/home_queen_middle_color"
+                        android:layout_marginTop="@dimen/comment_2_dip"
                         android:text="@string/hairdressing_custom" />
                 </LinearLayout>
 
@@ -136,10 +153,12 @@
                         android:src="@drawable/icon_home_meirongmeiti" />
 
                     <TextView
-                        android:textSize="@dimen/comment_14_size"
+                        android:textSize="@dimen/comment_12_size"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/comment_2_dip"
                         android:gravity="center"
+                        android:textColor="@color/home_queen_middle_color"
                         android:text="@string/cosmetology_and_body" />
                 </LinearLayout>
 
@@ -156,27 +175,33 @@
                         android:src="@drawable/icon_home_lipstick" />
 
                     <TextView
-                        android:textSize="@dimen/comment_14_size"
+                        android:textSize="@dimen/comment_12_size"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/comment_2_dip"
                         android:gravity="center"
+                        android:textColor="@color/home_queen_middle_color"
                         android:text="@string/semi_permanent" />
                 </LinearLayout>
-
 
             </LinearLayout>
         </LinearLayout>
 
+        <View android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:background="@color/home_shop_middle">
+        </View>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/comment_10_dip"
             android:background="@color/white">
 
             <LinearLayout
                 android:layout_width="@dimen/comment_0_dip"
                 android:layout_height="@dimen/comment_202_dip"
                 android:layout_weight="1"
+                android:paddingTop="@dimen/comment_10_dip"
                 android:gravity="center|top"
                 android:orientation="vertical">
 
@@ -191,6 +216,7 @@
                     android:layout_height="9dp"
                     android:layout_marginTop="3dp"
                     android:text="@string/free_shipping"
+                    android:textColor="@color/home_queen_9_9"
                     android:textSize="8sp" />
 
                 <ImageView
@@ -203,13 +229,14 @@
             <View
                 android:layout_width="1dp"
                 android:layout_height="@dimen/comment_202_dip"
-                android:background="#4DC6C4C4" />
+                android:background="@color/home_shop_middle" />
 
             <LinearLayout
                 android:layout_width="@dimen/comment_0_dip"
                 android:layout_height="@dimen/comment_202_dip"
                 android:layout_weight="1"
                 android:gravity="center|top"
+                android:paddingTop="@dimen/comment_10_dip"
                 android:orientation="vertical">
 
                 <ImageView
@@ -223,6 +250,7 @@
                     android:layout_height="9dp"
                     android:layout_marginTop="3dp"
                     android:gravity="center"
+                    android:textColor="@color/home_queen_9_9"
                     android:text="5249人免费试用过"
                     android:textSize="8sp" />
 
@@ -249,7 +277,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:layout_marginTop="@dimen/comment_5_dip"
-                    android:background="@color/alpha_05_black" />
+                    android:background="@color/home_shop_middle" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -277,6 +305,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="3dp"
                             android:gravity="center"
+                            android:textColor="@color/home_queen_9_9"
                             android:text="1元换10元劵"
                             android:textSize="@dimen/comment_8_size" />
 
@@ -291,7 +320,7 @@
                     <View
                         android:layout_width="1dp"
                         android:layout_height="match_parent"
-                        android:background="@color/alpha_05_black" />
+                        android:background="@color/home_shop_middle" />
 
                     <LinearLayout
                         android:layout_width="@dimen/comment_0_dip"
@@ -315,6 +344,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="3dp"
                             android:gravity="center"
+                            android:textColor="@color/home_queen_9_9"
                             android:text="人人都在买"
                             android:textSize="8sp" />
 
@@ -335,7 +365,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginLeft="@dimen/comment_10_dip">
+            android:background="@color/home_shop_middle"
+            android:paddingTop="@dimen/comment_5_dip"
+            android:paddingBottom="@dimen/comment_5_dip"
+            android:paddingStart="@dimen/comment_10_dip"
+            tools:ignore="RtlSymmetry">
 
             <ImageView
 
@@ -346,8 +380,9 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/comment_30_dip"
-                android:layout_marginLeft="@dimen/comment_8_dip"
+                android:layout_marginStart="@dimen/comment_8_dip"
                 android:gravity="center|left"
+                android:textColor="@color/home_queen_full"
                 android:text="@string/satisfy" />
         </LinearLayout>
     </LinearLayout>
