@@ -34,30 +34,6 @@ public class AppApplication extends BaseApplication {
         StrictMode.setVmPolicy(builder.build());
         builder.detectFileUriExposure();
 
-        //umen 推送
-        //PushAgent mPushAgent = PushAgent.getInstance(this);
-//        mPushAgent.setDebugMode(true);
-//        //sdk开启通知声音
-//        mPushAgent.setNotificationPlaySound(MsgConstant.NOTIFICATION_PLAY_SDK_ENABLE);
-//        //注册推送服务 每次调用register都会回调该接口
-//        mPushAgent.register(new IUmengRegisterCallback() {
-//            @Override
-//            public void onSuccess(String deviceToken) {
-//                UmLog.i(TAG, "device token: " + deviceToken);
-//                SPManager.getInstance().putString("device_token", deviceToken);
-//            }
-//
-//            @Override
-//            public void onFailure(String s, String s1) {
-//                UmLog.i(TAG, "register failed: " + s + " " + s1);
-//            }
-//        });
-//        mPushAgent.setPushIntentServiceClass(MyPushIntentService.class);
-
-        //LeakCanary.install(this);
-
-        //Stetho.initializeWithDefaults(this);
-
         CrashHandler crashHandler = CrashHandler.getInstance();
         crashHandler.init(this);
 
