@@ -1,14 +1,17 @@
 package com.ainisi.queenmirror.queenmirrorcduan.ui.home.home.fragment;
 
 import android.content.res.Resources;
+import android.graphics.drawable.Drawable;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.content.ContextCompat;
 import android.util.TypedValue;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.ainisi.queenmirror.common.base.BaseFragment;
@@ -36,10 +39,6 @@ public class OrderFragment extends BaseFragment {
     TabLayout otablayout;
     @Bind(R.id.or_mypager)
     NoScrollViewPager omypager;
-    @Bind(R.id.title_title)
-    TextView orderTitle;
-    @Bind(R.id.title_back)
-    ImageView imgBack;
     private List<String> tablist = new ArrayList<>();
     private List<Fragment> pagerlist = new ArrayList<>();
 
@@ -55,14 +54,10 @@ public class OrderFragment extends BaseFragment {
 
     @Override
     protected void initView() {
-        initText();
+
         initDate();
     }
 
-    private void initText() {
-        orderTitle.setText(R.string.order);
-        imgBack.setVisibility(View.GONE);
-    }
 
     private void initDate() {
         tablist.add("全部订单");
@@ -81,7 +76,7 @@ public class OrderFragment extends BaseFragment {
         pagerlist.add(new RefundFragment());
         ViewPager viewPager = new ViewPager(getActivity().getSupportFragmentManager(), pagerlist, tablist);
         omypager.setAdapter(viewPager);
-        omypager.setScanScroll(false);
+        omypager.setScanScroll(true);
         otablayout.setupWithViewPager(omypager);
         otablayout.post(new Runnable() {
             @Override
