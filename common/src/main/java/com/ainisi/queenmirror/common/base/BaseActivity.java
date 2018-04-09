@@ -42,39 +42,6 @@ import java.lang.reflect.Method;
 
 import butterknife.ButterKnife;
 
-/***************使用例子*********************/
-//1.mvp模式
-//public class SampleActivity extends BaseActivity<NewsChanelPresenter, NewsChannelModel>implements NewsChannelContract.View {
-//    @Override
-//    public int getLayoutId() {
-//        return R.layout.activity_news_channel;
-//    }
-//
-//    @Override
-//    public void initPresenter() {
-//        mPresenter.setVM(this, mModel);
-//    }
-//
-//    @Override
-//    public void initView() {
-//    }
-//}
-//2.普通模式
-//public class SampleActivity extends BaseActivity {
-//    @Override
-//    public int getLayoutId() {
-//        return R.layout.activity_news_channel;
-//    }
-//
-//    @Override
-//    public void initPresenter() {
-//    }
-//
-//    @Override
-//    public void initView() {
-//    }
-//}
-
 /***********************************************/
 public abstract class BaseActivity<T extends BasePresenter, E extends BaseModel> extends AppCompatActivity {
     public T mPresenter;
@@ -128,15 +95,15 @@ public abstract class BaseActivity<T extends BasePresenter, E extends BaseModel>
     private void doBeforeSetcontentView() {
         // 把activity放到application栈中管理
         AppManager.getAppManager().addActivity(this);
-        // 去掉标题栏
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
+       /* // 去掉标题栏
+        requestWindowFeature(Window.FEATURE_NO_TITLE);*/
         // 设置竖屏
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         // 默认着色状态栏
         setStatusBarColor();
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-            getWindow().addFlags(WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN);
-            getWindow().addFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
+            getWindow().addFlags(WindowManager.LayoutParams.FLAG_FORCE_NOT_FULLSCREEN);
+            getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
         }
     }
 

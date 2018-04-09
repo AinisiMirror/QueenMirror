@@ -25,38 +25,6 @@ import butterknife.ButterKnife;
  * on 2016.07.12:38
  */
 
-/***************使用例子*********************/
-//1.mvp模式
-//public class SampleFragment extends BaseFragment<NewsChanelPresenter, NewsChannelModel>implements NewsChannelContract.View {
-//    @Override
-//    public int getLayoutId() {
-//        return R.layout.activity_news_channel;
-//    }
-//
-//    @Override
-//    public void initPresenter() {
-//        mPresenter.setVM(this, mModel);
-//    }
-//
-//    @Override
-//    public void initView() {
-//    }
-//}
-//2.普通模式
-//public class SampleFragment extends BaseFragment {
-//    @Override
-//    public int getLayoutResource() {
-//        return R.layout.activity_news_channel;
-//    }
-//
-//    @Override
-//    public void initPresenter() {
-//    }
-//
-//    @Override
-//    public void initView() {
-//    }
-//}
 public abstract class BaseFragment<T extends BasePresenter, E extends BaseModel> extends Fragment {
     protected View rootView;
     public T mPresenter;
