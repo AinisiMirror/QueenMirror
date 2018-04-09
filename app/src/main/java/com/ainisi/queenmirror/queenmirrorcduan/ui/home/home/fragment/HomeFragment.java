@@ -113,6 +113,7 @@ public class HomeFragment extends BaseFragment {
         initQuee();
         initpopwindow();
 
+
     }
 
     private void initQuee() {
@@ -127,7 +128,6 @@ public class HomeFragment extends BaseFragment {
         });
 
     }
-
     @Override
     public void onResume() {
         super.onResume();
