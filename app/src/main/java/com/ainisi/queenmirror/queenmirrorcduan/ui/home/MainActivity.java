@@ -4,6 +4,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.RadioButton;
 import com.ainisi.queenmirror.common.base.BaseActivity;
 import com.ainisi.queenmirror.queenmirrorcduan.R;
@@ -50,15 +51,17 @@ public class MainActivity extends BaseActivity {
     public void initPresenter() {
 
     }
-
     @Override
     public void initView() {
+
         mHomeFragment = new HomeFragment();
         fm = getSupportFragmentManager();
         FragmentTransaction transaction = fm.beginTransaction();
         transaction.replace(R.id.fl_main_content_layout, mHomeFragment);
         transaction.commit();
         mHomeBtn.setChecked(true);
+
+
 
     }
 

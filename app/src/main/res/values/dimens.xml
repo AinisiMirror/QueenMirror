@@ -41,5 +41,6 @@
     <dimen name="comment_26_dip">26dp</dimen>
     <dimen name="comment_35_size">35sp</dimen>
     <dimen name="comment_25_size">25dp</dimen>
+    <dimen name="comment_52_dip">52dp</dimen>
 
 </resources>
