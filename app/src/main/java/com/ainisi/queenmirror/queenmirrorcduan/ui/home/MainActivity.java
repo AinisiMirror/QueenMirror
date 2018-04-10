@@ -9,6 +9,7 @@ import android.widget.RadioButton;
 import com.ainisi.queenmirror.common.base.BaseActivity;
 import com.ainisi.queenmirror.queenmirrorcduan.R;
 import com.ainisi.queenmirror.queenmirrorcduan.ui.home.home.fragment.HomeFragment;
+import com.ainisi.queenmirror.queenmirrorcduan.ui.home.home.fragment.HomeFragmentOne;
 import com.ainisi.queenmirror.queenmirrorcduan.ui.home.home.fragment.MasterFragment;
 import com.ainisi.queenmirror.queenmirrorcduan.ui.home.home.fragment.MineFragment;
 import com.ainisi.queenmirror.queenmirrorcduan.ui.home.home.fragment.OrderFragment;
@@ -21,7 +22,7 @@ import butterknife.OnClick;
  */
 public class MainActivity extends BaseActivity {
     //首页
-    private HomeFragment mHomeFragment;
+    private HomeFragmentOne mHomeFragment;
     //商城
     private ShopMallFragment mShopMallFragment;
     //订单
@@ -54,7 +55,7 @@ public class MainActivity extends BaseActivity {
     @Override
     public void initView() {
 
-        mHomeFragment = new HomeFragment();
+        mHomeFragment = new HomeFragmentOne();
         fm = getSupportFragmentManager();
         FragmentTransaction transaction = fm.beginTransaction();
         transaction.replace(R.id.fl_main_content_layout, mHomeFragment);
@@ -70,7 +71,7 @@ public class MainActivity extends BaseActivity {
             case R.id.rb_home:
                 mHomeBtn.setChecked(true);
                 if (mHomeFragment == null) {
-                    mHomeFragment = new HomeFragment();
+                    mHomeFragment = new HomeFragmentOne();
                     transaction.add(R.id.fl_main_content_layout, mHomeFragment);
                 } else {
                     transaction.show(mHomeFragment);

@@ -14,11 +14,11 @@
         <com.youth.banner.Banner
             android:id="@+id/banner"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/comment_240_dip"/>
+            android:layout_height="240dp"/>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="117dp"
             android:orientation="vertical">
 
             <RelativeLayout
@@ -195,7 +195,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="203dp"
             android:background="@color/white">
 
             <LinearLayout
@@ -364,7 +364,7 @@
         <LinearLayout
             android:id="@+id/home_layout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
             android:layout_gravity="center_horizontal"
             android:background="@color/home_shop_middle"
             android:paddingTop="@dimen/comment_5_dip"
@@ -373,7 +373,6 @@
             tools:ignore="RtlSymmetry">
 
             <ImageView
-
                 android:layout_width="@dimen/comment_70_dip"
                 android:layout_height="@dimen/comment_30_dip"
                 android:src="@drawable/icon_home_recommend" />
@@ -387,4 +386,5 @@
                 android:text="@string/satisfy" />
         </LinearLayout>
     </LinearLayout>
+    <include layout="@layout/home_appbarlayout" />
 </LinearLayout>
