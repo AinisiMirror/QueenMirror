@@ -93,11 +93,12 @@
             android:orientation="horizontal">
 
             <LinearLayout
+                android:id="@+id/li_sort_bottom"
                 style="@style/Recommend_layout"
                 android:layout_height="@dimen/comment_40_dip">
 
                 <TextView
-                    android:id="@+id/rb_sort"
+
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/sort"

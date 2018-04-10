@@ -53,7 +53,7 @@ public class HomeFragmentOne extends BaseFragment{
     @Bind(R.id.banner)
     Banner banner;
     @Bind(R.id.iv_sort)
-    ImageView ivsort;
+    LinearLayout ivsort;
     @Bind(R.id.iv_sort1)
     ImageView ivsort1;
     @Bind(R.id.rb_sort)
@@ -68,6 +68,9 @@ public class HomeFragmentOne extends BaseFragment{
     LinearLayout hlayout;
     @Bind(R.id.marqueeview)
     MarqueeView marqueeView;
+    @Bind(R.id.li_sort_bottom)
+    LinearLayout li_sort_bottom;
+
 
     @Bind(R.id.sc_home_scroll)
     ScrollView sc_home_scroll;
@@ -77,15 +80,12 @@ public class HomeFragmentOne extends BaseFragment{
     private int mScrollY = 0;
     HomePageAdapter commonAdapter;
 
-
     ListViewAdapter listadapter;
 
     @Bind(R.id.listView)
     NoScrollListview listView;
-
     @Bind(R.id.layout_stick_header_main)
     LinearLayout layout_stick_header_main;
-
     @Bind(R.id.layout_stick_header)
     LinearLayout layout_stick_header;
 
@@ -115,6 +115,8 @@ public class HomeFragmentOne extends BaseFragment{
     private List<ProblemBean> list = new ArrayList<>();
     String[] problem = {"销量最高", "价格最低", "距离最近", "优惠最多", "满减优惠", "新用最好", "用户最好"};
 
+    int hight;//标记ScrollView移动的距离
+
     @Override
     protected int getLayoutResource() {
         return R.layout.fragment_home;
@@ -136,7 +138,7 @@ public class HomeFragmentOne extends BaseFragment{
         sc_home_scroll.setOnScrollChangeListener(new View.OnScrollChangeListener() {
             @Override
             public void onScrollChange(View view, int i, int i1, int i2, int i3) {
-
+                hight = i1;
                 if(i1>=1621){
                     layout_stick_header.setVisibility(View.GONE);
                     layout_stick_header_main.setVisibility(View.VISIBLE);
@@ -151,10 +153,6 @@ public class HomeFragmentOne extends BaseFragment{
         listView.setAdapter(listadapter);
 
     }
-
-
-
-
 
     private void initQuee() {
        marqueeView.setTextArray(contentArray);
@@ -207,12 +205,6 @@ public class HomeFragmentOne extends BaseFragment{
         banner.setImages(images);
         banner.start();
 
-     /*  sortFragment = new SortFragment();
-        fm = getActivity().getSupportFragmentManager();
-        FragmentTransaction transaction = fm.beginTransaction();
-        transaction.replace(R.id.fl_home_recommend_layout, sortFragment);
-        transaction.commit();*/
-
     }
 
     private void initpop(View popview1) {
@@ -239,18 +231,26 @@ public class HomeFragmentOne extends BaseFragment{
 
     @OnClick({R.id.rb_sort, R.id.rb_sales, R.id.rb_distance, R.id.rb_screen, R.id.txt_bustling
             , R.id.img_search, R.id.img_information, R.id.home_esthetics, R.id.iv_sort, R.id.iv_sort1
-            , R.id.bt_screen})
+            , R.id.bt_screen,R.id.li_sort_bottom})
     public void click(View view) {
-        FragmentTransaction transaction = fm.beginTransaction();
+      //  FragmentTransaction transaction = fm.beginTransaction();
         switch (view.getId()) {
             case R.id.bt_screen:
 
                 break;
             //综合选择
+            case R.id.li_sort_bottom:
             case R.id.iv_sort:
+
                 ivsort.setVisibility(View.GONE);
                 ivsort1.setVisibility(View.VISIBLE);
-                pop.showAsDropDown(hSort);
+                if(hight >= 1621){
+                    pop.showAsDropDown(li_sort_bottom);
+                }else{
+                    sc_home_scroll.smoothScrollTo(0,1621);
+                    pop.showAsDropDown(hSort);
+                }
+
                 break;
             case R.id.iv_sort1:
                 pop.dismiss();
@@ -276,18 +276,18 @@ public class HomeFragmentOne extends BaseFragment{
                 startActivity(new Intent(getActivity(), MessageActivity.class));
                 break;
             case R.id.rb_sort:
-                if (sortFragment == null) {
+              /*  if (sortFragment == null) {
                     sortFragment = new SortFragment();
                     transaction.add(R.id.fl_home_recommend_layout, sortFragment);
                 } else {
                     transaction.show(sortFragment);
                 }
                 hideFragment(salesFragment, transaction);
-                hideFragment(distanceFragment, transaction);
+                hideFragment(distanceFragment, transaction);*/
 //                hideFragment(screenFragment, transaction);
                 break;
             case R.id.rb_sales:
-                if (salesFragment == null) {
+            /*    if (salesFragment == null) {
                     salesFragment = new SalesFragment();
                     transaction.add(R.id.fl_home_recommend_layout, salesFragment);
                 } else {
@@ -295,11 +295,11 @@ public class HomeFragmentOne extends BaseFragment{
                 }
                 hideFragment(sortFragment, transaction);
 //                hideFragment(screenFragment, transaction);
-                hideFragment(distanceFragment, transaction);
+                hideFragment(distanceFragment, transaction);*/
                 break;
             case R.id.rb_distance:
 
-                if (distanceFragment == null) {
+               /* if (distanceFragment == null) {
                     distanceFragment = new DistanceFragment();
                     transaction.add(R.id.fl_home_recommend_layout, distanceFragment);
                 } else {
@@ -307,7 +307,7 @@ public class HomeFragmentOne extends BaseFragment{
                 }
                 hideFragment(sortFragment, transaction);
                 hideFragment(salesFragment, transaction);
-//                hideFragment(screenFragment, transaction);
+//                hideFragment(screenFragment, transaction);*/
                 break;
             case R.id.rb_screen:
 
@@ -339,7 +339,7 @@ public class HomeFragmentOne extends BaseFragment{
                 break;
         }
         //提交事务
-        transaction.commit();
+        //transaction.commit();
 
 
     }

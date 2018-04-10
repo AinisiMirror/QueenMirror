@@ -16,6 +16,7 @@
         android:orientation="horizontal">
 
         <LinearLayout
+            android:id="@+id/iv_sort"
             style="@style/Recommend_layout"
             android:layout_height="@dimen/comment_40_dip">
 
@@ -26,7 +27,7 @@
                 android:text="@string/sort"
                 android:textSize="@dimen/comment_12_size" />
             <ImageView
-                android:id="@+id/iv_sort"
+
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
