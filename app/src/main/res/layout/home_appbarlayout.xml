@@ -57,6 +57,7 @@
             android:text="@string/distance" />
 
         <LinearLayout
+            android:id="@+id/li_home_screen_bottom"
             style="@style/Recommend_layout"
             android:layout_height="@dimen/comment_40_dip"
 
