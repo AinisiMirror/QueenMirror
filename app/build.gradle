@@ -20,6 +20,24 @@ android {
     }
     allprojects {
         repositories {
+            maven {
+                url 'https://jitpack.io'
+                'https://dl.bintray.com/wangyuwei/maven'
+            }
+
+        }
+        /* repositories {
+            mavenCentral() // jcenter() works as well because it pulls from Maven Central
+        }*/
+    }
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+    allprojects {
+        repositories {
             maven { url 'https://jitpack.io'
                 'https://dl.bintray.com/wangyuwei/maven'}
 
@@ -28,6 +46,20 @@ android {
             mavenCentral() // jcenter() works as well because it pulls from Maven Central
         }*/
     }
+
+    configurations.all {
+        resolutionStrategy.eachDependency { DependencyResolveDetails details ->
+            def requested = details.requested
+            if (requested.group == 'com.android.support') {
+                if (!requested.name.startsWith("multidex")) {
+                    details.useVersion '25.3.1'
+                }
+            }
+        }
+    }
+    /* task clean(type:Delete){
+         delete rootProject.buildDir
+     }*/
 }
 
 dependencies {
@@ -36,11 +68,13 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     compile project(':common')
+    //noinspection GradleCompatible
     compile 'com.android.support:appcompat-v7:25.3.1'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     compile 'com.android.support:design:26.0.0-alpha1'
     compile 'com.jakewharton:butterknife:6.1.0'
     compile 'com.android.support:support-v4:26.+'
     compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.31'
+    compile 'com.google.code.gson:gson:2.8.0'
     testCompile 'junit:junit:4.12'
 }

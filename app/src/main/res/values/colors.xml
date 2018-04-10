@@ -89,4 +89,7 @@
     <color name="home_bottom_radio">#F2F2F2</color>
     <color name="home_bottom_radio_text">#2D2D2D</color>
 
+    <color name="search_color">#C471F5</color>
+    <color name="search_search">#ECECEC</color>
+
 </resources>

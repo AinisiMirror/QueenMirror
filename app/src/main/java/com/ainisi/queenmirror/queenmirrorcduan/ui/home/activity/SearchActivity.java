@@ -2,13 +2,9 @@ package com.ainisi.queenmirror.queenmirrorcduan.ui.home.activity;
 
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Color;
 import android.support.v4.content.ContextCompat;
-import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -16,8 +12,9 @@ import android.widget.TextView;
 
 import com.ainisi.queenmirror.common.base.BaseActivity;
 import com.ainisi.queenmirror.queenmirrorcduan.R;
-import com.ainisi.queenmirror.queenmirrorcduan.adapter.MyAdapter;
+import com.ainisi.queenmirror.queenmirrorcduan.ui.home.BaseNewActivity;
 import com.ainisi.queenmirror.queenmirrorcduan.ui.home.bean.SortBean;
+import com.ainisi.queenmirror.queenmirrorcduan.utils.StatusBarUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,7 +27,7 @@ import butterknife.OnClick;
  * 搜索
  */
 
-public class SearchActivity extends BaseActivity {
+public class SearchActivity extends BaseNewActivity {
     @Bind(R.id.title_title)
     TextView title;
     @Bind(R.id.titleimg_right)
@@ -45,9 +42,9 @@ public class SearchActivity extends BaseActivity {
     LinearLayout titlelayout;
     @Bind(R.id.rc_hot)
     RecyclerView rchot;
-//    @Bind(R.id.rc_history)
+    //    @Bind(R.id.rc_history)
 //    RecyclerView rchistory;
-   private List<SortBean> list=new ArrayList<>();
+    private List<SortBean> list=new ArrayList<>();
     public static void startActivity(Context context) {
         Intent in = new Intent(context, SearchActivity.class);
         context.startActivity(in);
@@ -55,16 +52,13 @@ public class SearchActivity extends BaseActivity {
 
     @Override
     public int getLayoutId() {
+        StatusBarUtil.getStatusBarLightMode(getWindow());
         return R.layout.activity_search;
     }
 
     @Override
-    public void initPresenter() {
-
-    }
-
-    @Override
     public void initView(){
+
         showpopid();
         initHot();
         initHistory();
@@ -77,15 +71,11 @@ public class SearchActivity extends BaseActivity {
     }
 
 
-
-
     private void showpopid() {
         title.setVisibility(View.GONE);
         imgright.setVisibility(View.GONE);
         titlelayout.setVisibility(View.VISIBLE);
         poplayout.setBackgroundColor(ContextCompat.getColor(this,R.color.alpha_05_black));
-        search.setBackgroundColor(ContextCompat.getColor(this,R.color.alpha_40_black));
-       layouttitle.setBackgroundColor(ContextCompat.getColor(this,R.color.alpha_40_black));
     }
 
 
@@ -100,7 +90,6 @@ public class SearchActivity extends BaseActivity {
                 break;
 
         }
-
 
     }
 

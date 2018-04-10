@@ -206,7 +206,7 @@
             android:name=".ui.home.installactivity.MineDetailedActivity"
             android:screenOrientation="portrait" />
         <activity android:name=".ui.home.DetailActivity" />
-        <activity android:name=".ui.home.activity.BeanstalkActivity"></activity>
+        <activity android:name=".ui.home.activity.BeanstalkActivity" />
     </application>
 
 </manifest>

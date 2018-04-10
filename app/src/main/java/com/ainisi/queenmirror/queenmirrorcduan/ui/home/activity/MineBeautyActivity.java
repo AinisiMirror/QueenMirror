@@ -12,6 +12,9 @@ import com.ainisi.queenmirror.queenmirrorcduan.R;
 
 import butterknife.Bind;
 
+/**
+ * 我的——成为美业人
+ */
 public class MineBeautyActivity extends BaseActivity {
     @Bind(R.id.title_title)
     TextView beautyTitle;

@@ -36,7 +36,6 @@ public class MessageActivity extends BaseActivity {
     public void initView() {
         initText();
 
-
     }
 
     private void initText() {
@@ -59,7 +58,5 @@ public class MessageActivity extends BaseActivity {
                 break;
 
         }
-
-
     }
 }

@@ -1,19 +1,16 @@
 package com.ainisi.queenmirror.queenmirrorcduan.ui.home.home.fragment;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
 import android.os.Handler;
 import android.support.annotation.RequiresApi;
 import android.support.design.widget.CollapsingToolbarLayout;
-import android.support.design.widget.CoordinatorLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.Gravity;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.ImageView;
@@ -33,7 +30,6 @@ import com.ainisi.queenmirror.queenmirrorcduan.ui.home.activity.SearchActivity;
 import com.ainisi.queenmirror.queenmirrorcduan.ui.home.activity.SelectCityActivity;
 import com.ainisi.queenmirror.queenmirrorcduan.ui.home.activity.EstheticsActivity;
 import com.ainisi.queenmirror.queenmirrorcduan.ui.home.bean.ProblemBean;
-import com.ainisi.queenmirror.queenmirrorcduan.ui.home.bean.SortBean;
 import com.ainisi.queenmirror.queenmirrorcduan.ui.home.home.fragment.sonfragment.DistanceFragment;
 import com.ainisi.queenmirror.queenmirrorcduan.ui.home.home.fragment.sonfragment.SalesFragment;
 import com.ainisi.queenmirror.queenmirrorcduan.ui.home.home.fragment.sonfragment.ScreenFragment;
@@ -290,6 +286,8 @@ public class HomeFragmentOne extends BaseFragment{
                 break;
             //搜索
             case R.id.img_search:
+               /* Intent intent1 = new Intent(getActivity(), TestActivity.class);
+                startActivity(intent1);*/
                 SearchActivity.startActivity(getContext());
                 break;
             //信息
