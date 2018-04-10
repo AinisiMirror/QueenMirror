@@ -16,7 +16,7 @@ import java.util.List;
 public abstract class BaseRecyclerAdapter<T> extends RecyclerView.Adapter<BaseViewHolder> {
     private Context context;
     private LayoutInflater inflater;
-    private List<T                              > datas;
+    private List<T> datas;
     private int layoutId;
     protected OnItemClickListner onItemClickListner;//单击事件
     protected OnItemLongClickListner onItemLongClickListner;//长按单击事件
@@ -25,6 +25,7 @@ public abstract class BaseRecyclerAdapter<T> extends RecyclerView.Adapter<BaseVi
         this.context = context;
         this.datas = datas;
         this.layoutId = layoutId;
+
         this.inflater = LayoutInflater.from(context);
     }
 
