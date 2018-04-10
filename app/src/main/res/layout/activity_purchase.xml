@@ -9,6 +9,7 @@
     android:background="@color/alpha_05_black"
     tools:context="com.ainisi.queenmirror.queenmirrorcduan.ui.home.activity.PurchaseActivity">
     <include
+
         android:id="@+id/ic_title"
         layout="@layout/layout_title"/>
     <LinearLayout
