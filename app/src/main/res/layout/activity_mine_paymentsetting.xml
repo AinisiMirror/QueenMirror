@@ -5,15 +5,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    android:background="@color/alpha_05_black"
     tools:context="com.ainisi.queenmirror.queenmirrorcduan.ui.home.installactivity.MinePaymentsettingActivity">
     <include
         android:id="@+id/ic_title"
         layout="@layout/layout_title"/>
     <RelativeLayout
+        android:layout_below="@+id/ic_title"
+        android:background="@color/alpha_05_black"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <RelativeLayout
         android:background="@color/white"
         android:layout_marginTop="@dimen/comment_10_dip"
-        android:layout_below="@+id/ic_title"
         android:id="@+id/layout_setting"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -37,5 +40,6 @@
             android:text="@string/Setting_the_payment_password"
             android:textColor="@color/alpha_95_black"
             android:textSize="@dimen/comment_14_size" />
+    </RelativeLayout>
     </RelativeLayout>
 </RelativeLayout>

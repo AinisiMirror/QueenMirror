@@ -6,17 +6,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    android:background="@color/alpha_05_black"
+
     tools:context="com.ainisi.queenmirror.queenmirrorcduan.ui.home.activity.PortraitActivity">
 
     <include
         android:id="@+id/title"
         layout="@layout/layout_title" />
-
+    <RelativeLayout
+        android:layout_below="@+id/title"
+        android:background="@color/alpha_05_black"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/title"
         android:background="@color/white">
 
         <RelativeLayout
@@ -194,5 +197,6 @@
                 android:layout_centerVertical="true"
                 app:srcCompat="@drawable/icon_full_right" />
         </RelativeLayout>
+    </RelativeLayout>
     </RelativeLayout>
 </RelativeLayout>

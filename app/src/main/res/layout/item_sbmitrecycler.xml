@@ -2,8 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="wrap_content"
-    android:background="@color/white"
-    android:layout_marginBottom="@dimen/comment_2_dip"
+    android:background="@drawable/et_shap"
+    android:layout_marginBottom="@dimen/comment_0.5_dip"
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
@@ -139,6 +139,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/tv_head"
+
             android:layout_marginStart="@dimen/comment_13_dip"
             android:orientation="horizontal">
 
@@ -146,7 +147,7 @@
                 android:layout_width="@dimen/comment_0_dip"
                 android:textColor="@color/colorAccent"
                 android:text="相似商家"
-                android:layout_margin="@dimen/comment_10_dip"
+                style="@style/style_order"
                 android:gravity="center"
                 android:textSize="@dimen/comment_14_size"
                 android:background="@drawable/text_biankuang_shape"
@@ -157,8 +158,9 @@
                 android:layout_width="@dimen/comment_0_dip"
                 android:textColor="@color/colorAccent"
                 android:text="再来一单"
-                android:layout_margin="@dimen/comment_10_dip"
+
                 android:textSize="@dimen/comment_14_size"
+                style="@style/style_order"
                 android:gravity="center"
                 android:background="@drawable/text_biankuang_shape"
                 android:layout_height="@dimen/comment_30_dip"
@@ -166,9 +168,9 @@
 
             <TextView
                 android:layout_width="@dimen/comment_0_dip"
-                android:layout_margin="@dimen/comment_10_dip"
                 android:text="退款"
                 android:textSize="@dimen/comment_14_size"
+                style="@style/style_order"
                 android:textColor="@color/colorAccent"
                 android:gravity="center"
                 android:background="@drawable/text_biankuang_shape"

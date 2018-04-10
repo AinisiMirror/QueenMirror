@@ -5,13 +5,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    android:background="@color/alpha_05_black"
+
     tools:context="com.ainisi.queenmirror.queenmirrorcduan.ui.home.installactivity.MineAskproblemActivity">
     <include
         android:id="@+id/ic_title"
         layout="@layout/layout_title"/>
-    <TextView
+    <RelativeLayout
         android:layout_below="@+id/ic_title"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <TextView
+
         android:layout_width="match_parent"
         android:text="尚未添加常见问题"
         android:textColor="@color/alpha_95_black"
@@ -19,4 +23,5 @@
         android:textSize="@dimen/comment_14_size"
         android:gravity="center"
         android:layout_height="match_parent" />
+    </RelativeLayout>
 </RelativeLayout>

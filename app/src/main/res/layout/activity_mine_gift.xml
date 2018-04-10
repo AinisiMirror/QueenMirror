@@ -6,7 +6,7 @@
     android:fitsSystemWindows="true"
     android:layout_height="match_parent"
     android:scrollbars="vertical"
-    android:background="@color/alpha_20_black"
+
     tools:context="com.ainisi.queenmirror.queenmirrorcduan.ui.home.activity.MineGiftActivity">
     <RelativeLayout
 

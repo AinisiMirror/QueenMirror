@@ -26,6 +26,7 @@ public class MineBeanActivity extends BaseActivity {
     TextView beantitle;
     @Bind(R.id.rc_bean)
     RecyclerView beanrecycle;
+
     private List<SortBean> list=new ArrayList<>();
     public static void startActivity(Context context) {
         context.startActivity(new Intent(context,MineBeanActivity.class));
@@ -66,13 +67,16 @@ public class MineBeanActivity extends BaseActivity {
         beanrecycle.setAdapter(sortAdapter2);
     }
 
-    @OnClick({R.id.title_back
+    @OnClick({R.id.title_back,R.id.iv_date
     })
     public void click(View view) {
 
         switch (view.getId()) {
             case R.id.title_back:
                 finish();
+                break;
+            case R.id.iv_date:
+                startActivity(new Intent(this,BeanstalkActivity.class));
                 break;
 
         }

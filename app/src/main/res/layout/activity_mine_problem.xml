@@ -5,18 +5,20 @@
     android:layout_width="@dimen/comment_375_dip"
     android:layout_height="667dp"
     android:fitsSystemWindows="true"
-    android:background="@color/alpha_05_black"
     tools:context="com.ainisi.queenmirror.queenmirrorcduan.ui.home.activity.MineProblemActivity">
 
     <include
         android:id="@+id/ic_title"
         layout="@layout/layout_title" />
-
+    <RelativeLayout
+        android:layout_below="@+id/ic_title"
+        android:background="@color/alpha_05_black"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
     <RelativeLayout
         android:id="@+id/layout_feedback"
         android:layout_width="@dimen/comment_375_dip"
         android:layout_height="@dimen/comment_50_dip"
-        android:layout_below="@id/ic_title"
         android:layout_marginTop="@dimen/comment_10_dip"
         android:background="@color/white">
 
@@ -75,5 +77,6 @@
             android:layout_alignParentStart="true" />
 
 
+    </RelativeLayout>
     </RelativeLayout>
 </RelativeLayout>

@@ -5,15 +5,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    android:background="@color/alpha_05_black"
     tools:context="com.ainisi.queenmirror.queenmirrorcduan.ui.home.activity.MineQueenActivity">
     <include
         android:id="@+id/ic_title"
         layout="@layout/layout_queentitle"/>
     <RelativeLayout
+        android:layout_below="@+id/ic_title"
+        android:background="@color/alpha_05_black"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <RelativeLayout
         android:background="@color/white"
         android:id="@+id/relativeLayout"
-        android:layout_below="@+id/ic_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -189,7 +192,7 @@
 
     </RelativeLayout>
 
-
+    </RelativeLayout>
 
 
 </RelativeLayout>

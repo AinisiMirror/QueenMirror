@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/alpha_05_black"
+    android:fitsSystemWindows="true"
     tools:context="com.ainisi.queenmirror.queenmirrorcduan.ui.home.activity.MineFollowActivity">
 
     <include
@@ -12,9 +12,14 @@
         android:id="@+id/ic_title"
         layout="@layout/layout_title" />
     <RelativeLayout
+        android:layout_below="@+id/ic_title"
+        android:background="@color/alpha_05_black"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <RelativeLayout
         android:background="@color/white"
         android:id="@+id/re_follow"
-        android:layout_below="@+id/ic_title"
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
     <TextView
@@ -32,4 +37,5 @@
         android:id="@+id/mine_follow_recycler"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
+    </RelativeLayout>
 </RelativeLayout>

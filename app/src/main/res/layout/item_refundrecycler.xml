@@ -2,10 +2,10 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:background="@color/white"
-    android:layout_marginBottom="@dimen/comment_10_dip"
+    android:background="@drawable/et_shap"
+    android:layout_marginBottom="@dimen/comment_0.5_dip"
     android:layout_width="match_parent"
-    android:layout_height="@dimen/comment_232_dip">
+    android:layout_height="wrap_content">
     <RelativeLayout
         android:id="@+id/recycler_1"
         android:layout_marginBottom="@dimen/comment_10_dip"
@@ -121,7 +121,7 @@
         android:layout_marginTop="@dimen/comment_15_dip"
         android:text="查看详情"
         android:textSize="@dimen/comment_14_size"
-        android:layout_marginBottom="@dimen/comment_5_dip"
+        android:layout_marginBottom="@dimen/comment_16_dip"
         android:textColor="@color/colorAccent" />
 
 </RelativeLayout>

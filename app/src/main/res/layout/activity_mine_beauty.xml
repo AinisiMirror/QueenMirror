@@ -3,19 +3,23 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@color/alpha_05_black"
+
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     tools:context="com.ainisi.queenmirror.queenmirrorcduan.ui.home.activity.MineBeautyActivity">
     <include
         android:id="@+id/ic_title"
         layout="@layout/layout_title"/>
-
+    <RelativeLayout
+        android:layout_below="@+id/ic_title"
+        android:background="@color/alpha_05_black"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
     <TextView
         android:id="@+id/tv_text"
         android:layout_width="match_parent"
         android:layout_height="@dimen/comment_80_dip"
-        android:layout_below="@+id/ic_title"
+
         android:background="@color/white"
         android:gravity="center"
         android:text="活动描述——需要做成后台编辑"
@@ -99,5 +103,6 @@
                 android:layout_height="wrap_content" />
 
         </RadioGroup>
+    </RelativeLayout>
     </RelativeLayout>
 </RelativeLayout>

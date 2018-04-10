@@ -43,8 +43,16 @@
         <item name="android:layout_marginRight">11dp</item>
     </style>
     //PopWindow显示动画
+
     <style name="CustomPopWindowStyle">
         <item name="android:windowEnterAnimation">@anim/popwindow_anim_in</item>
         <item name="android:windowExitAnimation">@anim/popwindow_anim_out</item>
+    </style>
+    <!--订单三个按钮的间距-->
+    <style name="style_order">
+        <item name="android:layout_marginLeft">10dp</item>
+        <item name="android:layout_marginRight">10dp</item>
+        <item name="android:layout_marginTop">18dp</item>
+        <item name="android:layout_marginBottom">18dp</item>
     </style>
 </resources>

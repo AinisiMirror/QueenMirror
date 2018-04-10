@@ -5,6 +5,7 @@ import android.support.v7.widget.RecyclerView;
 
 import com.ainisi.queenmirror.common.base.BaseFragment;
 import com.ainisi.queenmirror.queenmirrorcduan.R;
+import com.ainisi.queenmirror.queenmirrorcduan.adapter.MineAdapter;
 import com.ainisi.queenmirror.queenmirrorcduan.adapter.MyAdapter;
 import com.ainisi.queenmirror.queenmirrorcduan.ui.home.bean.SortBean;
 
@@ -38,7 +39,7 @@ public class WholeFragment extends BaseFragment{
             SortBean sortBean=new SortBean();
             list.add(sortBean);
         }
-        MyAdapter sbmitWholeAdapter=new MyAdapter(getActivity(),list,R.layout.item_sbmitrecycler);
+        MineAdapter sbmitWholeAdapter=new MineAdapter(getActivity(),list,R.layout.item_sbmitrecycler);
         wholerecycle.setLayoutManager(new LinearLayoutManager(getActivity(),LinearLayoutManager.VERTICAL,false));
         wholerecycle.setAdapter(sbmitWholeAdapter);
 

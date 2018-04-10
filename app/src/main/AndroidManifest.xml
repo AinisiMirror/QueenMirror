@@ -56,7 +56,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
         <activity android:name=".ui.home.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -206,7 +205,8 @@
         <activity
             android:name=".ui.home.installactivity.MineDetailedActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".ui.home.DetailActivity"></activity>
+        <activity android:name=".ui.home.DetailActivity" />
+        <activity android:name=".ui.home.activity.BeanstalkActivity"></activity>
     </application>
 
 </manifest>

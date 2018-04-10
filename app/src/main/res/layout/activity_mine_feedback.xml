@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/alpha_05_black"
     android:fitsSystemWindows="true"
     tools:context="com.ainisi.queenmirror.queenmirrorcduan.ui.home.installactivity.MineFeedbackActivity">
 
@@ -12,12 +11,15 @@
 
         android:id="@+id/ic_title"
         layout="@layout/layout_title" />
-
+    <RelativeLayout
+        android:layout_below="@+id/ic_title"
+        android:background="@color/alpha_05_black"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
     <RelativeLayout
         android:id="@+id/rc_layout"
         android:layout_width="match_parent"
         android:layout_height="@dimen/comment_100_dip"
-        android:layout_below="@id/ic_title"
         android:layout_margin="@dimen/comment_10_dip"
         android:background="@drawable/et_shap">
 
@@ -58,4 +60,5 @@
         android:background="@drawable/ic_setting_breake"
         android:text="@string/submit"
         android:textColor="@color/white" />
+    </RelativeLayout>
 </RelativeLayout>

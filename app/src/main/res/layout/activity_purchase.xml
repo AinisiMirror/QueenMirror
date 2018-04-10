@@ -6,8 +6,12 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:fitsSystemWindows="true"
-    android:background="@color/alpha_05_black"
+
     tools:context="com.ainisi.queenmirror.queenmirrorcduan.ui.home.activity.PurchaseActivity">
+    <RelativeLayout
+        android:background="@color/alpha_05_black"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
     <include
 
         android:id="@+id/ic_title"
@@ -237,5 +241,5 @@
         </RelativeLayout>
     </LinearLayout>
     </LinearLayout>
-
+    </RelativeLayout>
 </RelativeLayout>

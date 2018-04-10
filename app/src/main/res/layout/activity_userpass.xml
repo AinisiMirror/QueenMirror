@@ -4,22 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/alpha_05_black"
     tools:context="com.ainisi.queenmirror.queenmirrorcduan.ui.home.activity.UserpassActivity">
     <include
         android:id="@+id/pass"
         layout="@layout/layout_title"/>
-    <RelativeLayout
-        android:background="@color/white"
-        android:layout_below="@id/pass"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-
-
-
-    </RelativeLayout>
-    
     <EditText
         android:id="@+id/ed_phone"
         android:inputType="number"
