@@ -68,7 +68,7 @@ public class MainActivity extends BaseActivity {
     public void click(View view) {
         FragmentTransaction transaction = fm.beginTransaction();
         switch (view.getId()) {
-            case R.id.rb_home:
+            case R.id.rb_home://首页
                 mHomeBtn.setChecked(true);
                 if (mHomeFragment == null) {
                     mHomeFragment = new HomeFragmentOne();
@@ -81,7 +81,7 @@ public class MainActivity extends BaseActivity {
                 hideFragment(mMasterFragment, transaction);
                 hideFragment(mMineFragment, transaction);
                 break;
-            case R.id.rb_shop_mall:
+            case R.id.rb_shop_mall://商城
                 mShopMall.setChecked(true);
                 if (mShopMallFragment == null) {
                     mShopMallFragment = new ShopMallFragment();
@@ -94,7 +94,7 @@ public class MainActivity extends BaseActivity {
                 hideFragment(mMasterFragment, transaction);
                 hideFragment(mMineFragment, transaction);
                 break;
-            case R.id.rb_order:
+            case R.id.rb_order://订单
                 mOrder.setChecked(true);
                 if (mOrderFragment == null) {
                     mOrderFragment = new OrderFragment();
@@ -107,7 +107,7 @@ public class MainActivity extends BaseActivity {
                 hideFragment(mMasterFragment, transaction);
                 hideFragment(mMineFragment, transaction);
                 break;
-            case R.id.rb_master:
+            case R.id.rb_master://大师
                 mMaster.setChecked(true);
                 if (mMasterFragment == null) {
                     mMasterFragment = new MasterFragment();
@@ -120,7 +120,7 @@ public class MainActivity extends BaseActivity {
                 hideFragment(mOrderFragment, transaction);
                 hideFragment(mMineFragment, transaction);
                 break;
-            case R.id.rb_mine:
+            case R.id.rb_mine://我的
                 mMine.setChecked(true);
                 if (mMineFragment == null) {
                     mMineFragment = new MineFragment();

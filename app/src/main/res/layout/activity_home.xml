@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:fitsSystemWindows="true"
-
     tools:context="com.ainisi.queenmirror.queenmirrorcduan.ui.home.MainActivity">
 
 
@@ -14,12 +13,14 @@
         android:id="@+id/fl_main_content_layout"
         android:layout_width="match_parent"
         android:layout_height="@dimen/comment_0_dip"
+        android:fitsSystemWindows="true"
         android:layout_weight="1" />
 
     <RadioGroup
         android:layout_width="match_parent"
         android:layout_height="@dimen/comment_52_dip"
         android:gravity="center"
+        android:fitsSystemWindows="true"
         android:background="@color/home_bottom_radio"
         android:orientation="horizontal">
 

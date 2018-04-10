@@ -20,8 +20,6 @@ import butterknife.Bind;
  */
 
 public class WholeFragment extends BaseFragment{
-    @Bind(R.id.recycle_whole)
-    RecyclerView wholerecycle;
     private List<SortBean> list=new ArrayList<>();
     @Override
     protected int getLayoutResource() {
@@ -40,8 +38,6 @@ public class WholeFragment extends BaseFragment{
             list.add(sortBean);
         }
         MineAdapter sbmitWholeAdapter=new MineAdapter(getActivity(),list,R.layout.item_sbmitrecycler);
-        wholerecycle.setLayoutManager(new LinearLayoutManager(getActivity(),LinearLayoutManager.VERTICAL,false));
-        wholerecycle.setAdapter(sbmitWholeAdapter);
 
     }
 }

@@ -19,8 +19,6 @@ import butterknife.Bind;
  */
 
 public class AssessedFragment extends BaseFragment{
-    @Bind(R.id.recycle_whole)
-    RecyclerView wholerecycle;
     private List<SortBean> list=new ArrayList<>();
     @Override
     protected int getLayoutResource() {
@@ -39,7 +37,5 @@ public class AssessedFragment extends BaseFragment{
             list.add(sortBean);
         }
         MyAdapter sbmitWholeAdapter=new MyAdapter(getActivity(),list,R.layout.item_sbmitrecycler);
-        wholerecycle.setLayoutManager(new LinearLayoutManager(getActivity(),LinearLayoutManager.VERTICAL,false));
-        wholerecycle.setAdapter(sbmitWholeAdapter);
     }
 }

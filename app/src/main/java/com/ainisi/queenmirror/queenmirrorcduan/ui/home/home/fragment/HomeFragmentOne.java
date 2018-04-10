@@ -12,20 +12,13 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.Gravity;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewTreeObserver;
-import android.widget.AbsListView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.ListView;
 import android.widget.PopupWindow;
 import android.widget.ScrollView;
 import android.widget.TextView;
-import android.widget.Toast;
-
 import com.ainisi.queenmirror.common.base.BaseFragment;
 import com.ainisi.queenmirror.queenmirrorcduan.R;
 import com.ainisi.queenmirror.queenmirrorcduan.adapter.HomePageAdapter;
@@ -75,10 +68,6 @@ public class HomeFragmentOne extends BaseFragment{
     LinearLayout hlayout;
     @Bind(R.id.marqueeview)
     MarqueeView marqueeView;
-
-
-    @Bind(R.id.recyclerView)
-    RecyclerView recyclerView;
 
     @Bind(R.id.sc_home_scroll)
     ScrollView sc_home_scroll;
