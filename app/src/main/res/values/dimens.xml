@@ -48,5 +48,9 @@
     <dimen name="comment_82_dip">82dp</dimen>
     <dimen name="comment_66_dip">66dp</dimen>
     <dimen name="comment_232_dip">232dp</dimen>
+    <dimen name="comment_250_dip">250dp</dimen>
+    <dimen name="comment_280_dip">280dp</dimen>
+    <dimen name="comment_275_dip">275dp</dimen>
+    <dimen name="comment_97_dip">97dp</dimen>
 
 </resources>

@@ -3,21 +3,34 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@color/alpha_05_black"
+    android:fitsSystemWindows="true"
     android:layout_height="match_parent"
     tools:context="com.ainisi.queenmirror.queenmirrorcduan.ui.home.activity.MineMyFootActivity">
     <include
+
         android:id="@+id/ic_title"
         layout="@layout/layout_title" />
+    <RelativeLayout
+        android:id="@+id/rc_region"
+        android:background="@color/white"
+        android:layout_below="@+id/ic_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
     <TextView
         android:id="@+id/tv_region"
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/ic_title"
+
         android:layout_margin="@dimen/comment_10_dip"
         android:text="1月15号"
         />
+    </RelativeLayout>
     <android.support.v7.widget.RecyclerView
-        android:layout_below="@+id/tv_region"
+
+        android:layout_marginTop="@dimen/comment_10_dip"
+        android:layout_below="@+id/rc_region"
         android:id="@+id/mine_foot_recycler"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />

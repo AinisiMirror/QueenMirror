@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="@dimen/comment_375_dip"
     android:layout_height="667dp"
+    android:fitsSystemWindows="true"
     android:background="@color/alpha_05_black"
     tools:context="com.ainisi.queenmirror.queenmirrorcduan.ui.home.activity.MineProblemActivity">
 

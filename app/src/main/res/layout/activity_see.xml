@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
     tools:context="com.ainisi.queenmirror.queenmirrorcduan.ui.home.installactivity.SeeActivity">
     <include
         android:id="@+id/ic_title"
