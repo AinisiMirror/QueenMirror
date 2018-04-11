@@ -11,17 +11,13 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.TimePicker;
 
 import com.ainisi.queenmirror.common.base.BaseActivity;
-import com.ainisi.queenmirror.common.commonutils.TUtil;
 import com.ainisi.queenmirror.common.commonutils.ToastUtils;
 import com.ainisi.queenmirror.queenmirrorcduan.R;
-import com.ainisi.queenmirror.queenmirrorcduan.ui.home.bean.ProblemBean;
 
 import java.lang.reflect.Field;
 import java.util.Calendar;
-import java.util.Date;
 
 import butterknife.Bind;
 import butterknife.OnClick;
@@ -39,8 +35,8 @@ public class BeanstalkActivity extends BaseActivity {
     TextView rightTitle;
     @Bind(R.id.re_branstalk)
     RelativeLayout branstalkmoth;
-    @Bind(R.id.re_branstalkday)
-    RelativeLayout branstalkmothday;
+    @Bind(R.id.tv_moth)
+    TextView monte;
     @Bind(R.id.layout_date)
     LinearLayout linearDate;
     @Bind(R.id.ed_starttime)
@@ -50,7 +46,7 @@ public class BeanstalkActivity extends BaseActivity {
     private int day;
     private int month;
     private int year;
-    private int flag=0;
+    private boolean isClick;
 
     @Override
     public int getLayoutId() {
@@ -59,7 +55,6 @@ public class BeanstalkActivity extends BaseActivity {
 
     @Override
     public void initPresenter() {
-
     }
 
     @Override
@@ -86,19 +81,25 @@ public class BeanstalkActivity extends BaseActivity {
         year = c.get(Calendar.YEAR);
         month = c.get(Calendar.MONTH);
         day = c.get(Calendar.DATE);
-        date.setText(year + "-" + "-" + (month + 1) + "-" + day);
+        date.setText(year + "-" + (month + 1) + "-" + day);
         datePicker.setMaxDate(System.currentTimeMillis() - 86400000);
+        setDateText(date);
+    }
+
+    public void setDateText(final TextView name) {
         datePicker.init(year, month, day, new DatePicker.OnDateChangedListener() {
             //            当dp日期改变时回调onDateChanged方法
             @Override
             public void onDateChanged(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
 //                获取dp的年月日的值，在textView上显示出来
-                date.setText(datePicker.getYear() + "-" + (datePicker.getMonth() + 1) + "-" + datePicker.getDayOfMonth());
+                name.setText(datePicker.getYear() + "-" + (datePicker.getMonth() + 1) + "-" + datePicker.getDayOfMonth());
             }
         });
     }
 
-    @OnClick({R.id.title_back, R.id.iv_delete, R.id.tv_date, R.id.re_branstalk})
+    ;
+
+    @OnClick({R.id.title_back, R.id.iv_delete, R.id.tv_date, R.id.re_branstalk, R.id.ed_starttime, R.id.ed_endtime})
     public void click(View view) {
         switch (view.getId()) {
             case R.id.title_back:
@@ -106,23 +107,41 @@ public class BeanstalkActivity extends BaseActivity {
                 break;
             case R.id.tv_date:
                 datePicker.setVisibility(View.VISIBLE);
+                setDateText(date);
                 break;
             case R.id.iv_delete:
                 datePicker.setVisibility(View.GONE);
                 date.setText("选择时间");
                 break;
             case R.id.re_branstalk:
-
+                if (isClick) {
+                    isClick = false;
+                    ToastUtils.showLong("哈哈哈");
+                    monte.setText("按月计算");
+                    hidePicker(datePicker);
+                    date.setVisibility(View.VISIBLE);
+                    linearDate.setVisibility(View.GONE);
+                } else {
+                    isClick = true;
+                    ToastUtils.showLong("吼吼吼");
+                    showPicker(datePicker);
+                    monte.setText("按日计算");
+                    date.setVisibility(View.GONE);
+                    linearDate.setVisibility(View.VISIBLE);
+                    setDateText(startTime);
+                }
+                break;
+            case R.id.ed_starttime:
+                setDateText(startTime);
+                break;
+            case R.id.ed_endtime:
+                setDateText(endtime);
+                break;
         }
-
-
     }
 
-
-
-
     /**
-     * @param picker 传入一个DatePicker对象,隐藏或者显示相应的时间项
+     * @param picker 传入一个DatePicker对象,隐藏相应的时间项
      */
     public static void hidePicker(DatePicker picker) {
         // 利用java反射技术得到picker内部的属性，并对其进行操作
@@ -172,7 +191,7 @@ public class BeanstalkActivity extends BaseActivity {
     }
 
     /**
-     * @param picker 传入一个DatePicker对象,隐藏或者显示相应的时间项
+     * @param picker 传入一个DatePicker对象,展示相应的时间项
      */
     public static void showPicker(DatePicker picker) {
         // 利用java反射技术得到picker内部的属性，并对其进行操作

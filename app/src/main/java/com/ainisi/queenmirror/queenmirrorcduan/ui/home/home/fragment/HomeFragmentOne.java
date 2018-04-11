@@ -240,6 +240,7 @@ public class HomeFragmentOne extends BaseFragment{
                 break;
             //综合选择
             case R.id.li_sort_bottom:
+                break;
             case R.id.iv_sort:
 
                 ivsort.setVisibility(View.GONE);
