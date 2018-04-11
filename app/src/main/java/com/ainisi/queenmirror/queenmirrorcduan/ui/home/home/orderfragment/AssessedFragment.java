@@ -2,6 +2,7 @@ package com.ainisi.queenmirror.queenmirrorcduan.ui.home.home.orderfragment;
 
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.widget.LinearLayout;
 
 import com.ainisi.queenmirror.common.base.BaseFragment;
 import com.ainisi.queenmirror.queenmirrorcduan.R;
@@ -19,10 +20,12 @@ import butterknife.Bind;
  */
 
 public class AssessedFragment extends BaseFragment{
+    @Bind(R.id.rc_assessde)
+    RecyclerView assessde;
     private List<SortBean> list=new ArrayList<>();
     @Override
     protected int getLayoutResource() {
-        return R.layout.fragment_shop_mall;
+        return R.layout.fragment_order_assessde;
     }
 
     @Override
@@ -37,5 +40,7 @@ public class AssessedFragment extends BaseFragment{
             list.add(sortBean);
         }
         MyAdapter sbmitWholeAdapter=new MyAdapter(getActivity(),list,R.layout.item_sbmitrecycler);
+        assessde.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayout.VERTICAL,false));
+        assessde.setAdapter(sbmitWholeAdapter);
     }
 }
