@@ -169,6 +169,11 @@
     <string name="reservation">保存</string>
     <string name="administration">管理</string>
     <string name="coupon">优惠券</string>
+    <string name="Selectiontime">选择时间</string>
+    <string name="Startdate">请选择开始日期</string>
+    <string name="EndDate">请选择结束日期</string>
+    <string name="Monthlysettlement">按月计算</string>
+    <string name="Bytheday">按日计算</string>
 
 
 </resources>

@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Build;
+import android.support.v4.content.ContextCompat;
 import android.view.View;
 import android.widget.DatePicker;
 import android.widget.EditText;
@@ -43,10 +44,15 @@ public class BeanstalkActivity extends BaseActivity {
     EditText startTime;
     @Bind(R.id.ed_endtime)
     EditText endtime;
+    @Bind(R.id.re_datepicker)
+    RelativeLayout redatepicker;
+    @Bind(R.id.view_one)
+    View viewone;
     private int day;
     private int month;
     private int year;
     private boolean isClick;
+    private Calendar c;
 
     @Override
     public int getLayoutId() {
@@ -65,8 +71,8 @@ public class BeanstalkActivity extends BaseActivity {
     }
 
     private void initText() {
-        dateTitle.setText("选择时间");
-        rightTitle.setText("完成");
+        dateTitle.setText(R.string.Selectiontime);
+        rightTitle.setText(R.string.complete);
 
     }
 
@@ -77,28 +83,36 @@ public class BeanstalkActivity extends BaseActivity {
 
     private void initTime() {
         //可以对每个时间域单独修改
-        Calendar c = Calendar.getInstance();
-        year = c.get(Calendar.YEAR);
-        month = c.get(Calendar.MONTH);
-        day = c.get(Calendar.DATE);
-        date.setText(year + "-" + (month + 1) + "-" + day);
+        c = Calendar.getInstance();
+        date.setText(c.get(Calendar.YEAR) + "-" + c.get(Calendar.MONTH));
         datePicker.setMaxDate(System.currentTimeMillis() - 86400000);
-        setDateText(date);
+        setnewText(date);
     }
 
     public void setDateText(final TextView name) {
-        datePicker.init(year, month, day, new DatePicker.OnDateChangedListener() {
+        datePicker.init(c.get(Calendar.YEAR), c.get(Calendar.MONTH), c.get(Calendar.DATE), new DatePicker.OnDateChangedListener() {
             //            当dp日期改变时回调onDateChanged方法
             @Override
             public void onDateChanged(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
 //                获取dp的年月日的值，在textView上显示出来
-                name.setText(datePicker.getYear() + "-" + (datePicker.getMonth() + 1) + "-" + datePicker.getDayOfMonth());
+                c.set(year, monthOfYear, dayOfMonth);
+
+                name.setText(year + "-" + monthOfYear + "-" + dayOfMonth);
             }
         });
     }
+    public void setnewText(final TextView newdate) {
+        datePicker.init(c.get(Calendar.YEAR), c.get(Calendar.MONTH), c.get(Calendar.DATE), new DatePicker.OnDateChangedListener() {
+            //            当dp日期改变时回调onDateChanged方法
+            @Override
+            public void onDateChanged(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+//                获取dp的年月日的值，在textView上显示出来
+                c.set(year, monthOfYear, dayOfMonth);
+                newdate.setText(year + "-" + monthOfYear );
 
-    ;
-
+            }
+        });
+    }
     @OnClick({R.id.title_back, R.id.iv_delete, R.id.tv_date, R.id.re_branstalk, R.id.ed_starttime, R.id.ed_endtime})
     public void click(View view) {
         switch (view.getId()) {
@@ -106,36 +120,48 @@ public class BeanstalkActivity extends BaseActivity {
                 finish();
                 break;
             case R.id.tv_date:
-                datePicker.setVisibility(View.VISIBLE);
-                setDateText(date);
+                redatepicker.setVisibility(View.VISIBLE);
+                setnewText(date);
+                date.setTextColor(ContextCompat.getColor(this, R.color.appbar_blue));
+                viewone.setBackgroundColor(ContextCompat.getColor(this, R.color.appbar_blue));
                 break;
             case R.id.iv_delete:
-                datePicker.setVisibility(View.GONE);
-                date.setText("选择时间");
+                redatepicker.setVisibility(View.GONE);
+                date.setText(R.string.Selectiontime);
+                startTime.setText(R.string.Startdate);
+                endtime.setText(R.string.EndDate);
+                startTime.setTextColor(ContextCompat.getColor(this, R.color.alpha_15_black));
+                endtime.setTextColor(ContextCompat.getColor(this, R.color.alpha_15_black));
+                date.setTextColor(ContextCompat.getColor(this, R.color.alpha_15_black));
+                viewone.setBackgroundColor(ContextCompat.getColor(this, R.color.alpha_15_black));
                 break;
             case R.id.re_branstalk:
                 if (isClick) {
                     isClick = false;
-                    ToastUtils.showLong("哈哈哈");
-                    monte.setText("按月计算");
+                    monte.setText(R.string.Monthlysettlement);
                     hidePicker(datePicker);
                     date.setVisibility(View.VISIBLE);
+                    viewone.setVisibility(View.VISIBLE);
                     linearDate.setVisibility(View.GONE);
                 } else {
                     isClick = true;
-                    ToastUtils.showLong("吼吼吼");
                     showPicker(datePicker);
-                    monte.setText("按日计算");
+                    monte.setText(R.string.Bytheday);
                     date.setVisibility(View.GONE);
                     linearDate.setVisibility(View.VISIBLE);
+                    viewone.setVisibility(View.GONE);
                     setDateText(startTime);
                 }
                 break;
             case R.id.ed_starttime:
+                redatepicker.setVisibility(View.VISIBLE);
                 setDateText(startTime);
+                startTime.setTextColor(ContextCompat.getColor(this, R.color.alpha_95_black));
                 break;
             case R.id.ed_endtime:
+                redatepicker.setVisibility(View.VISIBLE);
                 setDateText(endtime);
+                endtime.setTextColor(ContextCompat.getColor(this, R.color.alpha_95_black));
                 break;
         }
     }
