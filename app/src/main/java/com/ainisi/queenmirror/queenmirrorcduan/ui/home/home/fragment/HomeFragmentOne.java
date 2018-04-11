@@ -1,5 +1,6 @@
 package com.ainisi.queenmirror.queenmirrorcduan.ui.home.home.fragment;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
@@ -14,6 +15,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.Gravity;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
@@ -70,6 +72,10 @@ public class HomeFragmentOne extends BaseFragment{
     MarqueeView marqueeView;
     @Bind(R.id.li_sort_bottom)
     LinearLayout li_sort_bottom;
+    @Bind(R.id.li_home_screen)
+    LinearLayout li_home_screen;
+    @Bind(R.id.li_home_screen_bottom)
+    LinearLayout li_home_screen_bottom;
 
 
     @Bind(R.id.sc_home_scroll)
@@ -155,7 +161,7 @@ public class HomeFragmentOne extends BaseFragment{
     }
 
     private void initQuee() {
-       marqueeView.setTextArray(contentArray);
+        marqueeView.setTextArray(contentArray);
         marqueeView.setOnItemClickListener(new MarqueeView.onItemClickListener() {
             @Override
             public void onItemClick(int position) {
@@ -179,8 +185,9 @@ public class HomeFragmentOne extends BaseFragment{
 
 
     private void initpopwindow() {
-       pop = new PopupWindow(CollapsingToolbarLayout.LayoutParams.MATCH_PARENT, CollapsingToolbarLayout.LayoutParams.WRAP_CONTENT);
+        pop = new PopupWindow(CollapsingToolbarLayout.LayoutParams.MATCH_PARENT, CollapsingToolbarLayout.LayoutParams.WRAP_CONTENT);
         popview1 = View.inflate(getActivity(), R.layout.pop_myitem, null);
+
         initpop(popview1);
         pop.setContentView(popview1);
         pop.setBackgroundDrawable(new ColorDrawable(0));
@@ -191,9 +198,22 @@ public class HomeFragmentOne extends BaseFragment{
             public void onDismiss() {
                 ivsort.setVisibility(View.VISIBLE);
                 ivsort1.setVisibility(View.GONE);
-
+                setBackgroundAlpha(1.0f);
             }
         });
+    }
+
+    /**
+     * 设置添加屏幕的背景透明度
+     *
+     * @param bgAlpha
+     *            屏幕透明度0.0-1.0 1表示完全不透明
+     */
+    public void setBackgroundAlpha(float bgAlpha) {
+        WindowManager.LayoutParams lp = getActivity().getWindow()
+                .getAttributes();
+        lp.alpha = bgAlpha;
+        getActivity().getWindow().setAttributes(lp);
     }
 
     private void initDate() {
@@ -231,9 +251,9 @@ public class HomeFragmentOne extends BaseFragment{
 
     @OnClick({R.id.rb_sort, R.id.rb_sales, R.id.rb_distance, R.id.rb_screen, R.id.txt_bustling
             , R.id.img_search, R.id.img_information, R.id.home_esthetics, R.id.iv_sort, R.id.iv_sort1
-            , R.id.bt_screen,R.id.li_sort_bottom})
+            , R.id.bt_screen,R.id.li_sort_bottom,R.id.li_home_screen,R.id.li_home_screen_bottom})
     public void click(View view) {
-      //  FragmentTransaction transaction = fm.beginTransaction();
+        //  FragmentTransaction transaction = fm.beginTransaction();
         switch (view.getId()) {
             case R.id.bt_screen:
 
@@ -242,11 +262,11 @@ public class HomeFragmentOne extends BaseFragment{
             case R.id.li_sort_bottom:
                 break;
             case R.id.iv_sort:
-
+                setBackgroundAlpha(0.5f);
                 ivsort.setVisibility(View.GONE);
                 ivsort1.setVisibility(View.VISIBLE);
                 if(hight >= 1621){
-                    pop.showAsDropDown(li_sort_bottom);
+                    pop.showAsDropDown(layout_stick_header_main);
                 }else{
                     sc_home_scroll.smoothScrollTo(0,1621);
                     pop.showAsDropDown(hSort);
@@ -310,7 +330,9 @@ public class HomeFragmentOne extends BaseFragment{
                 hideFragment(salesFragment, transaction);
 //                hideFragment(screenFragment, transaction);*/
                 break;
+            case R.id.li_home_screen:
             case R.id.rb_screen:
+            case R.id.li_home_screen_bottom:
 
 //                if (screenFragment == null) {
 //                    screenFragment = new ScreenFragment();
@@ -321,7 +343,9 @@ public class HomeFragmentOne extends BaseFragment{
 //                hideFragment(sortFragment, transaction);
 //                hideFragment(salesFragment, transaction);
 //                hideFragment(distanceFragment, transaction);
-               // coorHm.setVisibility(View.INVISIBLE);
+                // coorHm.setVisibility(View.INVISIBLE);
+
+                sc_home_scroll.smoothScrollTo(0,1621);
                 View popview = View.inflate(getActivity(), R.layout.pop_right, null);
 
                 initview(popview);
@@ -332,7 +356,7 @@ public class HomeFragmentOne extends BaseFragment{
                         .setOutsideTouchable(true)
                         .setAnimationStyle(R.style.CustomPopWindowStyle)
                         .create()
-                        .showAtLocation(hlayout, Gravity.RIGHT, 0, 0);
+                        .showAsDropDown(layout_stick_header_main);
 
 
                 break;
@@ -352,7 +376,7 @@ public class HomeFragmentOne extends BaseFragment{
             @Override
             public void onClick(View view) {
                 popWindow.dissmiss();
-               // coorHm.setVisibility(View.VISIBLE);
+                // coorHm.setVisibility(View.VISIBLE);
             }
         });
     }

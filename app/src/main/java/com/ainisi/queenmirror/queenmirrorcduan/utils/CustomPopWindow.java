@@ -24,7 +24,7 @@ import android.widget.PopupWindow;
 
 public class CustomPopWindow implements PopupWindow.OnDismissListener{
     private static final String TAG = "CustomPopWindow";
-    private static final float DEFAULT_ALPHA = 0.7f;
+    private static final float DEFAULT_ALPHA = 0.5f;
     private Context mContext;
     private int mWidth;
     private int mHeight;
@@ -47,7 +47,7 @@ public class CustomPopWindow implements PopupWindow.OnDismissListener{
     /**
      * 弹出PopWindow 背景是否变暗，默认不会变暗。
      */
-    private boolean mIsBackgroundDark = false;
+    private boolean mIsBackgroundDark = true;
 
     private float mBackgroundDrakValue = 0;// 背景变暗的值，0 - 1
     /**
@@ -186,7 +186,7 @@ public class CustomPopWindow implements PopupWindow.OnDismissListener{
         if(!enableOutsideTouchDisMiss){
             //注意这三个属性必须同时设置，不然不能disMiss，以下三行代码在Android 4.4 上是可以，然后在Android 6.0以上，下面的三行代码就不起作用了，就得用下面的方法
             mPopupWindow.setFocusable(true);
-            mPopupWindow.setOutsideTouchable(false);
+            mPopupWindow.setOutsideTouchable(true);
             mPopupWindow.setBackgroundDrawable(null);
             //注意下面这三个是contentView 不是PopupWindow
             mPopupWindow.getContentView().setFocusable(true);
@@ -225,7 +225,7 @@ public class CustomPopWindow implements PopupWindow.OnDismissListener{
         }else{
             mPopupWindow.setFocusable(mIsFocusable);
             mPopupWindow.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-            mPopupWindow.setOutsideTouchable(mIsOutside);
+            mPopupWindow.setOutsideTouchable(true);
         }
         // update
         mPopupWindow.update();
