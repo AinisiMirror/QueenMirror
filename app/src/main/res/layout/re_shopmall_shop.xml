@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/image_title"
+            android:layout_marginTop="@dimen/comment_12_dip"
+            android:layout_width="@dimen/comment_37_dip"
+            android:layout_height="@dimen/comment_37_dip"
+            android:src="@drawable/icon_shop_service"
+            />
+        <TextView
+            android:id="@+id/text_name"
+            android:layout_marginTop="@dimen/comment_7_dip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/comment_14_size"
+            android:layout_marginBottom="@dimen/comment_11_dip"
+            android:text="汽车服务"
+            />
+    </LinearLayout>
+</LinearLayout>

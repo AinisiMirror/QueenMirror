@@ -3,7 +3,7 @@ package com.ainisi.queenmirror.queenmirrorcduan.adapter;
 import android.content.Context;
 import android.widget.TextView;
 import com.ainisi.queenmirror.queenmirrorcduan.R;
-import com.ainisi.queenmirror.queenmirrorcduan.ui.home.bean.ProblemBean;
+import com.ainisi.queenmirror.queenmirrorcduan.bean.ProblemBean;
 import com.ainisi.queenmirror.queenmirrorcduan.utils.BaseRecyclerAdapter;
 import com.ainisi.queenmirror.queenmirrorcduan.utils.BaseViewHolder;
 

@@ -10,7 +10,7 @@ import android.widget.TextView;
 import com.ainisi.queenmirror.common.base.BaseActivity;
 import com.ainisi.queenmirror.queenmirrorcduan.R;
 import com.ainisi.queenmirror.queenmirrorcduan.adapter.MyAdapter;
-import com.ainisi.queenmirror.queenmirrorcduan.ui.home.bean.SortBean;
+import com.ainisi.queenmirror.queenmirrorcduan.bean.SortBean;
 
 import java.util.ArrayList;
 import java.util.List;

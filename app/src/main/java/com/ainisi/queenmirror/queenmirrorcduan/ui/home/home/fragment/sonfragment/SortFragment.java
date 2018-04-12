@@ -3,13 +3,12 @@ package com.ainisi.queenmirror.queenmirrorcduan.ui.home.home.fragment.sonfragmen
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import android.widget.Toast;
 
 import com.ainisi.queenmirror.common.base.BaseFragment;
 import com.ainisi.queenmirror.common.commonutils.ToastUtils;
 import com.ainisi.queenmirror.queenmirrorcduan.R;
 import com.ainisi.queenmirror.queenmirrorcduan.adapter.MyAdapter;
-import com.ainisi.queenmirror.queenmirrorcduan.ui.home.bean.SortBean;
+import com.ainisi.queenmirror.queenmirrorcduan.bean.SortBean;
 import com.ainisi.queenmirror.queenmirrorcduan.utils.BaseRecyclerAdapter;
 
 import java.util.ArrayList;

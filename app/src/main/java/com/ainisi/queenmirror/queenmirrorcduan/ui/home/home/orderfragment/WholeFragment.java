@@ -7,8 +7,7 @@ import android.widget.LinearLayout;
 import com.ainisi.queenmirror.common.base.BaseFragment;
 import com.ainisi.queenmirror.queenmirrorcduan.R;
 import com.ainisi.queenmirror.queenmirrorcduan.adapter.MineAdapter;
-import com.ainisi.queenmirror.queenmirrorcduan.adapter.MyAdapter;
-import com.ainisi.queenmirror.queenmirrorcduan.ui.home.bean.SortBean;
+import com.ainisi.queenmirror.queenmirrorcduan.bean.SortBean;
 
 import java.util.ArrayList;
 import java.util.List;

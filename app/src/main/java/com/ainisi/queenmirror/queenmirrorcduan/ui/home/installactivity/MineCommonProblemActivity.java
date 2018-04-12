@@ -1,8 +1,6 @@
 package com.ainisi.queenmirror.queenmirrorcduan.ui.home.installactivity;
 
 import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -11,7 +9,7 @@ import android.widget.TextView;
 import com.ainisi.queenmirror.common.base.BaseActivity;
 import com.ainisi.queenmirror.queenmirrorcduan.R;
 import com.ainisi.queenmirror.queenmirrorcduan.adapter.ProblemAdapter;
-import com.ainisi.queenmirror.queenmirrorcduan.ui.home.bean.ProblemBean;
+import com.ainisi.queenmirror.queenmirrorcduan.bean.ProblemBean;
 
 import java.util.ArrayList;
 import java.util.List;

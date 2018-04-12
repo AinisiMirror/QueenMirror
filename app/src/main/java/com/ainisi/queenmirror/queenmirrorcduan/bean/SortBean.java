@@ -1,4 +1,4 @@
-package com.ainisi.queenmirror.queenmirrorcduan.ui.home.bean;
+package com.ainisi.queenmirror.queenmirrorcduan.bean;
 
 /**
  * Created by Administrator on 2018/3/14.

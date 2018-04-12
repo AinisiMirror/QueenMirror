@@ -29,7 +29,7 @@ import com.ainisi.queenmirror.queenmirrorcduan.ui.home.activity.MessageActivity;
 import com.ainisi.queenmirror.queenmirrorcduan.ui.home.activity.SearchActivity;
 import com.ainisi.queenmirror.queenmirrorcduan.ui.home.activity.SelectCityActivity;
 import com.ainisi.queenmirror.queenmirrorcduan.ui.home.activity.EstheticsActivity;
-import com.ainisi.queenmirror.queenmirrorcduan.ui.home.bean.ProblemBean;
+import com.ainisi.queenmirror.queenmirrorcduan.bean.ProblemBean;
 import com.ainisi.queenmirror.queenmirrorcduan.ui.home.home.fragment.sonfragment.DistanceFragment;
 import com.ainisi.queenmirror.queenmirrorcduan.ui.home.home.fragment.sonfragment.SalesFragment;
 import com.ainisi.queenmirror.queenmirrorcduan.ui.home.home.fragment.sonfragment.ScreenFragment;
@@ -286,8 +286,6 @@ public class HomeFragmentOne extends BaseFragment{
                 break;
             //搜索
             case R.id.img_search:
-               /* Intent intent1 = new Intent(getActivity(), TestActivity.class);
-                startActivity(intent1);*/
                 SearchActivity.startActivity(getContext());
                 break;
             //信息

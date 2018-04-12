@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical">
+        <RelativeLayout
+            android:background="@drawable/activity_shop_search_shape"
+            android:layout_width="match_parent"
+            android:layout_marginTop="@dimen/comment_10_dip"
+            android:layout_marginStart="@dimen/comment_19_dip"
+            android:layout_marginBottom="@dimen/comment_9_dip"
+            android:layout_marginEnd="@dimen/comment_19_dip"
+            android:paddingEnd="@dimen/comment_10_dip"
+            android:layout_height="@dimen/comment_32_dip">
+
+            <ImageView
+                android:id="@+id/iv_keyword"
+                android:layout_width="@dimen/comment_30_dip"
+                android:layout_height="@dimen/comment_30_dip"
+                android:paddingLeft="@dimen/comment_10_dip"
+                android:layout_centerVertical="true"
+                app:srcCompat="@android:drawable/ic_search_category_default" />
+            <EditText
+                android:id="@+id/ed_keyword"
+                android:layout_toRightOf="@id/iv_keyword"
+                android:hint="请输入关键字搜索"
+                android:paddingStart="@dimen/comment_10_dip"
+                android:layout_centerVertical="true"
+                android:background="@color/white"
+                android:textSize="@dimen/comment_16_size"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+        <com.youth.banner.Banner
+            android:id="@+id/banner"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/comment_151_dip"/>
+        <android.support.v7.widget.RecyclerView
+            android:layout_marginTop="@dimen/comment_10_dip"
+            android:background="@drawable/et_shap"
+            android:id="@+id/re_shop_mall"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    <include layout="@layout/home_appbarlayout" />
+    </LinearLayout>
+</LinearLayout>

@@ -44,9 +44,11 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:layout_marginRight="@dimen/comment_10_dip"
+        android:visibility="gone"
+        android:layout_marginBottom="@dimen/comment_10_dip"
         android:padding="@dimen/comment_5_dip"
         android:src="@mipmap/message"
-        android:visibility="gone" />
+         />
 
     <TextView
         android:id="@+id/title_right"

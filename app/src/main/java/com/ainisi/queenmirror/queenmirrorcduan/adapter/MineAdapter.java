@@ -2,7 +2,7 @@ package com.ainisi.queenmirror.queenmirrorcduan.adapter;
 
 import android.content.Context;
 
-import com.ainisi.queenmirror.queenmirrorcduan.ui.home.bean.SortBean;
+import com.ainisi.queenmirror.queenmirrorcduan.bean.SortBean;
 import com.ainisi.queenmirror.queenmirrorcduan.utils.BaseRecyclerAdapter;
 import com.ainisi.queenmirror.queenmirrorcduan.utils.BaseViewHolder;
 

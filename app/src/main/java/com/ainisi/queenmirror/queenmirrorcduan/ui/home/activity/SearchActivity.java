@@ -13,9 +13,9 @@ import android.widget.TextView;
 import com.ainisi.queenmirror.common.base.BaseActivity;
 import com.ainisi.queenmirror.queenmirrorcduan.R;
 import com.ainisi.queenmirror.queenmirrorcduan.ui.home.BaseNewActivity;
-import com.ainisi.queenmirror.queenmirrorcduan.ui.home.bean.SortBean;
 import com.ainisi.queenmirror.queenmirrorcduan.utils.FlowLayout;
 import com.ainisi.queenmirror.queenmirrorcduan.utils.StatusBarUtil;
+import com.ainisi.queenmirror.queenmirrorcduan.bean.SortBean;
 
 import java.util.ArrayList;
 import java.util.List;

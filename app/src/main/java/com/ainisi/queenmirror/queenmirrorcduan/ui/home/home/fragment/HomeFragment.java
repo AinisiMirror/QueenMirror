@@ -1,49 +1,8 @@
 package com.ainisi.queenmirror.queenmirrorcduan.ui.home.home.fragment;
 
-import android.content.Intent;
-import android.graphics.drawable.ColorDrawable;
-import android.os.Handler;
-import android.support.design.widget.AppBarLayout;
-import android.support.design.widget.CollapsingToolbarLayout;
-import android.support.design.widget.CoordinatorLayout;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.view.Gravity;
-import android.view.View;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.PopupWindow;
-import android.widget.RadioButton;
-import android.widget.TextView;
-
 import com.ainisi.queenmirror.common.base.BaseFragment;
-import com.ainisi.queenmirror.queenmirrorcduan.R;
-import com.ainisi.queenmirror.queenmirrorcduan.adapter.ProblemAdapter;
-import com.ainisi.queenmirror.queenmirrorcduan.ui.home.DetailActivity;
-import com.ainisi.queenmirror.queenmirrorcduan.ui.home.GlideImageLoader;
-import com.ainisi.queenmirror.queenmirrorcduan.ui.home.activity.MessageActivity;
-import com.ainisi.queenmirror.queenmirrorcduan.ui.home.activity.SearchActivity;
-import com.ainisi.queenmirror.queenmirrorcduan.ui.home.activity.SelectCityActivity;
-import com.ainisi.queenmirror.queenmirrorcduan.ui.home.activity.EstheticsActivity;
 
-import com.ainisi.queenmirror.queenmirrorcduan.ui.home.bean.ProblemBean;
-import com.ainisi.queenmirror.queenmirrorcduan.ui.home.home.fragment.sonfragment.DistanceFragment;
-import com.ainisi.queenmirror.queenmirrorcduan.ui.home.home.fragment.sonfragment.SalesFragment;
-import com.ainisi.queenmirror.queenmirrorcduan.ui.home.home.fragment.sonfragment.ScreenFragment;
-import com.ainisi.queenmirror.queenmirrorcduan.ui.home.home.fragment.sonfragment.SortFragment;
-import com.ainisi.queenmirror.queenmirrorcduan.utils.BaseRecyclerAdapter;
-import com.ainisi.queenmirror.queenmirrorcduan.utils.CustomPopWindow;
-import com.ainisi.queenmirror.queenmirrorcduan.utils.MarqueeView;
-import com.youth.banner.Banner;
-
-import java.util.ArrayList;
-import java.util.List;
-
-import butterknife.Bind;
-import butterknife.OnClick;
+import com.ainisi.queenmirror.queenmirrorcduan.bean.ProblemBean;
 
 /**
  * Created by EWorld on 2018/3/6.
