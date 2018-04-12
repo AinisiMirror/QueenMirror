@@ -1,5 +1,8 @@
 package com.ainisi.queenmirror.queenmirrorcduan.ui.home.fragment;
 
+
+
+import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
@@ -14,17 +17,15 @@ import java.util.List;
 import butterknife.Bind;
 
 /**
- * Created by EWorld on 2018/3/6.
- * 综合排序
+ * A simple {@link Fragment} subclass.
  */
-
-public class FullshortFragment extends BaseFragment{
+public class FullSortFragment extends BaseFragment{
     @Bind(R.id.full_sore_recycler)
     RecyclerView recycler;
     List<SortBean> sortlist=new ArrayList<>();
     @Override
     protected int getLayoutResource() {
-        return R.layout.fragment_fullshort;
+        return R.layout.fragment_full_sort;
     }
 
     @Override
@@ -34,6 +35,10 @@ public class FullshortFragment extends BaseFragment{
 
     @Override
     protected void initView() {
+        initDate();
+    }
+
+    private void initDate() {
         for (int i = 0; i <10 ; i++) {
             SortBean sortBean=new SortBean();
             sortBean.setName("MOCO美容美发沙龙");
@@ -43,9 +48,9 @@ public class FullshortFragment extends BaseFragment{
             sortBean.setDistance("875m");
             sortlist.add(sortBean);
         }
-        MyAdapter sortAdapter=new MyAdapter(getActivity(),sortlist,R.layout.re_full_short);
+        MyAdapter sortAdapter=new MyAdapter(getActivity(),sortlist,R.layout.item_fullshortrecycler);
         recycler.setLayoutManager(new LinearLayoutManager(getActivity(),LinearLayoutManager.VERTICAL,false));
         recycler.setAdapter(sortAdapter);
-
     }
+
 }

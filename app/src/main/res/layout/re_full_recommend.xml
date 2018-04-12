@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/iv_commodity_picture"
+        android:layout_marginStart="@dimen/comment_11_dip"
+        android:layout_width="@dimen/comment_105_dip"
+        android:layout_height="@dimen/comment_105_dip"
+        app:srcCompat="@drawable/icon_home_beautiful" />
+    <TextView
+        android:layout_below="@id/iv_commodity_picture"
+        android:id="@+id/tv_commodity_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/comment_10_dip"
+        android:layout_marginStart="@dimen/comment_12_dip"
+        android:text="七彩猫眼甲"
+        android:textColor="@color/alpha_95_black"
+        android:textSize="@dimen/comment_16_size" />
+    <TextView
+        android:id="@+id/tv_praise"
+        android:layout_width="wrap_content"
+        android:layout_marginStart="@dimen/comment_12_dip"
+        android:text="25人好评"
+        android:layout_below="@id/tv_commodity_name"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/tv_present_price"
+        android:layout_below="@id/tv_praise"
+        android:textSize="@dimen/comment_18_size"
+        android:text="¥138"
+        android:textColor="@color/gray_E7370C"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/comment_5_dip"
+        android:layout_marginStart="@dimen/comment_12_dip"
+        />
+    <TextView
+        android:id="@+id/original_price"
+        android:layout_below="@id/tv_praise"
+        android:layout_toRightOf="@id/tv_present_price"
+        android:layout_width="wrap_content"
+        android:textColor="@color/alpha_05_black"
+        android:layout_marginStart="@dimen/comment_5_dip"
+        android:layout_marginTop="@dimen/comment_2_dip"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/comment_16_size"
+        android:text="¥258"
+        />
+</RelativeLayout>

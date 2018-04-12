@@ -38,8 +38,10 @@ android {
     }
     allprojects {
         repositories {
-            maven { url 'https://jitpack.io'
-                'https://dl.bintray.com/wangyuwei/maven'}
+            maven {
+                url 'https://jitpack.io'
+                'https://dl.bintray.com/wangyuwei/maven'
+            }
 
         }
         /* repositories {
