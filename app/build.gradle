@@ -76,5 +76,6 @@ dependencies {
     compile 'com.android.support:support-v4:26.+'
     compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.31'
     compile 'com.google.code.gson:gson:2.8.0'
+    compile 'com.daidingkang:flowlayouttag:1.0.0'//热门搜索标签
     testCompile 'junit:junit:4.12'
 }

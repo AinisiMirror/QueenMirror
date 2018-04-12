@@ -91,5 +91,7 @@
 
     <color name="search_color">#C471F5</color>
     <color name="search_search">#ECECEC</color>
+    <color name="search_text_color">#656565</color>
+    <color name="search_text_biankuang">#DFDFDF</color>
 
 </resources>

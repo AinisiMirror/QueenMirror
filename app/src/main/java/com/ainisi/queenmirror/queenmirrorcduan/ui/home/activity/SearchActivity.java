@@ -14,6 +14,7 @@ import com.ainisi.queenmirror.common.base.BaseActivity;
 import com.ainisi.queenmirror.queenmirrorcduan.R;
 import com.ainisi.queenmirror.queenmirrorcduan.ui.home.BaseNewActivity;
 import com.ainisi.queenmirror.queenmirrorcduan.ui.home.bean.SortBean;
+import com.ainisi.queenmirror.queenmirrorcduan.utils.FlowLayout;
 import com.ainisi.queenmirror.queenmirrorcduan.utils.StatusBarUtil;
 
 import java.util.ArrayList;
@@ -40,10 +41,9 @@ public class SearchActivity extends BaseNewActivity {
     RelativeLayout poplayout;
     @Bind(R.id.title_layout)
     LinearLayout titlelayout;
-    @Bind(R.id.rc_hot)
-    RecyclerView rchot;
-    //    @Bind(R.id.rc_history)
-//    RecyclerView rchistory;
+
+    @Bind(R.id.his_flowLayout)
+    FlowLayout his_flowLayout;
     private List<SortBean> list=new ArrayList<>();
     public static void startActivity(Context context) {
         Intent in = new Intent(context, SearchActivity.class);
@@ -62,6 +62,7 @@ public class SearchActivity extends BaseNewActivity {
         showpopid();
         initHot();
         initHistory();
+        initHotTag();
     }
     private void initHot() {
 
@@ -90,8 +91,19 @@ public class SearchActivity extends BaseNewActivity {
                 break;
 
         }
-
     }
-
+    /**
+     * 热门搜索
+     */
+    private void initHotTag() {
+        String[] mStrings = {"apple", "百度CEO", "阿里巴巴", "绩效股", "中国股市", "美团", "google", "淘宝", "雷军 小米公司", "大疆无人机"};
+        his_flowLayout.setColorful(false);//设置是否是多彩的颜色
+        his_flowLayout.setData(mStrings);
+        his_flowLayout.setOnTagClickListener(new FlowLayout.OnTagClickListener() {
+            @Override
+            public void TagClick(String text) {
+            }
+        });
+    }
 
 }

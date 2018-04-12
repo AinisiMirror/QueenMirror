@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
+    android:background="@color/white"
     android:orientation="vertical">
 
     <include layout="@layout/layout_newtitle" />
@@ -13,15 +14,16 @@
         android:id="@+id/tv_hot_search_txt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@color/white"
         android:layout_marginBottom="@dimen/comment_10_dip"
         android:layout_marginLeft="@dimen/comment_10_dip"
         android:layout_marginTop="@dimen/comment_10_dip"
         android:text="@string/hot_search" />
 
-   <android.support.v7.widget.RecyclerView
-       android:id="@+id/rc_hot"
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content"/>
+    <com.ainisi.queenmirror.queenmirrorcduan.utils.FlowLayout
+        android:id="@+id/his_flowLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 
     <TextView
         android:layout_width="wrap_content"
