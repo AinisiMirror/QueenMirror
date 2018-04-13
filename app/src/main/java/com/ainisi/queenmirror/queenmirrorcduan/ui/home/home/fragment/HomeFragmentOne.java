@@ -46,6 +46,7 @@ import java.util.List;
 import butterknife.Bind;
 import butterknife.OnClick;
 
+
 public class HomeFragmentOne extends BaseFragment{
 
     @Bind(R.id.banner)
@@ -118,6 +119,9 @@ public class HomeFragmentOne extends BaseFragment{
     String[] problem = {"销量最高", "价格最低", "距离最近", "优惠最多", "满减优惠", "新用最好", "用户最好"};
 
     int hight;//标记ScrollView移动的距离
+
+    public HomeFragmentOne() {
+    }
 
     @Override
     protected int getLayoutResource() {
