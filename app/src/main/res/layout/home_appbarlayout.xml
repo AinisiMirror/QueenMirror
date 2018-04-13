@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:id="@+id/layout_stick_header"
     android:layout_width="match_parent"
@@ -79,6 +80,18 @@
                 android:layout_marginTop="@dimen/comment_1_dip"
                 android:button="@null"
                 android:drawableLeft="@drawable/icon_home_screen" />
+
         </LinearLayout>
+        <LinearLayout
+            android:id="@+id/line_surface"
+            style="@style/Recommend_layout"
+            android:layout_height="@dimen/comment_40_dip">
+        <ImageView
+            android:id="@+id/iv_surface"
+            android:layout_width="@dimen/comment_15_dip"
+            android:layout_height="@dimen/comment_12_dip"
+            app:srcCompat="@drawable/icon_home_list" />
+        </LinearLayout>
+
     </LinearLayout>
 </LinearLayout>

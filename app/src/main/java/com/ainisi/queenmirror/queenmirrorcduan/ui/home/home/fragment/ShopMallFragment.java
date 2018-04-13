@@ -79,6 +79,7 @@ public class ShopMallFragment extends BaseFragment {
     LinearLayout layout_stick_header;
     @Bind(R.id.re_shop_mall)
     RecyclerView shopRecycle;
+
     //综合排序
     SortFragment sortFragment;
     //销量最高
