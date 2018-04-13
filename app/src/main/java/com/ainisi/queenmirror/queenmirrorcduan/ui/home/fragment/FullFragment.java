@@ -110,7 +110,16 @@ public class FullFragment extends BaseFragment {
         MyAdapter sortAdapter=new MyAdapter(getActivity(),sortlist,R.layout.re_full_recommend);
         reProjects.setLayoutManager(new LinearLayoutManager(getActivity(),LinearLayoutManager.HORIZONTAL,false));
         reProjects.setAdapter(sortAdapter);
-
+        sortAdapter.setOnItemClickListner(new BaseRecyclerAdapter.OnItemClickListner() {
+            @Override
+            public void onItemClickListner(View v, int position) {
+                switch (position){
+                    case 0:
+                        startActivity(new Intent(getActivity(), FullActivity.class));
+                        break;
+                }
+            }
+        });
         pop = new PopupWindow(CollapsingToolbarLayout.LayoutParams.MATCH_PARENT, CollapsingToolbarLayout.LayoutParams.WRAP_CONTENT);
         popview1 = View.inflate(getActivity(), R.layout.pop_myitem, null);
         initpop(popview1);

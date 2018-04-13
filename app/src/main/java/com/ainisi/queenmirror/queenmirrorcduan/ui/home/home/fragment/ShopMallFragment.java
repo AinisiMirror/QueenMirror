@@ -19,6 +19,7 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.ainisi.queenmirror.common.base.BaseFragment;
+import com.ainisi.queenmirror.common.commonutils.ToastUtils;
 import com.ainisi.queenmirror.queenmirrorcduan.R;
 import com.ainisi.queenmirror.queenmirrorcduan.adapter.ListViewAdapter;
 import com.ainisi.queenmirror.queenmirrorcduan.adapter.MyShopAdapter;
@@ -149,6 +150,16 @@ public class ShopMallFragment extends BaseFragment {
         MyShopAdapter myShopAdapter=new MyShopAdapter(getActivity(),shopList,R.layout.re_shopmall_shop);
         shopRecycle.setLayoutManager(new GridLayoutManager(getActivity(),4));
         shopRecycle.setAdapter(myShopAdapter);
+        myShopAdapter.setOnItemClickListner(new BaseRecyclerAdapter.OnItemClickListner() {
+            @Override
+            public void onItemClickListner(View v, int position) {
+                switch (position){
+                    case 0:
+                        ToastUtils.showLong("你点击了我");
+                        break;
+                }
+            }
+        });
     }
 
 

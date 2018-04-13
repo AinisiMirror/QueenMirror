@@ -2,12 +2,15 @@ package com.ainisi.queenmirror.queenmirrorcduan.ui.home.home.orderfragment;
 
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
 import android.widget.LinearLayout;
 
 import com.ainisi.queenmirror.common.base.BaseFragment;
+import com.ainisi.queenmirror.common.commonutils.ToastUtils;
 import com.ainisi.queenmirror.queenmirrorcduan.R;
 import com.ainisi.queenmirror.queenmirrorcduan.adapter.MineAdapter;
 import com.ainisi.queenmirror.queenmirrorcduan.bean.SortBean;
+import com.ainisi.queenmirror.queenmirrorcduan.utils.BaseRecyclerAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -42,5 +45,11 @@ public class WholeFragment extends BaseFragment{
         MineAdapter sbmitWholeAdapter=new MineAdapter(getActivity(),list,R.layout.item_sbmitrecycler);
         whole.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayout.VERTICAL,false));
         whole.setAdapter(sbmitWholeAdapter);
+        sbmitWholeAdapter.setOnItemClickListner(new BaseRecyclerAdapter.OnItemClickListner() {
+            @Override
+            public void onItemClickListner(View v, int position) {
+                ToastUtils.showLong("你点击了我");
+            }
+        });
     }
 }
