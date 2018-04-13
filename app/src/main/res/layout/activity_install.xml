@@ -76,15 +76,7 @@
                 android:layout_centerVertical="true"
                 app:srcCompat="@drawable/icon_install_unselected" />
 
-            <ImageView
-                android:id="@+id/iv_selected"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:visibility="gone"
-                android:layout_centerVertical="true"
-                android:layout_alignParentEnd="true"
-                android:layout_marginEnd="@dimen/comment_11_dip"
-                app:srcCompat="@drawable/icon_install_selected" />
+
         </RelativeLayout>
 
         <View

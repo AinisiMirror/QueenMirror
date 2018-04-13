@@ -16,19 +16,15 @@ import butterknife.OnClick;
 public class ReplaceActivity extends BaseActivity {
     @Bind(R.id.title_title)
     TextView replacetitle;
-    @Bind(R.id.dynamic_unselected)
-    ImageView undynamic;
     @Bind(R.id.dynamic_selected)
     ImageView dynamic;
-    @Bind(R.id.iv_unstrange)
-    ImageView unstrange;
     @Bind(R.id.iv_strange)
     ImageView strange;
     @Bind(R.id.tv_me)
     TextView metext;
     @Bind(R.id.tv_her)
     TextView hertext;
-
+    public boolean isClick;
     public static void startActivity(Context context) {
         context.startActivity(new Intent(context,ReplaceActivity.class));
     }
@@ -48,7 +44,8 @@ public class ReplaceActivity extends BaseActivity {
         replacetitle.setText("隐私");
     }
 
-    @OnClick({R.id.dynamic_selected,R.id.dynamic_unselected,R.id.iv_unstrange,R.id.iv_strange,R.id.title_back
+    @OnClick({R.id.dynamic_selected
+            ,R.id.iv_strange,R.id.title_back
      ,R.id.layout_me,R.id.layout_her
     })
     public void click(View view) {
@@ -58,20 +55,23 @@ public class ReplaceActivity extends BaseActivity {
                 finish();
                 break;
             case R.id.dynamic_selected:
-                undynamic.setVisibility(View.VISIBLE);
-                dynamic.setVisibility(View.GONE);
+                if(isClick){
+                    dynamic.setImageResource(R.drawable.icon_install_unselected);
+                    isClick=false;
+                }else {
+                    dynamic.setImageResource(R.drawable.icon_install_selected);
+                    isClick=true;
+                }
                 break;
-            case R.id.dynamic_unselected:
-                undynamic.setVisibility(View.GONE);
-                dynamic.setVisibility(View.VISIBLE);
-                break;
-            case R.id.iv_unstrange:
-                strange.setVisibility(View.VISIBLE);
-                unstrange.setVisibility(View.GONE);
-                break;
+
             case R.id.iv_strange:
-                strange.setVisibility(View.GONE);
-                unstrange.setVisibility(View.VISIBLE);
+                if(isClick){
+                    strange.setImageResource(R.drawable.icon_install_unselected);
+                    isClick=false;
+                }else {
+                    strange.setImageResource(R.drawable.icon_install_selected);
+                    isClick=true;
+                }
                 break;
             case R.id.layout_me:
                 Intent intent=new Intent(this,MeDynamicActivity.class);

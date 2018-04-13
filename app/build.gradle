@@ -11,6 +11,13 @@ android {
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
+//    //签名打包
+//    release {
+//        storeFile file("ainisi.jks")
+//        storePassword "ainisi123"
+//        keyAlias "ainisi"
+//        keyPassword "ainisi123"
+//    }
 
     buildTypes {
         release {
@@ -18,36 +25,21 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-    allprojects {
-        repositories {
-            maven {
-                url 'https://jitpack.io'
-                'https://dl.bintray.com/wangyuwei/maven'
-            }
 
-        }
-        /* repositories {
-            mavenCentral() // jcenter() works as well because it pulls from Maven Central
-        }*/
-    }
 
-    sourceSets {
-        main {
-            jniLibs.srcDirs = ['libs']
-        }
-    }
-    allprojects {
-        repositories {
-            maven {
-                url 'https://jitpack.io'
-                'https://dl.bintray.com/wangyuwei/maven'
-            }
-
-        }
-        /* repositories {
-            mavenCentral() // jcenter() works as well because it pulls from Maven Central
-        }*/
-    }
+//    sourceSets {
+//        main {
+//            jniLibs.srcDirs = ['libs']
+//        }
+//    }
+//    allprojects {
+//        repositories {
+//
+//        }
+//        /* repositories {
+//            mavenCentral() // jcenter() works as well because it pulls from Maven Central
+//        }*/
+//    }
 
     configurations.all {
         resolutionStrategy.eachDependency { DependencyResolveDetails details ->
@@ -59,9 +51,7 @@ android {
             }
         }
     }
-    /* task clean(type:Delete){
-         delete rootProject.buildDir
-     }*/
+
 }
 
 dependencies {

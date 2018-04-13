@@ -37,15 +37,6 @@
             android:text="@string/family_friend"
             android:textColor="@color/alpha_95_black"
             android:textSize="@dimen/comment_16_size" />
-        <ImageView
-            android:id="@+id/dynamic_unselected"
-            android:visibility="gone"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_marginEnd="@dimen/comment_11_dip"
-            android:layout_centerVertical="true"
-            app:srcCompat="@drawable/icon_install_unselected" />
 
         <ImageView
             android:id="@+id/dynamic_selected"
@@ -213,17 +204,6 @@
                 android:layout_marginBottom="@dimen/comment_5_dip"
                 app:srcCompat="@drawable/icon_install_unselected" />
 
-            <ImageView
-                android:id="@+id/iv_unstrange"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:visibility="gone"
-                android:layout_marginTop="@dimen/comment_12_dip"
-                android:layout_alignParentEnd="true"
-                android:layout_marginEnd="@dimen/comment_11_dip"
-                app:srcCompat="@drawable/icon_install_selected"
-                android:layout_marginBottom="@dimen/comment_5_dip"
-                />
         </RelativeLayout>
     </RelativeLayout>
      </RelativeLayout>

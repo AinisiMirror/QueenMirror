@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.ainisi.queenmirror.common.base.BaseActivity;
+import com.ainisi.queenmirror.common.commonutils.ToastUtils;
 import com.ainisi.queenmirror.queenmirrorcduan.R;
 import com.ainisi.queenmirror.queenmirrorcduan.ui.home.activity.UserpassActivity;
 
@@ -20,8 +21,7 @@ public class InstallActivity extends BaseActivity {
     TextView settitle;
     @Bind(R.id.iv_unselected)
     ImageView unselscetd;
-    @Bind(R.id.iv_selected)
-    ImageView selscetd;
+    private boolean isClick;
 
     public static void startActivity(Context context) {
         context.startActivity(new Intent(context, InstallActivity.class));
@@ -42,7 +42,7 @@ public class InstallActivity extends BaseActivity {
         settitle.setText("隐私");
     }
 
-    @OnClick({R.id.title_back, R.id.iv_unselected, R.id.iv_selected, R.id.layout_privacy
+    @OnClick({R.id.title_back, R.id.iv_unselected,  R.id.layout_privacy
     })
     public void click(View view) {
 
@@ -56,12 +56,14 @@ public class InstallActivity extends BaseActivity {
                 break;
 
             case R.id.iv_unselected:
-                selscetd.setVisibility(View.VISIBLE);
-                unselscetd.setVisibility(View.GONE);
-                break;
-            case R.id.iv_selected:
-                selscetd.setVisibility(View.GONE);
-                unselscetd.setVisibility(View.VISIBLE);
+                if(isClick){
+                    unselscetd.setImageResource(R.drawable.icon_install_unselected);
+                    isClick=false;
+                }else {
+                    unselscetd.setImageResource(R.drawable.icon_install_selected);
+                    ToastUtils.showLong("你点击了我");
+                    isClick=true;
+                }
                 break;
             default:
                 break;

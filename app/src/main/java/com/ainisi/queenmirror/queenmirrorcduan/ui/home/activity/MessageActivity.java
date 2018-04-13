@@ -16,9 +16,6 @@ import butterknife.OnClick;
 public class MessageActivity extends BaseActivity {
     @Bind(R.id.title_title)
     TextView title;
-
-
-
     public static void startActivity(Context context) {
         context.startActivity(new Intent(context,MessageActivity.class));
     }
@@ -26,10 +23,8 @@ public class MessageActivity extends BaseActivity {
     public int getLayoutId() {
         return R.layout.activity_meage;
     }
-
     @Override
     public void initPresenter() {
-
     }
 
     @Override
@@ -37,7 +32,6 @@ public class MessageActivity extends BaseActivity {
         initText();
 
     }
-
     private void initText() {
         title.setText(R.string.message_center);
         title.setTextColor(ContextCompat.getColor(this,R.color.alpha_95_black));
