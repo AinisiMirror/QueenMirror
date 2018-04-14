@@ -94,4 +94,6 @@
     <color name="search_text_color">#656565</color>
     <color name="search_text_biankuang">#DFDFDF</color>
 
+    <color name="shop_detail_text">#000000</color>
+
 </resources>

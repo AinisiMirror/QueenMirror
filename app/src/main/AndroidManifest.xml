@@ -207,6 +207,7 @@
             android:screenOrientation="portrait" />
         <activity android:name=".ui.home.DetailActivity" />
         <activity android:name=".ui.home.activity.BeanstalkActivity" />
+        <activity android:name=".ui.shop.WorkRoomDetailActivity"></activity>
     </application>
 
 </manifest>

@@ -73,7 +73,7 @@ public class ShopMallFragment extends BaseFragment {
     @Bind(R.id.sc_home_scroll)
     ScrollView sc_home_scroll;
     ListViewAdapter listadapter;
-    @Bind(R.id.listView)
+    @Bind(R.id.list_view)
     NoScrollListview listView;
     @Bind(R.id.gridView)
     NoScrollGridView gridView;
@@ -126,6 +126,7 @@ public class ShopMallFragment extends BaseFragment {
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     protected void initView() {
+
 
         initDate();
         initpopwindow();

@@ -96,7 +96,7 @@ public class FullFragment extends BaseFragment {
         pagerList.add(salesFragment);
         pagerList.add(distanceFragment);
         pagerList.add(screenFragment);
-        ViewPager pager = new ViewPager(getFragmentManager(), pagerList, null);
+        ViewPager pager = new ViewPager(getChildFragmentManager(), pagerList, null);
         fullpager.setScanScroll(true);
         fullpager.setAdapter(pager);
     }

@@ -25,9 +25,7 @@ android {
                 url 'https://jitpack.io'
                 'https://dl.bintray.com/wangyuwei/maven'
             }
-
         }
-
     }
     dexOptions {
         jumboMode = true
@@ -53,16 +51,6 @@ android {
         }
     }
 
-    configurations.all {
-        resolutionStrategy.eachDependency { DependencyResolveDetails details ->
-            def requested = details.requested
-            if (requested.group == 'com.android.support') {
-                if (!requested.name.startsWith("multidex")) {
-                    details.useVersion '25.3.1'
-                }
-            }
-        }
-    }
 }
 
 dependencies {

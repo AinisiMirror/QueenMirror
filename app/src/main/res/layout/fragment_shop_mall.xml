@@ -37,7 +37,7 @@
          <include layout="@layout/activity_shop_mall" />
 
          <com.ainisi.queenmirror.queenmirrorcduan.utils.NoScrollListview
-             android:id="@+id/listView"
+             android:id="@+id/list_view"
              android:layout_width="match_parent"
              android:layout_height="wrap_content">
          </com.ainisi.queenmirror.queenmirrorcduan.utils.NoScrollListview>
