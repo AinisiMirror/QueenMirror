@@ -17,16 +17,23 @@
             android:orientation="vertical">
             <include layout="@layout/activity_home_shop" />
 
-            <!--<com.ainisi.queenmirror.queenmirrorcduan.utils.NoScrollListview-->
-                <!--android:id="@+id/listView"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="wrap_content">-->
-            <!--</com.ainisi.queenmirror.queenmirrorcduan.utils.NoScrollListview>-->
-
-            <android.support.v7.widget.RecyclerView
-                android:id="@+id/recycler_home"
+            <com.ainisi.queenmirror.queenmirrorcduan.utils.NoScrollListview
+                android:id="@+id/listView"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content">
+            </com.ainisi.queenmirror.queenmirrorcduan.utils.NoScrollListview>
+            <com.ainisi.queenmirror.queenmirrorcduan.utils.NoScrollGridView
+                android:id="@+id/gridView"
+                android:numColumns="3"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            </com.ainisi.queenmirror.queenmirrorcduan.utils.NoScrollGridView>
+
+            <!--<android.support.v7.widget.RecyclerView-->
+                <!--android:id="@+id/recycler_home"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"/>-->
 
         </LinearLayout>
     </ScrollView>

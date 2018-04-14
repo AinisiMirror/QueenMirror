@@ -26,10 +26,12 @@
    <ScrollView
        android:layout_below="@id/app_bar"
        android:id="@+id/sc_home_scroll"
+       android:scrollbars="vertical"
        android:layout_width="match_parent"
        android:layout_height="wrap_content">
       <LinearLayout
           android:layout_width="match_parent"
+          android:scrollbars="vertical"
           android:layout_height="wrap_content"
           android:orientation="vertical">
          <include layout="@layout/activity_shop_mall" />
@@ -39,6 +41,12 @@
              android:layout_width="match_parent"
              android:layout_height="wrap_content">
          </com.ainisi.queenmirror.queenmirrorcduan.utils.NoScrollListview>
+         <com.ainisi.queenmirror.queenmirrorcduan.utils.NoScrollGridView
+             android:id="@+id/gridView"
+             android:numColumns="3"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content">
+         </com.ainisi.queenmirror.queenmirrorcduan.utils.NoScrollGridView>
 
       </LinearLayout>
    </ScrollView>
@@ -128,9 +136,11 @@
                 android:drawableLeft="@drawable/icon_home_screen" />
          </LinearLayout>
          <LinearLayout
+             android:id="@+id/line_uspension_surface"
              style="@style/Recommend_layout"
              android:layout_height="@dimen/comment_40_dip">
             <ImageView
+                android:id="@+id/iv_uspension_surface"
                 android:layout_width="@dimen/comment_15_dip"
                 android:layout_height="@dimen/comment_12_dip"
                 app:srcCompat="@drawable/icon_home_list" />

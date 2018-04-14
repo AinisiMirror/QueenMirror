@@ -7,6 +7,7 @@ import com.ainisi.queenmirror.common.baseapp.BaseApplication;
 import com.ainisi.queenmirror.common.commonutils.NetWorkUtils;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.lzy.okgo.interceptor.HttpLoggingInterceptor;
 
 import java.io.File;
 import java.io.IOException;
@@ -18,7 +19,7 @@ import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
-import okhttp3.logging.HttpLoggingInterceptor;
+
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -75,8 +76,8 @@ public class Api {
     //构造方法私有
     private Api(int hostType) {
         //开启Log
-        HttpLoggingInterceptor logInterceptor = new HttpLoggingInterceptor();
-        logInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
+        HttpLoggingInterceptor logInterceptor = new HttpLoggingInterceptor("cache");
+
         //缓存
         File cacheFile = new File(BaseApplication.getAppContext().getCacheDir(), "cache");
         Cache cache = new Cache(cacheFile, 1024 * 1024 * 100); //100Mb

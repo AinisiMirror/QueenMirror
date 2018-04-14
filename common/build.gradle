@@ -5,7 +5,7 @@ android {
     buildToolsVersion "26.0.2"
 
     defaultConfig {
-        minSdkVersion 19
+        minSdkVersion 21
         targetSdkVersion 26
         versionCode 1
         versionName "1.0"
@@ -44,11 +44,13 @@ dependencies {
     compile 'com.squareup.retrofit2:adapter-rxjava:2.0.0-beta4'
     compile 'com.tbruyelle.rxpermissions:rxpermissions:0.7.0@aar'
     //打印日志
-    compile 'com.squareup.okhttp3:logging-interceptor:3.1.2'
+   /* compile 'com.squareup.okhttp3:logging-interceptor:3.1.2'*/
     //圆形头像
     compile 'de.hdodenhof:circleimageview:2.2.0'
     //轮播 -> https://github.com/youth5201314/banner
     compile 'com.youth.banner:banner:1.4.10'  //最新版本
     compile 'com.android.support:design:26.0.0-alpha1'
+
+
  }
 
