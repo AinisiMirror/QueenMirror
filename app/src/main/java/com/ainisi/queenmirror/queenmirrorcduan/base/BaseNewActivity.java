@@ -1,4 +1,4 @@
-package com.ainisi.queenmirror.queenmirrorcduan.ui.home;
+package com.ainisi.queenmirror.queenmirrorcduan.base;
 
 import android.app.Activity;
 import android.os.Bundle;

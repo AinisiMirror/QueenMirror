@@ -9,7 +9,6 @@ import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -19,14 +18,11 @@ import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.ScrollView;
 import android.widget.TextView;
-
 import com.ainisi.queenmirror.common.base.BaseFragment;
 import com.ainisi.queenmirror.queenmirrorcduan.R;
 import com.ainisi.queenmirror.queenmirrorcduan.adapter.HomePageAdapter;
 import com.ainisi.queenmirror.queenmirrorcduan.adapter.ListViewAdapter;
-import com.ainisi.queenmirror.queenmirrorcduan.adapter.MyAdapter;
 import com.ainisi.queenmirror.queenmirrorcduan.adapter.ProblemAdapter;
-import com.ainisi.queenmirror.queenmirrorcduan.bean.SortBean;
 import com.ainisi.queenmirror.queenmirrorcduan.ui.home.DetailActivity;
 import com.ainisi.queenmirror.queenmirrorcduan.ui.home.GlideImageLoader;
 import com.ainisi.queenmirror.queenmirrorcduan.ui.home.activity.MessageActivity;
@@ -51,7 +47,7 @@ import butterknife.Bind;
 import butterknife.OnClick;
 
 
-public class HomeFragmentOne extends BaseFragment {
+public class HomeFragmentOne extends BaseFragment{
 
     @Bind(R.id.banner)
     Banner banner;
@@ -88,18 +84,14 @@ public class HomeFragmentOne extends BaseFragment {
     HomePageAdapter commonAdapter;
 
     ListViewAdapter listadapter;
-//    @Bind(R.id.listView)
-//    NoScrollListview listView;
-    @Bind(R.id.recycler_home)
-    RecyclerView reHome;
+
+    @Bind(R.id.listView)
+    NoScrollListview listView;
     @Bind(R.id.layout_stick_header_main)
     LinearLayout layout_stick_header_main;
     @Bind(R.id.layout_stick_header)
     LinearLayout layout_stick_header;
-    @Bind(R.id.iv_surface)
-    ImageView imgSurface;
-    @Bind(R.id.iv_uspension_surface)
-    ImageView uspensionSurface;
+
     View firstLayout;
 
     Handler handler = new Handler();
@@ -124,11 +116,10 @@ public class HomeFragmentOne extends BaseFragment {
     private PopupWindow pop;
     private View popview1;
     private List<ProblemBean> list = new ArrayList<>();
-    private List<SortBean> sortList=new ArrayList<>();
     String[] problem = {"销量最高", "价格最低", "距离最近", "优惠最多", "满减优惠", "新用最好", "用户最好"};
 
     int hight;//标记ScrollView移动的距离
-    private boolean isClick;
+    int index = 0 ;
 
     public HomeFragmentOne() {
     }
@@ -155,32 +146,19 @@ public class HomeFragmentOne extends BaseFragment {
             @Override
             public void onScrollChange(View view, int i, int i1, int i2, int i3) {
                 hight = i1;
-                if (i1 >= 1621) {
+                if(i1>=1621){
                     layout_stick_header.setVisibility(View.GONE);
                     layout_stick_header_main.setVisibility(View.VISIBLE);
-                } else {
+                }else{
                     layout_stick_header.setVisibility(View.VISIBLE);
                     layout_stick_header_main.setVisibility(View.GONE);
                 }
             }
         });
 
-//        listadapter = new ListViewAdapter(getContext());
-//        listView.setAdapter(listadapter);
-        initrecy();
-    }
+        listadapter = new ListViewAdapter(getContext());
+        listView.setAdapter(listadapter);
 
-    private void initrecy() {
-        for (int i = 0; i <20 ; i++) {
-            SortBean sortBean=new SortBean();
-            sortBean.setName("");
-            sortBean.setTime("");
-            sortBean.setDistance("");
-            sortList.add(sortBean);
-        }
-        MyAdapter sortAdapter2=new MyAdapter(getActivity(),sortList,R.layout.item_shortrecycler);
-        reHome.setLayoutManager(new LinearLayoutManager(getActivity(),LinearLayoutManager.VERTICAL,false));
-        reHome.setAdapter(sortAdapter2);
     }
 
     private void initQuee() {
@@ -195,7 +173,6 @@ public class HomeFragmentOne extends BaseFragment {
         });
 
     }
-
     @Override
     public void onResume() {
         super.onResume();
@@ -230,7 +207,8 @@ public class HomeFragmentOne extends BaseFragment {
     /**
      * 设置添加屏幕的背景透明度
      *
-     * @param bgAlpha 屏幕透明度0.0-1.0 1表示完全不透明
+     * @param bgAlpha
+     *            屏幕透明度0.0-1.0 1表示完全不透明
      */
     public void setBackgroundAlpha(float bgAlpha) {
         WindowManager.LayoutParams lp = getActivity().getWindow()
@@ -274,45 +252,10 @@ public class HomeFragmentOne extends BaseFragment {
 
     @OnClick({R.id.rb_sort, R.id.rb_sales, R.id.rb_distance, R.id.rb_screen, R.id.txt_bustling
             , R.id.img_search, R.id.img_information, R.id.home_esthetics, R.id.iv_sort, R.id.iv_sort1
-            , R.id.bt_screen, R.id.li_sort_bottom, R.id.li_home_screen, R.id.li_home_screen_bottom, R.id.line_surface
-    ,R.id.line_uspension_surface})
+            , R.id.bt_screen,R.id.li_sort_bottom,R.id.li_home_screen,R.id.li_home_screen_bottom})
     public void click(View view) {
         //  FragmentTransaction transaction = fm.beginTransaction();
         switch (view.getId()) {
-            //点击流式布局，和瀑布流布局切换
-            case R.id.line_surface:
-                if (isClick) {
-                    isClick = false;
-                    MyAdapter sortAdapter2=new MyAdapter(getActivity(),sortList,R.layout.item_shortrecycler);
-                    reHome.setLayoutManager(new LinearLayoutManager(getActivity(),LinearLayoutManager.VERTICAL,false));
-                    reHome.setAdapter(sortAdapter2);
-                    imgSurface.setImageResource(R.drawable.icon_home_list);
-                } else {
-                    imgSurface.setImageResource(R.drawable.icon_home_recycler);
-                    MyAdapter sortAdapter2=new MyAdapter(getActivity(),sortList,R.layout.item_recycler_waterfall);
-                    reHome.setLayoutManager(new GridLayoutManager(getActivity(),2));
-                    reHome.setAdapter(sortAdapter2);
-                    isClick = true;
-                }
-                break;
-            case R.id.line_uspension_surface:
-                if (isClick) {
-                    isClick = false;
-                    MyAdapter sortAdapter2=new MyAdapter(getActivity(),sortList,R.layout.item_shortrecycler);
-                    reHome.setLayoutManager(new LinearLayoutManager(getActivity(),LinearLayoutManager.VERTICAL,false));
-                    reHome.setAdapter(sortAdapter2);
-                    imgSurface.setImageResource(R.drawable.icon_home_list);
-                    uspensionSurface.setImageResource(R.drawable.icon_home_list);
-                } else {
-                    uspensionSurface.setImageResource(R.drawable.icon_home_recycler);
-                    imgSurface.setImageResource(R.drawable.icon_home_recycler);
-                    MyAdapter sortAdapter2=new MyAdapter(getActivity(),sortList,R.layout.item_recycler_waterfall);
-                    reHome.setLayoutManager(new GridLayoutManager(getActivity(),2));
-                    reHome.setAdapter(sortAdapter2);
-                    isClick = true;
-                }
-
-                break;
             case R.id.bt_screen:
 
                 break;
@@ -323,10 +266,10 @@ public class HomeFragmentOne extends BaseFragment {
                 setBackgroundAlpha(0.5f);
                 ivsort.setVisibility(View.GONE);
                 ivsort1.setVisibility(View.VISIBLE);
-                if (hight >= 1621) {
+                if(hight >= 1621){
                     pop.showAsDropDown(layout_stick_header_main);
-                } else {
-                    sc_home_scroll.smoothScrollTo(0, 1621);
+                }else{
+                    sc_home_scroll.smoothScrollTo(0,1621);
                     pop.showAsDropDown(hSort);
                 }
 
@@ -403,7 +346,7 @@ public class HomeFragmentOne extends BaseFragment {
 //                hideFragment(distanceFragment, transaction);
                 // coorHm.setVisibility(View.INVISIBLE);
 
-                sc_home_scroll.smoothScrollTo(0, 1621);
+                sc_home_scroll.smoothScrollTo(0,1621);
                 View popview = View.inflate(getActivity(), R.layout.pop_right, null);
 
                 initview(popview);

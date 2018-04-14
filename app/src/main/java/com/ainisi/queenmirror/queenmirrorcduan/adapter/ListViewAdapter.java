@@ -44,7 +44,6 @@ public class ListViewAdapter extends BaseAdapter {
         if (convertView == null) {
             holder = new ViewHolder();
 
-
             convertView = inflater.inflate(R.layout.item_shortrecycler, parent, false);
 
             convertView.setTag(holder);

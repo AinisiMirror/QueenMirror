@@ -9,15 +9,9 @@ android {
         targetSdkVersion 26
         versionCode 1
         versionName "1.0"
+        multiDexEnabled true
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
-//    //签名打包
-//    release {
-//        storeFile file("ainisi.jks")
-//        storePassword "ainisi123"
-//        keyAlias "ainisi"
-//        keyPassword "ainisi123"
-//    }
 
     buildTypes {
         release {
@@ -25,21 +19,28 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    allprojects {
+        repositories {
+            maven {
+                url 'https://jitpack.io'
+                'https://dl.bintray.com/wangyuwei/maven'
+            }
 
+        }
 
-//    sourceSets {
-//        main {
-//            jniLibs.srcDirs = ['libs']
-//        }
-//    }
-//    allprojects {
-//        repositories {
-//
-//        }
-//        /* repositories {
-//            mavenCentral() // jcenter() works as well because it pulls from Maven Central
-//        }*/
-//    }
+    }
+    dexOptions {
+        jumboMode = true
+        preDexLibraries = false
+        javaMaxHeapSize "2g"//支持2g
+
+    }
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
 
     configurations.all {
         resolutionStrategy.eachDependency { DependencyResolveDetails details ->
@@ -52,6 +53,16 @@ android {
         }
     }
 
+    configurations.all {
+        resolutionStrategy.eachDependency { DependencyResolveDetails details ->
+            def requested = details.requested
+            if (requested.group == 'com.android.support') {
+                if (!requested.name.startsWith("multidex")) {
+                    details.useVersion '25.3.1'
+                }
+            }
+        }
+    }
 }
 
 dependencies {
@@ -61,13 +72,19 @@ dependencies {
     })
     compile project(':common')
     //noinspection GradleCompatible
-    compile 'com.android.support:appcompat-v7:25.3.1'
+    compile 'com.android.support:appcompat-v7:26.1.0'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     compile 'com.android.support:design:26.0.0-alpha1'
     compile 'com.jakewharton:butterknife:6.1.0'
     compile 'com.android.support:support-v4:26.+'
     compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.31'
     compile 'com.google.code.gson:gson:2.8.0'
-    /*compile 'com.daidingkang:flowlayouttag:1.0.0'//热门搜索标签*/
     testCompile 'junit:junit:4.12'
+
+    //okgo
+    compile files('libs/okgo-2.1.4.jar')
+    compile files('libs/okhttp-3.4.1.jar')
+    compile files('libs/okio-1.9.0.jar')
+//用于防止apk达到一定大小后出现问题
+    compile 'com.android.support:multidex:1.0.1'
 }

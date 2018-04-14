@@ -3,16 +3,14 @@ package com.ainisi.queenmirror.queenmirrorcduan.ui.home.activity;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v4.content.ContextCompat;
-import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.ainisi.queenmirror.common.base.BaseActivity;
 import com.ainisi.queenmirror.queenmirrorcduan.R;
-import com.ainisi.queenmirror.queenmirrorcduan.ui.home.BaseNewActivity;
+import com.ainisi.queenmirror.queenmirrorcduan.base.BaseNewActivity;
 import com.ainisi.queenmirror.queenmirrorcduan.utils.FlowLayout;
 import com.ainisi.queenmirror.queenmirrorcduan.utils.StatusBarUtil;
 import com.ainisi.queenmirror.queenmirrorcduan.bean.SortBean;
