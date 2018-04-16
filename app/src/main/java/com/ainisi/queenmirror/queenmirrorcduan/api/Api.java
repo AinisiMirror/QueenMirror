@@ -7,7 +7,6 @@ import com.ainisi.queenmirror.common.baseapp.BaseApplication;
 import com.ainisi.queenmirror.common.commonutils.NetWorkUtils;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.lzy.okgo.interceptor.HttpLoggingInterceptor;
 
 import java.io.File;
 import java.io.IOException;
@@ -73,7 +72,7 @@ public class Api {
     private static final String CACHE_CONTROL_AGE = "max-age=0";
 
 
-    //构造方法私有
+   /* //构造方法私有
     private Api(int hostType) {
         //开启Log
         HttpLoggingInterceptor logInterceptor = new HttpLoggingInterceptor("cache");
@@ -110,12 +109,12 @@ public class Api {
                 .build();
         movieService = retrofit.create(ApiService.class);
     }
-
+*/
     /**
      * @param hostType
      *
      */
-    public static ApiService getDefault(int hostType) {
+   /* public static ApiService getDefault(int hostType) {
         Api retrofitManager = sRetrofitManager.get(hostType);
         if (retrofitManager == null) {
             retrofitManager = new Api(hostType);
@@ -124,7 +123,7 @@ public class Api {
         return retrofitManager.movieService;
     }
 
-
+*/
     /**
      * 根据网络状况获取缓存的策略
      */

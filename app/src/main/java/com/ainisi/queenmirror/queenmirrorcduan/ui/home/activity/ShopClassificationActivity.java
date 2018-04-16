@@ -8,12 +8,13 @@ import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.View;
-
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -24,6 +25,7 @@ import com.ainisi.queenmirror.queenmirrorcduan.R;
 import com.ainisi.queenmirror.queenmirrorcduan.adapter.ProblemAdapter;
 import com.ainisi.queenmirror.queenmirrorcduan.bean.ProblemBean;
 import com.ainisi.queenmirror.queenmirrorcduan.ui.home.fragment.FullFragment;
+import com.ainisi.queenmirror.queenmirrorcduan.ui.home.fragment.ShopFullFragment;
 import com.ainisi.queenmirror.queenmirrorcduan.ui.home.home.orderfragment.AssessedFragment;
 import com.ainisi.queenmirror.queenmirrorcduan.ui.home.home.orderfragment.RefundFragment;
 import com.ainisi.queenmirror.queenmirrorcduan.ui.home.home.orderfragment.WholeFragment;
@@ -38,11 +40,7 @@ import java.util.List;
 import butterknife.Bind;
 import butterknife.OnClick;
 
-/**
- * 美学汇（美甲美手）
- */
-public class EstheticsActivity extends BaseActivity {
-
+public class ShopClassificationActivity extends BaseActivity {
     @Bind(R.id.exthetis_tab)
     TabLayout etablayout;
     @Bind(R.id.esthetics_mypager)
@@ -58,12 +56,9 @@ public class EstheticsActivity extends BaseActivity {
     private List<ProblemBean> list = new ArrayList<>();
     private List<String> tablist;
     private List<Fragment> pagerlist = new ArrayList<>();
-
-
-
     @Override
     public int getLayoutId() {
-        return R.layout.activity_esthetics;
+        return R.layout.activity_shop_classification;
     }
 
     @Override
@@ -77,72 +72,35 @@ public class EstheticsActivity extends BaseActivity {
         initText();
         ViewPager viewPager = new ViewPager(getSupportFragmentManager(), pagerlist, tablist);
         emypager.setAdapter(viewPager);
-        emypager.setScanScroll(false);
+        emypager.setScanScroll(true);
         etablayout.setupWithViewPager(emypager);
-    }
-    public void setIndicator(TabLayout tabs, int leftDip, int rightDip) {
-        Class<?> tabLayout = tabs.getClass();
-        Field tabStrip = null;
-        try {
-            tabStrip = tabLayout.getDeclaredField("mTabStrip");
-        } catch (NoSuchFieldException e) {
-            e.printStackTrace();
-        }
-
-        tabStrip.setAccessible(true);
-        LinearLayout llTab = null;
-        try {
-            llTab = (LinearLayout) tabStrip.get(tabs);
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        }
-
-        int left = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, leftDip, Resources.getSystem().getDisplayMetrics());
-        int right = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, rightDip, Resources.getSystem().getDisplayMetrics());
-
-        for (int i = 0; i < llTab.getChildCount(); i++) {
-            View child = llTab.getChildAt(i);
-            child.setPadding(0, 0, 0, 0);
-            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.MATCH_PARENT, 1);
-            params.leftMargin = left;
-            params.rightMargin = right;
-            child.setLayoutParams(params);
-            child.invalidate();
-        }
     }
     private void initDate() {
         tablist = new ArrayList<>();
         tablist.add("全部");
-        tablist.add("指甲笔绘");
-        tablist.add("指甲勾绘");
-        tablist.add("指甲喷绘");
-        tablist.add("待评价");
+        tablist.add("休闲");
+        tablist.add("游泳");
+        tablist.add("娱乐");
+        tablist.add("服务");
         tablist.add("退款");
         for (int i = 0; i < tablist.size(); i++) {
             etablayout.addTab(etablayout.newTab().setText(tablist.get(i)));
         }
-
         /**
          //全部订单
          //待评价
          //退款
          */
-        pagerlist.add(new FullFragment());
+        pagerlist.add(new ShopFullFragment());
         pagerlist.add(new AssessedFragment());
         pagerlist.add(new RefundFragment());
         pagerlist.add(new WholeFragment());
         pagerlist.add(new AssessedFragment());
         pagerlist.add(new RefundFragment());
-        etablayout.post(new Runnable() {
-            @Override
-            public void run() {
-                //用来给tablayout调节左右边距
-                setIndicator(etablayout, 0, 0);
-            }
-        });
     }
+
     private void initText() {
-        title.setText("美甲美手");
+        title.setText("珠宝首饰");
         title.setTextColor(ContextCompat.getColor(this, R.color.white));
         titlePhoto.setVisibility(View.VISIBLE);
         titlePhoto.setImageResource(R.drawable.icon_home_search);

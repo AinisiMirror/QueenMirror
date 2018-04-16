@@ -1,6 +1,7 @@
 package com.ainisi.queenmirror.queenmirrorcduan.ui.home.activity;
 
 import android.content.res.Resources;
+import android.database.sqlite.SQLiteDatabase;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
@@ -31,7 +32,8 @@ import butterknife.OnClick;
 /*
 服务中心
  */
-public class MineMyServiceActivity extends BaseActivity {
+public class
+MineMyServiceActivity extends BaseActivity {
     @Bind(R.id.title_title)
     TextView serviceTitle;
     @Bind(R.id.tab_service)
@@ -39,6 +41,10 @@ public class MineMyServiceActivity extends BaseActivity {
     @Bind(R.id.pager_service)
     NoScrollViewPager servicePager;
 
+    @Override
+    public SQLiteDatabase openOrCreateDatabase(String name, int mode, SQLiteDatabase.CursorFactory factory) {
+        return super.openOrCreateDatabase(name, mode, factory);
+    }
 
     private List<String> tablist = new ArrayList<>();
     private List<Fragment> pagerlist = new ArrayList<>();

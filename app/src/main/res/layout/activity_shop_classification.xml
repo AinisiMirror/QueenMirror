@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.ainisi.queenmirror.queenmirrorcduan.ui.home.activity.ShopClassificationActivity"
+    android:orientation="vertical">
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/comment_110_dip"
+        android:id="@+id/bar_esthetice"
+        android:background="@drawable/ic_setting_breake"
+
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/comment_110_dip"
+            android:background="@drawable/ic_setting_breake"
+            android:orientation="vertical">
+
+            <include layout="@layout/layout_title" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="bottom"
+                android:orientation="horizontal">
+
+                <android.support.design.widget.TabLayout
+                    android:layout_marginBottom="@dimen/comment_2_dip"
+                    android:id="@+id/exthetis_tab"
+                    android:layout_width="@dimen/comment_300_dip"
+                    android:layout_height="wrap_content"
+                    app:tabIndicatorColor="@color/white"
+                    app:tabMode="scrollable"
+                    app:tabSelectedTextColor="@color/white"
+                    app:tabTextColor="@color/white" />
+
+                <ImageView
+                    android:id="@+id/iv_screening"
+                    android:layout_width="@dimen/comment_20_dip"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="@dimen/comment_20_dip"
+                    android:src="@drawable/arrow_dwon_blue" />
+            </RelativeLayout>
+        </LinearLayout>
+    </android.support.design.widget.AppBarLayout>
+
+    <com.ainisi.queenmirror.queenmirrorcduan.utils.NoScrollViewPager
+        android:id="@+id/esthetics_mypager"
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</LinearLayout>

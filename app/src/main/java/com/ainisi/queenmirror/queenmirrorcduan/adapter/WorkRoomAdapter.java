@@ -10,7 +10,6 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.LinearLayout;
 
-import com.ainisi.queenmirror.common.commonutils.ToastUtils;
 import com.ainisi.queenmirror.queenmirrorcduan.R;
 import com.ainisi.queenmirror.queenmirrorcduan.ui.shop.WorkRoomDetailActivity;
 
@@ -18,11 +17,11 @@ import com.ainisi.queenmirror.queenmirrorcduan.ui.shop.WorkRoomDetailActivity;
  * Created by Mloong on 2017/11/25.
  */
 
-public class ListViewAdapter extends BaseAdapter {
+public class WorkRoomAdapter extends BaseAdapter {
     private final LayoutInflater inflater;
     private Context context;
 
-    public ListViewAdapter(Context context) {
+    public WorkRoomAdapter(Context context) {
         this.context = context;
         inflater = LayoutInflater.from(context);
     }
@@ -49,23 +48,14 @@ public class ListViewAdapter extends BaseAdapter {
         if (convertView == null) {
             holder = new ViewHolder();
 
-            convertView = inflater.inflate(R.layout.item_shortrecycler, parent, false);
+            convertView = inflater.inflate(R.layout.re_workroom_short, parent, false);
 
-            holder.li_home_short = convertView.findViewById(R.id.li_home_short);
 
             convertView.setTag(holder);
         }else{
             holder = (ViewHolder)convertView.getTag();
         }
 
-        holder.li_home_short.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                Intent intent = new Intent(context, WorkRoomDetailActivity.class);
-                context.startActivity(intent);
-            }
-        });
 
         return convertView;
     }

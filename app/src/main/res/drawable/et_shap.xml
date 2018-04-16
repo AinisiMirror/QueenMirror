@@ -9,5 +9,5 @@
              android:bottomRightRadius="3dip"/>
     <stroke
         android:width="@dimen/comment_2_dip"
-        android:color="@color/alpha_05_black" />
+        android:color="@color/white" />
 </shape>

@@ -2,10 +2,7 @@ package com.ainisi.queenmirror.queenmirrorcduan.api;
 
 import com.ainisi.queenmirror.queenmirrorcduan.utilnomal.L;
 import com.ainisi.queenmirror.queenmirrorcduan.utilnomal.T;
-import com.lzy.okgo.OkGo;
-import com.lzy.okgo.cache.CacheMode;
-import com.lzy.okgo.callback.StringCallback;
-import com.lzy.okgo.request.BaseRequest;
+
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Map;
@@ -19,7 +16,7 @@ import okhttp3.Response;
 
 public class HttpUtils {
 
-   public static void doGet(final int action, Map<String, String> params, CacheMode cacheMode, final boolean showLoadingDialog, final HttpCallBack httpCallBack) {
+   /*public static void doGet(final int action, Map<String, String> params, CacheMode cacheMode, final boolean showLoadingDialog, final HttpCallBack httpCallBack) {
         String url = getGetUrl(action, params);
         OkGo.get(url)
                 .cacheKey(getUrl(action).toString())
@@ -37,7 +34,7 @@ public class HttpUtils {
                     public void onSuccess(String s, Call call, Response response) {
                         L.e("result:" + s);
                         try {
-                         /*   JSONObject jsonObject = new JSONObject(s);
+                         *//*   JSONObject jsonObject = new JSONObject(s);
                             int state = jsonObject.getInt("state");
                             String res = jsonObject.getString("res");
                             //失败
@@ -45,7 +42,7 @@ public class HttpUtils {
                                 httpCallBack.showErrorMessage(res);
                                 return;
                             }
-*/
+*//*
                             //成功
                             httpCallBack.onSuccess(action, s);
                         } catch (Exception e) {
@@ -118,11 +115,11 @@ public class HttpUtils {
                             //JSONObject jsonObject = new JSONObject(s);
                             // int state = jsonObject.getInt("state");
                             //String res = jsonObject.getString("list");
-                          /*  //失败
+                          *//*  //失败
                             if (state != 200) {
                                 httpCallBack.showErrorMessage(res);
                                 return;
-                            }*/
+                            }*//*
 
                             //成功
                             httpCallBack.onSuccess(action, s);
@@ -189,14 +186,14 @@ public class HttpUtils {
                     public void onSuccess(String s, Call call, Response response) {
                         L.e("result:" + s);
                         try {
-                           /* JSONObject jsonObject = new JSONObject(s);
+                           *//* JSONObject jsonObject = new JSONObject(s);
                             int state = jsonObject.getInt("state");
                             String res = jsonObject.getString("res");
                             //失败
                             if (state != 200) {
                                 uploadCallBack.showErrorMessage(res);
                                 return;
-                            }*/
+                            }*//*
 
                             //成功
                             uploadCallBack.onSuccess(action, s);
@@ -245,7 +242,7 @@ public class HttpUtils {
 
                 });
     }
-
+*/
     public interface UploadCallBack {
         void onSuccess(int action, String res);
 

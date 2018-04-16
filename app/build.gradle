@@ -70,9 +70,8 @@ dependencies {
     testCompile 'junit:junit:4.12'
 
     //okgo
-    compile files('libs/okgo-2.1.4.jar')
+    /*  compile files('libs/okgo-2.1.4.jar')
     compile files('libs/okhttp-3.4.1.jar')
-    compile files('libs/okio-1.9.0.jar')
+    compile files('libs/okio-1.9.0.jar')*/
     //用于防止apk达到一定大小后出现问题
-    compile 'com.android.support:multidex:1.0.1'
 }

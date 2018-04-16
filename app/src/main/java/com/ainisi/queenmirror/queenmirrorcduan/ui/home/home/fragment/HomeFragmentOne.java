@@ -275,6 +275,7 @@ public class HomeFragmentOne extends BaseFragment {
                     isClick = false;
                     listadapter = new ListViewAdapter(getContext());
                     listView.setAdapter(listadapter);
+
                     gridView.setVisibility(View.GONE);
                     listView.setVisibility(View.VISIBLE);
                     imgSurface.setImageResource(R.drawable.icon_home_list);
@@ -381,7 +382,9 @@ public class HomeFragmentOne extends BaseFragment {
 //                hideFragment(screenFragment, transaction);*/
                 break;
             case R.id.li_home_screen:
+                break;
             case R.id.rb_screen:
+                break;
             case R.id.li_home_screen_bottom:
 
 //                if (screenFragment == null) {
@@ -395,7 +398,7 @@ public class HomeFragmentOne extends BaseFragment {
 //                hideFragment(distanceFragment, transaction);
                 // coorHm.setVisibility(View.INVISIBLE);
 
-                sc_home_scroll.smoothScrollTo(0, 1621);
+
                 View popview = View.inflate(getActivity(), R.layout.pop_right, null);
 
                 initview(popview);

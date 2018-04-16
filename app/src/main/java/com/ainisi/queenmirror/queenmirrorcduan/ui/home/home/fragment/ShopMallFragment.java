@@ -1,5 +1,6 @@
 package com.ainisi.queenmirror.queenmirrorcduan.ui.home.home.fragment;
 
+import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
@@ -28,6 +29,7 @@ import com.ainisi.queenmirror.queenmirrorcduan.adapter.ProblemAdapter;
 import com.ainisi.queenmirror.queenmirrorcduan.bean.ShopBean;
 import com.ainisi.queenmirror.queenmirrorcduan.ui.home.GlideImageLoader;
 import com.ainisi.queenmirror.queenmirrorcduan.bean.ProblemBean;
+import com.ainisi.queenmirror.queenmirrorcduan.ui.home.activity.ShopClassificationActivity;
 import com.ainisi.queenmirror.queenmirrorcduan.ui.home.home.fragment.sonfragment.DistanceFragment;
 import com.ainisi.queenmirror.queenmirrorcduan.ui.home.home.fragment.sonfragment.SalesFragment;
 import com.ainisi.queenmirror.queenmirrorcduan.ui.home.home.fragment.sonfragment.ScreenFragment;
@@ -166,7 +168,7 @@ public class ShopMallFragment extends BaseFragment {
             public void onItemClickListner(View v, int position) {
                 switch (position){
                     case 0:
-                        ToastUtils.showLong("你点击了我");
+                        startActivity(new Intent(getActivity(), ShopClassificationActivity.class));
                         break;
                 }
             }

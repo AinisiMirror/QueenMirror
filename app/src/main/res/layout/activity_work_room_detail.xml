@@ -84,12 +84,12 @@
                         android:layout_height="wrap_content"
                         android:orientation="horizontal" >
                         <!--这里是悬停布局-->
-                        <include layout="@layout/top_common"/>
+                        <include layout="@layout/common_top"/>
 
                     </LinearLayout>
                 </LinearLayout>
                 <!--这里是底部的布局-->
-                <include layout="@layout/activity_home_shop"/>
+                <include layout="@layout/common_bottom"/>
 
             </LinearLayout>
 

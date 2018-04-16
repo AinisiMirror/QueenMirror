@@ -1,18 +1,31 @@
 package com.ainisi.queenmirror.queenmirrorcduan.ui.shop;
 
+import android.support.design.widget.TabLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ListView;
+import android.widget.TableLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.ainisi.queenmirror.common.commonutils.ToastUtils;
 import com.ainisi.queenmirror.queenmirrorcduan.R;
+import com.ainisi.queenmirror.queenmirrorcduan.adapter.WorkCreditAdapter;
+import com.ainisi.queenmirror.queenmirrorcduan.adapter.WorkRoomAdapter;
 import com.ainisi.queenmirror.queenmirrorcduan.adapter.MyAdapter;
+import com.ainisi.queenmirror.queenmirrorcduan.adapter.WorkShopAdapter;
+import com.ainisi.queenmirror.queenmirrorcduan.adapter.WorkSingleAdapter;
 import com.ainisi.queenmirror.queenmirrorcduan.api.HttpCallBack;
 import com.ainisi.queenmirror.queenmirrorcduan.base.BaseNewActivity;
 import com.ainisi.queenmirror.queenmirrorcduan.bean.SortBean;
 import com.ainisi.queenmirror.queenmirrorcduan.utilnomal.HoveringScrollview;
+import com.ainisi.queenmirror.queenmirrorcduan.utils.BaseRecyclerAdapter;
+import com.ainisi.queenmirror.queenmirrorcduan.utils.NoScrollGridView;
+import com.ainisi.queenmirror.queenmirrorcduan.utils.NoScrollListview;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,13 +36,13 @@ import butterknife.OnClick;
 /**
  * 商户信息
  */
-public class WorkRoomDetailActivity extends BaseNewActivity implements HttpCallBack,HoveringScrollview.OnScrollListener  {
+public class WorkRoomDetailActivity extends BaseNewActivity implements HttpCallBack, HoveringScrollview.OnScrollListener {
 
-    @Bind(R.id.iv_common_back)
-    ImageView iv_common_back;
+
+    @Bind(R.id.tab_workroom)
+    TabLayout tabWorkRoom;
     @Bind(R.id.tv_common_title)
     TextView tv_common_title;
-
     @Bind(R.id.li_workroom_xuan)
     LinearLayout li_workroom_xuan;
     @Bind(R.id.search01)
@@ -42,10 +55,21 @@ public class WorkRoomDetailActivity extends BaseNewActivity implements HttpCallB
     LinearLayout li_workroom_top;
     @Bind(R.id.re_recommendable_projects_shop)
     RecyclerView re_recommendable_projects_shop;
-
     private int searchLayoutTop;
+    @Bind(R.id.listView)
+    NoScrollListview listView;
 
-    List<SortBean> sortlist=new ArrayList<>();
+    @Bind(R.id.tv_shop)
+    TextView tvShop;
+    @Bind(R.id.list_shop)
+    NoScrollListview listShop;
+    @Bind(R.id.tv_single)
+    TextView tvSingle;
+    @Bind(R.id.list_single)
+    NoScrollListview listSingle;
+    List<SortBean> sortlist = new ArrayList<>();
+    List<String> tabList = new ArrayList<>();
+    private WorkRoomAdapter listadapter;
 
     @Override
     protected int getLayoutId() {
@@ -55,26 +79,98 @@ public class WorkRoomDetailActivity extends BaseNewActivity implements HttpCallB
     @Override
     protected void initView() {
         super.initView();
+        initTab();
         tv_common_title.setText("MOCO形象工作室");
         whs_workroom_scroll.setOnScrollListener(this);
+    }
+
+    private void initTab() {
+        listView.setVisibility(View.VISIBLE);
+        listadapter = new WorkRoomAdapter(WorkRoomDetailActivity.this);
+        listView.setAdapter(listadapter);
+        tabList.add("门店服务");
+        tabList.add("门店信用");
+        tabList.add("商家信息");
+        tabList.add("优惠券");
+        tabWorkRoom.addTab(tabWorkRoom.newTab().setText(tabList.get(0)));
+        tabWorkRoom.addTab(tabWorkRoom.newTab().setText(tabList.get(1)));
+        tabWorkRoom.addTab(tabWorkRoom.newTab().setText(tabList.get(2)));
+        tabWorkRoom.addTab(tabWorkRoom.newTab().setText(tabList.get(3)));
+        tabWorkRoom.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+
+            private WorkCreditAdapter creditAdapter;
+
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                switch (tab.getPosition()) {
+                    case 0:
+                        listView.setVisibility(View.VISIBLE);
+                        tvShop.setVisibility(View.GONE);
+                        tvSingle.setVisibility(View.GONE);
+                        listShop.setVisibility(View.GONE);
+                        listSingle.setVisibility(View.GONE);
+                        listadapter = new WorkRoomAdapter(WorkRoomDetailActivity.this);
+                        listView.setAdapter(listadapter);
+                        break;
+                    case 1:
+                        listView.setVisibility(View.VISIBLE);
+                        tvShop.setVisibility(View.GONE);
+                        tvSingle.setVisibility(View.GONE);
+                        listShop.setVisibility(View.GONE);
+                        listSingle.setVisibility(View.GONE);
+                        creditAdapter = new WorkCreditAdapter(WorkRoomDetailActivity.this);
+                        listView.setAdapter(creditAdapter);
+
+                        break;
+                    case 2:
+                        tvShop.setVisibility(View.GONE);
+                        tvSingle.setVisibility(View.GONE);
+                        listShop.setVisibility(View.GONE);
+                        listSingle.setVisibility(View.GONE);
+                        View.inflate(WorkRoomDetailActivity.this, R.layout.activity_home_shop, null).isShown();
+                        break;
+                    case 3:
+                        listView.setVisibility(View.GONE);
+                        tvShop.setVisibility(View.VISIBLE);
+                        tvSingle.setVisibility(View.VISIBLE);
+                        listShop.setVisibility(View.VISIBLE);
+                        listSingle.setVisibility(View.VISIBLE);
+                        WorkShopAdapter shopAdapter=new WorkShopAdapter(WorkRoomDetailActivity.this);
+                        listShop.setAdapter(shopAdapter);
+                        WorkSingleAdapter singleAdapter=new WorkSingleAdapter(WorkRoomDetailActivity.this);
+                        listSingle.setAdapter(singleAdapter);
+                        break;
+                }
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }
+        });
     }
 
     @Override
     protected void initData() {
         super.initData();
 
-        for (int i = 0; i <10 ; i++) {
-            SortBean sortBean=new SortBean();
+        for (int i = 0; i < 10; i++) {
+            SortBean sortBean = new SortBean();
             sortlist.add(sortBean);
         }
-        MyAdapter sortAdapter=new MyAdapter(this,sortlist,R.layout.re_full_recommend);
-        re_recommendable_projects_shop.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false));
+        MyAdapter sortAdapter = new MyAdapter(this, sortlist, R.layout.re_full_recommend);
+        re_recommendable_projects_shop.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
         re_recommendable_projects_shop.setAdapter(sortAdapter);
     }
 
     @OnClick({R.id.iv_common_back})
-    public void OnClick(View view){
-        switch (view.getId()){
+    public void OnClick(View view) {
+        switch (view.getId()) {
             case R.id.iv_common_back:
                 finish();
                 break;
@@ -108,6 +204,7 @@ public class WorkRoomDetailActivity extends BaseNewActivity implements HttpCallB
 
         }
     }
+
     @Override
     public void onScroll(int scrollY) {
         if (scrollY >= searchLayoutTop) {
