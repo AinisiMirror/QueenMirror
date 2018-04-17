@@ -4,6 +4,7 @@
     android:orientation="vertical"
     android:background="@drawable/et_shap"
     android:paddingTop="@dimen/comment_5_dip"
+    android:fitsSystemWindows="true"
     android:layout_height="wrap_content"
     >
     <LinearLayout

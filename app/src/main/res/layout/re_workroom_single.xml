@@ -38,11 +38,10 @@
         android:id="@+id/img_overdue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
         android:layout_alignBottom="@+id/tv_no"
         android:layout_alignParentEnd="true"
         android:layout_marginEnd="15dp"
-        android:src="@drawable/icon_mine_use" />
+        android:src="@drawable/icon_shop_receive" />
 
     <View
         android:layout_toRightOf="@id/tv_price"

@@ -5,6 +5,7 @@
     <com.ainisi.queenmirror.queenmirrorcduan.utils.NoScrollListview
         android:id="@+id/listView"
         android:layout_width="match_parent"
+        android:scrollbars="none"
         android:layout_height="wrap_content">
     </com.ainisi.queenmirror.queenmirrorcduan.utils.NoScrollListview>
     <TextView
@@ -20,6 +21,7 @@
     <com.ainisi.queenmirror.queenmirrorcduan.utils.NoScrollListview
         android:id="@+id/list_shop"
         android:layout_below="@id/tv_shop"
+        android:scrollbars="none"
         android:visibility="gone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
@@ -37,6 +39,7 @@
     <com.ainisi.queenmirror.queenmirrorcduan.utils.NoScrollListview
         android:layout_marginTop="@dimen/comment_10_dip"
         android:id="@+id/list_single"
+        android:scrollbars="none"
         android:visibility="gone"
         android:layout_below="@id/tv_single"
         android:layout_width="match_parent"

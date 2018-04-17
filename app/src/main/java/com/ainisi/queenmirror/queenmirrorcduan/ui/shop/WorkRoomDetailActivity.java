@@ -58,7 +58,6 @@ public class WorkRoomDetailActivity extends BaseNewActivity implements HttpCallB
     private int searchLayoutTop;
     @Bind(R.id.listView)
     NoScrollListview listView;
-
     @Bind(R.id.tv_shop)
     TextView tvShop;
     @Bind(R.id.list_shop)
@@ -120,14 +119,15 @@ public class WorkRoomDetailActivity extends BaseNewActivity implements HttpCallB
                         listSingle.setVisibility(View.GONE);
                         creditAdapter = new WorkCreditAdapter(WorkRoomDetailActivity.this);
                         listView.setAdapter(creditAdapter);
-
                         break;
                     case 2:
+                        listView.setVisibility(View.VISIBLE);
                         tvShop.setVisibility(View.GONE);
                         tvSingle.setVisibility(View.GONE);
                         listShop.setVisibility(View.GONE);
                         listSingle.setVisibility(View.GONE);
-                        View.inflate(WorkRoomDetailActivity.this, R.layout.activity_home_shop, null).isShown();
+                        creditAdapter = new WorkCreditAdapter(WorkRoomDetailActivity.this);
+                        listView.setAdapter(creditAdapter);
                         break;
                     case 3:
                         listView.setVisibility(View.GONE);
@@ -135,9 +135,9 @@ public class WorkRoomDetailActivity extends BaseNewActivity implements HttpCallB
                         tvSingle.setVisibility(View.VISIBLE);
                         listShop.setVisibility(View.VISIBLE);
                         listSingle.setVisibility(View.VISIBLE);
-                        WorkShopAdapter shopAdapter=new WorkShopAdapter(WorkRoomDetailActivity.this);
+                        WorkShopAdapter shopAdapter = new WorkShopAdapter(WorkRoomDetailActivity.this);
                         listShop.setAdapter(shopAdapter);
-                        WorkSingleAdapter singleAdapter=new WorkSingleAdapter(WorkRoomDetailActivity.this);
+                        WorkSingleAdapter singleAdapter = new WorkSingleAdapter(WorkRoomDetailActivity.this);
                         listSingle.setAdapter(singleAdapter);
                         break;
                 }

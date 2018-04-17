@@ -20,14 +20,13 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.ainisi.queenmirror.common.base.BaseFragment;
-import com.ainisi.queenmirror.common.commonutils.ToastUtils;
 import com.ainisi.queenmirror.queenmirrorcduan.R;
 import com.ainisi.queenmirror.queenmirrorcduan.adapter.GridViewAdapter;
 import com.ainisi.queenmirror.queenmirrorcduan.adapter.ListViewAdapter;
 import com.ainisi.queenmirror.queenmirrorcduan.adapter.MyShopAdapter;
 import com.ainisi.queenmirror.queenmirrorcduan.adapter.ProblemAdapter;
 import com.ainisi.queenmirror.queenmirrorcduan.bean.ShopBean;
-import com.ainisi.queenmirror.queenmirrorcduan.ui.home.GlideImageLoader;
+import com.ainisi.queenmirror.queenmirrorcduan.ui.home.activity.GlideImageLoader;
 import com.ainisi.queenmirror.queenmirrorcduan.bean.ProblemBean;
 import com.ainisi.queenmirror.queenmirrorcduan.ui.home.activity.ShopClassificationActivity;
 import com.ainisi.queenmirror.queenmirrorcduan.ui.home.home.fragment.sonfragment.DistanceFragment;

@@ -2,7 +2,7 @@ package com.ainisi.queenmirror.queenmirrorcduan.ui.home.fragment;
 
 import com.ainisi.queenmirror.common.base.BaseFragment;
 import com.ainisi.queenmirror.queenmirrorcduan.R;
-import com.ainisi.queenmirror.queenmirrorcduan.ui.home.GlideImageLoader;
+import com.ainisi.queenmirror.queenmirrorcduan.ui.home.activity.GlideImageLoader;
 import com.youth.banner.Banner;
 
 import java.util.ArrayList;

@@ -6,7 +6,7 @@
     android:background="@color/alpha_05_black"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="com.ainisi.queenmirror.queenmirrorcduan.ui.home.activity.MineEvaluateActivity">
+    tools:context="com.ainisi.queenmirror.queenmirrorcduan.ui.home.mineactivity.MineEvaluateActivity">
     <RelativeLayout
         android:id="@+id/root_title"
         xmlns:android="http://schemas.android.com/apk/res/android"

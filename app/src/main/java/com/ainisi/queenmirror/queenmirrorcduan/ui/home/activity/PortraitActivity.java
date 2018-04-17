@@ -10,6 +10,9 @@ import android.widget.TextView;
 import com.ainisi.queenmirror.common.base.BaseActivity;
 import com.ainisi.queenmirror.common.commonutils.ToastUtils;
 import com.ainisi.queenmirror.queenmirrorcduan.R;
+import com.ainisi.queenmirror.queenmirrorcduan.ui.home.mineactivity.UserNameActivity;
+import com.ainisi.queenmirror.queenmirrorcduan.ui.home.mineactivity.UserpassActivity;
+import com.ainisi.queenmirror.queenmirrorcduan.ui.home.mineactivity.UserphoneActivity;
 import com.ainisi.queenmirror.queenmirrorcduan.utils.CustomPopWindow;
 
 import butterknife.Bind;

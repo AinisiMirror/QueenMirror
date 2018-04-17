@@ -4,28 +4,24 @@ import android.content.Intent;
 import android.view.View;
 
 import com.ainisi.queenmirror.common.base.BaseFragment;
-import com.ainisi.queenmirror.common.commonutils.ToastUtils;
 import com.ainisi.queenmirror.queenmirrorcduan.R;
 import com.ainisi.queenmirror.queenmirrorcduan.ui.home.activity.MessageActivity;
-import com.ainisi.queenmirror.queenmirrorcduan.ui.home.activity.MineBeanActivity;
-import com.ainisi.queenmirror.queenmirrorcduan.ui.home.activity.MineBeautyActivity;
-import com.ainisi.queenmirror.queenmirrorcduan.ui.home.activity.MineCollectionActivity;
-import com.ainisi.queenmirror.queenmirrorcduan.ui.home.activity.MineDiscountActivity;
-import com.ainisi.queenmirror.queenmirrorcduan.ui.home.activity.MineEvaluateActivity;
-import com.ainisi.queenmirror.queenmirrorcduan.ui.home.activity.MineFollowActivity;
-import com.ainisi.queenmirror.queenmirrorcduan.ui.home.activity.MineGiftActivity;
-import com.ainisi.queenmirror.queenmirrorcduan.ui.home.activity.MineMyServiceActivity;
-import com.ainisi.queenmirror.queenmirrorcduan.ui.home.activity.MineMyWalletActivity;
-import com.ainisi.queenmirror.queenmirrorcduan.ui.home.activity.MineProblemActivity;
-import com.ainisi.queenmirror.queenmirrorcduan.ui.home.activity.MineQueenActivity;
-import com.ainisi.queenmirror.queenmirrorcduan.ui.home.activity.MineFriendsActivity;
-import com.ainisi.queenmirror.queenmirrorcduan.ui.home.activity.MineInvincibleActivity;
-import com.ainisi.queenmirror.queenmirrorcduan.ui.home.activity.MineMyFootActivity;
-import com.ainisi.queenmirror.queenmirrorcduan.ui.home.activity.MinePositionActivity;
+import com.ainisi.queenmirror.queenmirrorcduan.ui.home.mineactivity.MineBeanActivity;
+import com.ainisi.queenmirror.queenmirrorcduan.ui.home.mineactivity.MineBeautyActivity;
+import com.ainisi.queenmirror.queenmirrorcduan.ui.home.mineactivity.MineCollectionActivity;
+import com.ainisi.queenmirror.queenmirrorcduan.ui.home.mineactivity.MineDiscountActivity;
+import com.ainisi.queenmirror.queenmirrorcduan.ui.home.mineactivity.MineEvaluateActivity;
+import com.ainisi.queenmirror.queenmirrorcduan.ui.home.mineactivity.MineFollowActivity;
+import com.ainisi.queenmirror.queenmirrorcduan.ui.home.mineactivity.MineGiftActivity;
+import com.ainisi.queenmirror.queenmirrorcduan.ui.home.mineactivity.MineMyServiceActivity;
+import com.ainisi.queenmirror.queenmirrorcduan.ui.home.mineactivity.MineMyWalletActivity;
+import com.ainisi.queenmirror.queenmirrorcduan.ui.home.mineactivity.MineProblemActivity;
+import com.ainisi.queenmirror.queenmirrorcduan.ui.home.mineactivity.MineQueenActivity;
+import com.ainisi.queenmirror.queenmirrorcduan.ui.home.mineactivity.MineFriendsActivity;
+import com.ainisi.queenmirror.queenmirrorcduan.ui.home.mineactivity.MineMyFootActivity;
+import com.ainisi.queenmirror.queenmirrorcduan.ui.home.mineactivity.MinePositionActivity;
 import com.ainisi.queenmirror.queenmirrorcduan.ui.home.activity.PortraitActivity;
-import com.ainisi.queenmirror.queenmirrorcduan.ui.home.installactivity.InstallActivity;
-import com.ainisi.queenmirror.queenmirrorcduan.ui.home.installactivity.MinePaymentsettingActivity;
-import com.ainisi.queenmirror.queenmirrorcduan.ui.home.installactivity.MineSettingActivity;
+import com.ainisi.queenmirror.queenmirrorcduan.ui.home.mineactivity.InstallActivity;
 
 import butterknife.OnClick;
 
@@ -53,7 +49,6 @@ public class MineFragment extends BaseFragment {
             R.id.layout_collection, R.id.layout_follow, R.id.layout_foot, R.id.layout_evaluate, R.id.img_position, R.id.img_friends
             , R.id.ly_mine_discount, R.id.ly_mine_invincible, R.id.ly_mine_foot, R.id.ly_mine_bean, R.id.layout_gift, R.id.layout_beauty
             , R.id.layout_problem, R.id.lay_service,R.id.ly_mine_wallet
-
     })
 
     public void click(View view) {

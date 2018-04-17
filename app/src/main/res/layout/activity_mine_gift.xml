@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:scrollbars="vertical"
 
-    tools:context="com.ainisi.queenmirror.queenmirrorcduan.ui.home.activity.MineGiftActivity">
+    tools:context="com.ainisi.queenmirror.queenmirrorcduan.ui.home.mineactivity.MineGiftActivity">
     <RelativeLayout
 
         android:layout_width="match_parent"

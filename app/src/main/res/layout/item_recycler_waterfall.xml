@@ -6,6 +6,7 @@
     android:paddingTop="@dimen/comment_2_dip"
     android:paddingLeft="@dimen/comment_2_dip"
     android:paddingRight="@dimen/comment_2_dip"
+    android:fitsSystemWindows="true"
     android:background="@drawable/et_shap"
     android:gravity="center">
 

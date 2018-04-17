@@ -74,4 +74,6 @@ dependencies {
     compile files('libs/okhttp-3.4.1.jar')
     compile files('libs/okio-1.9.0.jar')*/
     //用于防止apk达到一定大小后出现问题
+    //节操播放器依赖包
+    compile 'cn.jzvd:jiaozivideoplayer:6.0.0'
 }

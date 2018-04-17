@@ -73,6 +73,8 @@
     <dimen name="comment_900_dip">900dp</dimen>
     <dimen name="comment_500_dip">500dp</dimen>
     <dimen name="comment_350_dip">350dp</dimen>
+    <dimen name="comment_170_dip">170dp</dimen>
+    <dimen name="comment_175_dip">175dp</dimen>
 
 
 </resources>

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.ainisi.queenmirror.queenmirrorcduan.ui.home.activity.UserpassActivity">
+    tools:context="com.ainisi.queenmirror.queenmirrorcduan.ui.home.mineactivity.UserpassActivity">
     <include
         android:id="@+id/pass"
         layout="@layout/layout_title"/>

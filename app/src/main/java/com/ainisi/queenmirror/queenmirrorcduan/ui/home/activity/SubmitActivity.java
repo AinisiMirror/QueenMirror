@@ -8,7 +8,10 @@ import com.ainisi.queenmirror.queenmirrorcduan.R;
 
 import butterknife.Bind;
 import butterknife.OnClick;
-//支付订单
+
+/**
+ * 我的订单
+ */
 public class SubmitActivity extends BaseActivity {
     @Bind(R.id.img_wechat_unpayment)
     ImageView wcunpayment;

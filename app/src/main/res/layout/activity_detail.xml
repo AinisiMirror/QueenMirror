@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:fitsSystemWindows="true"
     android:layout_height="match_parent"
-    tools:context="com.ainisi.queenmirror.queenmirrorcduan.ui.home.DetailActivity">
+    tools:context="com.ainisi.queenmirror.queenmirrorcduan.ui.home.activity.DetailActivity">
     <TextView
         android:id="@+id/detail_tv"
         android:layout_width="wrap_content"

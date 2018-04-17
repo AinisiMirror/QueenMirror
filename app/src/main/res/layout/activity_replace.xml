@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="com.ainisi.queenmirror.queenmirrorcduan.ui.home.installactivity.ReplaceActivity">
+    tools:context="com.ainisi.queenmirror.queenmirrorcduan.ui.home.mineactivity.ReplaceActivity">
     <include
         android:id="@+id/title"
         layout="@layout/layout_title" />

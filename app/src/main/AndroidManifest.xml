@@ -94,118 +94,118 @@
             android:name=".ui.home.activity.MessageActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.home.activity.MineDiscountActivity"
+            android:name=".ui.home.mineactivity.MineDiscountActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.home.activity.MineInvincibleActivity"
+            android:name=".ui.home.mineactivity.MineInvincibleActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.home.activity.MineQueenActivity"
+            android:name=".ui.home.mineactivity.MineQueenActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.home.activity.MineBeanActivity"
+            android:name=".ui.home.mineactivity.MineBeanActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".ui.home.activity.PortraitActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.home.activity.UserNameActivity"
+            android:name=".ui.home.mineactivity.UserNameActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.home.activity.UserpassActivity"
+            android:name=".ui.home.mineactivity.UserpassActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.home.activity.UserphoneActivity"
+            android:name=".ui.home.mineactivity.UserphoneActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.home.installactivity.InstallActivity"
+            android:name=".ui.home.mineactivity.InstallActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.home.installactivity.ReplaceActivity"
+            android:name=".ui.home.mineactivity.ReplaceActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.home.installactivity.MyWeActivity"
+            android:name=".ui.home.mineactivity.MyWeActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.home.installactivity.MeDynamicActivity"
+            android:name=".ui.home.mineactivity.MeDynamicActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.home.installactivity.HerDynamicActivity"
+            android:name=".ui.home.mineactivity.HerDynamicActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.home.installactivity.OrderMessageActivity"
+            android:name=".ui.home.activity.OrderMessageActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.home.activity.MineCollectionActivity"
+            android:name=".ui.home.mineactivity.MineCollectionActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.home.activity.MineFollowActivity"
+            android:name=".ui.home.mineactivity.MineFollowActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.home.activity.MineMyFootActivity"
+            android:name=".ui.home.mineactivity.MineMyFootActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.home.activity.MineEvaluateActivity"
+            android:name=".ui.home.mineactivity.MineEvaluateActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.home.activity.MinePositionActivity"
+            android:name=".ui.home.mineactivity.MinePositionActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.home.activity.MineFriendsActivity"
+            android:name=".ui.home.mineactivity.MineFriendsActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.home.activity.MineGiftActivity"
+            android:name=".ui.home.mineactivity.MineGiftActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.home.installactivity.RechargeActivity"
+            android:name=".ui.home.mineactivity.RechargeActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.home.installactivity.SeeActivity"
+            android:name=".ui.home.mineactivity.SeeActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.home.installactivity.MineRealnameActivity"
+            android:name=".ui.home.mineactivity.MineRealnameActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.home.installactivity.MinePaymentsettingActivity"
+            android:name=".ui.home.mineactivity.MinePaymentsettingActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.home.activity.MineMyWalletActivity"
+            android:name=".ui.home.mineactivity.MineMyWalletActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.home.installactivity.MineSettingActivity"
+            android:name=".ui.home.mineactivity.MineSettingActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.home.activity.MineBeautyActivity"
+            android:name=".ui.home.mineactivity.MineBeautyActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.home.activity.MineProblemActivity"
+            android:name=".ui.home.mineactivity.MineProblemActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.home.installactivity.MineFeedbackActivity"
+            android:name=".ui.home.mineactivity.MineFeedbackActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.home.installactivity.MineAskproblemActivity"
+            android:name=".ui.home.mineactivity.MineAskproblemActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.home.activity.MineMyServiceActivity"
+            android:name=".ui.home.mineactivity.MineMyServiceActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.home.activity.MineAddcartActivity"
+            android:name=".ui.home.mineactivity.MineAddcartActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".ui.home.activity.MineBalanceActivity" />
+        <activity android:name=".ui.home.mineactivity.MineBalanceActivity" />
         <activity
-            android:name=".ui.home.installactivity.MineRechargeActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".ui.home.installactivity.MineWithdrawalsActivity"
+            android:name=".ui.home.mineactivity.MineRechargeActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.home.installactivity.MineCommonProblemActivity"
+            android:name=".ui.home.mineactivity.MineWithdrawalsActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.home.installactivity.MineDetailedActivity"
+            android:name=".ui.home.mineactivity.MineCommonProblemActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".ui.home.DetailActivity" />
+        <activity
+            android:name=".ui.home.mineactivity.MineDetailedActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".ui.home.activity.DetailActivity" />
         <activity android:name=".ui.home.activity.BeanstalkActivity" />
         <activity android:name=".ui.shop.WorkRoomDetailActivity"></activity>
         <activity android:name=".ui.home.activity.ShopClassificationActivity"></activity>
