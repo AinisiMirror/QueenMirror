@@ -37,6 +37,7 @@ import com.ainisi.queenmirror.queenmirrorcduan.ui.home.home.fragment.sonfragment
 import com.ainisi.queenmirror.queenmirrorcduan.ui.home.home.fragment.sonfragment.SalesFragment;
 import com.ainisi.queenmirror.queenmirrorcduan.ui.home.home.fragment.sonfragment.ScreenFragment;
 import com.ainisi.queenmirror.queenmirrorcduan.ui.home.home.fragment.sonfragment.SortFragment;
+import com.ainisi.queenmirror.queenmirrorcduan.ui.shop.ShoppingCartActivity;
 import com.ainisi.queenmirror.queenmirrorcduan.utils.BaseRecyclerAdapter;
 import com.ainisi.queenmirror.queenmirrorcduan.utils.CustomPopWindow;
 import com.ainisi.queenmirror.queenmirrorcduan.utils.MarqueeView;
@@ -330,11 +331,11 @@ public class HomeFragmentOne extends BaseFragment {
                 break;
             //美学汇
             case R.id.home_esthetics:
-                startActivity(new Intent(getActivity(), EstheticsActivity.class));
+                startActivity(new Intent(getActivity(), ShoppingCartActivity.class));
                 break;
             //我的位置
             case R.id.txt_bustling:
-                Intent intent = new Intent(getActivity(), SelectCityActivity.class);
+                Intent intent = new Intent(getActivity(), ShoppingCartActivity.class);
 
                 startActivity(intent);
                 break;

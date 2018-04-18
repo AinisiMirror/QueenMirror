@@ -76,4 +76,8 @@ dependencies {
     //用于防止apk达到一定大小后出现问题
     //节操播放器依赖包
     compile 'cn.jzvd:jiaozivideoplayer:6.0.0'
+    compile files('libs/okio-1.9.0.jar')
+
+    //强大的下拉刷新控件
+    compile 'in.srain.cube:ultra-ptr:1.0.11'
 }

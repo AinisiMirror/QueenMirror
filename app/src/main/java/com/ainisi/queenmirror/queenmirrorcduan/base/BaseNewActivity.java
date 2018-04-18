@@ -3,13 +3,14 @@ package com.ainisi.queenmirror.queenmirrorcduan.base;
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AppCompatActivity;
 
 import com.ainisi.queenmirror.common.commonwidget.StatusBarCompat;
 import com.ainisi.queenmirror.queenmirrorcduan.utils.StatusBarUtil;
 
 import butterknife.ButterKnife;
 
-public abstract class BaseNewActivity extends Activity {
+public abstract class BaseNewActivity extends AppCompatActivity {
     /**
      * ATTENTION: This was auto-generated to implement the App Indexing API.
      * See https://g.co/AppIndexing/AndroidStudio for more information.

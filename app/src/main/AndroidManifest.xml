@@ -207,8 +207,9 @@
             android:screenOrientation="portrait" />
         <activity android:name=".ui.home.activity.DetailActivity" />
         <activity android:name=".ui.home.activity.BeanstalkActivity" />
-        <activity android:name=".ui.shop.WorkRoomDetailActivity"></activity>
-        <activity android:name=".ui.home.activity.ShopClassificationActivity"></activity>
+        <activity android:name=".ui.shop.WorkRoomDetailActivity" />
+        <activity android:name=".ui.home.activity.ShopClassificationActivity" />
+        <activity android:name=".ui.shop.ShoppingCartActivity"></activity>
     </application>
 
 </manifest>

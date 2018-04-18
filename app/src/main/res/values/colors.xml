@@ -95,5 +95,9 @@
     <color name="search_text_biankuang">#DFDFDF</color>
 
     <color name="shop_detail_text">#000000</color>
+    <color name="grey_color2">#666666</color>
+    <color name="grey_color1">#333333</color>
+    <color name="grey_color3">#999999</color>
+    <color name="light_white">#fcfcfc</color>
 
 </resources>

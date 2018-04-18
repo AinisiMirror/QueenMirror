@@ -11,6 +11,7 @@ import android.widget.TextView;
 import com.ainisi.queenmirror.common.base.BaseActivity;
 import com.ainisi.queenmirror.queenmirrorcduan.R;
 import com.ainisi.queenmirror.queenmirrorcduan.adapter.MyAdapter;
+import com.ainisi.queenmirror.queenmirrorcduan.api.HttpCallBack;
 import com.ainisi.queenmirror.queenmirrorcduan.bean.SortBean;
 import com.ainisi.queenmirror.queenmirrorcduan.ui.home.activity.BeanstalkActivity;
 
@@ -19,8 +20,13 @@ import java.util.List;
 
 import butterknife.Bind;
 import butterknife.OnClick;
-//我的魔豆
-public class MineBeanActivity extends BaseActivity {
+
+/**
+ *
+ * 我的魔豆
+ *
+ */
+public class MineBeanActivity extends BaseActivity implements HttpCallBack{
     @Bind(R.id.title_title)
     TextView beantitle;
     @Bind(R.id.rc_bean)
@@ -80,6 +86,21 @@ public class MineBeanActivity extends BaseActivity {
 
         }
 
+
+    }
+
+    @Override
+    public void onSuccess(int action, String res) {
+
+    }
+
+    @Override
+    public void showLoadingDialog() {
+
+    }
+
+    @Override
+    public void showErrorMessage(String s) {
 
     }
 }
