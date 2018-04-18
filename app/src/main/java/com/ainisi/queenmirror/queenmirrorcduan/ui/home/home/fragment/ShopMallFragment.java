@@ -28,6 +28,7 @@ import com.ainisi.queenmirror.queenmirrorcduan.adapter.ProblemAdapter;
 import com.ainisi.queenmirror.queenmirrorcduan.bean.ShopBean;
 import com.ainisi.queenmirror.queenmirrorcduan.ui.home.activity.GlideImageLoader;
 import com.ainisi.queenmirror.queenmirrorcduan.bean.ProblemBean;
+import com.ainisi.queenmirror.queenmirrorcduan.ui.home.activity.SearchActivity;
 import com.ainisi.queenmirror.queenmirrorcduan.ui.home.activity.ShopClassificationActivity;
 import com.ainisi.queenmirror.queenmirrorcduan.ui.home.home.fragment.sonfragment.DistanceFragment;
 import com.ainisi.queenmirror.queenmirrorcduan.ui.home.home.fragment.sonfragment.SalesFragment;
@@ -242,11 +243,14 @@ public class ShopMallFragment extends BaseFragment {
     @OnClick({R.id.rb_sort, R.id.rb_sales, R.id.rb_distance, R.id.rb_screen
             , R.id.iv_sort, R.id.iv_sort1
             , R.id.bt_screen, R.id.li_sort_bottom, R.id.li_home_screen, R.id.li_home_screen_bottom
-            ,R.id.line_surface,R.id.line_uspension_surface
+            ,R.id.line_surface,R.id.line_uspension_surface,R.id.ed_keyword
     })
     public void click(View view) {
         //  FragmentTransaction transaction = fm.beginTransaction();
         switch (view.getId()) {
+            case R.id.ed_keyword:
+                SearchActivity.startActivity(getContext());
+                break;
             //点击流式布局，和瀑布流布局切换
             case R.id.line_surface:
                 if (isClick) {

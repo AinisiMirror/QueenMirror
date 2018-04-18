@@ -1,32 +1,27 @@
 package com.ainisi.queenmirror.queenmirrorcduan.ui.home.activity;
 
-import android.annotation.SuppressLint;
-import android.content.res.Resources;
-import android.graphics.Color;
-import android.support.design.widget.AppBarLayout;
+import android.content.Intent;
+import android.graphics.drawable.ColorDrawable;
 import android.support.design.widget.CollapsingToolbarLayout;
-import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.View;
-
 import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
+import android.widget.PopupWindow;
 import android.widget.TextView;
-
 import com.ainisi.queenmirror.common.base.BaseActivity;
 import com.ainisi.queenmirror.queenmirrorcduan.R;
+import com.ainisi.queenmirror.queenmirrorcduan.adapter.MyAdapter;
 import com.ainisi.queenmirror.queenmirrorcduan.adapter.ProblemAdapter;
 import com.ainisi.queenmirror.queenmirrorcduan.bean.ProblemBean;
-import com.ainisi.queenmirror.queenmirrorcduan.ui.home.fragment.FullFragment;
-import com.ainisi.queenmirror.queenmirrorcduan.ui.home.home.orderfragment.AssessedFragment;
-import com.ainisi.queenmirror.queenmirrorcduan.ui.home.home.orderfragment.RefundFragment;
-import com.ainisi.queenmirror.queenmirrorcduan.ui.home.home.orderfragment.WholeFragment;
+import com.ainisi.queenmirror.queenmirrorcduan.bean.SortBean;
+import com.ainisi.queenmirror.queenmirrorcduan.ui.home.fragment.FulldistanFragment;
+import com.ainisi.queenmirror.queenmirrorcduan.ui.home.fragment.FullsalesFragment;
+import com.ainisi.queenmirror.queenmirrorcduan.ui.home.fragment.FullscreenFragment;
+import com.ainisi.queenmirror.queenmirrorcduan.ui.home.fragment.FullshortFragment;
+import com.ainisi.queenmirror.queenmirrorcduan.utils.BaseRecyclerAdapter;
 import com.ainisi.queenmirror.queenmirrorcduan.utils.CustomPopWindow;
 import com.ainisi.queenmirror.queenmirrorcduan.utils.NoScrollViewPager;
 import com.ainisi.queenmirror.queenmirrorcduan.utils.ViewPager;
@@ -42,25 +37,38 @@ import butterknife.OnClick;
  * 美学汇（美甲美手）
  */
 public class EstheticsActivity extends BaseActivity {
+    @Bind(R.id.full_rb_sort)
+    TextView hSort;
+    @Bind(R.id.re_recommendable_projects)
+    RecyclerView reProjects;
+    @Bind(R.id.full_rb_sales)
+    TextView hSales;
+    @Bind(R.id.full_rb_distance)
+    TextView hDistance;
+    @Bind(R.id.full_rb_screen)
+    TextView hscreen;
+    @Bind(R.id.iv_sort)
+    ImageView ivsort;
+    @Bind(R.id.iv_sort1)
+    ImageView ivsort1;
+    @Bind(R.id.pager_home_full)
+    NoScrollViewPager fullpager;
 
-    @Bind(R.id.exthetis_tab)
-    TabLayout etablayout;
-    @Bind(R.id.esthetics_mypager)
-    NoScrollViewPager emypager;
-    @Bind(R.id.bar_esthetice)
-    AppBarLayout esthetics;
-    @Bind(R.id.title_title)
-    TextView title;
-    @Bind(R.id.title_photo)
-    ImageView titlePhoto;
-
-    String[] problem = {"销量最高", "价格最低", "距离最近", "优惠最多", "满减优惠", "新用最好", "用户最好"};
+    //综合排序
+    FullshortFragment sortFragment = new FullshortFragment();
+    //销量最高
+    FullsalesFragment salesFragment = new FullsalesFragment();
+    //距离最近
+    FulldistanFragment distanceFragment = new FulldistanFragment();
+    //筛选
+    FullscreenFragment screenFragment = new FullscreenFragment();
+    private CustomPopWindow popWindow;
+    private View popview1;
+    private PopupWindow pop;
+    private List<Fragment> pagerList = new ArrayList<>();
+    List<SortBean> sortlist=new ArrayList<>();
     private List<ProblemBean> list = new ArrayList<>();
-    private List<String> tablist;
-    private List<Fragment> pagerlist = new ArrayList<>();
-
-
-
+    String[] problem = {"销量最高", "价格最低", "距离最近", "优惠最多", "满减优惠", "新用最好", "用户最好"};
     @Override
     public int getLayoutId() {
         return R.layout.activity_esthetics;
@@ -74,131 +82,148 @@ public class EstheticsActivity extends BaseActivity {
     @Override
     public void initView() {
         initDate();
-        initText();
-        ViewPager viewPager = new ViewPager(getSupportFragmentManager(), pagerlist, tablist);
-        emypager.setAdapter(viewPager);
-        emypager.setScanScroll(false);
-        etablayout.setupWithViewPager(emypager);
+        initfragment();
+       
     }
-    public void setIndicator(TabLayout tabs, int leftDip, int rightDip) {
-        Class<?> tabLayout = tabs.getClass();
-        Field tabStrip = null;
-        try {
-            tabStrip = tabLayout.getDeclaredField("mTabStrip");
-        } catch (NoSuchFieldException e) {
-            e.printStackTrace();
-        }
-
-        tabStrip.setAccessible(true);
-        LinearLayout llTab = null;
-        try {
-            llTab = (LinearLayout) tabStrip.get(tabs);
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        }
-
-        int left = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, leftDip, Resources.getSystem().getDisplayMetrics());
-        int right = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, rightDip, Resources.getSystem().getDisplayMetrics());
-
-        for (int i = 0; i < llTab.getChildCount(); i++) {
-            View child = llTab.getChildAt(i);
-            child.setPadding(0, 0, 0, 0);
-            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.MATCH_PARENT, 1);
-            params.leftMargin = left;
-            params.rightMargin = right;
-            child.setLayoutParams(params);
-            child.invalidate();
-        }
+    private void initfragment() {
+        pagerList.add(sortFragment);
+        pagerList.add(salesFragment);
+        pagerList.add(distanceFragment);
+        pagerList.add(screenFragment);
+        ViewPager pager = new ViewPager(getSupportFragmentManager(), pagerList, null);
+        fullpager.setScanScroll(true);
+        fullpager.setAdapter(pager);
     }
+
     private void initDate() {
-        tablist = new ArrayList<>();
-        tablist.add("全部");
-        tablist.add("指甲笔绘");
-        tablist.add("指甲勾绘");
-        tablist.add("指甲喷绘");
-        tablist.add("待评价");
-        tablist.add("退款");
-        for (int i = 0; i < tablist.size(); i++) {
-            etablayout.addTab(etablayout.newTab().setText(tablist.get(i)));
-        }
 
-        /**
-         //全部订单
-         //待评价
-         //退款
-         */
-        pagerlist.add(new FullFragment());
-        pagerlist.add(new AssessedFragment());
-        pagerlist.add(new RefundFragment());
-        pagerlist.add(new WholeFragment());
-        pagerlist.add(new AssessedFragment());
-        pagerlist.add(new RefundFragment());
-        etablayout.post(new Runnable() {
+        for (int i = 0; i <10 ; i++) {
+            SortBean sortBean=new SortBean();
+            sortlist.add(sortBean);
+        }
+        MyAdapter sortAdapter=new MyAdapter(this,sortlist,R.layout.re_full_recommend);
+        reProjects.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false));
+        reProjects.setAdapter(sortAdapter);
+        sortAdapter.setOnItemClickListner(new BaseRecyclerAdapter.OnItemClickListner() {
             @Override
-            public void run() {
-                //用来给tablayout调节左右边距
-                setIndicator(etablayout, 0, 0);
+            public void onItemClickListner(View v, int position) {
+                switch (position){
+                    case 0:
+                        startActivity(new Intent(EstheticsActivity.this, FullActivity.class));
+                        break;
+                }
             }
         });
-    }
-    private void initText() {
-        title.setText("美甲美手");
-        title.setTextColor(ContextCompat.getColor(this, R.color.white));
-        titlePhoto.setVisibility(View.VISIBLE);
-        titlePhoto.setImageResource(R.drawable.icon_home_search);
-    }
+        pop = new PopupWindow(CollapsingToolbarLayout.LayoutParams.MATCH_PARENT, CollapsingToolbarLayout.LayoutParams.WRAP_CONTENT);
+        popview1 = View.inflate(this, R.layout.pop_myitem, null);
+        initpop(popview1);
+        pop.setContentView(popview1);
+        pop.setBackgroundDrawable(new ColorDrawable(0));
+        pop.setOutsideTouchable(true);
+        pop.setAnimationStyle(R.style.CustomPopWindowStyle);
+        pop.setOnDismissListener(new PopupWindow.OnDismissListener() {
+            @Override
+            public void onDismiss() {
+                ivsort.setVisibility(View.VISIBLE);
+                ivsort1.setVisibility(View.GONE);
+            }
+        });
+        pop.dismiss();
 
-    @OnClick({R.id.title_back, R.id.iv_screening})
-    public void click(View view) {
-        switch (view.getId()) {
-            case R.id.title_back:
-                finish();
-                break;
-            case R.id.iv_screening:
-                View popview = View.inflate(this, R.layout.pop_screening, null);
-                showpopid(popview);
-                CustomPopWindow popWindow = new CustomPopWindow.PopupWindowBuilder(this)
-                        .setView(popview)
-                        .setFocusable(true)
-                        .size(CollapsingToolbarLayout.LayoutParams.MATCH_PARENT, CollapsingToolbarLayout.LayoutParams.WRAP_CONTENT)
-                        .setOutsideTouchable(true)
-                        .enableBackgroundDark(true) //弹出popWindow时，背景是否变暗
-                        .setBgDarkAlpha(0.7f) // 控制亮度
-                        .setAnimationStyle(R.style.CustomPopWindowStyle)
-                        .create()
-                        .showAtLocation(esthetics, Gravity.TOP, 0, 0);
-                break;
-
-        }
 
     }
 
-    private void showpopid(View popview) {
-        TextView title = popview.findViewById(R.id.title_title);
-        ImageView imgright = popview.findViewById(R.id.titleimg_right);
-        TextView search = popview.findViewById(R.id.title_search);
-        LinearLayout layouttitle = popview.findViewById(R.id.layout_title);
-        RelativeLayout poplayout = popview.findViewById(R.id.root_title);
-        LinearLayout titlelayout = popview.findViewById(R.id.title_layout);
-        title.setVisibility(View.GONE);
-        imgright.setVisibility(View.GONE);
-        titlelayout.setVisibility(View.VISIBLE);
-        poplayout.setBackgroundColor(Color.parseColor("#EC5990"));
-        search.setBackgroundColor(Color.parseColor("#F371BB"));
-        layouttitle.setBackgroundColor(Color.parseColor("#F371BB"));
-
-        @SuppressLint("WrongViewCast") RecyclerView rcscreen = popview.findViewById(R.id.rc_screen);
-
+    private void initpop(View popview1) {
+        final RecyclerView ce = popview1.findViewById(R.id.rc_popview);
         for (int i = 0; i < problem.length; i++) {
             ProblemBean problemBean = new ProblemBean();
             problemBean.setName(problem[i]);
             list.add(problemBean);
         }
-        ProblemAdapter problemAdapter = new ProblemAdapter(this, list, R.layout.item_pop_rcscreen);
-        rcscreen.setLayoutManager(new GridLayoutManager(this, 4));
-        rcscreen.setAdapter(problemAdapter);
+        ProblemAdapter problemAdapter = new ProblemAdapter(this, list, R.layout.item_pop_sort);
+        ce.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
+        ce.setAdapter(problemAdapter);
+        problemAdapter.setOnItemClickListner(new BaseRecyclerAdapter.OnItemClickListner() {
+            @Override
+            public void onItemClickListner(View v, int position) {
+                hSort.setText(problem[position]);
+                pop.dismiss();
+            }
+        });
+    }
+
+
+    @OnClick({R.id.ed_keyword,R.id.iv_back,R.id.full_rb_sort, R.id.full_rb_sales, R.id.full_rb_distance, R.id.full_rb_screen, R.id.iv_sort, R.id.iv_sort1})
+    public void click(View view) {
+        switch (view.getId()) {
+            //搜素
+            case R.id.ed_keyword:
+                SearchActivity.startActivity(this);
+                break;
+            case R.id.iv_back:
+                finish();
+                break;
+//            //订单详情
+//            case R.id.full_guijiao:
+//                startActivity(new Intent(this, FullActivity.class));
+//                break;
+            //综合选择
+            case R.id.iv_sort:
+                ivsort.setVisibility(View.GONE);
+                ivsort1.setVisibility(View.VISIBLE);
+                pop.showAsDropDown(hSort);
+                break;
+            case R.id.iv_sort1:
+                pop.dismiss();
+                ivsort.setVisibility(View.VISIBLE);
+                ivsort1.setVisibility(View.GONE);
+                break;
+            //综合排序
+            case R.id.full_rb_sort:
+                fullpager.setCurrentItem(0);
+                break;
+            //销量最高
+            case R.id.full_rb_sales:
+                fullpager.setCurrentItem(1);
+                break;
+            //距离最近
+            case R.id.full_rb_distance:
+                fullpager.setCurrentItem(2);
+                break;
+            //筛选
+            case R.id.full_rb_screen:
+                View popview = View.inflate(this, R.layout.pop_right, null);
+
+                initview(popview);
+                popWindow = new CustomPopWindow.PopupWindowBuilder(this)
+                        .setView(popview)
+                        .setFocusable(true)
+                        .size(CollapsingToolbarLayout.LayoutParams.MATCH_PARENT, CollapsingToolbarLayout.LayoutParams.MATCH_PARENT)
+                        .setOutsideTouchable(true)
+                        .setAnimationStyle(R.style.CustomPopWindowStyle)
+                        .create()
+
+                        .showAtLocation(hscreen, Gravity.RIGHT, 0, 0);
+                break;
+            default:
+                break;
+
+        }
 
 
     }
+
+    private void initview(final View popview) {
+        TextView eliminateTv = popview.findViewById(R.id.tv_eliminate);
+        TextView okTv = popview.findViewById(R.id.tv_ok);
+        eliminateTv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                popWindow.dissmiss();
+
+            }
+        });
+    }
+
 
 }

@@ -3,9 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
-
     android:background="@drawable/et_shap"
-    android:layout_marginBottom="@dimen/comment_0.5_dip"
+    android:layout_marginBottom="@dimen/comment_10_dip"
     android:layout_height="wrap_content">
 
 
@@ -46,7 +45,7 @@
         android:layout_width="match_parent"
         android:layout_marginTop="@dimen/comment_10_dip"
         android:layout_marginBottom="@dimen/comment_10_dip"
-        android:layout_height="@dimen/comment_1_dip"/>
+        android:layout_height="@dimen/comment_2_dip"/>
     <RelativeLayout
         android:layout_below="@id/view"
         android:layout_width="match_parent"
@@ -145,7 +144,7 @@
         android:layout_below="@id/tv_wallet"
         android:layout_margin="@dimen/comment_5_dip"
         android:background="@color/alpha_05_black"
-        android:layout_height="@dimen/comment_1_dip"
+        android:layout_height="@dimen/comment_2_dip"
         android:id="@+id/view6" />
 
     <ImageView

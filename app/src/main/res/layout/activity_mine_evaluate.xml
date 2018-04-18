@@ -11,8 +11,8 @@
         android:id="@+id/root_title"
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:background="@color/light_yellow"
-        android:layout_height="wrap_content"
+        android:background="@drawable/ic_setting_breake"
+        android:layout_height="@dimen/comment_183_dip"
         >
         <ImageView
             android:id="@+id/title_back"
@@ -26,10 +26,10 @@
             android:paddingRight="@dimen/comment_10_dip"/>
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/iv_title"
-            android:layout_width="wrap_content"
+            android:layout_width="@dimen/comment_68_dip"
             android:layout_centerHorizontal="true"
             android:layout_below="@+id/title_back"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/comment_68_dip"
             android:src="@drawable/icon_portrait"
             app:civ_border_color="@color/white"
             app:civ_border_width="@dimen/comment_2_dip" />
@@ -39,13 +39,14 @@
             android:text="dugujun001"
             android:layout_marginTop="@dimen/comment_10_dip"
             android:gravity="center"
-            android:textSize="@dimen/comment_16_size"
+            android:textColor="@color/alpha_95_black"
+            android:textSize="@dimen/comment_15_size"
             android:layout_below="@+id/iv_title"
             android:layout_height="wrap_content" />
         <TextView
             android:layout_below="@+id/tv_name"
             android:gravity="center"
-            android:textSize="@dimen/comment_10_size"
+            android:textSize="@dimen/comment_12_size"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="已贡献两条评价"
