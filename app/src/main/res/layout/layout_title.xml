@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/root_title"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="@dimen/comment_375_dip"
+    android:layout_width="match_parent"
     android:background="@color/alpha_05_black"
     android:layout_height="@dimen/comment_65_dip"
     >
@@ -39,15 +39,16 @@
 
     <ImageView
         android:id="@+id/title_photo"
-        android:layout_width="@dimen/comment_30_dip"
-        android:layout_height="@dimen/comment_30_dip"
-        android:layout_alignParentBottom="true"
+        android:layout_width="@dimen/comment_13_dip"
+        android:layout_height="@dimen/comment_15_dip"
         android:layout_alignParentRight="true"
         android:layout_marginRight="@dimen/comment_10_dip"
+        android:layout_alignParentBottom="true"
         android:visibility="gone"
+        android:layout_marginEnd="@dimen/comment_15_dip"
         android:layout_marginBottom="@dimen/comment_10_dip"
-        android:padding="@dimen/comment_5_dip"
-        android:src="@mipmap/message"
+        android:layout_marginTop="@dimen/comment_25_dip"
+        android:src="@drawable/icon_full_fenxiang"
          />
 
     <TextView

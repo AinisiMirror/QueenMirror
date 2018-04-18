@@ -4,12 +4,18 @@ import android.content.Intent;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.ainisi.queenmirror.common.base.BaseActivity;
+import com.ainisi.queenmirror.common.commonutils.ToastUtils;
 import com.ainisi.queenmirror.queenmirrorcduan.R;
+import com.ainisi.queenmirror.queenmirrorcduan.adapter.ListViewAdapter;
 import com.ainisi.queenmirror.queenmirrorcduan.adapter.MyAdapter;
+import com.ainisi.queenmirror.queenmirrorcduan.adapter.PurchaseListViewAdapter;
 import com.ainisi.queenmirror.queenmirrorcduan.bean.SortBean;
+import com.ainisi.queenmirror.queenmirrorcduan.utils.BaseRecyclerAdapter;
 
 
 import java.util.ArrayList;
@@ -19,11 +25,12 @@ import butterknife.Bind;
 import butterknife.OnClick;
 //提交订单
 public class PurchaseActivity extends BaseActivity {
-    @Bind(R.id.recycle_order)
-    RecyclerView precycler;
+    @Bind(R.id.list_order)
+    ListView listOrder;
     @Bind(R.id.title_title)
     TextView purtitle;
-    private List<SortBean> list=new ArrayList<>();
+    private PurchaseListViewAdapter listadapter;
+
     @Override
     public int getLayoutId() {
         return R.layout.activity_purchase;
@@ -37,16 +44,9 @@ public class PurchaseActivity extends BaseActivity {
     @Override
     public void initView() {
         purtitle.setText("提交订单");
-        for (int i = 0; i <8 ; i++) {
-            SortBean sortBean=new SortBean();
-            sortBean.setName("");
-            sortBean.setTime("");
-            sortBean.setDistance("");
-            list.add(sortBean);
-        }
-        MyAdapter sortAdapter2=new MyAdapter(this,list,R.layout.item_purchase);
-        precycler.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false));
-        precycler.setAdapter(sortAdapter2);
+        listadapter = new PurchaseListViewAdapter(this);
+        listOrder.setAdapter(listadapter);
+
 
     }
     @OnClick({R.id.tv_submit,R.id.title_back

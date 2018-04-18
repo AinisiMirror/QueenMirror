@@ -1,10 +1,13 @@
 package com.ainisi.queenmirror.queenmirrorcduan.ui.home.activity;
 
 import android.content.Intent;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.ainisi.queenmirror.common.base.BaseActivity;
 import com.ainisi.queenmirror.queenmirrorcduan.R;
@@ -23,6 +26,10 @@ public class FullActivity extends BaseActivity {
     RecyclerView frecycler;
     @Bind(R.id.full_recyclertwo)
     RecyclerView frecyclertwo;
+    @Bind(R.id.title_title)
+    TextView fullTitle;
+    @Bind(R.id.title_photo)
+    ImageView fullPhoto;
     private List<SortBean> fulllist = new ArrayList<>();
     private List<SortBean> fulllist2 = new ArrayList<>();
 
@@ -35,6 +42,7 @@ public class FullActivity extends BaseActivity {
     }
     @Override
     public void initView() {
+        initText();
         for (int i = 0; i < 6; i++) {
             SortBean sortBean = new SortBean();
             sortBean.setName("MOCO美容美发沙龙");
@@ -59,6 +67,13 @@ public class FullActivity extends BaseActivity {
         frecyclertwo.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
         frecyclertwo.setAdapter(sortAdapter2);
     }
+
+    private void initText() {
+        fullTitle.setText("纯色美甲");
+        fullPhoto.setImageResource(R.drawable.icon_full_fenxiang);
+        fullPhoto.setVisibility(View.VISIBLE);
+    }
+
     @OnClick({R.id.tv_purchase, R.id.title_back})
     public void click(View view) {
         switch (view.getId()) {

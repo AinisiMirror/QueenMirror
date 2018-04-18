@@ -118,7 +118,6 @@ public class HomeFragmentOne extends BaseFragment {
             "恭喜杨小姐领取奔驰4s店优惠券一张",
             "恭喜李先生领取奶茶特饮优惠券一张",
             "恭喜王小姐领取50元话费优惠券一张",};
-
     private FragmentManager fm;
     private CustomPopWindow popWindow;
     private PopupWindow pop;
@@ -192,7 +191,7 @@ public class HomeFragmentOne extends BaseFragment {
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                //  marqueeView.resume();
+                 marqueeView.resume();
             }
         }, 1000);
     }

@@ -3,76 +3,122 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:fitsSystemWindows="true"
+    android:orientation="vertical"
     android:scrollbars="vertical"
     tools:context="com.ainisi.queenmirror.queenmirrorcduan.ui.home.activity.FullActivity">
 
-    <LinearLayout
+    <RelativeLayout
         android:id="@+id/recycler"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/comment_50_dip"
-        android:gravity="center"
+        android:layout_height="@dimen/comment_44_dip"
         android:layout_alignParentBottom="true"
-        android:orientation="horizontal">
+        android:gravity="center">
 
-        <LinearLayout
-            android:layout_width="@dimen/comment_0_dip"
+        <RelativeLayout
+            android:background="@color/white"
+            android:layout_width="@dimen/comment_198_dip"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/re_full_customerservice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/comment_25_dip"
+                android:layout_marginTop="@dimen/comment_10_dip"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/iv_full_customerservice"
+                    android:layout_width="@dimen/comment_21_dip"
+                    android:layout_centerHorizontal="true"
+                    android:layout_height="@dimen/comment_18_dip"
+                    android:src="@drawable/icon_full_service" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/comment_10_size"
+                    android:layout_below="@id/iv_full_customerservice"
+                    android:text="@string/customer_service" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/re_full_shop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/comment_40_dip"
+                android:layout_marginTop="@dimen/comment_10_dip"
+                android:layout_toRightOf="@id/re_full_customerservice"
+                android:gravity="center"
+                tools:ignore="NotSibling">
+
+                <ImageView
+                    android:id="@+id/iv_full_shop"
+                    android:layout_centerHorizontal="true"
+                    android:layout_width="@dimen/comment_19_dip"
+                    android:layout_height="@dimen/comment_17_dip"
+                    android:src="@drawable/icon_full_shop" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/comment_10_size"
+                    android:layout_below="@id/iv_full_shop"
+                    android:text="@string/shop" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/comment_40_dip"
+                android:layout_marginTop="@dimen/comment_10_dip"
+                android:layout_toRightOf="@id/re_full_shop"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/iv_full_collection"
+                    android:layout_centerHorizontal="true"
+                    android:layout_width="@dimen/comment_20_dip"
+                    android:layout_height="@dimen/comment_18_dip"
+                    android:src="@drawable/icon_full_collection" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/comment_10_size"
+                    android:layout_below="@id/iv_full_collection"
+                    android:text="@string/Collection" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1">
+            android:layout_alignParentRight="true"
+            >
 
             <TextView
-                android:drawableTop="@drawable/icon_full_service"
-                android:text="@string/customer_service"
-                android:layout_width="@dimen/comment_0_dip"
+                android:id="@+id/tv_full_shoppingcart"
+                android:layout_width="@dimen/comment_89_dip"
+                android:layout_height="@dimen/comment_44_dip"
+                android:background="@color/colorAccent"
                 android:gravity="center"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
-
-            <TextView
-                android:text="@string/shop"
-                android:drawableTop="@drawable/icon_full_shop"
-                android:layout_width="@dimen/comment_0_dip"
-                android:gravity="center"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
-
-            <TextView
-                android:text="@string/Collection"
-                android:drawableTop="@drawable/icon_full_collection"
-                android:layout_width="0dp"
-                android:gravity="center"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1">
-            <TextView
-                android:layout_width="@dimen/comment_0_dip"
-                android:layout_weight="1"
                 android:text="@string/add_to_cart"
-                android:textColor="@color/white"
-                android:gravity="center"
-                android:background="@drawable/icon_shoping"
-                android:layout_height="@dimen/comment_50_dip" />
+
+                android:textColor="@color/white" />
 
             <TextView
                 android:id="@+id/tv_purchase"
-                android:layout_width="@dimen/comment_0_dip"
-                android:layout_height="@dimen/comment_50_dip"
-                android:layout_weight="1"
+                android:layout_width="@dimen/comment_89_dip"
+                android:layout_height="@dimen/comment_44_dip"
+                android:layout_toRightOf="@id/tv_full_shoppingcart"
                 android:background="@drawable/ic_setting_breake"
                 android:gravity="center"
                 android:text="@string/purchase_immediately"
                 android:textColor="@color/white" />
-        </LinearLayout>
+        </RelativeLayout>
 
 
-    </LinearLayout>
+    </RelativeLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -80,8 +126,9 @@
         android:layout_above="@+id/recycler"
         android:orientation="vertical">
 
-        <include layout="@layout/layout_title"/>
-        <include layout="@layout/layout_home_shopping"/>
+        <include layout="@layout/layout_title" />
+
+        <include layout="@layout/layout_home_shopping" />
 
     </LinearLayout>
 </RelativeLayout>

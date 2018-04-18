@@ -75,6 +75,15 @@
     <dimen name="comment_350_dip">350dp</dimen>
     <dimen name="comment_170_dip">170dp</dimen>
     <dimen name="comment_175_dip">175dp</dimen>
+    <dimen name="comment_77_dip">77dp</dimen>
+    <dimen name="comment_335_dip">335dp</dimen>
+    <dimen name="comment_355_dip">355dp</dimen>
+    <dimen name="comment_214_dip">214dp</dimen>
+    <dimen name="comment_230_dip">230dp</dimen>
+    <dimen name="comment_13_size">13dp</dimen>
+    <dimen name="comment_72_dip">72dp</dimen>
+    <dimen name="comment_89_dip">89dp</dimen>
+    <dimen name="comment_198_dip">198dp</dimen>
 
 
 </resources>

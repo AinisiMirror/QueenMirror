@@ -55,4 +55,8 @@
         <item name="android:layout_marginTop">18dp</item>
         <item name="android:layout_marginBottom">18dp</item>
     </style>
+
+    <style name="CustomCheckBoxTheme">
+        <item name="android:button">@drawable/purchase_checkbox</item>
+    </style>
 </resources>

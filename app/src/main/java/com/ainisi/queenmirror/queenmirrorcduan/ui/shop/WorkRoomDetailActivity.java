@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.TableLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -66,6 +67,10 @@ public class WorkRoomDetailActivity extends BaseNewActivity implements HttpCallB
     TextView tvSingle;
     @Bind(R.id.list_single)
     NoScrollListview listSingle;
+    @Bind(R.id.re_workroom_coupon)
+    RelativeLayout reCoupu;
+    @Bind(R.id.re_infor_massage)
+    RelativeLayout reMassage;
     List<SortBean> sortlist = new ArrayList<>();
     List<String> tabList = new ArrayList<>();
     private WorkRoomAdapter listadapter;
@@ -102,39 +107,33 @@ public class WorkRoomDetailActivity extends BaseNewActivity implements HttpCallB
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
                 switch (tab.getPosition()) {
+                    //门店服务
                     case 0:
                         listView.setVisibility(View.VISIBLE);
-                        tvShop.setVisibility(View.GONE);
-                        tvSingle.setVisibility(View.GONE);
-                        listShop.setVisibility(View.GONE);
-                        listSingle.setVisibility(View.GONE);
+                        reCoupu.setVisibility(View.GONE);
+                        reMassage.setVisibility(View.GONE);
                         listadapter = new WorkRoomAdapter(WorkRoomDetailActivity.this);
                         listView.setAdapter(listadapter);
                         break;
+                    //门店信用
                     case 1:
                         listView.setVisibility(View.VISIBLE);
-                        tvShop.setVisibility(View.GONE);
-                        tvSingle.setVisibility(View.GONE);
-                        listShop.setVisibility(View.GONE);
-                        listSingle.setVisibility(View.GONE);
+                        reCoupu.setVisibility(View.GONE);
+                        reMassage.setVisibility(View.GONE);
                         creditAdapter = new WorkCreditAdapter(WorkRoomDetailActivity.this);
                         listView.setAdapter(creditAdapter);
                         break;
+                    //商家信息
                     case 2:
-                        listView.setVisibility(View.VISIBLE);
-                        tvShop.setVisibility(View.GONE);
-                        tvSingle.setVisibility(View.GONE);
-                        listShop.setVisibility(View.GONE);
-                        listSingle.setVisibility(View.GONE);
-                        creditAdapter = new WorkCreditAdapter(WorkRoomDetailActivity.this);
-                        listView.setAdapter(creditAdapter);
+                        listView.setVisibility(View.GONE);
+                        reCoupu.setVisibility(View.GONE);
+                        reMassage.setVisibility(View.VISIBLE);
                         break;
+                    //优惠券
                     case 3:
                         listView.setVisibility(View.GONE);
-                        tvShop.setVisibility(View.VISIBLE);
-                        tvSingle.setVisibility(View.VISIBLE);
-                        listShop.setVisibility(View.VISIBLE);
-                        listSingle.setVisibility(View.VISIBLE);
+                        reMassage.setVisibility(View.GONE);
+                        reCoupu.setVisibility(View.VISIBLE);
                         WorkShopAdapter shopAdapter = new WorkShopAdapter(WorkRoomDetailActivity.this);
                         listShop.setAdapter(shopAdapter);
                         WorkSingleAdapter singleAdapter = new WorkSingleAdapter(WorkRoomDetailActivity.this);

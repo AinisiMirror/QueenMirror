@@ -62,7 +62,7 @@
     <string name="account_password">账号密码</string>
     <string name="beauty_living_room">多米美容生活馆</string>
     <string name="single_product_coupons">单品抵扣劵</string>
-    <string name="shop_general_voucher">店铺通用劵</string>
+    <string name="shop_general_voucher">单品券选择</string>
     <string name="availability">张可用</string>
     <string name="recharge_amount">充值金额：</string>
     ]
@@ -184,6 +184,7 @@
     <string name="trazin">教育培训</string>
     <string name="Big_shot">大咖</string>
     <string name="recommendable_store">推荐门店</string>
+    <string name="wechat_alipay">支付宝支付</string>
 
 
 </resources>
