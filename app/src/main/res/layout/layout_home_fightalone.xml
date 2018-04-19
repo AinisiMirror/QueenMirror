@@ -4,19 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/alpha_05_black"
-    android:orientation="vertical">
+    android:background="@color/alpha_05_black">
 
     <com.ainisi.queenmirror.queenmirrorcduan.utils.ScrollInterceptScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:scrollbars="none">
+        >
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:scrollbars="none">
+            android:scrollbars="vertical">
 
             <LinearLayout
                 android:id="@+id/linearLayout"
@@ -118,6 +117,185 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/comment_15_dip"
+                android:background="@drawable/et_shap">
+
+                <TextView
+                    android:id="@+id/tv_collage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/comment_13_dip"
+                    android:layout_marginTop="@dimen/comment_13_dip"
+                    android:text="63人在拼团，可直接参与"
+                    android:textColor="@color/alpha_95_black"
+                    android:textSize="@dimen/comment_14_size" />
+
+                <RelativeLayout
+                    android:id="@+id/relative_look_more"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginEnd="@dimen/comment_40_dip"
+                        android:layout_marginTop="@dimen/comment_14_dip"
+                        android:text="查看更多"
+                        android:textSize="@dimen/comment_12_size" />
+
+
+                    <ImageView
+                        android:id="@+id/iv_look_more"
+                        android:layout_width="@dimen/comment_8_dip"
+                        android:layout_height="@dimen/comment_14_dip"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginEnd="@dimen/comment_21_dip"
+                        android:layout_marginTop="@dimen/comment_16_dip"
+                        app:srcCompat="@drawable/icon_full_right" />
+                </RelativeLayout>
+
+                <View
+                    android:id="@+id/view_fightalone"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/comment_2_dip"
+                    android:layout_below="@+id/tv_collage"
+                    android:layout_marginEnd="@dimen/comment_13_dip"
+                    android:layout_marginStart="@dimen/comment_13_dip"
+                    android:layout_marginTop="@dimen/comment_12_dip"
+                    android:background="@color/alpha_05_black" />
+
+                <RelativeLayout
+                    android:id="@+id/re_surplus"
+                    android:layout_width="match_parent"
+
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/view_fightalone">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/iv_title"
+                        android:layout_width="@dimen/comment_45_dip"
+                        android:layout_height="@dimen/comment_45_dip"
+                        android:layout_marginStart="@dimen/comment_18_dip"
+                        android:layout_marginTop="@dimen/comment_6_dip"
+                        android:backgroundTintMode="@color/white"
+                        android:src="@drawable/icon_home_beautiful"
+                        app:civ_border_color="@color/white" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/comment_8_dip"
+                        android:layout_marginTop="@dimen/comment_20_dip"
+                        android:layout_toRightOf="@id/iv_title"
+                        android:text="灰太狼的替身"
+                        android:textSize="@dimen/comment_14_size" />
+
+                    <TextView
+                        android:id="@+id/tv_surplus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginEnd="@dimen/comment_91_dip"
+                        android:layout_marginTop="@dimen/comment_13_dip"
+                        android:text="还差1人拼成"
+                        android:textColor="@color/alpha_95_black"
+                        android:textSize="@dimen/comment_12_size" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_below="@id/tv_surplus"
+                        android:layout_marginEnd="@dimen/comment_91_dip"
+                        android:text="剩余21:15:15.6"
+                        android:textSize="@dimen/comment_10_size" />
+
+                    <TextView
+                        android:layout_width="@dimen/comment_69_dip"
+                        android:layout_height="@dimen/comment_29_dip"
+                        android:background="@drawable/icon_home_fightalone"
+                        android:text="去拼单"
+                        android:gravity="center"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginTop="@dimen/comment_13_dip"
+                        android:layout_marginEnd="@dimen/comment_12_dip"
+                        android:textColor="@color/white"
+                        />
+                </RelativeLayout>
+                <View
+                    android:id="@+id/view_fightaltwo"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/comment_2_dip"
+                    android:layout_below="@+id/re_surplus"
+                    android:layout_marginEnd="@dimen/comment_13_dip"
+                    android:layout_marginStart="@dimen/comment_13_dip"
+                    android:layout_marginTop="@dimen/comment_12_dip"
+                    android:background="@color/alpha_05_black" />
+                <RelativeLayout
+                    android:id="@+id/re_surplustwo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/view_fightaltwo">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/iv_titletwo"
+                        android:layout_width="@dimen/comment_45_dip"
+                        android:layout_height="@dimen/comment_45_dip"
+                        android:layout_marginStart="@dimen/comment_18_dip"
+                        android:layout_marginTop="@dimen/comment_6_dip"
+                        android:layout_marginBottom="@dimen/comment_6_dip"
+                        android:backgroundTintMode="@color/white"
+                        android:src="@drawable/icon_home_beautiful"
+                        app:civ_border_color="@color/white" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/comment_8_dip"
+                        android:layout_marginTop="@dimen/comment_20_dip"
+                        android:layout_toRightOf="@id/iv_titletwo"
+                        android:text="灰太狼的替身"
+                        android:textSize="@dimen/comment_14_size" />
+
+                    <TextView
+                        android:id="@+id/tv_surplustwo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginEnd="@dimen/comment_91_dip"
+                        android:layout_marginTop="@dimen/comment_13_dip"
+                        android:text="还差1人拼成"
+                        android:textColor="@color/alpha_95_black"
+                        android:textSize="@dimen/comment_12_size" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_below="@id/tv_surplustwo"
+                        android:layout_marginEnd="@dimen/comment_91_dip"
+                        android:text="剩余21:15:15.6"
+                        android:textSize="@dimen/comment_10_size" />
+
+                    <TextView
+                        android:layout_width="@dimen/comment_69_dip"
+                        android:layout_height="@dimen/comment_29_dip"
+                        android:background="@drawable/icon_home_fightalone"
+                        android:text="去拼单"
+                        android:gravity="center"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginTop="@dimen/comment_13_dip"
+                        android:layout_marginEnd="@dimen/comment_12_dip"
+                        android:textColor="@color/white"
+                        />
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+
                 android:layout_height="@dimen/comment_150_dip"
                 android:layout_marginTop="@dimen/comment_15_dip"
                 android:background="@drawable/et_shap">
@@ -197,7 +375,6 @@
                     android:layout_marginRight="@dimen/comment_10_dip"
                     android:layout_marginTop="@dimen/comment_19_dip"
                     android:src="@drawable/icon_full_right" />
-
                 <View
                     android:id="@+id/view_two"
                     android:layout_width="match_parent"
@@ -205,7 +382,6 @@
                     android:layout_below="@id/img_pingfen"
                     android:layout_marginTop="@dimen/comment_21_dip"
                     android:background="@color/alpha_05_black" />
-
                 <android.support.v7.widget.RecyclerView
                     android:id="@+id/full_recyclertwo"
                     android:layout_width="match_parent"
@@ -229,6 +405,7 @@
                     android:layout_marginTop="@dimen/comment_15_dip"
                     android:text="精品推荐"
                     android:textColor="@color/gray_E7370C" />
+
                 <android.support.v7.widget.RecyclerView
                     android:id="@+id/full_recycler"
                     android:layout_width="match_parent"

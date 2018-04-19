@@ -10,6 +10,8 @@ import com.lzy.okgo.request.BaseRequest;
 
 import java.io.File;
 import java.util.ArrayList;
+import com.ainisi.queenmirror.queenmirrorcduan.utilnomal.L;
+
 import java.util.Map;
 import okhttp3.Call;
 import okhttp3.Response;
@@ -119,7 +121,7 @@ public class HttpUtils {
                         try {
                             //JSONObject jsonObject = new JSONObject(s);
                             // int state = jsonObject.getInt("state");
-                            //String res = jsonObject.getString("list");
+                             //String res = jsonObject.getString("list");
                           /*  //失败
                             if (state != 200) {
                                 httpCallBack.showErrorMessage(res);

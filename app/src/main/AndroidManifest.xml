@@ -212,6 +212,7 @@
         <activity android:name=".ui.shop.ShoppingCartActivity" />
         <activity android:name=".ui.home.activity.HomeFightaloneActivity" />
         <activity android:name=".ui.home.mineactivity.MineAuthenticationActivity"></activity>
+        <activity android:name=".ui.home.activity.FightaloneActivity"></activity>
     </application>
 
 </manifest>

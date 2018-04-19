@@ -88,6 +88,8 @@
     <dimen name="comment_68_dip">68dp</dimen>
     <dimen name="comment_183_dip">183dp</dimen>
     <dimen name="comment_11_size">11sp</dimen>
+    <dimen name="comment_91_dip">91dp</dimen>
+    <dimen name="comment_69_dip">69dp</dimen>
 
 
 </resources>

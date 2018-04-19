@@ -23,7 +23,7 @@
 
    </android.support.design.widget.AppBarLayout>
 
-   <ScrollView
+   <com.ainisi.queenmirror.queenmirrorcduan.utils.ScrollInterceptScrollView
        android:layout_below="@id/app_bar"
        android:id="@+id/sc_home_scroll"
        android:scrollbars="vertical"
@@ -49,7 +49,7 @@
          </com.ainisi.queenmirror.queenmirrorcduan.utils.NoScrollGridView>
 
       </LinearLayout>
-   </ScrollView>
+   </com.ainisi.queenmirror.queenmirrorcduan.utils.ScrollInterceptScrollView>
 
 
 

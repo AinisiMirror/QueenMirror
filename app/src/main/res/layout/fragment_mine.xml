@@ -46,17 +46,17 @@
             android:text="@string/personal_information"
             android:textColor="@color/white" />
 
-        <ImageView
-            android:id="@+id/img_vip"
-            android:layout_width="@dimen/comment_15_dip"
-            android:layout_height="@dimen/comment_25_dip"
-            android:layout_toEndOf="@+id/tv_name"
-            android:layout_marginStart="40dp"
-            android:layout_alignTop="@+id/iv_title"
-            android:layout_marginRight="@dimen/comment_5_dip"
-            android:layout_marginTop="6dp"
-            android:layout_toLeftOf="@+id/tv_member"
-            app:srcCompat="@drawable/icon_mine_vip" />
+        <!--<ImageView-->
+            <!--android:id="@+id/img_vip"-->
+            <!--android:layout_width="@dimen/comment_15_dip"-->
+            <!--android:layout_height="@dimen/comment_25_dip"-->
+            <!--android:layout_toEndOf="@+id/tv_name"-->
+            <!--android:layout_marginStart="40dp"-->
+            <!--android:layout_alignTop="@+id/iv_title"-->
+            <!--android:layout_marginRight="@dimen/comment_5_dip"-->
+            <!--android:layout_marginTop="6dp"-->
+            <!--android:layout_toLeftOf="@+id/tv_member"-->
+            <!--android:src="@drawable/icon_mine_vip" />-->
 
         <TextView
             android:id="@+id/tv_member"
@@ -64,7 +64,7 @@
             android:layout_height="wrap_content"
             android:layout_alignBottom="@+id/tv_name"
             android:layout_marginRight="@dimen/comment_10_dip"
-            android:layout_toRightOf="@+id/img_vip"
+            android:layout_toRightOf="@+id/tv_shop"
             android:layout_marginStart="@dimen/comment_10_dip"
             android:text="@string/gold_member"
             android:textColor="@color/white" />
@@ -78,8 +78,7 @@
             android:layout_alignParentRight="true"
             android:layout_marginRight="@dimen/comment_60_dip"
             android:layout_marginTop="@dimen/comment_28_dip"
-            app:srcCompat="@mipmap/icon_mine_setup" />
-
+            android:src="@mipmap/icon_mine_setup" />
         <ImageView
             android:id="@+id/img_information"
             android:layout_width="@dimen/comment_30_dip"
@@ -87,9 +86,9 @@
             android:layout_alignParentEnd="true"
             android:layout_marginEnd="@dimen/comment_25_dip"
             android:layout_marginTop="@dimen/comment_30_dip"
-            app:srcCompat="@mipmap/message" />
+            android:src="@mipmap/message" />
     </RelativeLayout>
-    <ScrollView
+    <com.ainisi.queenmirror.queenmirrorcduan.utils.ScrollInterceptScrollView
         android:layout_below="@+id/relativeLayout"
         android:layout_width="match_parent"
         android:scrollbars="vertical"
@@ -264,5 +263,5 @@
 
             </RelativeLayout>
         </LinearLayout>
-    </ScrollView>
+    </com.ainisi.queenmirror.queenmirrorcduan.utils.ScrollInterceptScrollView>
 </RelativeLayout>

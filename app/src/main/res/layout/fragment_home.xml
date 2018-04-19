@@ -7,7 +7,7 @@
     android:orientation="vertical">
 
 
-    <ScrollView
+    <com.ainisi.queenmirror.queenmirrorcduan.utils.ScrollInterceptScrollView
         android:id="@+id/sc_home_scroll"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -35,7 +35,7 @@
             </com.ainisi.queenmirror.queenmirrorcduan.utils.NoScrollGridView>
 
         </LinearLayout>
-    </ScrollView>
+    </com.ainisi.queenmirror.queenmirrorcduan.utils.ScrollInterceptScrollView>
 
     <android.support.design.widget.AppBarLayout
         android:id="@+id/app_bar"

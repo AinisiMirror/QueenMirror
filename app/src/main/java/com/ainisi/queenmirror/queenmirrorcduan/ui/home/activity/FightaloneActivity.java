@@ -1,7 +1,8 @@
 package com.ainisi.queenmirror.queenmirrorcduan.ui.home.activity;
 
 import android.content.Intent;
-import android.support.v4.content.ContextCompat;
+import android.support.design.widget.TabLayout;
+import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -13,7 +14,10 @@ import com.ainisi.queenmirror.common.base.BaseActivity;
 import com.ainisi.queenmirror.queenmirrorcduan.R;
 import com.ainisi.queenmirror.queenmirrorcduan.adapter.MyAdapter;
 import com.ainisi.queenmirror.queenmirrorcduan.bean.SortBean;
+import com.ainisi.queenmirror.queenmirrorcduan.ui.home.fragment.HomeFightaloneFragment;
 import com.ainisi.queenmirror.queenmirrorcduan.ui.shop.ShoppingCartActivity;
+import com.ainisi.queenmirror.queenmirrorcduan.utils.NoScrollViewPager;
+import com.ainisi.queenmirror.queenmirrorcduan.utils.ViewPager;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,8 +25,10 @@ import java.util.List;
 import butterknife.Bind;
 import butterknife.OnClick;
 
-//商品详情
-public class FullActivity extends BaseActivity {
+/**
+ * 拼单
+ */
+public class FightaloneActivity extends BaseActivity {
     @Bind(R.id.full_recycler)
     RecyclerView frecycler;
     @Bind(R.id.full_recyclertwo)
@@ -33,13 +39,17 @@ public class FullActivity extends BaseActivity {
     ImageView fullPhoto;
     private List<SortBean> fulllist = new ArrayList<>();
     private List<SortBean> fulllist2 = new ArrayList<>();
+
     @Override
     public int getLayoutId() {
-        return R.layout.activity_full;
+        return R.layout.activity_fightalone;
     }
+
     @Override
     public void initPresenter() {
+
     }
+
     @Override
     public void initView() {
         initText();
@@ -74,22 +84,20 @@ public class FullActivity extends BaseActivity {
         fullPhoto.setVisibility(View.VISIBLE);
     }
 
-    @OnClick({R.id.tv_purchase, R.id.title_back,R.id.tv_full_shoppingcart})
+    @OnClick({R.id.title_back, R.id.relative_look_more})
     public void click(View view) {
         switch (view.getId()) {
             case R.id.title_back:
                 finish();
                 break;
-            //提交订单
-            case R.id.tv_purchase:
-                startActivity(new Intent(FullActivity.this, PurchaseActivity.class));
+            //拼单剩余人数（查看更多）
+            case R.id.relative_look_more:
+
                 break;
-                //加入购物车
-            case R.id.tv_full_shoppingcart:
-                startActivity(new Intent(this, ShoppingCartActivity.class));
-                break;
+
         }
 
 
     }
+
 }

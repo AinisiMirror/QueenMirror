@@ -6,6 +6,7 @@ import android.widget.TextView;
 import com.ainisi.queenmirror.common.base.BaseActivity;
 import com.ainisi.queenmirror.queenmirrorcduan.R;
 import com.ainisi.queenmirror.queenmirrorcduan.ui.home.fragment.FullshortFragment;
+import com.ainisi.queenmirror.queenmirrorcduan.ui.home.fragment.HomeFightaloneFragment;
 import com.ainisi.queenmirror.queenmirrorcduan.utils.NoScrollViewPager;
 import com.ainisi.queenmirror.queenmirrorcduan.utils.ViewPager;
 import java.util.ArrayList;
@@ -40,12 +41,14 @@ public class HomeFightaloneActivity extends BaseActivity {
         titleFightalone.setText("拼团");
         for (int i = 0; i < tabName.length; i++) {
             tabList.add(tabName[i]);
-
+            pagerList.add(new HomeFightaloneFragment());
             tabFightalone.addTab(tabFightalone.newTab().setText(tabList.get(i)));
         }
+
         ViewPager viewPager=new ViewPager(getSupportFragmentManager(),pagerList,tabList);
         pagerFightalone.setAdapter(viewPager);
         tabFightalone.setupWithViewPager(pagerFightalone);
+
     }
     @OnClick({R.id.title_back
     })
