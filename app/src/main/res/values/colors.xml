@@ -99,5 +99,6 @@
     <color name="grey_color1">#333333</color>
     <color name="grey_color3">#999999</color>
     <color name="light_white">#fcfcfc</color>
+    <color name="mine_gray">#f3f3f5</color>
 
 </resources>

@@ -6,6 +6,7 @@ import android.view.View;
 import com.ainisi.queenmirror.common.base.BaseFragment;
 import com.ainisi.queenmirror.queenmirrorcduan.R;
 import com.ainisi.queenmirror.queenmirrorcduan.ui.home.activity.MessageActivity;
+import com.ainisi.queenmirror.queenmirrorcduan.ui.home.mineactivity.MineAuthenticationActivity;
 import com.ainisi.queenmirror.queenmirrorcduan.ui.home.mineactivity.MineBeanActivity;
 import com.ainisi.queenmirror.queenmirrorcduan.ui.home.mineactivity.MineBeautyActivity;
 import com.ainisi.queenmirror.queenmirrorcduan.ui.home.mineactivity.MineCollectionActivity;
@@ -48,11 +49,15 @@ public class MineFragment extends BaseFragment {
     @OnClick({R.id.iv_title, R.id.iv_install, R.id.img_information,
             R.id.layout_collection, R.id.layout_follow, R.id.layout_foot, R.id.layout_evaluate, R.id.img_position, R.id.img_friends
             , R.id.ly_mine_discount, R.id.ly_mine_invincible, R.id.ly_mine_foot, R.id.ly_mine_bean, R.id.layout_gift, R.id.layout_beauty
-            , R.id.layout_problem, R.id.lay_service,R.id.ly_mine_wallet
+            , R.id.layout_problem, R.id.lay_service,R.id.ly_mine_wallet,R.id.li_mine_main_authentication
     })
 
     public void click(View view) {
         switch (view.getId()) {
+            //我要认证
+            case R.id.li_mine_main_authentication:
+                MineAuthenticationActivity.startActivity(getActivity());
+                break;
             //更改头像和个人信息
             case R.id.iv_title:
                 PortraitActivity.startActivity(getActivity());
