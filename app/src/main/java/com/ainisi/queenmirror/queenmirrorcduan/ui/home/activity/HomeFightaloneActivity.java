@@ -40,7 +40,7 @@ public class HomeFightaloneActivity extends BaseActivity {
         titleFightalone.setText("拼团");
         for (int i = 0; i < tabName.length; i++) {
             tabList.add(tabName[i]);
-            pagerList.add(new FullshortFragment());
+
             tabFightalone.addTab(tabFightalone.newTab().setText(tabList.get(i)));
         }
         ViewPager viewPager=new ViewPager(getSupportFragmentManager(),pagerList,tabList);
