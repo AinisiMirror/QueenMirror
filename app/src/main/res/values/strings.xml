@@ -124,7 +124,7 @@
     <string name="my_collection">我的收藏</string>
     <string name="follow_shop">关注店铺</string>
     <string name="my_Tracks">我的足迹</string>
-    <string name="evaluate">评价</string>
+    <string name="evaluate">我的评价</string>
     <string name="Coupon">优惠券</string>
     <string name="invincible_coupon">无敌劵</string>
     <string name="queen">女王卡</string>
@@ -134,6 +134,7 @@
     <string name="my_magic_beans">我的魔豆</string>
     <string name="gift">邀请有奖</string>
     <string name="beauty">成为美业人</string>
+    <string name="mine_crown">我要认证</string>
     <string name="help_and_feedback">帮助与反馈</string>
     <string name="customer_service_center">客服中心</string>
     <string name="enter_the_shop">请输入店铺名称或商品名称</string>

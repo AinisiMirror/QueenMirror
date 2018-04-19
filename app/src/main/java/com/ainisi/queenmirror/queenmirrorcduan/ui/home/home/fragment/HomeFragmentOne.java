@@ -331,7 +331,7 @@ public class HomeFragmentOne extends BaseFragment {
                 break;
             //美学汇
             case R.id.home_esthetics:
-                startActivity(new Intent(getActivity(), ShoppingCartActivity.class));
+                startActivity(new Intent(getActivity(), EstheticsActivity.class));
                 break;
             //我的位置
             case R.id.txt_bustling:
