@@ -13,6 +13,7 @@ import com.ainisi.queenmirror.common.base.BaseActivity;
 import com.ainisi.queenmirror.queenmirrorcduan.R;
 import com.ainisi.queenmirror.queenmirrorcduan.adapter.MyAdapter;
 import com.ainisi.queenmirror.queenmirrorcduan.bean.SortBean;
+import com.ainisi.queenmirror.queenmirrorcduan.ui.shop.ShoppingCartActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,7 +33,6 @@ public class FullActivity extends BaseActivity {
     ImageView fullPhoto;
     private List<SortBean> fulllist = new ArrayList<>();
     private List<SortBean> fulllist2 = new ArrayList<>();
-
     @Override
     public int getLayoutId() {
         return R.layout.activity_full;
@@ -74,7 +74,7 @@ public class FullActivity extends BaseActivity {
         fullPhoto.setVisibility(View.VISIBLE);
     }
 
-    @OnClick({R.id.tv_purchase, R.id.title_back})
+    @OnClick({R.id.tv_purchase, R.id.title_back,R.id.tv_full_shoppingcart})
     public void click(View view) {
         switch (view.getId()) {
             case R.id.title_back:
@@ -83,6 +83,9 @@ public class FullActivity extends BaseActivity {
             //提交订单
             case R.id.tv_purchase:
                 startActivity(new Intent(FullActivity.this, PurchaseActivity.class));
+                break;
+            case R.id.tv_full_shoppingcart:
+                startActivity(new Intent(this, ShoppingCartActivity.class));
                 break;
         }
 

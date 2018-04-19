@@ -209,7 +209,8 @@
         <activity android:name=".ui.home.activity.BeanstalkActivity" />
         <activity android:name=".ui.shop.WorkRoomDetailActivity" />
         <activity android:name=".ui.home.activity.ShopClassificationActivity" />
-        <activity android:name=".ui.shop.ShoppingCartActivity"></activity>
+        <activity android:name=".ui.shop.ShoppingCartActivity" />
+        <activity android:name=".ui.home.activity.HomeFightaloneActivity"></activity>
     </application>
 
 </manifest>

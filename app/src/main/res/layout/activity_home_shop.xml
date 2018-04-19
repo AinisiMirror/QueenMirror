@@ -239,7 +239,12 @@
                 android:gravity="center|top"
                 android:paddingTop="@dimen/comment_10_dip"
                 android:orientation="vertical">
-
+                <LinearLayout
+                    android:id="@+id/linear_home_freetrial"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
                 <ImageView
                     android:layout_width="59dp"
                     android:layout_height="@dimen/comment_14_dip"
@@ -273,7 +278,7 @@
                         android:layout_weight="1"
                         android:src="@drawable/icon_home_perfume" />
                 </LinearLayout>
-
+                </LinearLayout>
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"

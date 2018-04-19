@@ -89,7 +89,6 @@ public class ShopClassificationActivity extends BaseActivity {
         fullpager.setScanScroll(true);
         fullpager.setAdapter(pager);
     }
-
     private void initDate() {
 
         for (int i = 0; i <10 ; i++) {
@@ -124,10 +123,7 @@ public class ShopClassificationActivity extends BaseActivity {
             }
         });
         pop.dismiss();
-
-
     }
-
     private void initpop(View popview1) {
         final RecyclerView ce = popview1.findViewById(R.id.rc_popview);
         for (int i = 0; i < problem.length; i++) {
@@ -146,7 +142,6 @@ public class ShopClassificationActivity extends BaseActivity {
             }
         });
     }
-
 
     @OnClick({R.id.ed_keyword,R.id.iv_back,R.id.full_rb_sort, R.id.full_rb_sales, R.id.full_rb_distance, R.id.full_rb_screen, R.id.iv_sort, R.id.iv_sort1})
     public void click(View view) {
@@ -197,17 +192,12 @@ public class ShopClassificationActivity extends BaseActivity {
                         .setOutsideTouchable(true)
                         .setAnimationStyle(R.style.CustomPopWindowStyle)
                         .create()
-
                         .showAtLocation(hscreen, Gravity.RIGHT, 0, 0);
                 break;
             default:
                 break;
-
         }
-
-
     }
-
     private void initview(final View popview) {
         TextView eliminateTv = popview.findViewById(R.id.tv_eliminate);
         TextView okTv = popview.findViewById(R.id.tv_ok);

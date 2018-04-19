@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.ainisi.queenmirror.queenmirrorcduan.ui.home.activity.HomeFightaloneActivity">
+
+    <include
+        android:id="@+id/ic_title"
+        layout="@layout/layout_title" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/comment_2_dip"
+        android:layout_below="@id/ic_title"
+        android:background="@color/alpha_15_black" />
+
+    <android.support.design.widget.TabLayout
+        android:id="@+id/tab_home_fightalone"
+        android:layout_width="match_parent"
+        app:tabMode="scrollable"
+        app:tabMaxWidth="0dp"
+        app:tabGravity="fill"
+        app:tabPaddingStart="-1dp"
+        app:tabPaddingEnd="-1dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/view" />
+
+    <com.ainisi.queenmirror.queenmirrorcduan.utils.NoScrollViewPager
+        android:id="@+id/pager_home_fightalone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/tab_home_fightalone" />
+</RelativeLayout>

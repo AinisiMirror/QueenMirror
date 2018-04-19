@@ -28,6 +28,7 @@ import com.ainisi.queenmirror.queenmirrorcduan.adapter.ProblemAdapter;
 import com.ainisi.queenmirror.queenmirrorcduan.bean.SortBean;
 import com.ainisi.queenmirror.queenmirrorcduan.ui.home.activity.DetailActivity;
 import com.ainisi.queenmirror.queenmirrorcduan.ui.home.activity.GlideImageLoader;
+import com.ainisi.queenmirror.queenmirrorcduan.ui.home.activity.HomeFightaloneActivity;
 import com.ainisi.queenmirror.queenmirrorcduan.ui.home.activity.MessageActivity;
 import com.ainisi.queenmirror.queenmirrorcduan.ui.home.activity.SearchActivity;
 import com.ainisi.queenmirror.queenmirrorcduan.ui.home.activity.SelectCityActivity;
@@ -124,7 +125,7 @@ public class HomeFragmentOne extends BaseFragment {
     private PopupWindow pop;
     private View popview1;
     private List<ProblemBean> list = new ArrayList<>();
-    private List<SortBean> sortList=new ArrayList<>();
+    private List<SortBean> sortList = new ArrayList<>();
     String[] problem = {"销量最高", "价格最低", "距离最近", "优惠最多", "满减优惠", "新用最好", "用户最好"};
 
     int hight;//标记ScrollView移动的距离
@@ -172,7 +173,6 @@ public class HomeFragmentOne extends BaseFragment {
 
     }
 
-
     private void initQuee() {
         marqueeView.setTextArray(contentArray);
         marqueeView.setOnItemClickListener(new MarqueeView.onItemClickListener() {
@@ -192,7 +192,7 @@ public class HomeFragmentOne extends BaseFragment {
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                 marqueeView.resume();
+                marqueeView.resume();
             }
         }, 1000);
     }
@@ -265,7 +265,7 @@ public class HomeFragmentOne extends BaseFragment {
     @OnClick({R.id.rb_sort, R.id.rb_sales, R.id.rb_distance, R.id.rb_screen, R.id.txt_bustling
             , R.id.img_search, R.id.img_information, R.id.home_esthetics, R.id.iv_sort, R.id.iv_sort1
             , R.id.bt_screen, R.id.li_sort_bottom, R.id.li_home_screen, R.id.li_home_screen_bottom, R.id.line_surface
-    ,R.id.line_uspension_surface})
+            , R.id.line_uspension_surface, R.id.linear_home_freetrial})
     public void click(View view) {
         //  FragmentTransaction transaction = fm.beginTransaction();
         switch (view.getId()) {
@@ -346,6 +346,10 @@ public class HomeFragmentOne extends BaseFragment {
             //信息
             case R.id.img_information:
                 startActivity(new Intent(getActivity(), MessageActivity.class));
+                break;
+            //免费试用（拼单）
+            case R.id.linear_home_freetrial:
+                startActivity(new Intent(getActivity(),HomeFightaloneActivity.class));
                 break;
             case R.id.rb_sort:
               /*  if (sortFragment == null) {

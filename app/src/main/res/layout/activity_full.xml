@@ -16,9 +16,9 @@
         android:gravity="center">
 
         <RelativeLayout
-            android:background="@color/white"
             android:layout_width="@dimen/comment_198_dip"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:background="@color/white">
 
             <RelativeLayout
                 android:id="@+id/re_full_customerservice"
@@ -31,17 +31,18 @@
                 <ImageView
                     android:id="@+id/iv_full_customerservice"
                     android:layout_width="@dimen/comment_21_dip"
-                    android:layout_centerHorizontal="true"
                     android:layout_height="@dimen/comment_18_dip"
+                    android:layout_centerHorizontal="true"
                     android:src="@drawable/icon_full_service" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="@dimen/comment_10_size"
                     android:layout_below="@id/iv_full_customerservice"
-                    android:text="@string/customer_service" />
+                    android:text="@string/customer_service"
+                    android:textSize="@dimen/comment_10_size" />
             </RelativeLayout>
+
             <RelativeLayout
                 android:id="@+id/re_full_shop"
                 android:layout_width="wrap_content"
@@ -54,16 +55,17 @@
 
                 <ImageView
                     android:id="@+id/iv_full_shop"
-                    android:layout_centerHorizontal="true"
                     android:layout_width="@dimen/comment_19_dip"
                     android:layout_height="@dimen/comment_17_dip"
+                    android:layout_centerHorizontal="true"
                     android:src="@drawable/icon_full_shop" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="@dimen/comment_10_size"
                     android:layout_below="@id/iv_full_shop"
-                    android:text="@string/shop" />
+                    android:text="@string/shop"
+                    android:textSize="@dimen/comment_10_size" />
             </RelativeLayout>
 
             <RelativeLayout
@@ -76,25 +78,24 @@
 
                 <ImageView
                     android:id="@+id/iv_full_collection"
-                    android:layout_centerHorizontal="true"
                     android:layout_width="@dimen/comment_20_dip"
                     android:layout_height="@dimen/comment_18_dip"
+                    android:layout_centerHorizontal="true"
                     android:src="@drawable/icon_full_collection" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="@dimen/comment_10_size"
                     android:layout_below="@id/iv_full_collection"
-                    android:text="@string/Collection" />
+                    android:text="@string/Collection"
+                    android:textSize="@dimen/comment_10_size" />
             </RelativeLayout>
         </RelativeLayout>
 
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            >
+            android:layout_alignParentRight="true">
 
             <TextView
                 android:id="@+id/tv_full_shoppingcart"
