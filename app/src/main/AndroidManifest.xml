@@ -98,7 +98,7 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".ui.mine.activity.MineInvincibleActivity"
-        
+
             android:screenOrientation="portrait" />
         <activity
             android:name=".ui.mine.activity.MineQueenActivity"
@@ -206,15 +206,33 @@
         <activity
             android:name=".ui.mine.activity.MineDetailedActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".ui.home.activity.DetailActivity" />
-        <activity android:name=".ui.mine.activity.BeanstalkActivity" />
-        <activity android:name=".ui.shop.WorkRoomDetailActivity" />
-        <activity android:name=".ui.shop.activity.ShopClassificationActivity" />
-        <activity android:name=".ui.home.activity.ShoppingCartActivity" />
-        <activity android:name=".ui.home.activity.HomeFightaloneActivity" />
-        <activity android:name=".ui.mine.activity.MineAuthenticationActivity"></activity>
-        <activity android:name=".ui.shop.OrderDetailActivity"></activity>
-        <activity android:name=".ui.home.activity.FightaloneActivity"></activity>
+        <activity
+            android:name=".ui.home.activity.DetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.mine.activity.BeanstalkActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.shop.WorkRoomDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.shop.activity.ShopClassificationActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.home.activity.ShoppingCartActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.home.activity.HomeFightaloneActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.mine.activity.MineAuthenticationActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.shop.OrderDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.home.activity.FightaloneActivity"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>
