@@ -11,6 +11,13 @@ android {
         versionName "1.0"
         multiDexEnabled true
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        ndk {
+
+            //APP的build.gradle设置支持的SO库架构                用来管理so大小文件ndk过滤
+
+            abiFilters 'armeabi', 'armeabi-v7a', 'x86'
+        }
     }
 
     buildTypes {
@@ -33,9 +40,6 @@ android {
         javaMaxHeapSize "2g"//支持2g
 
     }
-
-
-
 
     configurations.all {
         resolutionStrategy.eachDependency { DependencyResolveDetails details ->

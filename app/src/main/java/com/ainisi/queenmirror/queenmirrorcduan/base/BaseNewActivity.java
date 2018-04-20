@@ -6,11 +6,12 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 
 import com.ainisi.queenmirror.common.commonwidget.StatusBarCompat;
+import com.ainisi.queenmirror.queenmirrorcduan.utilnomal.SwipeActivity;
 import com.ainisi.queenmirror.queenmirrorcduan.utils.StatusBarUtil;
 
 import butterknife.ButterKnife;
 
-public abstract class BaseNewActivity extends AppCompatActivity {
+public abstract class BaseNewActivity extends SwipeActivity {
     /**
      * ATTENTION: This was auto-generated to implement the App Indexing API.
      * See https://g.co/AppIndexing/AndroidStudio for more information.

@@ -59,4 +59,9 @@
     <style name="CustomCheckBoxTheme">
         <item name="android:button">@drawable/purchase_checkbox</item>
     </style>
+
+    <style name="Transparent" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
 </resources>
