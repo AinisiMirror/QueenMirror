@@ -337,9 +337,7 @@ public class HomeFragmentOne extends BaseFragment {
                 break;
             //我的位置
             case R.id.txt_bustling:
-                Intent intent = new Intent(getActivity(), ShoppingCartActivity.class);
-
-                startActivity(intent);
+                startProgressDialog();
                 break;
             //搜索
             case R.id.img_search:

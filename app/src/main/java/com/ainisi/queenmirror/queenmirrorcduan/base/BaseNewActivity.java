@@ -1,10 +1,7 @@
 package com.ainisi.queenmirror.queenmirrorcduan.base;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AppCompatActivity;
-
 import com.ainisi.queenmirror.common.commonwidget.StatusBarCompat;
 import com.ainisi.queenmirror.queenmirrorcduan.utilnomal.SwipeActivity;
 import com.ainisi.queenmirror.queenmirrorcduan.utils.StatusBarUtil;
