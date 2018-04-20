@@ -5,7 +5,6 @@ import android.view.View;
 import android.widget.TextView;
 import com.ainisi.queenmirror.common.base.BaseActivity;
 import com.ainisi.queenmirror.queenmirrorcduan.R;
-import com.ainisi.queenmirror.queenmirrorcduan.ui.home.fragment.FullshortFragment;
 import com.ainisi.queenmirror.queenmirrorcduan.ui.home.fragment.HomeFightaloneFragment;
 import com.ainisi.queenmirror.queenmirrorcduan.utils.NoScrollViewPager;
 import com.ainisi.queenmirror.queenmirrorcduan.utils.ViewPager;

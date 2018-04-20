@@ -37,7 +37,6 @@ public abstract class BaseFragment extends Fragment implements HttpCallBack {
         }
         return rootView;
     }
-
     protected void initView() {
     }
 

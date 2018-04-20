@@ -6,7 +6,7 @@
     android:background="@color/alpha_05_black"
     android:fitsSystemWindows="true"
     android:layout_height="match_parent"
-    tools:context="com.ainisi.queenmirror.queenmirrorcduan.ui.home.mineactivity.MineMyFootActivity">
+    tools:context=".ui.mine.MineMyFootActivity">
     <include
 
         android:id="@+id/ic_title"

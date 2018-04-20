@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.ainisi.queenmirror.queenmirrorcduan.ui.home.activity.ShopClassificationActivity"
+    tools:context="com.ainisi.queenmirror.queenmirrorcduan.ui.shop.activity.ShopClassificationActivity"
     android:orientation="vertical">
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"

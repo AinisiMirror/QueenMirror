@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
 
-    tools:context="com.ainisi.queenmirror.queenmirrorcduan.ui.home.mineactivity.MineBeanActivity">
+    tools:context=".ui.mine.MineBeanActivity">
     <include
         android:id="@+id/ic_title"
         layout="@layout/layout_queentitle"/>

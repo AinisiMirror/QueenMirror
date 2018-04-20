@@ -1,23 +1,17 @@
 package com.ainisi.queenmirror.queenmirrorcduan.ui.home.activity;
 
-import android.content.Intent;
-import android.support.design.widget.TabLayout;
-import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.ainisi.queenmirror.common.base.BaseActivity;
 import com.ainisi.queenmirror.queenmirrorcduan.R;
 import com.ainisi.queenmirror.queenmirrorcduan.adapter.MyAdapter;
 import com.ainisi.queenmirror.queenmirrorcduan.bean.SortBean;
-import com.ainisi.queenmirror.queenmirrorcduan.ui.home.fragment.HomeFightaloneFragment;
-import com.ainisi.queenmirror.queenmirrorcduan.ui.shop.ShoppingCartActivity;
-import com.ainisi.queenmirror.queenmirrorcduan.utils.NoScrollViewPager;
-import com.ainisi.queenmirror.queenmirrorcduan.utils.ViewPager;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -47,7 +41,6 @@ public class FightaloneActivity extends BaseActivity {
 
     @Override
     public void initPresenter() {
-
     }
 
     @Override
@@ -92,7 +85,7 @@ public class FightaloneActivity extends BaseActivity {
                 break;
             //拼单剩余人数（查看更多）
             case R.id.relative_look_more:
-
+                Toast.makeText(mContext, "您点击了我", Toast.LENGTH_SHORT).show();
                 break;
 
         }

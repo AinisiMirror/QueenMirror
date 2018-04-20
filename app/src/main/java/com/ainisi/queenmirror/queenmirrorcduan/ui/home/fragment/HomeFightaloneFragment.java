@@ -26,6 +26,7 @@ import butterknife.Bind;
 
 /**
  * A simple {@link Fragment} subclass.
+ * 拼团
  */
 public class HomeFightaloneFragment extends BaseFragment {
     @Bind(R.id.recycler_fragment_fightalone)

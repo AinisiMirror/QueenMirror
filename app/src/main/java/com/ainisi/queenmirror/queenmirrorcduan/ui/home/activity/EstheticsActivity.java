@@ -26,7 +26,6 @@ import com.ainisi.queenmirror.queenmirrorcduan.utils.CustomPopWindow;
 import com.ainisi.queenmirror.queenmirrorcduan.utils.NoScrollViewPager;
 import com.ainisi.queenmirror.queenmirrorcduan.utils.ViewPager;
 
-import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
 
