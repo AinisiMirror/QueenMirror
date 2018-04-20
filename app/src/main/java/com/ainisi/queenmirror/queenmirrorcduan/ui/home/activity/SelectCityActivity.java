@@ -10,20 +10,15 @@ import com.ainisi.queenmirror.common.base.BaseActivity;
 import com.ainisi.queenmirror.queenmirrorcduan.R;
 import com.ainisi.queenmirror.queenmirrorcduan.adapter.MyAdapter;
 import com.ainisi.queenmirror.queenmirrorcduan.bean.SortBean;
-
 import java.util.ArrayList;
 import java.util.List;
-
 import butterknife.Bind;
 import butterknife.OnClick;
-
-
 /**
  * @author weikailiang
  * @function Created on 2017/8/4.
  * 位置
  */
-
 public class SelectCityActivity extends BaseActivity {
     @Bind(R.id.title_title)
     TextView StTitle;

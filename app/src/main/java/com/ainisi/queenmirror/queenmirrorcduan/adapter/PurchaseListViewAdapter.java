@@ -31,7 +31,7 @@ public class PurchaseListViewAdapter extends BaseAdapter {
 
     @Override
     public int getCount() {
-        return 10;
+        return 1;
     }
 
     @Override
@@ -51,12 +51,10 @@ public class PurchaseListViewAdapter extends BaseAdapter {
         final ViewHolder holder;
         if (convertView == null) {
             holder = new ViewHolder();
-
             convertView = inflater.inflate(R.layout.item_purchase, parent, false);
             holder.checkTitle = convertView.findViewById(R.id.purchase_check_title);
             holder.checkNameOne = convertView.findViewById(R.id.purchase_check_nameone);
             holder.checkNameTwo = convertView.findViewById(R.id.purchase_check_nametwo);
-
             convertView.setTag(holder);
         } else {
             holder = (ViewHolder) convertView.getTag();

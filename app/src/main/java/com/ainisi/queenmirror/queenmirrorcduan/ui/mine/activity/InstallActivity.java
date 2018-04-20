@@ -31,12 +31,9 @@ public class InstallActivity extends BaseActivity {
     public int getLayoutId() {
         return R.layout.activity_install;
     }
-
     @Override
     public void initPresenter() {
-
     }
-
     @Override
     public void initView() {
         settitle.setText("隐私");
@@ -54,14 +51,12 @@ public class InstallActivity extends BaseActivity {
             case R.id.layout_privacy:
                 ReplaceActivity.startActivity(InstallActivity.this);
                 break;
-
             case R.id.iv_unselected:
                 if(isClick){
                     unselscetd.setImageResource(R.drawable.icon_install_unselected);
                     isClick=false;
                 }else {
                     unselscetd.setImageResource(R.drawable.icon_install_selected);
-                    ToastUtils.showLong("你点击了我");
                     isClick=true;
                 }
                 break;

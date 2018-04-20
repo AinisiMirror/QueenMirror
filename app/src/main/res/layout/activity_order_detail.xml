@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/mine_gray"
     android:orientation="vertical"
-    tools:context=".ui.shop.OrderDetailActivity">
+    tools:context=".ui.order.activity.OrderDetailActivity">
 
     <include layout="@layout/top_common"/>
 

@@ -1,4 +1,4 @@
-package com.ainisi.queenmirror.queenmirrorcduan.ui.shop;
+package com.ainisi.queenmirror.queenmirrorcduan.ui.order.activity;
 
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;

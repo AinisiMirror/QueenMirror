@@ -142,7 +142,6 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".ui.mine.activity.MyWeActivity"
-            android:theme="@style/Transparent"
             android:screenOrientation="portrait" />
         <activity
             android:name=".ui.mine.activity.MeDynamicActivity"
@@ -178,7 +177,6 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".ui.mine.activity.MineFriendsActivity"
-            android:theme="@style/Transparent"
             android:screenOrientation="portrait" />
         <activity
             android:name=".ui.mine.activity.MineGiftActivity"
@@ -279,7 +277,7 @@
             android:theme="@style/Transparent"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.shop.OrderDetailActivity"
+            android:name=".ui.order.activity.OrderDetailActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Transparent"/>
         <activity

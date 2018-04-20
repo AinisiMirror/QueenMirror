@@ -186,6 +186,9 @@
     <string name="Big_shot">大咖</string>
     <string name="recommendable_store">推荐门店</string>
     <string name="wechat_alipay">支付宝支付</string>
+    <string name="di_san_fang_login">使用以下账号快速登录</string>
+    <string name="login">登录</string>
+    <string name="register">注册</string>
 
 
 </resources>

@@ -22,8 +22,6 @@
         <attr name="dayNightFiveTextColorAttr" format="string|reference"/><!--切换三级字体颜色属性-->
         <attr name="dayNightBackgroundDrawableAttr" format="string|reference"/><!--切换背景图片属性-->
     </declare-styleable>
-
-
     <!--图形制作-->
     <declare-styleable name="MultiShapeView">
         <attr name="shape" format="enum">
@@ -66,6 +64,7 @@
     </declare-styleable>
 
     <!--跑马灯-->
+
     <declare-styleable name="MarqueeViewStyle">
         <attr name="textSize" format="dimension" />
         <attr name="textColor" format="color" />
@@ -76,6 +75,33 @@
         <attr name="startDelayTime" format="integer"/>
         <attr name="reRepeatDelayTime" format="integer"/>
         <attr name="itemAnimationTime" format="integer"/>
+    </declare-styleable>
+    <attr name="aspectRatio" format="float|reference"/>
+    <declare-styleable name="AspectRatioImageView">
+        <attr name="aspectRatio" />
+    </declare-styleable>
+    <declare-styleable name="AspectRatioRelativeLayout">
+        <attr name="aspectRatio" />
+    </declare-styleable>
+    <declare-styleable name="PullZoomView">
+        <attr name="zoomview" format="reference" />
+        <attr name="headview" format="reference" />
+        <attr name="contentview" format="reference" />
+    </declare-styleable>
+    <!--自定义文本编辑-->
+    <declare-styleable name="DelEdit">
+        <attr name="mTextSize" format="dimension"/>
+        <attr name="mTextColor" format="color|reference"/>
+        <attr name="mHintColor" format="color|reference"/>
+        <attr name="mText" format="string"/>\
+        <attr name="mHint" format="string"/>
+        <attr name="mMaxLength" format="integer"/>
+        <attr name="mShowAble" format="boolean"/>
+        <attr name="mInputType" format="enum">
+            <enum  name="text" value="0" />
+            <enum  name="number" value="1"/>
+            <enum  name="password" value="2"/>
+        </attr>
     </declare-styleable>
 
 </resources>

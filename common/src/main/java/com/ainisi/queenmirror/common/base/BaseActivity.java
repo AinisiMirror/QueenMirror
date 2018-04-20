@@ -105,6 +105,7 @@ public abstract class BaseActivity<T extends BasePresenter, E extends BaseModel>
             getWindow().addFlags(WindowManager.LayoutParams.FLAG_FORCE_NOT_FULLSCREEN);
             getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
         }
+
     }
 
     /*********************子类实现*****************************/
@@ -304,12 +305,8 @@ public abstract class BaseActivity<T extends BasePresenter, E extends BaseModel>
     }
 
 
-    @Override
-    protected void onStart() {
-        //调用配置
-        init();
-        super.onStart();
-    }
+
+
 
     private void init() {
         int flag = View.SYSTEM_UI_FLAG_LAYOUT_STABLE                      //SYSTEM_UI_FLAG_LAYOUT_STABLE:防止系统栏隐藏时内容区域大小发生变化

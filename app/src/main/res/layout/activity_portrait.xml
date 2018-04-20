@@ -13,6 +13,7 @@
         android:id="@+id/title"
         layout="@layout/layout_title" />
     <RelativeLayout
+        android:id="@+id/recycler"
         android:layout_below="@+id/title"
         android:background="@color/alpha_05_black"
         android:layout_width="match_parent"
@@ -199,4 +200,15 @@
         </RelativeLayout>
     </RelativeLayout>
     </RelativeLayout>
+    <TextView
+        android:background="@drawable/et_shap"
+        android:text="退出登录"
+        android:gravity="center"
+        android:textColor="@color/alpha_95_black"
+        android:textSize="@dimen/comment_16_size"
+        android:layout_width="@dimen/comment_300_dip"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/comment_25_dip"
+        android:layout_height="@dimen/comment_50_dip" />
 </RelativeLayout>

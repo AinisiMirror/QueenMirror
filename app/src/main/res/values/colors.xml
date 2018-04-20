@@ -4,7 +4,7 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
 
-    <color name="color_product_detail_code_text">#E39999</color>
+
     <color name="drop_down_selected">#5E3778</color>
     <color name="normal">#fff</color>
     <color name="press">#ff0</color>
@@ -100,5 +100,39 @@
     <color name="grey_color3">#999999</color>
     <color name="light_white">#fcfcfc</color>
     <color name="mine_gray">#f3f3f5</color>
+    <!--1.2-->
+    <color name="color_hint_text">#FFC9CACB</color>
+    <color name="color_code_text">#FFF3C323</color>
+    <color name="color_home_code_text">#4D4637</color>
+    <color name="color_reg_text">#FFFFFFFF</color>
+    <color name="color_main_text">#FF5E3579</color>
+    <color name="color_main_deep_text">#4B0082</color>
+    <color name="color_hint_third_part_text">#FFB5B6B6</color>
+    <color name="color_white_text">#FFFFFF</color>
+    <color name="color_title_color">#F7F7F7</color>
+    <color name="color_home_text">#A0A0A0</color>
+    <color name="color_detail_text">#727070</color>
+    <color name="color_white">#faf9f9</color>
+    <color name="color_coupon_bg">#F1F1F1</color>
+    <color name="color_home_title">#595757</color>
+    <color name="color_home_cate_title">#ffffff</color>
+    <color name="color_929191">#929191</color>
+    <color name="gray_cccccc">#cccccc</color>
+    <color name="black">#FF000000</color>
+    <color name="text_yellow">#eeb13d</color>
+    <color name="order_number">#999999</color>
+    <color name="text_gray_1">#333333</color>
+    <color name="color_f90202">#f90202</color>
+    <color name="color_fed952">#fed952</color>
+
+    <color name="color_ffffff">#ffffff</color>
+    <color name="color_title">#FF333333</color>
+
+    <color name="color_product_detail_code_text">#E39999</color>
+    <color name="color_FF374F">#FF374F</color>
+    <color name="color_F6A237">#F6A237</color>
+    <color name="color_F3C323">#F3C323</color>
+    <color name="color_B5B5B6">#B5B5B6</color>
+    <color name="color_3E3A39">#3E3A39</color>
 
 </resources>
