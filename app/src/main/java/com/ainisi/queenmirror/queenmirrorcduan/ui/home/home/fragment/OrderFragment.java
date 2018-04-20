@@ -1,5 +1,6 @@
 package com.ainisi.queenmirror.queenmirrorcduan.ui.home.home.fragment;
 
+import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.support.design.widget.TabLayout;
@@ -19,6 +20,7 @@ import com.ainisi.queenmirror.queenmirrorcduan.R;
 import com.ainisi.queenmirror.queenmirrorcduan.ui.home.home.orderfragment.AssessedFragment;
 import com.ainisi.queenmirror.queenmirrorcduan.ui.home.home.orderfragment.RefundFragment;
 import com.ainisi.queenmirror.queenmirrorcduan.ui.home.home.orderfragment.WholeFragment;
+import com.ainisi.queenmirror.queenmirrorcduan.ui.shop.OrderDetailActivity;
 import com.ainisi.queenmirror.queenmirrorcduan.utils.NoScrollViewPager;
 import com.ainisi.queenmirror.queenmirrorcduan.utils.ViewPager;
 
@@ -39,6 +41,8 @@ public class OrderFragment extends BaseFragment {
     TabLayout otablayout;
     @Bind(R.id.or_mypager)
     NoScrollViewPager omypager;
+    @Bind(R.id.title_photo)
+    ImageView title_photo;
     private List<String> tablist = new ArrayList<>();
     private List<Fragment> pagerlist = new ArrayList<>();
 
@@ -50,6 +54,16 @@ public class OrderFragment extends BaseFragment {
     @Override
     public void initPresenter() {
 
+    }
+
+    @OnClick({R.id.title_photo})
+    public void onClick(View view){
+        switch (view.getId()){
+            case R.id.title_photo:
+                Intent intent = new Intent(getActivity(), OrderDetailActivity.class);
+                startActivity(intent);
+                break;
+        }
     }
 
     @Override

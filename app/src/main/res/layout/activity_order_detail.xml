@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/mine_gray"
+    android:orientation="vertical"
+    tools:context=".ui.shop.OrderDetailActivity">
+
+    <include layout="@layout/top_common"/>
+
+    <com.ainisi.queenmirror.queenmirrorcduan.utils.GradationScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none"
+        >
+        <LinearLayout android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="订单商品"
+                android:textColor="@color/alpha_65_black"
+                android:background="@color/white"
+                android:layout_marginTop="10dp"
+                android:textStyle="bold"
+                android:padding="10dp">
+            </TextView>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_orderdetail_order"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            </android.support.v7.widget.RecyclerView>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="店铺通用券"
+                    android:layout_marginStart="10dp"
+                    android:textSize="@dimen/comment_14_dip"
+                    android:textColor="@color/alpha_45_black">
+                </TextView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="-￥30"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="10dp"
+                    android:textSize="@dimen/comment_14_dip"
+                    android:textColor="@color/alpha_45_black">
+                </TextView>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="5dp"
+                android:background="@color/white">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="单品抵扣券"
+                    android:layout_marginStart="10dp"
+                    android:textSize="@dimen/comment_14_dip"
+                    android:textColor="@color/alpha_45_black">
+                </TextView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="-￥30"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="10dp"
+                    android:textSize="@dimen/comment_14_dip"
+                    android:textColor="@color/alpha_45_black">
+                </TextView>
+            </RelativeLayout>
+            <LinearLayout android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@color/white">
+                <View android:layout_width="match_parent"
+                    android:layout_height="1.5dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/search_text_biankuang">
+                </View>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp">
+                    <TextView
+                        android:id="@+id/tv_orderdetail_heji"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="568"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginEnd="10dp"
+                        android:textSize="@dimen/comment_16_dip"
+                        android:textStyle="bold"
+                        android:textColor="@color/alpha_60_black">
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/tv_heji"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toStartOf="@id/tv_orderdetail_heji"
+                        android:text="合计"
+                        android:layout_centerVertical="true"
+                        android:textSize="@dimen/comment_14_dip"
+                        android:textColor="@color/alpha_45_black">
+                    </TextView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toStartOf="@id/tv_heji"
+                        android:layout_marginEnd="10dp"
+                        android:text="优惠￥30"
+                        android:layout_centerVertical="true"
+                        android:textSize="@dimen/comment_14_dip"
+                        android:textColor="@color/alpha_45_black">
+                    </TextView>
+
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@color/white"
+                android:gravity="center_horizontal"
+                android:layout_marginTop="10dp">
+                <TextView android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="订单详情"
+                    android:textStyle="bold"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:textSize="@dimen/comment_14_dip"
+                    android:textColor="@color/alpha_60_black">
+                </TextView>
+                <TextView android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="订单号码：20000001180120501"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:textSize="@dimen/comment_12_dip"
+                    android:textColor="@color/alpha_45_black">
+                </TextView>
+                <TextView android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="手机号码：12345678901"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="6dp"
+                    android:textSize="@dimen/comment_12_dip"
+                    android:textColor="@color/alpha_45_black">
+                </TextView>
+                <TextView android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="付款时间：2018-05-01"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="6dp"
+                    android:textSize="@dimen/comment_12_dip"
+                    android:textColor="@color/alpha_45_black">
+                </TextView>
+
+                <View android:layout_width="match_parent"
+                    android:layout_height="1.5dp"
+                    android:background="@color/search_text_biankuang"
+                    android:layout_margin="10dp">
+                </View>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/alpha_60_black"
+                    android:textSize="@dimen/comment_16_dip"
+                    android:gravity="center"
+                    android:layout_marginBottom="10dp"
+                    android:drawableStart="@drawable/mine_phone"
+                    android:text=" 联系店家">
+                </TextView>
+
+            </LinearLayout>
+
+            <RelativeLayout android:layout_width="match_parent"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginBottom="40dp"
+                android:layout_height="@dimen/comment_45_dip"
+                android:background="@drawable/background_mine_auth">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="申请退款"
+                    android:layout_centerInParent="true"
+                    android:textSize="@dimen/comment_14_dip"
+                    android:textColor="@color/white">
+                </TextView>
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </com.ainisi.queenmirror.queenmirrorcduan.utils.GradationScrollView>
+
+
+</LinearLayout>
