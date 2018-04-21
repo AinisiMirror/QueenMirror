@@ -189,6 +189,9 @@
     <string name="di_san_fang_login">使用以下账号快速登录</string>
     <string name="login">登录</string>
     <string name="register">注册</string>
+    <string name="reg_agreement">轻触上面的“立即注册”按钮，即表示您同意</string>
+    <string name="reg_agreement_name">《女王魔镜用户协议与隐私条件》</string>
+    <string name="forgetcipher">忘记密码</string>
 
 
 </resources>

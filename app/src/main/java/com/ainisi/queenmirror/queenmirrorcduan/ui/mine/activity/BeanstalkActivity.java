@@ -1,8 +1,6 @@
 package com.ainisi.queenmirror.queenmirrorcduan.ui.mine.activity;
 
 
-import android.app.Activity;
-import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Build;
 import android.support.v4.content.ContextCompat;
@@ -76,9 +74,7 @@ public class BeanstalkActivity extends BaseActivity {
     private void initText() {
         dateTitle.setText(R.string.Selectiontime);
         rightTitle.setText(R.string.complete);
-
     }
-
     private void initDate() {
         initTime();
         hidePicker(datePicker);

@@ -86,204 +86,208 @@
             android:windowSoftInputMode="adjustResize|stateHidden" />
         <activity
             android:name=".ui.home.activity.FullActivity"
-            android:theme="@style/Transparent"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/Transparent" />
         <activity
             android:name=".ui.home.activity.PurchaseActivity"
-            android:theme="@style/Transparent"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/Transparent" />
         <activity
             android:name=".ui.home.activity.SubmitActivity"
-            android:theme="@style/Transparent"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/Transparent" />
         <activity
             android:name=".ui.home.activity.MessageActivity"
-            android:theme="@style/Transparent"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/Transparent" />
         <activity
             android:name=".ui.mine.activity.MineDiscountActivity"
-            android:theme="@style/Transparent"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/Transparent" />
         <activity
             android:name=".ui.mine.activity.MineInvincibleActivity"
-            android:theme="@style/Transparent"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/Transparent" />
         <activity
             android:name=".ui.mine.activity.MineQueenActivity"
-            android:theme="@style/Transparent"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/Transparent" />
         <activity
             android:name=".ui.mine.activity.MineBeanActivity"
-            android:theme="@style/Transparent"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/Transparent" />
         <activity
             android:name=".ui.mine.activity.PortraitActivity"
-            android:theme="@style/Transparent"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/Transparent" />
         <activity
             android:name=".ui.mine.activity.UserNameActivity"
-            android:theme="@style/Transparent"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/Transparent" />
         <activity
             android:name=".ui.mine.activity.UserpassActivity"
-            android:theme="@style/Transparent"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/Transparent" />
         <activity
             android:name=".ui.mine.activity.UserphoneActivity"
-            android:theme="@style/Transparent"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/Transparent" />
         <activity
             android:name=".ui.mine.activity.InstallActivity"
-            android:theme="@style/Transparent"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/Transparent" />
         <activity
             android:name=".ui.mine.activity.ReplaceActivity"
-            android:theme="@style/Transparent"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/Transparent" />
         <activity
             android:name=".ui.mine.activity.MyWeActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".ui.mine.activity.MeDynamicActivity"
-            android:theme="@style/Transparent"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/Transparent" />
         <activity
             android:name=".ui.mine.activity.HerDynamicActivity"
-            android:theme="@style/Transparent"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/Transparent" />
         <activity
             android:name=".ui.home.activity.OrderMessageActivity"
-            android:theme="@style/Transparent"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/Transparent" />
         <activity
             android:name=".ui.mine.activity.MineCollectionActivity"
-            android:theme="@style/Transparent"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/Transparent" />
         <activity
             android:name=".ui.mine.activity.MineFollowActivity"
-            android:theme="@style/Transparent"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/Transparent" />
         <activity
             android:name=".ui.mine.activity.MineMyFootActivity"
-            android:theme="@style/Transparent"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/Transparent" />
         <activity
             android:name=".ui.mine.activity.MineEvaluateActivity"
-            android:theme="@style/Transparent"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/Transparent" />
         <activity
             android:name=".ui.mine.activity.MinePositionActivity"
-            android:theme="@style/Transparent"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/Transparent" />
         <activity
             android:name=".ui.mine.activity.MineFriendsActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".ui.mine.activity.MineGiftActivity"
-            android:theme="@style/Transparent"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/Transparent" />
         <activity
             android:name=".ui.mine.activity.RechargeActivity"
-            android:theme="@style/Transparent"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/Transparent" />
         <activity
             android:name=".ui.mine.activity.SeeActivity"
-            android:theme="@style/Transparent"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/Transparent" />
         <activity
             android:name=".ui.mine.activity.MineRealnameActivity"
-            android:theme="@style/Transparent"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/Transparent" />
         <activity
             android:name=".ui.mine.activity.MinePaymentsettingActivity"
-            android:theme="@style/Transparent"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/Transparent" />
         <activity
             android:name=".ui.mine.activity.MineMyWalletActivity"
-            android:theme="@style/Transparent"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/Transparent" />
         <activity
             android:name=".ui.mine.activity.MineSettingActivity"
-            android:theme="@style/Transparent"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/Transparent" />
         <activity
             android:name=".ui.mine.activity.MineBeautyActivity"
-            android:theme="@style/Transparent"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/Transparent" />
         <activity
             android:name=".ui.mine.activity.MineProblemActivity"
-            android:theme="@style/Transparent"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/Transparent" />
         <activity
             android:name=".ui.mine.activity.MineFeedbackActivity"
-            android:theme="@style/Transparent"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/Transparent" />
         <activity
             android:name=".ui.mine.activity.MineAskproblemActivity"
-            android:theme="@style/Transparent"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/Transparent" />
         <activity
             android:name=".ui.mine.activity.MineMyServiceActivity"
-            android:theme="@style/Transparent"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/Transparent" />
         <activity
             android:name=".ui.mine.activity.MineAddcartActivity"
-            android:theme="@style/Transparent"
-            android:screenOrientation="portrait" />
-        <activity android:name=".ui.mine.activity.MineBalanceActivity"
-            android:theme="@style/Transparent"/>
+            android:screenOrientation="portrait"
+            android:theme="@style/Transparent" />
+        <activity
+            android:name=".ui.mine.activity.MineBalanceActivity"
+            android:theme="@style/Transparent" />
         <activity
             android:name=".ui.mine.activity.MineRechargeActivity"
-            android:theme="@style/Transparent"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/Transparent" />
         <activity
             android:name=".ui.mine.activity.MineWithdrawalsActivity"
-            android:theme="@style/Transparent"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/Transparent" />
         <activity
             android:name=".ui.mine.activity.MineCommonProblemActivity"
-            android:theme="@style/Transparent"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/Transparent" />
         <activity
             android:name=".ui.mine.activity.MineDetailedActivity"
-            android:theme="@style/Transparent"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/Transparent" />
         <activity
             android:name=".ui.home.activity.DetailActivity"
-            android:theme="@style/Transparent"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/Transparent" />
         <activity
             android:name=".ui.mine.activity.BeanstalkActivity"
-            android:theme="@style/Transparent"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/Transparent" />
         <activity
             android:name=".ui.shop.WorkRoomDetailActivity"
-            android:theme="@style/Transparent"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/Transparent" />
         <activity
             android:name=".ui.shop.activity.ShopClassificationActivity"
-            android:theme="@style/Transparent"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/Transparent" />
         <activity
             android:name=".ui.home.activity.ShoppingCartActivity"
-            android:theme="@style/Transparent"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/Transparent" />
         <activity
             android:name=".ui.home.activity.HomeFightaloneActivity"
-            android:theme="@style/Transparent"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/Transparent" />
         <activity
             android:name=".ui.mine.activity.MineAuthenticationActivity"
-            android:theme="@style/Transparent"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/Transparent" />
         <activity
             android:name=".ui.order.activity.OrderDetailActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/Transparent"/>
+            android:theme="@style/Transparent" />
         <activity
             android:name=".ui.home.activity.FightaloneActivity"
-            android:theme="@style/Transparent"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/Transparent" />
+        <activity android:name=".ui.user.LoginActivity" />
+        <activity android:name=".ui.user.RegisterActivity" />
+        <activity android:name=".ui.user.ForgetcipherActivity"></activity>
     </application>
 
 </manifest>

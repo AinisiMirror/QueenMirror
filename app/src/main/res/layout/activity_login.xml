@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context="com.ainisi.queenmirror.queenmirrorcduan.ui.user.LoginActivity">
+
+    <include
+        android:id="@+id/ic_title"
+        layout="@layout/layout_title" />
+    <com.ainisi.queenmirror.queenmirrorcduan.utils.ScrollInterceptScrollView
+        android:layout_width="match_parent"
+        android:layout_below="@id/ic_title"
+        android:background="@color/alpha_05_black"
+        android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+       >
+        <ImageView
+            android:id="@+id/iv_head"
+            android:layout_width="@dimen/comment_95_dip"
+            android:layout_height="@dimen/comment_95_dip"
+            android:layout_marginTop="@dimen/comment_26_dip"
+            android:layout_centerHorizontal="true"
+            android:src="@mipmap/icon_login_head" />
+
+        <RelativeLayout
+            android:id="@+id/re_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/iv_head"
+            android:layout_marginEnd="@dimen/comment_10_dip"
+
+            android:background="@color/white">
+
+            <ImageView
+                android:id="@+id/iv_phonenumber"
+                android:layout_width="@dimen/comment_15_dip"
+                android:layout_height="@dimen/comment_25_dip"
+                android:layout_marginStart="@dimen/comment_18_dip"
+                android:layout_marginTop="@dimen/comment_10_dip"
+                android:src="@mipmap/icon_login_phone" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/comment_25_dip"
+                android:layout_marginStart="@dimen/comment_14_dip"
+                android:layout_marginTop="@dimen/comment_10_dip"
+                android:layout_toRightOf="@id/iv_phonenumber"
+                android:background="@color/white"
+                android:gravity="center|left"
+                android:inputType="number"
+                android:maxLength="11"
+                android:hint="请输入手机号"
+                android:textSize="@dimen/comment_14_size" />
+
+            <View
+                android:id="@+id/view"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/comment_2_dip"
+                android:layout_below="@id/iv_phonenumber"
+                android:layout_marginEnd="@dimen/comment_16_dip"
+                android:layout_marginStart="@dimen/comment_16_dip"
+                android:layout_marginTop="@dimen/comment_14_dip"
+                android:background="@color/alpha_05_black" />
+
+            <ImageView
+                android:id="@+id/iv_password"
+                android:layout_width="@dimen/comment_19_dip"
+                android:layout_height="@dimen/comment_24_dip"
+                android:layout_below="@id/view"
+                android:layout_marginStart="@dimen/comment_18_dip"
+                android:layout_marginTop="@dimen/comment_16_dip"
+                android:src="@mipmap/icon_login_password" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/comment_24_dip"
+                android:layout_below="@id/view"
+                android:layout_marginBottom="@dimen/comment_10_dip"
+                android:layout_marginStart="@dimen/comment_14_dip"
+                android:layout_marginTop="@dimen/comment_16_dip"
+                android:inputType="number"
+                android:maxLength="11"
+                android:layout_toRightOf="@id/iv_password"
+                android:background="@color/white"
+                android:gravity="center|left"
+                android:hint="请输入密码"
+                android:textSize="@dimen/comment_14_size" />
+            <View
+                android:id="@+id/view_two"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/comment_2_dip"
+                android:layout_below="@id/iv_password"
+                android:layout_marginEnd="@dimen/comment_16_dip"
+                android:layout_marginStart="@dimen/comment_16_dip"
+                android:layout_marginTop="@dimen/comment_14_dip"
+                android:background="@color/alpha_05_black" />
+            <ImageView
+                android:id="@+id/tv_choice"
+                android:layout_marginTop="@dimen/comment_25_dip"
+                android:layout_below="@id/view_two"
+                android:layout_marginStart="@dimen/comment_20_size"
+                android:layout_width="@dimen/comment_15_dip"
+                android:src="@mipmap/icon_login_choice"
+                android:layout_height="@dimen/comment_15_dip" />
+            <TextView
+                android:id="@+id/tv_forgetcipher"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/comment_14_size"
+                android:layout_below="@id/view_two"
+                android:layout_marginStart="@dimen/comment_5_dip"
+                android:layout_marginTop="@dimen/comment_23_dip"
+                android:layout_toRightOf="@id/tv_choice"
+                android:text="记住密码"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="忘记密码？"
+                android:layout_below="@id/view_two"
+                android:layout_marginTop="@dimen/comment_25_dip"
+                android:textColor="@color/gray_E7370C"
+                android:layout_alignParentRight="true"
+                />
+            <Button
+                android:id="@+id/bt_login"
+                android:layout_width="@dimen/comment_339_dip"
+                android:layout_below="@id/tv_choice"
+                android:layout_marginTop="@dimen/comment_14_dip"
+                android:layout_centerHorizontal="true"
+                android:text="登录"
+                android:background="@mipmap/icon_login_squareness"
+                android:layout_height="@dimen/comment_44_dip" />
+
+                />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_below="@id/re_login"
+            android:layout_marginTop="@dimen/comment_89_dip"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <include layout="@layout/activity_login_mine"/>
+        </RelativeLayout>
+
+    </RelativeLayout>
+    </com.ainisi.queenmirror.queenmirrorcduan.utils.ScrollInterceptScrollView>
+</RelativeLayout>

@@ -6,8 +6,8 @@
     android:fitsSystemWindows="true"
     android:layout_height="match_parent"
     android:scrollbars="vertical"
-
-    tools:context=".ui.mine.MineGiftActivity">
+    android:background="@color/white"
+    tools:context=".ui.mine.activity.MineGiftActivity">
     <RelativeLayout
 
         android:layout_width="match_parent"

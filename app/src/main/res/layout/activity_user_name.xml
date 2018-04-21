@@ -4,8 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:fitsSystemWindows="true"
+    android:background="@color/white"
+
     android:layout_height="match_parent"
-    tools:context=".ui.mine.UserNameActivity">
+    tools:context=".ui.mine.activity.UserNameActivity">
     <include
         android:id="@+id/tit_name"
         layout="@layout/layout_title"/>

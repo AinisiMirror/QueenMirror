@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context=".ui.mine.ReplaceActivity">
+    android:background="@color/white"
+    tools:context=".ui.mine.activity.ReplaceActivity">
     <include
         android:id="@+id/title"
         layout="@layout/layout_title" />

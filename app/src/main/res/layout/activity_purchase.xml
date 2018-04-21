@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:fitsSystemWindows="true"
-
+    android:background="@color/white"
     tools:context="com.ainisi.queenmirror.queenmirrorcduan.ui.home.activity.PurchaseActivity">
     <RelativeLayout
         android:layout_width="match_parent"

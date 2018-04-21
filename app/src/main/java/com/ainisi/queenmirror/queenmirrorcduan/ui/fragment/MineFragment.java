@@ -23,6 +23,7 @@ import com.ainisi.queenmirror.queenmirrorcduan.ui.mine.activity.MineMyFootActivi
 import com.ainisi.queenmirror.queenmirrorcduan.ui.mine.activity.MinePositionActivity;
 import com.ainisi.queenmirror.queenmirrorcduan.ui.mine.activity.PortraitActivity;
 import com.ainisi.queenmirror.queenmirrorcduan.ui.mine.activity.InstallActivity;
+import com.ainisi.queenmirror.queenmirrorcduan.ui.user.LoginActivity;
 
 import butterknife.OnClick;
 
@@ -60,7 +61,8 @@ public class MineFragment extends BaseFragment {
                 break;
             //更改头像和个人信息
             case R.id.iv_title:
-                PortraitActivity.startActivity(getActivity());
+                //PortraitActivity.startActivity(getActivity());
+                startActivity(new Intent(getContext(), LoginActivity.class));
                 break;
             //设置
             case R.id.iv_install:

@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context=".ui.mine.MineQueenActivity">
+    android:background="@color/white"
+    tools:context=".ui.mine.activity.MineQueenActivity">
     <include
         android:id="@+id/ic_title"
         layout="@layout/layout_queentitle"/>

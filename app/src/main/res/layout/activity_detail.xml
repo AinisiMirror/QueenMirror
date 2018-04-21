@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:fitsSystemWindows="true"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context="com.ainisi.queenmirror.queenmirrorcduan.ui.home.activity.DetailActivity">
     <TextView
         android:id="@+id/detail_tv"

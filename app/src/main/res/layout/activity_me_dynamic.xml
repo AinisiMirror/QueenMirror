@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context=".ui.mine.MeDynamicActivity">
+    android:background="@color/white"
+    tools:context=".ui.mine.activity.MeDynamicActivity">
     <include layout="@layout/title"/>
 </RelativeLayout>

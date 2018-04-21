@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.mine.UserpassActivity">
+    android:background="@color/white"
+    tools:context=".ui.mine.activity.UserpassActivity">
     <include
         android:id="@+id/pass"
         layout="@layout/layout_title"/>

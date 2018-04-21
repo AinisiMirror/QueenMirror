@@ -6,6 +6,7 @@ import android.support.v7.app.AlertDialog;
 import android.text.SpannableString;
 import android.text.Spanned;
 import android.text.style.StrikethroughSpan;
+import android.view.DragAndDropPermissions;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -43,14 +44,11 @@ public class ShopcatAdapter extends BaseExpandableListAdapter {
     private GroupEditorListener groupEditorListener;
     private int count = 0;
     private boolean flag=true; //组的编辑按钮是否可见，true可见，false不可见
-
-
     public ShopcatAdapter(List<StoreInfo> groups, Map<String, List<GoodsInfo>> childrens, Context mcontext) {
         this.groups = groups;
         this.childrens = childrens;
         this.mcontext = mcontext;
     }
-
     @Override
     public int getGroupCount() {
         return groups.size();
@@ -87,7 +85,6 @@ public class ShopcatAdapter extends BaseExpandableListAdapter {
     public boolean hasStableIds() {
         return false;
     }
-
     @Override
     public View getGroupView(final int groupPosition, boolean isExpanded, View convertView, ViewGroup parent) {
         final GroupViewHolder groupViewHolder;
