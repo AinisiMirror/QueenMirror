@@ -52,6 +52,7 @@ public class OrderFragment extends BaseFragment {
 
     @OnClick({R.id.title_photo})
     public void onClick(View view){
+
         switch (view.getId()){
             case R.id.title_photo:
                 Intent intent = new Intent(getActivity(), OrderDetailActivity.class);
@@ -65,8 +66,6 @@ public class OrderFragment extends BaseFragment {
 
         initDate();
     }
-
-
     private void initDate() {
         tablist.add("全部订单");
         tablist.add("待评价");

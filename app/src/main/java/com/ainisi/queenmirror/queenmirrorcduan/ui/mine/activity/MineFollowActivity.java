@@ -49,7 +49,7 @@ public class MineFollowActivity extends BaseActivity{
             sortlist.add(sortBean);
         }
 
-        MyAdapter sortAdapter=new MyAdapter(this,sortlist,R.layout.item_fullshortrecycler);
+        MyAdapter sortAdapter=new MyAdapter(R.layout.item_fullshortrecycler,sortlist);
         recycler.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false));
         recycler.setAdapter(sortAdapter);
 

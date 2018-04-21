@@ -1,10 +1,11 @@
 package com.ainisi.queenmirror.queenmirrorcduan.adapter;
 
 import android.content.Context;
+import android.support.annotation.Nullable;
 
 import com.ainisi.queenmirror.queenmirrorcduan.bean.SortBean;
-import com.ainisi.queenmirror.queenmirrorcduan.utils.BaseRecyclerAdapter;
-import com.ainisi.queenmirror.queenmirrorcduan.utils.BaseViewHolder;
+import com.chad.library.adapter.base.BaseQuickAdapter;
+import com.chad.library.adapter.base.BaseViewHolder;
 
 import java.util.List;
 
@@ -12,16 +13,15 @@ import java.util.List;
  * Created by 王军超 on 2018/3/22.
  */
 
-public class MyAdapter extends BaseRecyclerAdapter<SortBean> {
+public class MyAdapter extends BaseQuickAdapter<SortBean,BaseViewHolder> {
 
-    public MyAdapter(Context context, List<SortBean> datas, int layoutId) {
-        super(context, datas, layoutId);
 
+    public MyAdapter(int layoutResId, @Nullable List<SortBean> data) {
+        super(layoutResId, data);
     }
 
     @Override
-    protected void bindData(BaseViewHolder holder, final SortBean data, int position) {
-
+    protected void convert(BaseViewHolder helper, SortBean item) {
 
     }
 }

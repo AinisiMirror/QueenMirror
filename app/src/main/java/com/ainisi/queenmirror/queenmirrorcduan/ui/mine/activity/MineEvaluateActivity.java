@@ -43,7 +43,7 @@ public class MineEvaluateActivity extends BaseActivity {
             sortBean.setDistance("");
             list.add(sortBean);
         }
-        MyAdapter sortAdapter2=new MyAdapter(this,list,R.layout.item_evaluate);
+        MyAdapter sortAdapter2=new MyAdapter(R.layout.item_evaluate,list);
         rcevaluate.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false));
         rcevaluate.setAdapter(sortAdapter2);
     }

@@ -47,21 +47,9 @@ public class SortFragment extends BaseFragment {
             sortBean.setDistance("875m");
             sortlist.add(sortBean);
         }
-        MyAdapter sortAdapter = new MyAdapter(getActivity(), sortlist, R.layout.item_shortrecycler);
+        MyAdapter sortAdapter = new MyAdapter(R.layout.item_shortrecycler,sortlist);
         recycler.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false));
         recycler.setAdapter(sortAdapter);
-        sortAdapter.setOnItemClickListner(new BaseRecyclerAdapter.OnItemClickListner() {
-            @Override
-            public void onItemClickListner(View v, int position) {
-                switch (position) {
-                    case 1:
-                        ToastUtils.showShort("你点击了item1");
-                        break;
-                    case 2:
-                        ToastUtils.showShort("您点击了item2，因为代码设定之后的无法点击了");
-                        break;
-                }
-            }
-        });
+
     }
 }

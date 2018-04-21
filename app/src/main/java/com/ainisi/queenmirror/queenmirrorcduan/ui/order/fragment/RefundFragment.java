@@ -12,6 +12,7 @@ import com.ainisi.queenmirror.queenmirrorcduan.R;
 import com.ainisi.queenmirror.queenmirrorcduan.adapter.MyAdapter;
 import com.ainisi.queenmirror.queenmirrorcduan.bean.SortBean;
 import com.ainisi.queenmirror.queenmirrorcduan.utils.BaseRecyclerAdapter;
+import com.chad.library.adapter.base.BaseQuickAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -43,15 +44,15 @@ public class RefundFragment extends BaseFragment{
             SortBean sortBean=new SortBean();
             list.add(sortBean);
         }
-        MyAdapter sbmitWholeAdapter=new MyAdapter(getActivity(),list,R.layout.item_refundrecycler);
+        MyAdapter sbmitWholeAdapter=new MyAdapter(R.layout.item_refundrecycler,list);
         refund.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayout.VERTICAL,false));
         refund.setAdapter(sbmitWholeAdapter);
-        sbmitWholeAdapter.setOnItemClickListner(new BaseRecyclerAdapter.OnItemClickListner() {
+        sbmitWholeAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
             @Override
-            public void onItemClickListner(View v, int position) {
-
+            public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
                 Toast.makeText(getActivity(), "你点击了我", Toast.LENGTH_SHORT).show();
             }
         });
+
     }
 }

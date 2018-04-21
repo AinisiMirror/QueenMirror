@@ -45,7 +45,7 @@ public class HistorydiscountFragment extends BaseFragment{
             sortBean.setDistance("875m");
             list.add(sortBean);
         }
-        MyAdapter sortAdapter=new MyAdapter(getActivity(),list,R.layout.item_discount);
+        MyAdapter sortAdapter=new MyAdapter(R.layout.item_discount,list);
         disrecycler.setLayoutManager(new LinearLayoutManager(getActivity(),LinearLayoutManager.VERTICAL,false));
         disrecycler.setAdapter(sortAdapter);
     }

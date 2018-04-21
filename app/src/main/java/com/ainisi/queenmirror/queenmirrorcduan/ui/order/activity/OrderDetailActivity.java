@@ -6,7 +6,7 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import com.ainisi.queenmirror.queenmirrorcduan.R;
-import com.ainisi.queenmirror.queenmirrorcduan.adapter.MineAdapter;
+import com.ainisi.queenmirror.queenmirrorcduan.adapter.MyAdapter;
 import com.ainisi.queenmirror.queenmirrorcduan.api.HttpCallBack;
 import com.ainisi.queenmirror.queenmirrorcduan.base.BaseNewActivity;
 import com.ainisi.queenmirror.queenmirrorcduan.bean.SortBean;
@@ -41,7 +41,7 @@ public class OrderDetailActivity extends BaseNewActivity implements HttpCallBack
             SortBean sortBean=new SortBean();
             list.add(sortBean);
         }
-        MineAdapter sbmitWholeAdapter=new MineAdapter(this,list,R.layout.order_detail_listitem);
+        MyAdapter sbmitWholeAdapter=new MyAdapter(R.layout.order_detail_listitem,list);
         rv_orderdetail_order.setLayoutManager(new LinearLayoutManager(this, LinearLayout.VERTICAL,false));
         rv_orderdetail_order.setAdapter(sbmitWholeAdapter);
     }

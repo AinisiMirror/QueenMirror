@@ -66,7 +66,7 @@ public class MineBeanActivity extends BaseActivity implements HttpCallBack{
             sortBean.setDistance("");
             list.add(sortBean);
         }
-        MyAdapter sortAdapter2=new MyAdapter(this,list,R.layout.item_rcbean);
+        MyAdapter sortAdapter2=new MyAdapter(R.layout.item_rcbean,list);
         beanrecycle.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false));
         beanrecycle.setAdapter(sortAdapter2);
     }

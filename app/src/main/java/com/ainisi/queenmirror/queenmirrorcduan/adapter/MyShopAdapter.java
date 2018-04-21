@@ -1,14 +1,13 @@
 package com.ainisi.queenmirror.queenmirrorcduan.adapter;
 
-import android.content.Context;
-import android.widget.ImageView;
-import android.widget.TextView;
+
+import android.support.annotation.Nullable;
 
 import com.ainisi.queenmirror.queenmirrorcduan.R;
 import com.ainisi.queenmirror.queenmirrorcduan.bean.ShopBean;
-import com.ainisi.queenmirror.queenmirrorcduan.bean.SortBean;
-import com.ainisi.queenmirror.queenmirrorcduan.utils.BaseRecyclerAdapter;
-import com.ainisi.queenmirror.queenmirrorcduan.utils.BaseViewHolder;
+
+import com.chad.library.adapter.base.BaseQuickAdapter;
+import com.chad.library.adapter.base.BaseViewHolder;
 
 import java.util.List;
 
@@ -22,18 +21,16 @@ import java.util.List;
  * jl
  */
 
-public class MyShopAdapter extends BaseRecyclerAdapter<ShopBean> {
+public class MyShopAdapter extends BaseQuickAdapter<ShopBean, BaseViewHolder> {
 
-    public MyShopAdapter(Context context, List<ShopBean> datas, int layoutId) {
-        super(context, datas, layoutId);
+
+    public MyShopAdapter(int layoutResId, @Nullable List<ShopBean> data) {
+        super(layoutResId, data);
     }
 
     @Override
-    protected void bindData(BaseViewHolder holder, ShopBean data, int position) {
-           ImageView imageTitle= holder.getView(R.id.image_title);
-           TextView name= holder.getView(R.id.text_name);
-           imageTitle.setImageResource(data.getImageTitle());
-           name.setText(data.getTextName());
-
+    protected void convert(BaseViewHolder helper, ShopBean item) {
+        helper.setImageResource(R.id.image_title,item.getImageTitle());
+        helper.setText(R.id.text_name,item.getTextName());
     }
 }

@@ -22,7 +22,7 @@ import android.widget.TextView;
 import com.ainisi.queenmirror.common.base.BaseFragment;
 import com.ainisi.queenmirror.queenmirrorcduan.R;
 import com.ainisi.queenmirror.queenmirrorcduan.adapter.GridViewAdapter;
-import com.ainisi.queenmirror.queenmirrorcduan.adapter.HomePageAdapter;
+
 import com.ainisi.queenmirror.queenmirrorcduan.adapter.ListViewAdapter;
 import com.ainisi.queenmirror.queenmirrorcduan.adapter.ProblemAdapter;
 import com.ainisi.queenmirror.queenmirrorcduan.bean.SortBean;
@@ -86,7 +86,7 @@ public class HomeFragmentOne extends BaseFragment {
     private LinearLayoutManager linearLayoutManager;
     private int top = -1;
     private int mScrollY = 0;
-    HomePageAdapter commonAdapter;
+
 
     ListViewAdapter listadapter;
     @Bind(R.id.listView)

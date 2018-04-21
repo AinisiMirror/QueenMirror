@@ -55,7 +55,7 @@ public class FightaloneActivity extends BaseActivity {
             sortBean.setDistance("875m");
             fulllist.add(sortBean);
         }
-        MyAdapter sortAdapter = new MyAdapter(this, fulllist, R.layout.item_fullrecycler);
+        MyAdapter sortAdapter = new MyAdapter( R.layout.item_fullrecycler,fulllist);
         frecycler.setLayoutManager(new GridLayoutManager(this, 2));
         frecycler.setAdapter(sortAdapter);
         for (int i = 0; i < 8; i++) {
@@ -65,7 +65,7 @@ public class FightaloneActivity extends BaseActivity {
             sortBean.setDistance("");
             fulllist2.add(sortBean);
         }
-        MyAdapter sortAdapter2 = new MyAdapter(this, fulllist2, R.layout.item_fullrecyclertwo);
+        MyAdapter sortAdapter2 = new MyAdapter(R.layout.item_fullrecyclertwo,fulllist2);
 
         frecyclertwo.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
         frecyclertwo.setAdapter(sortAdapter2);

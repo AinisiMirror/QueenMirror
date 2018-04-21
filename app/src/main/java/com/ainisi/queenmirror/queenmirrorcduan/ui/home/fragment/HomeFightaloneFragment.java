@@ -18,6 +18,7 @@ import com.ainisi.queenmirror.queenmirrorcduan.bean.SortBean;
 import com.ainisi.queenmirror.queenmirrorcduan.ui.home.activity.FightaloneActivity;
 import com.ainisi.queenmirror.queenmirrorcduan.ui.home.activity.FullActivity;
 import com.ainisi.queenmirror.queenmirrorcduan.utils.BaseRecyclerAdapter;
+import com.chad.library.adapter.base.BaseQuickAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -55,14 +56,13 @@ public class HomeFightaloneFragment extends BaseFragment {
             sortBean.setDistance("875m");
             list.add(sortBean);
         }
-        MyAdapter sortAdapter=new MyAdapter(getActivity(),list,R.layout.re_home_fightalone);
+        MyAdapter sortAdapter=new MyAdapter(R.layout.re_home_fightalone,list);
         reFightalone.setLayoutManager(new LinearLayoutManager(getActivity(),LinearLayoutManager.VERTICAL,false));
         reFightalone.setAdapter(sortAdapter);
-        sortAdapter.setOnItemClickListner(new BaseRecyclerAdapter.OnItemClickListner() {
+        sortAdapter.setOnItemChildClickListener(new BaseQuickAdapter.OnItemChildClickListener() {
             @Override
-            public void onItemClickListner(View v, int position) {
-
-               startActivity(new Intent(getActivity(), FightaloneActivity.class));
+            public void onItemChildClick(BaseQuickAdapter adapter, View view, int position) {
+                startActivity(new Intent(getActivity(), FightaloneActivity.class));
             }
         });
     }

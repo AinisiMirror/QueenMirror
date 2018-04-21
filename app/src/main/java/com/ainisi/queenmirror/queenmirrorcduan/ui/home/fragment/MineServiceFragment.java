@@ -43,7 +43,7 @@ public class MineServiceFragment extends BaseFragment{
             sortBean.setDistance("875m");
             sortlist.add(sortBean);
         }
-        MyAdapter sortAdapter=new MyAdapter(getActivity(),sortlist,R.layout.item_rcshedule);
+        MyAdapter sortAdapter=new MyAdapter(R.layout.item_rcshedule,sortlist);
         rcshedule.setLayoutManager(new LinearLayoutManager(getActivity(),LinearLayoutManager.VERTICAL,false));
         rcshedule.setAdapter(sortAdapter);
     }

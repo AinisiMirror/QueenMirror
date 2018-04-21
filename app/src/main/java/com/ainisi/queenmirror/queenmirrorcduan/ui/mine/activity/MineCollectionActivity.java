@@ -49,7 +49,7 @@ public class MineCollectionActivity extends BaseActivity{
             sortBean.setDistance("");
             list.add(sortBean);
         }
-        MyAdapter sortAdapter2=new MyAdapter(this,list,R.layout.item_collection);
+        MyAdapter sortAdapter2=new MyAdapter(R.layout.item_collection,list);
         collrecycler.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false));
         collrecycler.setAdapter(sortAdapter2);
 

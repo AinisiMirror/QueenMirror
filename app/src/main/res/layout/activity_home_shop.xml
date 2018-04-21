@@ -391,5 +391,8 @@
                 android:text="@string/satisfy" />
         </LinearLayout>
     </LinearLayout>
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
     <include layout="@layout/home_appbarlayout" />
 </LinearLayout>

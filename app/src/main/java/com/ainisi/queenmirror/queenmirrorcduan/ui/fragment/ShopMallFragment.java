@@ -38,6 +38,7 @@ import com.ainisi.queenmirror.queenmirrorcduan.utils.BaseRecyclerAdapter;
 import com.ainisi.queenmirror.queenmirrorcduan.utils.CustomPopWindow;
 import com.ainisi.queenmirror.queenmirrorcduan.utils.NoScrollGridView;
 import com.ainisi.queenmirror.queenmirrorcduan.utils.NoScrollListview;
+import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.youth.banner.Banner;
 
 import java.util.ArrayList;
@@ -160,17 +161,13 @@ public class ShopMallFragment extends BaseFragment {
             shopBean.setTextName(textTitle[i]);
             shopList.add(shopBean);
         }
-        MyShopAdapter myShopAdapter=new MyShopAdapter(getActivity(),shopList,R.layout.re_shopmall_shop);
+        MyShopAdapter myShopAdapter=new MyShopAdapter(R.layout.re_shopmall_shop,shopList);
         shopRecycle.setLayoutManager(new GridLayoutManager(getActivity(),4));
         shopRecycle.setAdapter(myShopAdapter);
-        myShopAdapter.setOnItemClickListner(new BaseRecyclerAdapter.OnItemClickListner() {
+        myShopAdapter.setOnItemChildClickListener(new BaseQuickAdapter.OnItemChildClickListener() {
             @Override
-            public void onItemClickListner(View v, int position) {
-                switch (position){
-                    case 0:
-                        startActivity(new Intent(getActivity(), ShopClassificationActivity.class));
-                        break;
-                }
+            public void onItemChildClick(BaseQuickAdapter adapter, View view, int position) {
+                startActivity(new Intent(getActivity(), ShopClassificationActivity.class));
             }
         });
     }

@@ -51,7 +51,7 @@ public class OrderMessageActivity extends BaseActivity {
             sortBean.setDistance("875m");
             orelist.add(sortBean);
         }
-        MyAdapter sortAdapter=new MyAdapter(this,orelist,R.layout.item_oremesage);
+        MyAdapter sortAdapter=new MyAdapter(R.layout.item_oremesage,orelist);
         ordrecycler.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false));
         ordrecycler.setAdapter(sortAdapter);
         title.setText(R.string.message_center);

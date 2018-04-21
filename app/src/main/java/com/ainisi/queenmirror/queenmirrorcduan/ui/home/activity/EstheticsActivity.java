@@ -25,6 +25,7 @@ import com.ainisi.queenmirror.queenmirrorcduan.utils.BaseRecyclerAdapter;
 import com.ainisi.queenmirror.queenmirrorcduan.utils.CustomPopWindow;
 import com.ainisi.queenmirror.queenmirrorcduan.utils.NoScrollViewPager;
 import com.ainisi.queenmirror.queenmirrorcduan.utils.ViewPager;
+import com.chad.library.adapter.base.BaseQuickAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -100,17 +101,13 @@ public class EstheticsActivity extends BaseActivity {
             SortBean sortBean=new SortBean();
             sortlist.add(sortBean);
         }
-        MyAdapter sortAdapter=new MyAdapter(this,sortlist,R.layout.re_full_recommend);
+        MyAdapter sortAdapter=new MyAdapter(R.layout.re_full_recommend,sortlist);
         reProjects.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false));
         reProjects.setAdapter(sortAdapter);
-        sortAdapter.setOnItemClickListner(new BaseRecyclerAdapter.OnItemClickListner() {
+        sortAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
             @Override
-            public void onItemClickListner(View v, int position) {
-                switch (position){
-                    case 0:
-                        startActivity(new Intent(EstheticsActivity.this, FullActivity.class));
-                        break;
-                }
+            public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
+                startActivity(new Intent(EstheticsActivity.this, FullActivity.class));
             }
         });
         pop = new PopupWindow(CollapsingToolbarLayout.LayoutParams.MATCH_PARENT, CollapsingToolbarLayout.LayoutParams.WRAP_CONTENT);

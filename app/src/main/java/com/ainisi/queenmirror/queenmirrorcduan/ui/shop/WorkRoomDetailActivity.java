@@ -162,7 +162,7 @@ public class WorkRoomDetailActivity extends BaseNewActivity implements HttpCallB
             SortBean sortBean = new SortBean();
             sortlist.add(sortBean);
         }
-        MyAdapter sortAdapter = new MyAdapter(this, sortlist, R.layout.re_full_recommend);
+        MyAdapter sortAdapter = new MyAdapter(R.layout.re_full_recommend,sortlist);
         re_recommendable_projects_shop.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
         re_recommendable_projects_shop.setAdapter(sortAdapter);
     }

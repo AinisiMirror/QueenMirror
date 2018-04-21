@@ -43,7 +43,7 @@ public class FullshortFragment extends BaseFragment{
             sortBean.setDistance("875m");
             sortlist.add(sortBean);
         }
-        MyAdapter sortAdapter=new MyAdapter(getActivity(),sortlist,R.layout.re_full_short);
+        MyAdapter sortAdapter=new MyAdapter(R.layout.re_full_short,sortlist);
         recycler.setLayoutManager(new LinearLayoutManager(getActivity(),LinearLayoutManager.VERTICAL,false));
         recycler.setAdapter(sortAdapter);
 

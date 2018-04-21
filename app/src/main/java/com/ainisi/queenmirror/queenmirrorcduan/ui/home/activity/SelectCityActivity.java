@@ -54,7 +54,7 @@ public class SelectCityActivity extends BaseActivity {
             sortlist.add(sortBean);
         }
 
-        MyAdapter sortAdapter = new MyAdapter(this, sortlist, R.layout.item_rcselect);
+        MyAdapter sortAdapter = new MyAdapter( R.layout.item_rcselect,sortlist);
         HmSelecity.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
         HmSelecity.setAdapter(sortAdapter);
 

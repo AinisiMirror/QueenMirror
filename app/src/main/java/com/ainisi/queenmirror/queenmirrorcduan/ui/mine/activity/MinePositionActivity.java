@@ -49,7 +49,7 @@ public class MinePositionActivity extends BaseActivity {
             sortlist.add(sortBean);
         }
 
-        MyAdapter sortAdapter=new MyAdapter(this,sortlist,R.layout.item_rcposition);
+        MyAdapter sortAdapter=new MyAdapter(R.layout.item_rcposition,sortlist);
        posrctcle.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false));
         posrctcle.setAdapter(sortAdapter);
     }

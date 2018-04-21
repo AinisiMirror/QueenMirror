@@ -48,7 +48,7 @@ public class MineFriendsActivity extends BaseActivity {
             sortBean.setDistance("");
             list.add(sortBean);
         }
-        MyAdapter sortAdapter2=new MyAdapter(this,list,R.layout.item_rcfriends);
+        MyAdapter sortAdapter2=new MyAdapter(R.layout.item_rcfriends,list);
         rcfriends.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false));
         rcfriends.setAdapter(sortAdapter2);
     }
