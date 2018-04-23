@@ -2,22 +2,16 @@ package com.ainisi.queenmirror.queenmirrorcduan.ui.home.fragment;
 
 
 import android.content.Intent;
-import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Toast;
 
 import com.ainisi.queenmirror.common.base.BaseFragment;
 import com.ainisi.queenmirror.queenmirrorcduan.R;
 import com.ainisi.queenmirror.queenmirrorcduan.adapter.MyAdapter;
 import com.ainisi.queenmirror.queenmirrorcduan.bean.SortBean;
 import com.ainisi.queenmirror.queenmirrorcduan.ui.home.activity.FightaloneActivity;
-import com.ainisi.queenmirror.queenmirrorcduan.ui.home.activity.FullActivity;
-import com.ainisi.queenmirror.queenmirrorcduan.utils.BaseRecyclerAdapter;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 
 import java.util.ArrayList;

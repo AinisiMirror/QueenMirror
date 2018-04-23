@@ -21,7 +21,6 @@ import com.ainisi.queenmirror.queenmirrorcduan.ui.home.fragment.FulldistanFragme
 import com.ainisi.queenmirror.queenmirrorcduan.ui.home.fragment.FullsalesFragment;
 import com.ainisi.queenmirror.queenmirrorcduan.ui.home.fragment.FullscreenFragment;
 import com.ainisi.queenmirror.queenmirrorcduan.ui.home.fragment.FullshortFragment;
-import com.ainisi.queenmirror.queenmirrorcduan.utils.BaseRecyclerAdapter;
 import com.ainisi.queenmirror.queenmirrorcduan.utils.CustomPopWindow;
 import com.ainisi.queenmirror.queenmirrorcduan.utils.NoScrollViewPager;
 import com.ainisi.queenmirror.queenmirrorcduan.utils.ViewPager;
@@ -136,12 +135,12 @@ public class EstheticsActivity extends BaseActivity {
             problemBean.setName(problem[i]);
             list.add(problemBean);
         }
-        ProblemAdapter problemAdapter = new ProblemAdapter(this, list, R.layout.item_pop_sort);
+        ProblemAdapter problemAdapter = new ProblemAdapter(R.layout.item_pop_sort,list);
         ce.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
         ce.setAdapter(problemAdapter);
-        problemAdapter.setOnItemClickListner(new BaseRecyclerAdapter.OnItemClickListner() {
+        problemAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
             @Override
-            public void onItemClickListner(View v, int position) {
+            public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
                 hSort.setText(problem[position]);
                 pop.dismiss();
             }

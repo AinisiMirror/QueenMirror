@@ -34,7 +34,6 @@ import com.ainisi.queenmirror.queenmirrorcduan.ui.home.fragment.DistanceFragment
 import com.ainisi.queenmirror.queenmirrorcduan.ui.home.fragment.SalesFragment;
 import com.ainisi.queenmirror.queenmirrorcduan.ui.home.fragment.ScreenFragment;
 import com.ainisi.queenmirror.queenmirrorcduan.ui.home.fragment.SortFragment;
-import com.ainisi.queenmirror.queenmirrorcduan.utils.BaseRecyclerAdapter;
 import com.ainisi.queenmirror.queenmirrorcduan.utils.CustomPopWindow;
 import com.ainisi.queenmirror.queenmirrorcduan.utils.NoScrollGridView;
 import com.ainisi.queenmirror.queenmirrorcduan.utils.NoScrollListview;
@@ -224,12 +223,12 @@ public class ShopMallFragment extends BaseFragment {
             problemBean.setName(problem[i]);
             list.add(problemBean);
         }
-        ProblemAdapter problemAdapter = new ProblemAdapter(getActivity(), list, R.layout.item_pop_sort);
+        ProblemAdapter problemAdapter = new ProblemAdapter(R.layout.item_pop_sort,list);
         ce.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false));
         ce.setAdapter(problemAdapter);
-        problemAdapter.setOnItemClickListner(new BaseRecyclerAdapter.OnItemClickListner() {
+        problemAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
             @Override
-            public void onItemClickListner(View v, int position) {
+            public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
                 hSort.setText(problem[position]);
                 pop.dismiss();
             }

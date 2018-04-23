@@ -1,11 +1,11 @@
 package com.ainisi.queenmirror.queenmirrorcduan.adapter;
 
-import android.content.Context;
-import android.widget.TextView;
+import android.support.annotation.Nullable;
 import com.ainisi.queenmirror.queenmirrorcduan.R;
 import com.ainisi.queenmirror.queenmirrorcduan.bean.ProblemBean;
-import com.ainisi.queenmirror.queenmirrorcduan.utils.BaseRecyclerAdapter;
-import com.ainisi.queenmirror.queenmirrorcduan.utils.BaseViewHolder;
+
+import com.chad.library.adapter.base.BaseQuickAdapter;
+import com.chad.library.adapter.base.BaseViewHolder;
 
 import java.util.List;
 
@@ -13,16 +13,16 @@ import java.util.List;
  * Created by Administrator on 2018/4/3.
  */
 
-public class ProblemAdapter extends BaseRecyclerAdapter<ProblemBean> {
+public class ProblemAdapter extends BaseQuickAdapter<ProblemBean,BaseViewHolder> {
 
-    public ProblemAdapter(Context context, List<ProblemBean> datas, int layoutId) {
-        super(context, datas, layoutId);
 
+    public ProblemAdapter(int layoutResId, @Nullable List<ProblemBean> data) {
+        super(layoutResId, data);
     }
 
+
     @Override
-    protected void bindData(BaseViewHolder holder, ProblemBean data, int position) {
-       TextView replace=holder.itemView.findViewById(R.id.tv_replace);
-        replace.setText(data.getName());
+    protected void convert(BaseViewHolder helper, ProblemBean item) {
+        helper.setText(R.id.tv_replace,item.getName());
     }
 }

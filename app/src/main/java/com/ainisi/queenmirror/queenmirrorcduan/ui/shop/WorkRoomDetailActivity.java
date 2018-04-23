@@ -3,17 +3,11 @@ package com.ainisi.queenmirror.queenmirrorcduan.ui.shop;
 import android.support.design.widget.TabLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.ListView;
 import android.widget.RelativeLayout;
-import android.widget.TableLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.ainisi.queenmirror.common.commonutils.ToastUtils;
 import com.ainisi.queenmirror.queenmirrorcduan.R;
 import com.ainisi.queenmirror.queenmirrorcduan.adapter.WorkCreditAdapter;
 import com.ainisi.queenmirror.queenmirrorcduan.adapter.WorkRoomAdapter;
@@ -24,8 +18,6 @@ import com.ainisi.queenmirror.queenmirrorcduan.api.HttpCallBack;
 import com.ainisi.queenmirror.queenmirrorcduan.base.BaseNewActivity;
 import com.ainisi.queenmirror.queenmirrorcduan.bean.SortBean;
 import com.ainisi.queenmirror.queenmirrorcduan.utilnomal.HoveringScrollview;
-import com.ainisi.queenmirror.queenmirrorcduan.utils.BaseRecyclerAdapter;
-import com.ainisi.queenmirror.queenmirrorcduan.utils.NoScrollGridView;
 import com.ainisi.queenmirror.queenmirrorcduan.utils.NoScrollListview;
 
 import java.util.ArrayList;

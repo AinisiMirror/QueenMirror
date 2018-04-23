@@ -287,7 +287,8 @@
             android:theme="@style/Transparent" />
         <activity android:name=".ui.user.LoginActivity" />
         <activity android:name=".ui.user.RegisterActivity" />
-        <activity android:name=".ui.user.ForgetcipherActivity"></activity>
+        <activity android:name=".ui.user.ForgetcipherActivity" />
+        <activity android:name=".ui.order.activity.ScoreActivity"></activity>
     </application>
 
 </manifest>

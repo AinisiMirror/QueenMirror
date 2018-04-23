@@ -320,14 +320,14 @@
         android:layout_height="@dimen/comment_50_dip"
         android:layout_gravity="center"
         android:layout_marginTop="@dimen/comment_40_dip"
-        android:background="@drawable/ic_setting_breake"
+        android:background="@mipmap/icon_login_squareness"
         android:gravity="center">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/confirmation_of_payment"
-            android:textColor="@color/alpha_90_black"
+            android:textColor="@color/white"
             android:textSize="@dimen/comment_12_size" />
 
         <TextView
@@ -335,7 +335,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/comment_10_dip"
             android:text="¥222.00"
-            android:textColor="@color/alpha_90_black"
+            android:textColor="@color/white"
             android:textSize="@dimen/comment_16_size" />
     </LinearLayout>
 </LinearLayout>

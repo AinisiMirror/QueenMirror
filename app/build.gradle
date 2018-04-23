@@ -64,23 +64,20 @@ dependencies {
     compile 'com.android.support:appcompat-v7:26.1.0'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     compile 'com.android.support:design:26.0.0-alpha1'
-//    compile 'com.jakewharton:butterknife:6.1.0'
+    //    compile 'com.jakewharton:butterknife:6.1.0'
     compile 'com.android.support:support-v4:26.+'
     compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.31'
     compile 'com.google.code.gson:gson:2.8.0'
     testCompile 'junit:junit:4.12'
-
     //okgo
     /*compile files('libs/okgo-2.1.4.jar')
-    compile files('libs/okhttp-3.4.1.jar')
-    compile files('libs/okio-1.9.0.jar')*/
+        compile files('libs/okhttp-3.4.1.jar')
+        compile files('libs/okio-1.9.0.jar')*/
     //用于防止apk达到一定大小后出现问题
     //节操播放器依赖包
     compile 'cn.jzvd:jiaozivideoplayer:6.0.0'
     //compile files('libs/okio-1.9.0.jar')
-
     //强大的下拉刷新控件
     compile 'in.srain.cube:ultra-ptr:1.0.11'
-
-
+    compile project(':mypplication')
 }

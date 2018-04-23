@@ -56,7 +56,7 @@ public class MineCommonProblemActivity extends BaseActivity {
             problemBean.setName(problem[i]);
             list.add(problemBean);
         }
-        ProblemAdapter problemAdapter=new ProblemAdapter(this,list,R.layout.item_rccommon_problem);
+        ProblemAdapter problemAdapter=new ProblemAdapter(R.layout.item_rccommon_problem,list);
         rccommon.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false));
         rccommon.setAdapter(problemAdapter);
 

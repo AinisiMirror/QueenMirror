@@ -7,11 +7,9 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.ainisi.queenmirror.common.base.BaseFragment;
-import com.ainisi.queenmirror.common.commonutils.ToastUtils;
 import com.ainisi.queenmirror.queenmirrorcduan.R;
 import com.ainisi.queenmirror.queenmirrorcduan.adapter.MyAdapter;
 import com.ainisi.queenmirror.queenmirrorcduan.bean.SortBean;
-import com.ainisi.queenmirror.queenmirrorcduan.utils.BaseRecyclerAdapter;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 
 import java.util.ArrayList;
@@ -50,7 +48,7 @@ public class RefundFragment extends BaseFragment{
         sbmitWholeAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
-                Toast.makeText(getActivity(), "你点击了我", Toast.LENGTH_SHORT).show();
+             Toast.makeText(getActivity(), "aofjiawejgiejtgiwahei", Toast.LENGTH_SHORT).show();
             }
         });
 

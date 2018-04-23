@@ -110,7 +110,7 @@
         android:id="@+id/view3" />
 
     <TextView
-        android:id="@+id/textView31"
+        android:id="@+id/tv_detail"
         android:layout_width="@dimen/comment_82_dip"
         android:gravity="center"
         android:layout_height="@dimen/comment_32_dip"

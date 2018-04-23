@@ -1,25 +1,14 @@
 package com.ainisi.queenmirror.queenmirrorcduan.ui.home.activity;
 
 import android.content.Intent;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.ainisi.queenmirror.common.base.BaseActivity;
-import com.ainisi.queenmirror.common.commonutils.ToastUtils;
 import com.ainisi.queenmirror.queenmirrorcduan.R;
-import com.ainisi.queenmirror.queenmirrorcduan.adapter.ListViewAdapter;
-import com.ainisi.queenmirror.queenmirrorcduan.adapter.MyAdapter;
 import com.ainisi.queenmirror.queenmirrorcduan.adapter.PurchaseListViewAdapter;
-import com.ainisi.queenmirror.queenmirrorcduan.bean.SortBean;
-import com.ainisi.queenmirror.queenmirrorcduan.utils.BaseRecyclerAdapter;
 
-
-import java.util.ArrayList;
-import java.util.List;
 
 import butterknife.Bind;
 import butterknife.OnClick;

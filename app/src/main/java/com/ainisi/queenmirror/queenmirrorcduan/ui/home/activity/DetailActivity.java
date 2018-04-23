@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 import com.ainisi.queenmirror.queenmirrorcduan.R;
+import com.ainisi.queenmirror.queenmirrorcduan.api.HttpUtils;
 
 public class DetailActivity extends AppCompatActivity {
 
