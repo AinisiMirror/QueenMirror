@@ -163,9 +163,9 @@ public class ShopMallFragment extends BaseFragment {
         MyShopAdapter myShopAdapter=new MyShopAdapter(R.layout.re_shopmall_shop,shopList);
         shopRecycle.setLayoutManager(new GridLayoutManager(getActivity(),4));
         shopRecycle.setAdapter(myShopAdapter);
-        myShopAdapter.setOnItemChildClickListener(new BaseQuickAdapter.OnItemChildClickListener() {
+        myShopAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
             @Override
-            public void onItemChildClick(BaseQuickAdapter adapter, View view, int position) {
+            public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
                 startActivity(new Intent(getActivity(), ShopClassificationActivity.class));
             }
         });

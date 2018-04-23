@@ -48,6 +48,7 @@ public class WholeFragment extends BaseFragment {
         MyAdapter sbmitWholeAdapter = new MyAdapter(R.layout.item_sbmitrecycler, list);
         whole.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayout.VERTICAL, false));
         whole.setAdapter(sbmitWholeAdapter);
+
         sbmitWholeAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {

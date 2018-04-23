@@ -192,6 +192,14 @@
     <string name="reg_agreement">轻触上面的“立即注册”按钮，即表示您同意</string>
     <string name="reg_agreement_name">《女王魔镜用户协议与隐私条件》</string>
     <string name="forgetcipher">忘记密码</string>
+    <string name="hintorder">满足您的期待吗？说说它的缺点和美中不足的地方吧。</string>
+    <string name="anonymous">匿名</string>
+    <string name="anonymousshow">你写的评论会以匿名的形式展现</string>
+    <string name="serviceattitude">服务态度</string>
+    <string name="tv_commodity_grade">商品评分</string>
+    <string name="store_environment">门店环境</string>
+    <string name="published_order">发表评论</string>
+    <string name="release">发布</string>
 
 
 </resources>

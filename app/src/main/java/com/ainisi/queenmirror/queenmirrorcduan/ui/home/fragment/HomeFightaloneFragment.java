@@ -50,15 +50,16 @@ public class HomeFightaloneFragment extends BaseFragment {
             sortBean.setDistance("875m");
             list.add(sortBean);
         }
-        MyAdapter sortAdapter=new MyAdapter(R.layout.re_home_fightalone,list);
+        final MyAdapter sortAdapter=new MyAdapter(R.layout.re_home_fightalone,list);
         reFightalone.setLayoutManager(new LinearLayoutManager(getActivity(),LinearLayoutManager.VERTICAL,false));
         reFightalone.setAdapter(sortAdapter);
-        sortAdapter.setOnItemChildClickListener(new BaseQuickAdapter.OnItemChildClickListener() {
+        sortAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
             @Override
-            public void onItemChildClick(BaseQuickAdapter adapter, View view, int position) {
-                startActivity(new Intent(getActivity(), FightaloneActivity.class));
+            public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
+                startActivity(new Intent(getActivity(),FightaloneActivity.class));
             }
         });
+
     }
 
 }
