@@ -200,6 +200,8 @@
     <string name="store_environment">门店环境</string>
     <string name="published_order">发表评论</string>
     <string name="release">发布</string>
+    <string name="phone">电话</string>
+    <string name="evaluation">评价</string>
 
 
 </resources>

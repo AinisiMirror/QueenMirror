@@ -1,4 +1,4 @@
-package com.ainisi.queenmirror.queenmirrorcduan.ui.shop;
+package com.ainisi.queenmirror.queenmirrorcduan.ui.shop.activity;
 
 import android.support.design.widget.TabLayout;
 import android.support.v7.widget.LinearLayoutManager;

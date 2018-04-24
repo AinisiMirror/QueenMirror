@@ -92,6 +92,12 @@
     <dimen name="comment_69_dip">69dp</dimen>
     <dimen name="comment_339_dip">339dp</dimen>
     <dimen name="comment_63_dip">63dp</dimen>
+    <dimen name="comment_17_size">17sp</dimen>
+    <dimen name="comment_143_dip">143dp</dimen>
+    <dimen name="comment_188_dip">188dp</dimen>
+    <dimen name="comment_61_dip">61dp</dimen>
+    <dimen name="comment_173_dip">173dp</dimen>
+    <dimen name="comment_211_dip">211dp</dimen>
 
 
 </resources>

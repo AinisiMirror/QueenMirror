@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/alpha_05_black"
+    tools:context="com.ainisi.queenmirror.queenmirrorcduan.ui.shop.activity.ShopStoreActivity">
+    <include
+        android:id="@+id/ic_title"
+        layout="@layout/layout_title"/>
+    <RelativeLayout
+        android:id="@+id/re_"
+        android:background="@color/white"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/comment_61_dip">
+        <ImageView
+            android:id="@+id/iv_evaluation"
+            android:layout_width="@dimen/comment_26_dip"
+            android:layout_height="@dimen/comment_26_dip"
+            android:layout_marginTop="@dimen/comment_18_dip"
+            android:layout_marginStart="@dimen/comment_61_dip"
+            android:src="@drawable/icon_store_evaluation"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_marginTop="@dimen/comment_22_dip"
+            android:layout_height="wrap_content"
+            android:text="@string/evaluation"
+            android:layout_marginStart="@dimen/comment_10_dip"
+            android:textColor="@color/alpha_95_black"
+            android:textSize="@dimen/comment_14_size"
+            android:layout_toRightOf="@id/iv_evaluation"
+            />
+        <ImageView
+            android:id="@+id/iv_phone"
+            android:layout_width="@dimen/comment_25_dip"
+            android:layout_height="@dimen/comment_25_dip"
+            android:layout_marginTop="@dimen/comment_18_dip"
+            android:layout_alignParentRight="true"
+            android:layout_marginEnd="@dimen/comment_101_dip"
+            android:src="@drawable/icon_store_phone"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_marginTop="@dimen/comment_22_dip"
+            android:layout_height="wrap_content"
+            android:text="@string/phone"
+            android:layout_marginEnd="@dimen/comment_61_dip"
+            android:layout_alignParentRight="true"
+            android:layout_marginStart="@dimen/comment_10_dip"
+            android:textColor="@color/alpha_95_black"
+            android:textSize="@dimen/comment_14_size"
+            />
+    </RelativeLayout>
+    <com.ainisi.queenmirror.queenmirrorcduan.utils.ScrollInterceptScrollView
+        android:layout_below="@id/ic_title"
+        android:layout_above="@id/re_"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/relativeLayout"
+                android:orientation="vertical"
+                tools:layout_editor_absoluteX="@dimen/comment_8_dip"
+                tools:layout_editor_absoluteY="@dimen/comment_8_dip">
+
+                <ImageView
+                    android:id="@+id/iv_shop"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/comment_180_dip"
+                    android:src="@drawable/icon_big_coffeetattoos"
+                    />
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/et_shap">
+
+
+                    <TextView
+                        android:id="@+id/tv_shopname"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/comment_17_dip"
+                        android:layout_marginTop="@dimen/comment_5_dip"
+                        android:text="DLOVES婚介定制中心(九方购物中心店)"
+                        android:textColor="@color/alpha_95_black"
+                        android:textSize="@dimen/comment_17_size" />
+
+                    <ImageView
+                        android:id="@+id/iv_comments"
+                        android:layout_width="@dimen/comment_70_dip"
+                        android:layout_height="@dimen/comment_14_dip"
+                        android:layout_below="@+id/tv_shopname"
+                        android:layout_marginStart="@dimen/comment_17_dip"
+                        android:layout_marginTop="@dimen/comment_5_dip"
+                        app:srcCompat="@drawable/ic_sortrecyke_stars" />
+
+                    <TextView
+                        android:id="@+id/tv_comments"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/tv_shopname"
+                        android:layout_marginStart="@dimen/comment_12_dip"
+                        android:layout_marginTop="@dimen/comment_4_dip"
+                        android:layout_toEndOf="@+id/iv_comments"
+                        android:layout_toRightOf="@id/iv_comments"
+                        android:text="123条评论  |  人均 ¥ 14250"
+                        android:textSize="@dimen/comment_13_size" />
+                    <View
+                        android:id="@+id/view"
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="@dimen/comment_15_dip"
+                        android:layout_height="@dimen/comment_1_dip"
+                        android:background="@color/alpha_05_black"
+                        android:layout_below="@id/tv_comments"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/view"
+                        android:layout_marginStart="@dimen/comment_17_dip"
+                        android:layout_marginTop="@dimen/comment_15_dip"
+                        android:text="萧林路66号九方购物中心1层"
+                        android:layout_marginBottom="@dimen/comment_15_dip"
+                        android:textColor="@color/alpha_95_black"
+                        android:textSize="@dimen/comment_15_size" />
+
+                    <ImageView
+                        android:layout_width="@dimen/comment_11_dip"
+                        android:layout_height="@dimen/comment_16_dip"
+                        android:layout_below="@id/view"
+                        android:layout_marginTop="@dimen/comment_16_dip"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginBottom="@dimen/comment_15_dip"
+                        android:layout_marginEnd="@dimen/comment_18_dip"
+                        android:src="@drawable/icon_store_address" />
+                </RelativeLayout>
+
+            </LinearLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/recycler_one"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/comment_45_dip"
+                android:layout_marginTop="@dimen/comment_16_dip"
+                android:background="@drawable/et_shap">
+                <ImageView
+                    android:layout_marginStart="@dimen/comment_17_dip"
+                    android:src="@drawable/icon_invincible_stamps"
+                    android:id="@+id/iv_invincible_stamps"
+                    android:layout_marginTop="@dimen/comment_17_dip"
+                    android:layout_width="@dimen/comment_20_dip"
+                    android:layout_height="@dimen/comment_20_dip" />
+                <TextView
+                    android:id="@+id/ttv_ping"
+                    android:layout_toRightOf="@id/iv_invincible_stamps"
+                    android:layout_width="wrap_content"
+                    android:layout_marginStart="@dimen/comment_5_dip"
+                    android:textColor="@color/alpha_95_black"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/comment_13_size"
+                    android:layout_marginTop="@dimen/comment_17_dip"
+                    android:text="无敌券领取"
+                    />
+
+                <TextView
+                    android:id="@+id/img_pingfen"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:text="共一张无敌劵可领取"
+                    android:textSize="@dimen/comment_12_size"
+                    android:layout_marginEnd="@dimen/comment_32_dip"
+                    android:layout_marginTop="@dimen/comment_17_dip"
+                    app:srcCompat="@drawable/ic_sortrecyke_stars" />
+
+                <ImageView
+                    android:layout_width="@dimen/comment_7_dip"
+                    android:layout_height="@dimen/comment_14_dip"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="@dimen/comment_10_dip"
+                    android:layout_marginTop="@dimen/comment_18_dip"
+                    android:src="@drawable/icon_full_right" />
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/recycler_two"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/comment_25_dip"
+                android:background="@color/alpha_05_black">
+                <RelativeLayout
+                    android:id="@+id/re_product_two"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tv_product"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/comment_17_dip"
+                    android:layout_marginTop="@dimen/comment_15_dip"
+                    android:text="本店成品"
+                    android:textColor="@color/alpha_95_black" />
+                <TextView
+                    android:id="@+id/img_product"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:text="全部103款成品"
+                    android:textSize="@dimen/comment_12_size"
+                    android:layout_marginEnd="@dimen/comment_32_dip"
+                    android:layout_marginTop="@dimen/comment_17_dip"
+                    app:srcCompat="@drawable/ic_sortrecyke_stars" />
+
+                <ImageView
+                    android:layout_width="@dimen/comment_7_dip"
+                    android:layout_height="@dimen/comment_14_dip"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="@dimen/comment_10_dip"
+                    android:layout_marginTop="@dimen/comment_18_dip"
+                    android:src="@drawable/icon_full_right" />
+                </RelativeLayout>
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/re_product"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/re_product_two"
+                    android:layout_marginTop="@dimen/comment_11_dip" />
+            </RelativeLayout>
+            <RelativeLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/comment_25_dip"
+                android:background="@drawable/et_shap">
+
+                <TextView
+                    android:id="@+id/tv_boutique"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/comment_12_dip"
+                    android:layout_marginTop="@dimen/comment_15_dip"
+                    android:text="网友评论(123)"
+                    android:textColor="@color/alpha_95_black" />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recycler_boutique"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_boutique"
+                    android:layout_marginTop="@dimen/comment_11_dip" />
+            </RelativeLayout>
+        </LinearLayout>
+
+    </com.ainisi.queenmirror.queenmirrorcduan.utils.ScrollInterceptScrollView>
+</RelativeLayout>

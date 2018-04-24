@@ -67,16 +67,12 @@ public class ShopClassificationActivity extends BaseActivity {
     List<SortBean> sortlist=new ArrayList<>();
     private List<ProblemBean> list = new ArrayList<>();
     String[] problem = {"销量最高", "价格最低", "距离最近", "优惠最多", "满减优惠", "新用最好", "用户最好"};
-
     public int getLayoutId() {
         return R.layout.activity_shop_classification;
     }
-
     @Override
     public void initPresenter() {
-
     }
-
     @Override
     public void initView() {
        initDate();
@@ -181,7 +177,6 @@ public class ShopClassificationActivity extends BaseActivity {
             //筛选
             case R.id.full_rb_screen:
                 View popview = View.inflate(this, R.layout.pop_right, null);
-
                 initview(popview);
                 popWindow = new CustomPopWindow.PopupWindowBuilder(this)
                         .setView(popview)

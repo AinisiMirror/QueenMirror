@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="@color/white"
     android:orientation="vertical"
-    tools:context=".ui.shop.WorkRoomDetailActivity">
+    tools:context=".ui.shop.activity.WorkRoomDetailActivity">
     <RelativeLayout
         android:id="@+id/linearLayout"
         android:layout_alignParentBottom="true"
@@ -24,7 +24,7 @@
                 android:text="3000"
                 android:textColor="@color/gray_E7370C"
                 android:layout_centerVertical="true"
-                android:layout_marginStart="@dimen/comment_50_dip"
+                android:layout_marginStart="@dimen/comment_60_dip"
                 android:textSize="@dimen/comment_18_size" />
 
             <TextView
@@ -44,7 +44,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_marginStart="@dimen/comment_10_dip"
-            android:src="@drawable/icon_shop_jewellery"
+            android:src="@drawable/icon_shopping_cart"
            />
     </RelativeLayout>
     <LinearLayout

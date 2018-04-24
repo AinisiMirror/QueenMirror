@@ -123,7 +123,6 @@ public class HomeFragmentOne extends BaseFragment {
     private PopupWindow pop;
     private View popview1;
     private List<ProblemBean> list = new ArrayList<>();
-    private List<SortBean> sortList = new ArrayList<>();
     String[] problem = {"销量最高", "价格最低", "距离最近", "优惠最多", "满减优惠", "新用最好", "用户最好"};
 
     int hight;//标记ScrollView移动的距离
@@ -147,11 +146,9 @@ public class HomeFragmentOne extends BaseFragment {
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     protected void initView() {
-
         initDate();
         initQuee();
         initpopwindow();
-
         sc_home_scroll.setOnScrollChangeListener(new View.OnScrollChangeListener() {
             @Override
             public void onScrollChange(View view, int i, int i1, int i2, int i3) {
@@ -165,7 +162,6 @@ public class HomeFragmentOne extends BaseFragment {
                 }
             }
         });
-
         listadapter = new ListViewAdapter(getContext());
         listView.setAdapter(listadapter);
 
@@ -197,8 +193,6 @@ public class HomeFragmentOne extends BaseFragment {
             }
         }, 1000);
     }
-
-
     private void initpopwindow() {
         pop = new PopupWindow(CollapsingToolbarLayout.LayoutParams.MATCH_PARENT, CollapsingToolbarLayout.LayoutParams.WRAP_CONTENT);
         popview1 = View.inflate(getActivity(), R.layout.pop_myitem, null);
@@ -233,7 +227,7 @@ public class HomeFragmentOne extends BaseFragment {
     private void initDate() {
         List<String> images = new ArrayList<>();
         for (int i = 0; i < 4; i++) {
-            images.add("http://test.meiyaoni.com.cn/Uploads/adver/2017-05-11/5914298d12262.png");
+            images.add("http://ww4.sinaimg.cn/large/006uZZy8jw1faic21363tj30ci08ct96.jpg");
         }
         banner.setImageLoader(new GlideImageLoader());
         banner.setImages(images);

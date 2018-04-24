@@ -148,7 +148,9 @@ public class EstheticsActivity extends BaseActivity {
     }
 
 
-    @OnClick({R.id.ed_keyword,R.id.iv_back,R.id.full_rb_sort, R.id.full_rb_sales, R.id.full_rb_distance, R.id.full_rb_screen, R.id.iv_sort, R.id.iv_sort1})
+    @OnClick({R.id.ed_keyword,R.id.iv_back,R.id.full_rb_sort, R.id.full_rb_sales,
+            R.id.full_rb_distance, R.id.full_rb_screen, R.id.iv_sort, R.id.iv_sort1
+    ,R.id.tv_more})
     public void click(View view) {
         switch (view.getId()) {
             //搜素
@@ -162,6 +164,9 @@ public class EstheticsActivity extends BaseActivity {
 //            case R.id.full_guijiao:
 //                startActivity(new Intent(this, FullActivity.class));
 //                break;
+            case R.id.tv_more:
+                startActivity(new Intent(this,RecommendedActivity.class));
+                break;
             //综合选择
             case R.id.iv_sort:
                 ivsort.setVisibility(View.GONE);

@@ -17,19 +17,15 @@ import com.ainisi.queenmirror.queenmirrorcduan.ui.order.fragment.RefundFragment;
 import com.ainisi.queenmirror.queenmirrorcduan.ui.order.fragment.WholeFragment;
 import com.ainisi.queenmirror.queenmirrorcduan.utils.NoScrollViewPager;
 import com.ainisi.queenmirror.queenmirrorcduan.utils.ViewPager;
-
-
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
-
 import butterknife.Bind;
 import butterknife.OnClick;
-
 /**
  * Created by EWorld on 2018/3/6.
+ *
  */
-
 public class OrderFragment extends BaseFragment {
     @Bind(R.id.or_tab)
     TabLayout otablayout;

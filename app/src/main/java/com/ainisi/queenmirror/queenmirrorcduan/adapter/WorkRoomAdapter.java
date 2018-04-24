@@ -1,7 +1,6 @@
 package com.ainisi.queenmirror.queenmirrorcduan.adapter;
 
 import android.content.Context;
-import android.content.Intent;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
 import android.view.LayoutInflater;
@@ -11,7 +10,6 @@ import android.widget.BaseAdapter;
 import android.widget.LinearLayout;
 
 import com.ainisi.queenmirror.queenmirrorcduan.R;
-import com.ainisi.queenmirror.queenmirrorcduan.ui.shop.WorkRoomDetailActivity;
 
 /**
  * Created by Mloong on 2017/11/25.
