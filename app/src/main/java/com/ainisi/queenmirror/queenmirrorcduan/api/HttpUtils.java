@@ -10,20 +10,24 @@ import com.lzy.okgo.request.BaseRequest;
 
 import java.io.File;
 import java.util.ArrayList;
+
 import com.ainisi.queenmirror.queenmirrorcduan.utilnomal.L;
 
+import org.json.JSONObject;
+
+import java.util.HashMap;
 import java.util.Map;
+
 import okhttp3.Call;
 import okhttp3.Response;
 
 /**
  * 作者： jl
- *
  */
 
 public class HttpUtils {
 
-   public static void doGet(final int action, Map<String, String> params, CacheMode cacheMode, final boolean showLoadingDialog, final HttpCallBack httpCallBack) {
+    public static void doGet(final int action, Map<String, String> params, CacheMode cacheMode, final boolean showLoadingDialog, final HttpCallBack httpCallBack) {
         String url = getGetUrl(action, params);
         OkGo.get(url)
                 .cacheKey(getUrl(action).toString())
@@ -99,14 +103,19 @@ public class HttpUtils {
                 });
     }
 
-    public static void doPost(final int action, Map<String, String> params, CacheMode cacheMode, final boolean showLoadingDialog, final HttpCallBack httpCallBack) {
+    public static void doPost(final int action, HashMap<String, String> params, CacheMode cacheMode, final boolean showLoadingDialog, final HttpCallBack httpCallBack) {
         String url = getUrl(action).toString();
+
+        JSONObject jsonObject = new JSONObject(params);
+
+        L.e(":::::::::::  v " + jsonObject.toString());
 
         OkGo.post(url)
                 .cacheKey(String.valueOf(action))
                 .tag(String.valueOf(action))
                 .cacheMode(cacheMode)
-                .params(params, true)
+                .upJson(jsonObject.toString())
+                //.params(params, true)
                 .execute(new StringCallback() {
                     @Override
                     public void onBefore(BaseRequest request) {
@@ -121,12 +130,14 @@ public class HttpUtils {
                         try {
                             //JSONObject jsonObject = new JSONObject(s);
                             // int state = jsonObject.getInt("state");
-                             //String res = jsonObject.getString("list");
+                            //String res = jsonObject.getString("list");
                           /*  //失败
                             if (state != 200) {
                                 httpCallBack.showErrorMessage(res);
                                 return;
                             }*/
+
+                            L.e("???????????? ?" + s);
 
                             //成功
                             httpCallBack.onSuccess(action, s);
@@ -297,6 +308,9 @@ public class HttpUtils {
                 break;
             case ACTION.LOGIN://登陆
                 actionUrl = UrlConstants.LOGIN;
+                break;
+            case ACTION.VERIFY://获取验证码
+                actionUrl = UrlConstants.VERIFY;
                 break;
         }
         url.append(actionUrl);

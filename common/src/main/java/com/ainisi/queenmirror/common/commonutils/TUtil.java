@@ -52,7 +52,6 @@ public class TUtil {
         final float scale = context.getResources().getDisplayMetrics().density;
         return (int) (dpValue * scale);
     }
-
 //    public static Bitmap createQRCode(int width, int height, String source) {
 //        try {
 //            if (TextUtils.isEmpty(source)) {
@@ -166,7 +165,6 @@ public class TUtil {
 
     /**
      * dp转px
-     *
      * @param context
      * @param dp
      * @return

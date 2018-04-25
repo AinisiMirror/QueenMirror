@@ -8,5 +8,5 @@ package com.ainisi.queenmirror.queenmirrorcduan.api;
 public interface ACTION {
     int REGIST = 0x001;//注册
     int LOGIN = 0x002;//登陆
-
+    int VERIFY=0x003;//获取验证码
 }

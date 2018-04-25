@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/main"
     android:background="@color/alpha_05_black"
     tools:context="com.ainisi.queenmirror.queenmirrorcduan.ui.shop.activity.ShopStoreActivity">
     <include
@@ -155,7 +156,7 @@
 
 
             <RelativeLayout
-                android:id="@+id/recycler_one"
+                android:id="@+id/re_invincible"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/comment_45_dip"
                 android:layout_marginTop="@dimen/comment_16_dip"
@@ -164,7 +165,7 @@
                     android:layout_marginStart="@dimen/comment_17_dip"
                     android:src="@drawable/icon_invincible_stamps"
                     android:id="@+id/iv_invincible_stamps"
-                    android:layout_marginTop="@dimen/comment_17_dip"
+                    android:layout_marginTop="@dimen/comment_15_dip"
                     android:layout_width="@dimen/comment_20_dip"
                     android:layout_height="@dimen/comment_20_dip" />
                 <TextView
@@ -175,7 +176,7 @@
                     android:textColor="@color/alpha_95_black"
                     android:layout_height="wrap_content"
                     android:textSize="@dimen/comment_13_size"
-                    android:layout_marginTop="@dimen/comment_17_dip"
+                    android:layout_marginTop="@dimen/comment_15_dip"
                     android:text="无敌券领取"
                     />
 
@@ -187,7 +188,7 @@
                     android:text="共一张无敌劵可领取"
                     android:textSize="@dimen/comment_12_size"
                     android:layout_marginEnd="@dimen/comment_32_dip"
-                    android:layout_marginTop="@dimen/comment_17_dip"
+                    android:layout_marginTop="@dimen/comment_15_dip"
                     app:srcCompat="@drawable/ic_sortrecyke_stars" />
 
                 <ImageView
@@ -195,7 +196,7 @@
                     android:layout_height="@dimen/comment_14_dip"
                     android:layout_alignParentRight="true"
                     android:layout_marginRight="@dimen/comment_10_dip"
-                    android:layout_marginTop="@dimen/comment_18_dip"
+                    android:layout_marginTop="@dimen/comment_16_dip"
                     android:src="@drawable/icon_full_right" />
             </RelativeLayout>
 

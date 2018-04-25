@@ -7,6 +7,7 @@ import com.ainisi.queenmirror.common.base.BaseFragment;
 import com.ainisi.queenmirror.queenmirrorcduan.R;
 import com.ainisi.queenmirror.queenmirrorcduan.adapter.MyAdapter;
 import com.ainisi.queenmirror.queenmirrorcduan.bean.SortBean;
+import com.chad.library.adapter.base.BaseQuickAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,10 +19,11 @@ import butterknife.Bind;
  * 综合排序
  */
 
-public class FullshortFragment extends BaseFragment{
+public class FullshortFragment extends BaseFragment {
     @Bind(R.id.full_sore_recycler)
     RecyclerView recycler;
-    List<SortBean> sortlist=new ArrayList<>();
+    List<SortBean> sortlist = new ArrayList<>();
+
     @Override
     protected int getLayoutResource() {
         return R.layout.fragment_fullshort;
@@ -34,8 +36,8 @@ public class FullshortFragment extends BaseFragment{
 
     @Override
     protected void initView() {
-        for (int i = 0; i <10 ; i++) {
-            SortBean sortBean=new SortBean();
+        for (int i = 0; i < 10; i++) {
+            SortBean sortBean = new SortBean();
             sortBean.setName("MOCO美容美发沙龙");
             sortBean.setTime("营业时间 9:00-20:00");
             sortBean.setLogo(R.drawable.ic_sortrecyle_logo);
@@ -43,9 +45,23 @@ public class FullshortFragment extends BaseFragment{
             sortBean.setDistance("875m");
             sortlist.add(sortBean);
         }
-        MyAdapter sortAdapter=new MyAdapter(R.layout.re_full_short,sortlist);
-        recycler.setLayoutManager(new LinearLayoutManager(getActivity(),LinearLayoutManager.VERTICAL,false));
+        MyAdapter sortAdapter = new MyAdapter(R.layout.re_full_short, sortlist);
+        recycler.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false));
         recycler.setAdapter(sortAdapter);
+        sortAdapter.setUpFetchEnable(true);
+        sortAdapter.setUpFetchListener(new BaseQuickAdapter.UpFetchListener() {
+            @Override
+            public void onUpFetch() {
+
+            }
+        });
+        sortAdapter.setOnLoadMoreListener(new BaseQuickAdapter.RequestLoadMoreListener() {
+            @Override
+            public void onLoadMoreRequested() {
+
+            }
+        });
 
     }
+
 }

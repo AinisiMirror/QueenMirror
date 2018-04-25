@@ -1,6 +1,5 @@
 package com.ainisi.queenmirror.queenmirrorcduan.ui.shop.activity;
 
-import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
@@ -32,7 +31,6 @@ public class ProductActivity extends BaseNewActivity {
     protected int getLayoutId() {
         return R.layout.activity_product;
     }
-
     @Override
     protected void initView() {
         super.initView();
@@ -47,6 +45,7 @@ public class ProductActivity extends BaseNewActivity {
             SortBean sortBean = new SortBean();
             beanList.add(sortBean);
         }
+
         MyAdapter myAdapter = new MyAdapter(R.layout.re_shop_store, beanList);
         reProduct.setLayoutManager(new GridLayoutManager(this, 2));
         reProduct.setAdapter(myAdapter);

@@ -7,6 +7,12 @@ import com.ainisi.queenmirror.queenmirrorcduan.R;
 import com.ainisi.queenmirror.queenmirrorcduan.utilnomal.L;
 import com.ainisi.queenmirror.queenmirrorcduan.utilnomal.T;
 import com.bumptech.glide.request.target.ViewTarget;
+import com.lzy.okgo.OkGo;
+import com.lzy.okgo.cache.CacheEntity;
+import com.lzy.okgo.cache.CacheMode;
+import com.lzy.okgo.cookie.store.PersistentCookieStore;
+import com.lzy.okgo.model.HttpHeaders;
+import com.lzy.okgo.model.HttpParams;
 
 
 import java.io.IOException;
@@ -43,7 +49,7 @@ public class App extends MultiDexApplication {
 
         T.context = getApplicationContext();
 
-      /*  //---------这里给出的是示例代码,告诉你可以这么传,实际使用的时候,根据需要传,不需要就不传-------------//
+       //---------这里给出的是示例代码,告诉你可以这么传,实际使用的时候,根据需要传,不需要就不传-------------//
         HttpHeaders headers = new HttpHeaders();
 //        headers.put("commonHeaderKey1", "commonHeaderValue1");    //header不支持中文
         //   headers.put("access_token", "Bearer "+ SP.get(this, Key.ACCESS_TOKEN,""));
@@ -115,11 +121,11 @@ public class App extends MultiDexApplication {
                 }
             })
 //                    .addCommonParams(params);   //设置全局公共参数
-            ;*/
+            ;
 
-        /*} catch (Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
-        }*/
+        }
 
     }
 

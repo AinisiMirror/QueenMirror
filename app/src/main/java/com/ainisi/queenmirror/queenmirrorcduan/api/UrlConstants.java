@@ -10,9 +10,11 @@ public interface UrlConstants {
 
  // String BASE_URL = "http://116.62.204.235:8080/";
 
- String BASE_URL = "http://192.168.10.151:8080/";//测试路径
+ String BASE_URL = "http://192.168.50.194:8080/";//测试路径
 
- String REGIST = "userinfoApi/userReg";//请求方法名
+ String REGIST = "wg/a/api/ans/login/userRegister";//请求方法名(注册)
+
+ String VERIFY="wg/a/api/ans/login/verifyCodeGet";//请求方法名(获取验证码)
 
  String LOGIN = "userinfoApi/userLogin";
 

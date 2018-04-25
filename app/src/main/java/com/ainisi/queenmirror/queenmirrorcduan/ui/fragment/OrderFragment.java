@@ -89,6 +89,7 @@ public class OrderFragment extends BaseFragment {
         });
     }
 
+
     public void setIndicator(TabLayout tabs, int leftDip, int rightDip) {
         Class<?> tabLayout = tabs.getClass();
         Field tabStrip = null;

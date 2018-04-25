@@ -2,11 +2,13 @@ package com.ainisi.queenmirror.queenmirrorcduan.ui.shop.activity;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.GridView;
 import android.widget.ImageView;
@@ -18,6 +20,7 @@ import com.ainisi.queenmirror.queenmirrorcduan.adapter.MyAdapter;
 import com.ainisi.queenmirror.queenmirrorcduan.base.BaseNewActivity;
 import com.ainisi.queenmirror.queenmirrorcduan.bean.SortBean;
 import com.ainisi.queenmirror.queenmirrorcduan.ui.shop.activity.ProductActivity;
+import com.ainisi.queenmirror.queenmirrorcduan.utils.CustomPopWindow;
 import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
@@ -42,6 +45,8 @@ public class ShopStoreActivity extends BaseNewActivity{
     RecyclerView reBoutique;
     String url="http://ww4.sinaimg.cn/large/006uZZy8jw1faic21363tj30ci08ct96.jpg";
     private List<SortBean> beanList=new ArrayList<>();
+    private CustomPopWindow popWindow;
+
     @Override
     protected int getLayoutId() {
         return R.layout.activity_shop_store;
@@ -70,12 +75,26 @@ public class ShopStoreActivity extends BaseNewActivity{
         reBoutique.setAdapter(myAdapter1);
 
     }
-    @OnClick({R.id.title_back,R.id.re_product_two
-    })
+    @OnClick({R.id.title_back,R.id.re_product_two,R.id.re_invincible})
     public void click(View view) {
         switch (view.getId()) {
             case R.id.title_back:
                 finish();
+                break;
+            case R.id.re_invincible:
+                View popview = View.inflate(this, R.layout.item_shop_get_ticket, null);
+                //弹出popWindow时，背景是否变暗
+// 控制亮度
+                popWindow = new CustomPopWindow.PopupWindowBuilder(this)
+                        .setView(popview)
+                        .setFocusable(true)
+                        .size(CollapsingToolbarLayout.LayoutParams.MATCH_PARENT, CollapsingToolbarLayout.LayoutParams.WRAP_CONTENT)
+                        .setOutsideTouchable(true)
+                        .enableBackgroundDark(true) //弹出popWindow时，背景是否变暗
+                        .setBgDarkAlpha(0.5f) // 控制亮度
+                        .setAnimationStyle(R.style.CustomPopWindowStyle)
+                        .create()
+                        .showAtLocation(this.findViewById(R.id.main), Gravity.BOTTOM, 0, 0);
                 break;
             case R.id.re_product_two:
                 startActivity(new Intent(this, ProductActivity.class));
