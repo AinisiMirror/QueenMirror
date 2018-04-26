@@ -8,6 +8,8 @@ import android.widget.RadioButton;
 import com.ainisi.queenmirror.common.base.BaseActivity;
 
 import com.ainisi.queenmirror.queenmirrorcduan.R;
+import com.ainisi.queenmirror.queenmirrorcduan.base.BaseOneActivity;
+import com.ainisi.queenmirror.queenmirrorcduan.ui.fragment.HomeFragment;
 import com.ainisi.queenmirror.queenmirrorcduan.ui.fragment.HomeFragmentOne;
 import com.ainisi.queenmirror.queenmirrorcduan.ui.fragment.MasterFragment;
 import com.ainisi.queenmirror.queenmirrorcduan.ui.fragment.MineFragment;
@@ -19,9 +21,9 @@ import butterknife.OnClick;
 /**
  * 主页面
  */
-public class MainActivity extends BaseActivity {
+public class MainActivity extends BaseOneActivity {
     //首页
-    private HomeFragmentOne mHomeFragment;
+    private HomeFragment mHomeFragment;
     //商城
     private ShopMallFragment mShopMallFragment;
     //订单
@@ -43,6 +45,11 @@ public class MainActivity extends BaseActivity {
     RadioButton mMine;
 
     @Override
+    protected int setLayoutId() {
+        return R.layout.activity_home;
+    }
+
+    /*@Override
     public int getLayoutId() {
         return R.layout.activity_home;
     }
@@ -50,11 +57,12 @@ public class MainActivity extends BaseActivity {
     @Override
     public void initPresenter() {
 
-    }
+    }*/
+
     @Override
     public void initView() {
 
-        mHomeFragment = new HomeFragmentOne();
+        mHomeFragment = new HomeFragment();
         fm = getSupportFragmentManager();
         FragmentTransaction transaction = fm.beginTransaction();
         transaction.replace(R.id.fl_main_content_layout, mHomeFragment);
@@ -70,7 +78,7 @@ public class MainActivity extends BaseActivity {
             case R.id.rb_home://首页
                 mHomeBtn.setChecked(true);
                 if (mHomeFragment == null) {
-                    mHomeFragment = new HomeFragmentOne();
+                    mHomeFragment = new HomeFragment();
                     transaction.add(R.id.fl_main_content_layout, mHomeFragment);
                 } else {
                     transaction.show(mHomeFragment);

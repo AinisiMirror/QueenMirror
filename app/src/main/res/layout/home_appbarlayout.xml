@@ -1,12 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:id="@+id/layout_stick_header"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
+    <LinearLayout
+        android:id="@+id/home_layout"
+        android:layout_width="match_parent"
+        android:layout_height="53dp"
+        android:paddingTop="3dp"
+        android:layout_gravity="center_horizontal"
+        android:background="@color/home_shop_middle"
+        android:gravity="center_vertical"
+        android:paddingStart="@dimen/comment_10_dip"
+        tools:ignore="RtlSymmetry">
+
+        <ImageView
+            android:layout_width="@dimen/comment_70_dip"
+            android:layout_height="@dimen/comment_30_dip"
+            android:src="@drawable/icon_home_recommend" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/comment_30_dip"
+            android:layout_marginStart="@dimen/comment_8_dip"
+            android:gravity="center|left"
+            android:textColor="@color/home_queen_full"
+            android:text="@string/satisfy" />
+    </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/li_home_paixu"
         android:layout_marginTop="@dimen/comment_10_dip"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -27,7 +53,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/sort"
-                android:textSize="@dimen/comment_12_size" />
+                android:textSize="@dimen/comment_14_size" />
             <ImageView
 
                 android:layout_width="wrap_content"
@@ -47,7 +73,7 @@
             android:id="@+id/rb_sales"
             style="@style/Recommend_layout"
             android:layout_height="@dimen/comment_40_dip"
-            android:textSize="@dimen/comment_12_size"
+            android:textSize="@dimen/comment_14_size"
             android:text="@string/sales" />
 
         <TextView
@@ -55,7 +81,7 @@
             android:id="@+id/rb_distance"
             style="@style/Recommend_layout"
             android:layout_height="@dimen/comment_40_dip"
-            android:textSize="@dimen/comment_12_size"
+            android:textSize="@dimen/comment_14_size"
             android:text="@string/distance" />
 
         <LinearLayout
@@ -69,7 +95,7 @@
                 android:id="@+id/rb_screen"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="@dimen/comment_12_size"
+                android:textSize="@dimen/comment_14_size"
                 android:text="@string/screen" />
 
             <RadioButton
@@ -86,11 +112,11 @@
             android:id="@+id/line_surface"
             style="@style/Recommend_layout"
             android:layout_height="@dimen/comment_40_dip">
-        <ImageView
-            android:id="@+id/iv_surface"
-            android:layout_width="@dimen/comment_15_dip"
-            android:layout_height="@dimen/comment_12_dip"
-            app:srcCompat="@drawable/icon_home_list" />
+            <ImageView
+                android:id="@+id/iv_surface"
+                android:layout_width="@dimen/comment_15_dip"
+                android:layout_height="@dimen/comment_12_dip"
+                app:srcCompat="@drawable/icon_home_list" />
         </LinearLayout>
 
     </LinearLayout>

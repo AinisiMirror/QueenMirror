@@ -10,21 +10,18 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-
-import com.ainisi.queenmirror.common.base.BaseActivity;
-import com.ainisi.queenmirror.common.commonutils.ToastUtils;
 import com.ainisi.queenmirror.queenmirrorcduan.R;
-
+import com.ainisi.queenmirror.queenmirrorcduan.api.HttpCallBack;
+import com.ainisi.queenmirror.queenmirrorcduan.base.BaseNewActivity;
 import java.lang.reflect.Field;
 import java.util.Calendar;
-
 import butterknife.Bind;
 import butterknife.OnClick;
 
 /**
  * 我的（魔豆（选择时间））
  */
-public class BeanstalkActivity extends BaseActivity {
+public class BeanstalkActivity extends BaseNewActivity implements HttpCallBack {
 
     private static final int TELVERSION = 0;
     @Bind(R.id.datepicker)
@@ -58,10 +55,6 @@ public class BeanstalkActivity extends BaseActivity {
     @Override
     public int getLayoutId() {
         return R.layout.activity_beanstalk;
-    }
-
-    @Override
-    public void initPresenter() {
     }
 
     @Override
@@ -265,4 +258,18 @@ public class BeanstalkActivity extends BaseActivity {
 
     }
 
+    @Override
+    public void onSuccess(int action, String res) {
+
+    }
+
+    @Override
+    public void showLoadingDialog() {
+
+    }
+
+    @Override
+    public void showErrorMessage(String s) {
+
+    }
 }

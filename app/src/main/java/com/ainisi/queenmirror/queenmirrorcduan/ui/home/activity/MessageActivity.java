@@ -8,11 +8,13 @@ import android.widget.TextView;
 
 import com.ainisi.queenmirror.common.base.BaseActivity;
 import com.ainisi.queenmirror.queenmirrorcduan.R;
+import com.ainisi.queenmirror.queenmirrorcduan.api.HttpCallBack;
+import com.ainisi.queenmirror.queenmirrorcduan.base.BaseNewActivity;
 
 import butterknife.Bind;
 import butterknife.OnClick;
 //消息
-public class MessageActivity extends BaseActivity {
+public class MessageActivity extends BaseNewActivity implements HttpCallBack{
     @Bind(R.id.title_title)
     TextView title;
     public static void startActivity(Context context) {
@@ -21,9 +23,6 @@ public class MessageActivity extends BaseActivity {
     @Override
     public int getLayoutId() {
         return R.layout.activity_meage;
-    }
-    @Override
-    public void initPresenter() {
     }
 
     @Override
@@ -51,5 +50,20 @@ public class MessageActivity extends BaseActivity {
                 break;
 
         }
+    }
+
+    @Override
+    public void onSuccess(int action, String res) {
+
+    }
+
+    @Override
+    public void showLoadingDialog() {
+
+    }
+
+    @Override
+    public void showErrorMessage(String s) {
+
     }
 }

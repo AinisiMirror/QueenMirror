@@ -19,20 +19,24 @@
 
             <include layout="@layout/activity_home_shop" />
 
-            <com.ainisi.queenmirror.queenmirrorcduan.utils.NoScrollListview
-                android:id="@+id/listView"
-                android:layout_width="match_parent"
+            <RelativeLayout android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-            </com.ainisi.queenmirror.queenmirrorcduan.utils.NoScrollListview>
+                <com.ainisi.queenmirror.queenmirrorcduan.utils.NoScrollListview
+                    android:id="@+id/listView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
 
-            <com.ainisi.queenmirror.queenmirrorcduan.utils.NoScrollGridView
-                android:id="@+id/gridView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:numColumns="3">
+                </com.ainisi.queenmirror.queenmirrorcduan.utils.NoScrollListview>
 
-            </com.ainisi.queenmirror.queenmirrorcduan.utils.NoScrollGridView>
+                <com.ainisi.queenmirror.queenmirrorcduan.utils.NoScrollGridView
+                    android:id="@+id/gridView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:numColumns="3">
+
+                </com.ainisi.queenmirror.queenmirrorcduan.utils.NoScrollGridView>
+            </RelativeLayout>
 
         </LinearLayout>
     </com.ainisi.queenmirror.queenmirrorcduan.utils.ScrollInterceptScrollView>

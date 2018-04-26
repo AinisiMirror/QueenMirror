@@ -19,12 +19,13 @@ import android.widget.PopupWindow;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
-import com.ainisi.queenmirror.common.base.BaseFragment;
 import com.ainisi.queenmirror.queenmirrorcduan.R;
 import com.ainisi.queenmirror.queenmirrorcduan.adapter.GridViewAdapter;
 
 import com.ainisi.queenmirror.queenmirrorcduan.adapter.ListViewAdapter;
 import com.ainisi.queenmirror.queenmirrorcduan.adapter.ProblemAdapter;
+import com.ainisi.queenmirror.queenmirrorcduan.api.HttpCallBack;
+import com.ainisi.queenmirror.queenmirrorcduan.base.BaseFragment;
 import com.ainisi.queenmirror.queenmirrorcduan.bean.SortBean;
 import com.ainisi.queenmirror.queenmirrorcduan.ui.home.activity.DetailActivity;
 import com.ainisi.queenmirror.queenmirrorcduan.utils.GlideImageLoader;
@@ -51,7 +52,7 @@ import butterknife.Bind;
 import butterknife.OnClick;
 
 
-public class HomeFragmentOne extends BaseFragment {
+public class HomeFragmentOne extends BaseFragment implements HttpCallBack{
 
     @Bind(R.id.banner)
     Banner banner;
@@ -133,7 +134,7 @@ public class HomeFragmentOne extends BaseFragment {
     public HomeFragmentOne() {
     }
 
-    @Override
+   /* @Override
     protected int getLayoutResource() {
         return R.layout.fragment_home;
     }
@@ -141,6 +142,11 @@ public class HomeFragmentOne extends BaseFragment {
     @Override
     public void initPresenter() {
 
+    }*/
+
+    @Override
+    protected int setLayoutId() {
+        return R.layout.fragment_home;
     }
 
     @RequiresApi(api = Build.VERSION_CODES.M)
@@ -266,6 +272,9 @@ public class HomeFragmentOne extends BaseFragment {
         switch (view.getId()) {
             //点击流式布局，和瀑布流布局切换
             case R.id.line_surface:
+                sc_home_scroll.smoothScrollTo(0, 1621);
+                layout_stick_header.setVisibility(View.GONE);
+                layout_stick_header_main.setVisibility(View.VISIBLE);
                 if (isClick) {
                     isClick = false;
                     listadapter = new ListViewAdapter(getContext());
@@ -284,6 +293,9 @@ public class HomeFragmentOne extends BaseFragment {
                 }
                 break;
             case R.id.line_uspension_surface:
+                sc_home_scroll.smoothScrollTo(0, 1621);
+                layout_stick_header.setVisibility(View.GONE);
+                layout_stick_header_main.setVisibility(View.VISIBLE);
                 if (isClick) {
                     isClick = false;
                     listadapter = new ListViewAdapter(getContext());
@@ -330,7 +342,7 @@ public class HomeFragmentOne extends BaseFragment {
                 break;
             //我的位置
             case R.id.txt_bustling:
-                startProgressDialog();
+                //startProgressDialog();
                 break;
             //搜索
             case R.id.img_search:
@@ -435,5 +447,20 @@ public class HomeFragmentOne extends BaseFragment {
         if (null != fragment) {
             transaction.hide(fragment);
         }
+    }
+
+    @Override
+    public void onSuccess(int action, String res) {
+
+    }
+
+    @Override
+    public void showLoadingDialog() {
+
+    }
+
+    @Override
+    public void showErrorMessage(String s) {
+
     }
 }
