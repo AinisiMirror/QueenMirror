@@ -26,7 +26,7 @@ import butterknife.OnClick;
 /**
  * 忘记密码
  */
-public class ForgetcipherActivity extends BaseNewActivity implements HttpCallBack{
+public class ForgetcipherActivity extends BaseNewActivity implements HttpCallBack {
 
 
     @Bind(R.id.title_title)
@@ -50,7 +50,7 @@ public class ForgetcipherActivity extends BaseNewActivity implements HttpCallBac
     @Override
     protected void initView() {
         super.initView();
-        myCountDownTimer = new MyCountDownTimer(30000,1000);
+        myCountDownTimer = new MyCountDownTimer(30000, 1000);
         initText();
 
         loginSee.setImageResource(R.drawable.icon_login_nosee);
@@ -60,7 +60,8 @@ public class ForgetcipherActivity extends BaseNewActivity implements HttpCallBac
     private void initText() {
         loginTitle.setText(R.string.forgetcipher);
     }
-    @OnClick({R.id.title_back,R.id.iv_remove_text,R.id.iv_login_see,R.id.tv_validation})
+
+    @OnClick({R.id.title_back, R.id.iv_remove_text, R.id.iv_login_see, R.id.tv_validation})
     public void click(View view) {
         switch (view.getId()) {
             case R.id.title_back:
@@ -73,30 +74,32 @@ public class ForgetcipherActivity extends BaseNewActivity implements HttpCallBac
                 initValidation();
                 myCountDownTimer.start();
                 break;
-                //密码是否可见
+            //密码是否可见
             case R.id.iv_login_see:
-                if(click){
+                if (click) {
                     loginSee.setImageResource(R.drawable.icon_login_nosee);
                     passWord.setSelection(passWord.getText().length());
                     passWord.setTransformationMethod(PasswordTransformationMethod.getInstance());
-                    click=false;
-                }else {
+                    click = false;
+                } else {
                     //如果选中，显示密码
                     loginSee.setImageResource(R.drawable.icon_login_see);
                     passWord.setSelection(passWord.getText().length());
                     passWord.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
-                    click=true;
+                    click = true;
                 }
                 break;
         }
 
 
     }
+
     private void initValidation() {
         HashMap<String, String> params = new HashMap<>();
         params.put("telNo", phoneNumber.getText().toString().trim());
         HttpUtils.doPost(ACTION.VERIFY, params, CacheMode.REQUEST_FAILED_READ_CACHE, true, this);
     }
+
     @Override
     public void onSuccess(int action, String res) {
 
@@ -111,6 +114,7 @@ public class ForgetcipherActivity extends BaseNewActivity implements HttpCallBac
     public void showErrorMessage(String s) {
 
     }
+
     //复写倒计时
     private class MyCountDownTimer extends CountDownTimer {
 
@@ -123,7 +127,7 @@ public class ForgetcipherActivity extends BaseNewActivity implements HttpCallBac
         public void onTick(long l) {
             //防止计时过程中重复点击
             validation.setClickable(false);
-            validation.setText((l/1000)+"s后重新获取");
+            validation.setText((l / 1000) + "s后重新获取");
 
         }
 

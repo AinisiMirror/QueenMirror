@@ -108,8 +108,6 @@ public class HttpUtils {
 
         JSONObject jsonObject = new JSONObject(params);
 
-        L.e(":::::::::::  v " + jsonObject.toString());
-
         OkGo.post(url)
                 .cacheKey(String.valueOf(action))
                 .tag(String.valueOf(action))
@@ -311,6 +309,9 @@ public class HttpUtils {
                 break;
             case ACTION.VERIFY://获取验证码
                 actionUrl = UrlConstants.VERIFY;
+                break;
+            case ACTION.LIST:
+                actionUrl=UrlConstants.LIST;
                 break;
         }
         url.append(actionUrl);

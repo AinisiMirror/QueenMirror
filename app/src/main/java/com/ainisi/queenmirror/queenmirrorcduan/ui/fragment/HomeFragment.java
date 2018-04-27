@@ -11,10 +11,9 @@ import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.ViewTreeObserver;
 import android.widget.LinearLayout;
 import com.ainisi.queenmirror.queenmirrorcduan.R;
-import com.ainisi.queenmirror.queenmirrorcduan.adapter.HomePageAdapter;
+
 import com.ainisi.queenmirror.queenmirrorcduan.adapter.MyRecyclerCardviewAdapter;
 import com.ainisi.queenmirror.queenmirrorcduan.api.ACTION;
 import com.ainisi.queenmirror.queenmirrorcduan.api.HttpCallBack;
@@ -101,19 +100,17 @@ public class HomeFragment extends BaseFragment implements HttpCallBack{
     @Override
     protected void initView() {
         super.initView();
-
         //创建布局管理
         layoutManager = new LinearLayoutManager(getActivity());
         layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         recyclerView.setLayoutManager(layoutManager);
-        myRecyclerCardviewAdapter = new MyRecyclerCardviewAdapter();
+        myRecyclerCardviewAdapter = new MyRecyclerCardviewAdapter(getActivity());
         recyclerView.setAdapter(myRecyclerCardviewAdapter);
         recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override
             public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
                 super.onScrollStateChanged(recyclerView, newState);
             }
-
             @Override
             public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
                 super.onScrolled(recyclerView, dx, dy);
@@ -126,7 +123,6 @@ public class HomeFragment extends BaseFragment implements HttpCallBack{
                 }
             }
         });
-
         home_refresh.setMaterialRefreshListener(new MaterialRefreshListener() {
             @Override
             public void onRefresh(MaterialRefreshLayout materialRefreshLayout) {
@@ -150,7 +146,13 @@ public class HomeFragment extends BaseFragment implements HttpCallBack{
 
         // 结束上拉刷新...
         home_refresh.finishRefreshLoadMore();*/
+
+
+
+
+
     }
+
     private View headView,headView2;
     private void addHeaderView() {
         headView = LayoutInflater.from(mActivity).inflate(R.layout.activity_home_shop, (ViewGroup) recyclerView.getParent(), false);
@@ -158,7 +160,7 @@ public class HomeFragment extends BaseFragment implements HttpCallBack{
        /* headView2 = LayoutInflater.from(mActivity).inflate(R.layout.home_appbarlayout, (ViewGroup) recyclerView.getParent(), false);
         homePageAdapter.addHeaderView(headView2);*/
 
-        li_top = headView.findViewById(R.id.li_top);
+
         layout_stick_header = headView.findViewById(R.id.layout_stick_header);
 
         recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
@@ -179,7 +181,6 @@ public class HomeFragment extends BaseFragment implements HttpCallBack{
                 }
             }
         });
-
         /**
          * Banner
          */

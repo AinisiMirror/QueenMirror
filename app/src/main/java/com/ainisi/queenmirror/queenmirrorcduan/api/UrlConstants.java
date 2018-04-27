@@ -18,4 +18,6 @@ public interface UrlConstants {
 
  String LOGIN = "userinfoApi/userLogin";
 
+ String LIST="wg/a/api/ans/refund/refundApplyList";//测试（listce测试）
+
 }

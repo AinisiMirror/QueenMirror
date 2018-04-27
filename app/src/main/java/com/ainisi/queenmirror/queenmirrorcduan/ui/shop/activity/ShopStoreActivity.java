@@ -43,7 +43,7 @@ public class ShopStoreActivity extends BaseNewActivity{
     //网友评论
     @Bind(R.id.recycler_boutique)
     RecyclerView reBoutique;
-    String url="http://ww4.sinaimg.cn/large/006uZZy8jw1faic21363tj30ci08ct96.jpg";
+
     private List<SortBean> beanList=new ArrayList<>();
     private CustomPopWindow popWindow;
 
@@ -57,7 +57,7 @@ public class ShopStoreActivity extends BaseNewActivity{
         super.initView();
         storeTitle.setText("DLOVES婚介定制中心");
         storeTitle.setTextColor(Color.BLACK);
-        Glide.with(this).load(url).into(ivShop);
+
 
     }
     @Override

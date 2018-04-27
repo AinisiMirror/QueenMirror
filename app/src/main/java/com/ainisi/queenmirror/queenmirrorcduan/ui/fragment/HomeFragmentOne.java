@@ -170,9 +170,7 @@ public class HomeFragmentOne extends BaseFragment implements HttpCallBack{
         });
         listadapter = new ListViewAdapter(getContext());
         listView.setAdapter(listadapter);
-
     }
-
     /**
      * 点击首页跑马灯效果
      */
@@ -233,7 +231,7 @@ public class HomeFragmentOne extends BaseFragment implements HttpCallBack{
     private void initDate() {
         List<String> images = new ArrayList<>();
         for (int i = 0; i < 4; i++) {
-            images.add("http://ww4.sinaimg.cn/large/006uZZy8jw1faic21363tj30ci08ct96.jpg");
+            images.add("http://pic3.zhimg.com//144edd4fa57e8b0b9c70bfea5c6b5dee.jpg");
         }
         banner.setImageLoader(new GlideImageLoader());
         banner.setImages(images);
@@ -261,7 +259,6 @@ public class HomeFragmentOne extends BaseFragment implements HttpCallBack{
             }
         });
     }
-
 
     @OnClick({R.id.rb_sort, R.id.rb_sales, R.id.rb_distance, R.id.rb_screen, R.id.txt_bustling
             , R.id.img_search, R.id.img_information, R.id.home_esthetics, R.id.iv_sort, R.id.iv_sort1

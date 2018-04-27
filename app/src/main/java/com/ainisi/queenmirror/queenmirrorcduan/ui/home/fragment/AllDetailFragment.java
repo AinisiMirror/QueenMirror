@@ -47,6 +47,7 @@ public class AllDetailFragment extends BaseFragment {
         MyAdapter sortAdapter2=new MyAdapter(R.layout.item_rcbean,list);
         detailrecycle.setLayoutManager(new LinearLayoutManager(getActivity(),LinearLayoutManager.VERTICAL,false));
         detailrecycle.setAdapter(sortAdapter2);
+
     }
 
 

@@ -1,10 +1,18 @@
 package com.ainisi.queenmirror.queenmirrorcduan.adapter;
+
+import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
+
 import com.ainisi.queenmirror.queenmirrorcduan.R;
 import com.ainisi.queenmirror.queenmirrorcduan.bean.BigshotBean;
+import com.ainisi.queenmirror.queenmirrorcduan.ui.master.activity.DynamicActivity;
+import com.ainisi.queenmirror.queenmirrorcduan.ui.master.activity.WriteCommentActivity;
+
 import java.util.List;
 
 /**
@@ -18,11 +26,15 @@ public class RecyclerVarietyAdapter extends RecyclerView.Adapter {
     public static final int TYPE_PULL_IMAGE = 0;
     public static final int TYPE_RIGHT_IMAGE = 1;
     public static final int TYPE_THREE_IMAGE = 2;
+    private final Context context;
     private List<BigshotBean> mData;
     boolean flag;
-    public RecyclerVarietyAdapter(List<BigshotBean> data) {
+
+    public RecyclerVarietyAdapter(Context contect, List<BigshotBean> data) {
+        this.context=contect;
         this.mData = data;
     }
+
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         //创建不同的 ViewHolder
@@ -66,19 +78,41 @@ public class RecyclerVarietyAdapter extends RecyclerView.Adapter {
             return TYPE_THREE_IMAGE;
         }
     }
+
     /**
      * 创建三种ViewHolder
      */
-    private class PullImageHolder extends RecyclerView.ViewHolder {
+    private class PullImageHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         private final ImageView praise;
+        private final RelativeLayout dynamic;
+        private final RelativeLayout comment;
 
         public PullImageHolder(View itemView) {
             super(itemView);
             praise = itemView.findViewById(R.id.iv_big_praise);
-            praise.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
+            dynamic = itemView.findViewById(R.id.re_forward_dynamic);
+            comment = itemView.findViewById(R.id.re_comment);
+            praise.setOnClickListener(this);
+            dynamic.setOnClickListener(this);
+            comment.setOnClickListener(this);
+
+        }
+
+        @Override
+        public void onClick(View view) {
+            switch (view.getId()) {
+
+                //分享动态
+                case R.id.re_forward_dynamic:
+                    context.startActivity(new Intent(context, DynamicActivity.class));
+                    break;
+                //写评论
+                case R.id.re_comment:
+                    context.startActivity(new Intent(context, WriteCommentActivity.class));
+                    break;
+                //点赞
+                case R.id.iv_big_praise:
                     if (flag) {
                         flag = false;
                         praise.setImageResource(R.drawable.icon_big_unpraise);
@@ -86,19 +120,45 @@ public class RecyclerVarietyAdapter extends RecyclerView.Adapter {
                         praise.setImageResource(R.drawable.icon_big_praise);
                         flag = true;
                     }
-                }
-            });
+
+                default:
+                    break;
+
+            }
         }
     }
-    private class RightImageHolder extends RecyclerView.ViewHolder {
-        private final ImageView praise;
 
+    private class RightImageHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+        private final ImageView praise;
+        private final RelativeLayout dynamic;
+        private final RelativeLayout comment;
         public RightImageHolder(View itemView) {
             super(itemView);
+
+
             praise = itemView.findViewById(R.id.iv_big_praise);
-            praise.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
+            dynamic = itemView.findViewById(R.id.re_forward_dynamic);
+            comment = itemView.findViewById(R.id.re_comment);
+            praise.setOnClickListener(this);
+            dynamic.setOnClickListener(this);
+            comment.setOnClickListener(this);
+
+        }
+
+        @Override
+        public void onClick(View view) {
+            switch (view.getId()) {
+
+                //分享动态
+                case R.id.re_forward_dynamic:
+                    context.startActivity(new Intent(context, DynamicActivity.class));
+                    break;
+                //写评论
+                case R.id.re_comment:
+                    context.startActivity(new Intent(context, WriteCommentActivity.class));
+                    break;
+                //点赞
+                case R.id.iv_big_praise:
                     if (flag) {
                         flag = false;
                         praise.setImageResource(R.drawable.icon_big_unpraise);
@@ -106,21 +166,45 @@ public class RecyclerVarietyAdapter extends RecyclerView.Adapter {
                         praise.setImageResource(R.drawable.icon_big_praise);
                         flag = true;
                     }
-                }
-            });
+
+                default:
+                    break;
+
+            }
         }
     }
 
-    private class ThreeImageHolder extends RecyclerView.ViewHolder {
+    private class ThreeImageHolder extends RecyclerView.ViewHolder implements View.OnClickListener
+    {
 
         private final ImageView praise;
-
+        private final RelativeLayout dynamic;
+        private final RelativeLayout comment;
         public ThreeImageHolder(View itemView) {
             super(itemView);
             praise = itemView.findViewById(R.id.iv_big_praise);
-            praise.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
+            dynamic = itemView.findViewById(R.id.re_forward_dynamic);
+            comment = itemView.findViewById(R.id.re_comment);
+            praise.setOnClickListener(this);
+            dynamic.setOnClickListener(this);
+            comment.setOnClickListener(this);
+
+        }
+
+        @Override
+        public void onClick(View view) {
+            switch (view.getId()) {
+
+                //分享动态
+                case R.id.re_forward_dynamic:
+                    context.startActivity(new Intent(context, DynamicActivity.class));
+                    break;
+                //写评论
+                case R.id.re_comment:
+                    context.startActivity(new Intent(context, WriteCommentActivity.class));
+                    break;
+                //点赞
+                case R.id.iv_big_praise:
                     if (flag) {
                         flag = false;
                         praise.setImageResource(R.drawable.icon_big_unpraise);
@@ -128,8 +212,11 @@ public class RecyclerVarietyAdapter extends RecyclerView.Adapter {
                         praise.setImageResource(R.drawable.icon_big_praise);
                         flag = true;
                     }
-                }
-            });
+
+                default:
+                    break;
+
+            }
         }
     }
 }

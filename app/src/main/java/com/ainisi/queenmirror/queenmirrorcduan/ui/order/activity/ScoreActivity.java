@@ -6,9 +6,11 @@ import android.widget.TextView;
 
 import com.ainisi.queenmirror.queenmirrorcduan.R;
 import com.ainisi.queenmirror.queenmirrorcduan.api.HttpCallBack;
-import com.ainisi.queenmirror.queenmirrorcduan.base.BaseNewActivity;;
+import com.ainisi.queenmirror.queenmirrorcduan.base.BaseNewActivity;
+import com.ainisi.queenmirror.queenmirrorcduan.utilnomal.T;;
 
 import butterknife.Bind;
+import butterknife.OnClick;
 
 public class ScoreActivity extends BaseNewActivity implements HttpCallBack {
     @Bind(R.id.title_title)
@@ -82,6 +84,21 @@ public class ScoreActivity extends BaseNewActivity implements HttpCallBack {
 
     @Override
     public void showErrorMessage(String s) {
+
+    }
+
+    @OnClick({R.id.title_back,R.id.iv_add})
+    public void click(View view) {
+        switch (view.getId()) {
+            case R.id.title_back:
+                finish();
+                break;
+            case R.id.iv_add:
+                T.show("您点击了我");
+                break;
+
+        }
+
 
     }
 }

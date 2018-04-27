@@ -4,14 +4,13 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
 
 import com.ainisi.queenmirror.queenmirrorcduan.R;
 import com.ainisi.queenmirror.queenmirrorcduan.base.BaseOneActivity;
 import com.ainisi.queenmirror.queenmirrorcduan.ui.fragment.HomeFragment;
+import com.ainisi.queenmirror.queenmirrorcduan.ui.fragment.HomeFragmentOne;
 import com.ainisi.queenmirror.queenmirrorcduan.ui.fragment.MasterFragment;
 import com.ainisi.queenmirror.queenmirrorcduan.ui.fragment.MineFragment;
 import com.ainisi.queenmirror.queenmirrorcduan.ui.fragment.OrderFragment;
@@ -45,7 +44,7 @@ public class HomePageActivity extends BaseOneActivity  implements View.OnClickLi
     @Override
     protected void initData() {
         mFragments = new ArrayList<>();
-        HomeFragment homeOneFragment = new HomeFragment();
+        HomeFragmentOne homeOneFragment = new HomeFragmentOne();
         ShopMallFragment categoryOneFragment = new ShopMallFragment();
         OrderFragment serviceOneFragment = new OrderFragment();
         MasterFragment mineOneFragment = new MasterFragment();
@@ -89,12 +88,10 @@ public class HomePageActivity extends BaseOneActivity  implements View.OnClickLi
                 break;
         }
     }
-
     @Override
     public void onPageScrollStateChanged(int state) {
 
     }
-
     @Override
     protected void setListener() {
         ll_home.setOnClickListener(this);

@@ -3,11 +3,13 @@ package com.ainisi.queenmirror.queenmirrorcduan.ui.home.activity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.Toast;
 
 import com.ainisi.queenmirror.queenmirrorcduan.R;
 import com.ainisi.queenmirror.queenmirrorcduan.adapter.MyAdapter;
 import com.ainisi.queenmirror.queenmirrorcduan.base.BaseNewActivity;
 import com.ainisi.queenmirror.queenmirrorcduan.bean.SortBean;
+import com.chad.library.adapter.base.BaseQuickAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,6 +21,8 @@ public class RecommendedActivity extends BaseNewActivity {
     @Bind(R.id.re_recommended)
     RecyclerView reRecommended;
     private List<SortBean> beanList = new ArrayList<>();
+    private MyAdapter myAdapter;
+
     @Override
     protected int getLayoutId() {
         return R.layout.activity_recommended;
@@ -36,10 +40,9 @@ public class RecommendedActivity extends BaseNewActivity {
             SortBean sortBean = new SortBean();
             beanList.add(sortBean);
         }
-        MyAdapter myAdapter = new MyAdapter(R.layout.item_shortrecycler, beanList);
-        reRecommended.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false));
+        myAdapter = new MyAdapter(R.layout.item_shortrecycler, beanList);
+        reRecommended.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
         reRecommended.setAdapter(myAdapter);
-
     }
 
     @OnClick({R.id.title_back

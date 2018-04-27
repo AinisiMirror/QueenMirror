@@ -40,23 +40,15 @@ public class ShoppingCartActivity extends BaseNewActivity implements HttpCallBac
     TextView totalPrice;
     @Bind(R.id.go_pay)
     TextView goPay;
-    @Bind(R.id.order_info)
-    LinearLayout orderInfo;
-    @Bind(R.id.share_goods)
-    TextView shareGoods;
-    @Bind(R.id.collect_goods)
-    TextView collectGoods;
     @Bind(R.id.del_goods)
     TextView delGoods;
-    @Bind(R.id.share_info)
-    LinearLayout shareInfo;
     @Bind(R.id.ll_cart)
     LinearLayout llCart;
 
     @Bind(R.id.shoppingcat_num)
     TextView shoppingcatNum;
     @Bind(R.id.actionBar_edit)
-    Button actionBarEdit;
+    TextView actionBarEdit;
     @Bind(R.id.layout_empty_shopcart)
     LinearLayout empty_shopcart;
     private Context mcontext;
@@ -102,13 +94,14 @@ public class ShoppingCartActivity extends BaseNewActivity implements HttpCallBac
         groups = new ArrayList<StoreInfo>();
         childs = new HashMap<String, List<GoodsInfo>>();
         for (int i = 0; i < 5; i++) {
-            groups.add(new StoreInfo(i + "", "小马的第" + (i + 1) + "号当铺"));
+            groups.add(new StoreInfo(i + "", "MOCO形象工作室>"));
             List<GoodsInfo> goods = new ArrayList<>();
             for (int j = 0; j <= i; j++) {
-                int[] img = {R.drawable.cmaz, R.drawable.cmaz, R.drawable.cmaz, R.drawable.cmaz, R.drawable.cmaz, R.drawable.cmaz};
-                //i-j 就是商品的id， 对应着第几个店铺的第几个商品，1-1 就是第一个店铺的第一个商品
-                goods.add(new GoodsInfo(i + "-" + j, "商品", groups.get(i).getName() + "的第" + (j + 1) + "个商品", 255.00 + new Random().nextInt(1500), 1555 + new Random().nextInt(3000), "第一排", "出头天者", img[j], new Random().nextInt(100)));
+                int[] img = {R.drawable.icon_home_beautiful, R.drawable.icon_home_beautiful, R.drawable.icon_home_beautiful, R.drawable.icon_home_beautiful, R.drawable.icon_home_beautiful, R.drawable.icon_home_beautiful};
+                //i-j 就是商品的id， 对应着第几个店铺的第几个商品，1-1 就是第一个店铺的第一个商品,价格,在加商品时的数量
+                goods.add(new GoodsInfo(i + "-" + j, "商品", groups.get(i).getName() + "的第" + (j + 1) + "个商品", 138.00 + 0, 138+ 0, "第一排", "出头天者", img[j], 0));
             }
+
             childs.put(groups.get(i).getId(), goods);
         }
 
@@ -142,9 +135,6 @@ public class ShoppingCartActivity extends BaseNewActivity implements HttpCallBac
             }
         });
     }
-
-
-
     @Override
     protected void onResume() {
         super.onResume();
@@ -175,7 +165,7 @@ public class ShoppingCartActivity extends BaseNewActivity implements HttpCallBac
     }
 
     private void clearCart() {
-        shoppingcatNum.setText("购物车(0)");
+        shoppingcatNum.setText("去支付");
         actionBarEdit.setVisibility(View.GONE);
         llCart.setVisibility(View.GONE);
         empty_shopcart.setVisibility(View.VISIBLE);//这里发生过错误
@@ -342,7 +332,7 @@ public class ShoppingCartActivity extends BaseNewActivity implements HttpCallBac
 
     }
 
-    @OnClick({R.id.all_checkBox, R.id.go_pay, R.id.share_goods, R.id.collect_goods, R.id.del_goods})
+    @OnClick({R.id.all_checkBox, R.id.go_pay,  R.id.del_goods})
     public void onClick(View view) {
         AlertDialog dialog;
         switch (view.getId()) {
@@ -369,20 +359,6 @@ public class ShoppingCartActivity extends BaseNewActivity implements HttpCallBac
                     }
                 });
                 dialog.show();
-                break;
-            case R.id.share_goods:
-                if (mtotalCount == 0) {
-                    UtilTool.toast(mcontext, "请选择要分享的商品");
-                    return;
-                }
-                UtilTool.toast(mcontext, "分享成功");
-                break;
-            case R.id.collect_goods:
-                if (mtotalCount == 0) {
-                    UtilTool.toast(mcontext, "请选择要收藏的商品");
-                    return;
-                }
-                UtilTool.toast(mcontext, "收藏成功");
                 break;
             case R.id.del_goods:
                 if (mtotalCount == 0) {
@@ -480,13 +456,13 @@ public class ShoppingCartActivity extends BaseNewActivity implements HttpCallBac
 
     private void setVisiable() {
         if (flag) {
-            orderInfo.setVisibility(View.GONE);
-            shareInfo.setVisibility(View.VISIBLE);
+            goPay.setVisibility(View.GONE);
+            delGoods.setVisibility(View.VISIBLE);
             actionBarEdit.setText("完成");
         } else {
-            orderInfo.setVisibility(View.VISIBLE);
-            shareInfo.setVisibility(View.GONE);
-            actionBarEdit.setText("编辑");
+            goPay.setVisibility(View.VISIBLE);
+            delGoods.setVisibility(View.GONE);
+            actionBarEdit.setText("...");
         }
     }
 

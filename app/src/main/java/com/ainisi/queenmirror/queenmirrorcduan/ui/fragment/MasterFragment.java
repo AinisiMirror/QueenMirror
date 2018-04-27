@@ -49,8 +49,10 @@ public class MasterFragment extends BaseFragment{
             mData.add(more);
             LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
             reBigshot.setLayoutManager(linearLayoutManager);
-            RecyclerVarietyAdapter adapter = new RecyclerVarietyAdapter(mData);
+            RecyclerVarietyAdapter adapter = new RecyclerVarietyAdapter(getActivity(),mData);
             reBigshot.setAdapter(adapter);
+
         }
+
     }
 }

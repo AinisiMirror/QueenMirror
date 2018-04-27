@@ -101,6 +101,12 @@
     <dimen name="comment_121_dip">121dp</dimen>
     <dimen name="comment_21_size">21sp</dimen>
     <dimen name="comment_71_dip">71dp</dimen>
+    <dimen name="comment_58_dip">58dp</dimen>
+    <dimen name="comment_305_dip">305dp</dimen>
+    <dimen name="comment_231_dip">231dp</dimen>
+    <dimen name="comment_155_dip">155dp</dimen>
+    <dimen name="comment_51_dip">51dp</dimen>
+    <dimen name="comment_147_dip">147dp</dimen>
 
 
 </resources>

@@ -6,7 +6,6 @@ import android.support.v7.app.AlertDialog;
 import android.text.SpannableString;
 import android.text.Spanned;
 import android.text.style.StrikethroughSpan;
-import android.view.DragAndDropPermissions;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -105,32 +104,6 @@ public class ShopcatAdapter extends BaseExpandableListAdapter {
             }
         });
         groupViewHolder.storeCheckBox.setChecked(group.isChoosed());
-
-        /**【文字指的是组的按钮的文字】
-         * 当我们按下ActionBar的 "编辑"按钮， 应该把所有组的文字显示"编辑",并且设置按钮为不可见
-         * 当我们完成编辑后，再把组的编辑按钮设置为可见
-         * 不懂，请自己操作淘宝，观察一遍
-         */
-        if(group.isActionBarEditor()){
-            group.setEditor(false);
-            groupViewHolder.storeEdit.setVisibility(View.GONE);
-            flag=false;
-        }else{
-            flag=true;
-            groupViewHolder.storeEdit.setVisibility(View.VISIBLE);
-        }
-
-        /**
-         * 思路:当我们按下组的"编辑"按钮后，组处于编辑状态，文字显示"完成"
-         * 当我们点击“完成”按钮后，文字显示"编辑“,组处于未编辑状态
-         */
-        if (group.isEditor()) {
-            groupViewHolder.storeEdit.setText("完成");
-        } else {
-            groupViewHolder.storeEdit.setText("编辑");
-        }
-
-        groupViewHolder.storeEdit.setOnClickListener(new GroupViewClick(group, groupPosition, groupViewHolder.storeEdit));
         return convertView;
     }
 
@@ -145,51 +118,16 @@ public class ShopcatAdapter extends BaseExpandableListAdapter {
             childViewHolder = (ChildViewHolder) convertView.getTag();
         }
 
-        /**
-         * 根据组的编辑按钮的可见与不可见，去判断是组对下辖的子元素编辑  还是ActionBar对组的下瞎元素的编辑
-         * 如果组的编辑按钮可见，那么肯定是组对自己下辖元素的编辑
-         * 如果组的编辑按钮不可见，那么肯定是ActionBar对组下辖元素的编辑
-         */
-        if(flag){
-            if (groups.get(groupPosition).isEditor()) {
-                childViewHolder.editGoodsData.setVisibility(View.VISIBLE);
-                childViewHolder.delGoods.setVisibility(View.VISIBLE);
-                childViewHolder.goodsData.setVisibility(View.GONE);
-            } else {
-                childViewHolder.delGoods.setVisibility(View.VISIBLE);
-                childViewHolder.goodsData.setVisibility(View.VISIBLE);
-                childViewHolder.editGoodsData.setVisibility(View.GONE);
-            }
-        }else{
-
-            if(groups.get(groupPosition).isActionBarEditor()){
-                childViewHolder.delGoods.setVisibility(View.GONE);
-                childViewHolder.editGoodsData.setVisibility(View.VISIBLE);
-                childViewHolder.goodsData.setVisibility(View.GONE);
-            }else{
-                childViewHolder.delGoods.setVisibility(View.VISIBLE);
-                childViewHolder.goodsData.setVisibility(View.VISIBLE);
-                childViewHolder.editGoodsData.setVisibility(View.GONE);
-            }
-        }
-
         final GoodsInfo child = (GoodsInfo) getChild(groupPosition, childPosition);
         if (child != null) {
-            childViewHolder.goodsName.setText(child.getDesc());
-            childViewHolder.goodsPrice.setText("￥" + child.getPrice() + "");
+
             childViewHolder.goodsNum.setText(String.valueOf(child.getCount()));
-            childViewHolder.goodsImage.setImageResource(R.drawable.cmaz);
-            childViewHolder.goods_size.setText("门票:" + child.getColor() + ",类型:" + child.getSize());
+            childViewHolder.goodsImage.setImageResource(R.drawable.icon_home_beautiful);
             //设置打折前的原价
             SpannableString spannableString = new SpannableString("￥" + child.getPrime_price() + "");
             StrikethroughSpan span = new StrikethroughSpan();
             spannableString.setSpan(span,0,spannableString.length()-1+1, Spanned.SPAN_INCLUSIVE_INCLUSIVE);
-            //避免无限次的append
-            if (childViewHolder.goodsPrimePrice.length() > 0) {
-                childViewHolder.goodsPrimePrice.setText("");
-            }
-            childViewHolder.goodsPrimePrice.setText(spannableString);
-            childViewHolder.goodsBuyNum.setText("x" + child.getCount() + "");
+
             childViewHolder.singleCheckBox.setChecked(child.isChoosed());
             childViewHolder.singleCheckBox.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -217,22 +155,7 @@ public class ShopcatAdapter extends BaseExpandableListAdapter {
                     showDialog(groupPosition,childPosition,childViewHolder.goodsNum,childViewHolder.singleCheckBox.isChecked(),child);
                 }
             });
-            childViewHolder.delGoods.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    new AlertDialog.Builder(mcontext)
-                            .setMessage("确定要删除该商品吗")
-                            .setNegativeButton("取消",null)
-                            .setPositiveButton("确定", new DialogInterface.OnClickListener() {
-                                @Override
-                                public void onClick(DialogInterface dialog, int which) {
-                                    modifyCountInterface.childDelete(groupPosition,childPosition);
-                                }
-                            })
-                            .create()
-                            .show();;
-                }
-            });
+
         }
         return convertView;
     }
@@ -340,8 +263,6 @@ public class ShopcatAdapter extends BaseExpandableListAdapter {
         CheckBox storeCheckBox;
         @Bind(R.id.store_name)
         TextView storeName;
-        @Bind(R.id.store_edit)
-        TextView storeEdit;
 
         public GroupViewHolder(View view) {
             ButterKnife.bind(this, view);
@@ -439,30 +360,13 @@ public class ShopcatAdapter extends BaseExpandableListAdapter {
         CheckBox singleCheckBox;
         @Bind(R.id.goods_image)
         ImageView goodsImage;
-        @Bind(R.id.goods_name)
-        TextView goodsName;
-        @Bind(R.id.goods_size)
-        TextView goods_size;
-        @Bind(R.id.goods_price)
-        TextView goodsPrice;
-        @Bind(R.id.goods_prime_price)
-        TextView goodsPrimePrice;
-        @Bind(R.id.goods_buyNum)
-        TextView goodsBuyNum;
-        @Bind(R.id.goods_data)
-        RelativeLayout goodsData;
         @Bind(R.id.reduce_goodsNum)
         TextView reduceGoodsNum;
         @Bind(R.id.goods_Num)
         TextView goodsNum;
         @Bind(R.id.increase_goods_Num)
         TextView increaseGoodsNum;
-        @Bind(R.id.goodsSize)
-        TextView goodsSize;
-        @Bind(R.id.del_goods)
-        TextView delGoods;
-        @Bind(R.id.edit_goods_data)
-        LinearLayout editGoodsData;
+
 
         public ChildViewHolder(View view) {
             ButterKnife.bind(this, view);

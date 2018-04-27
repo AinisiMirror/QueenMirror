@@ -11,15 +11,15 @@
     <include
         android:id="@+id/ic_title"
         layout="@layout/layout_title" />
-
-    <View
-        android:id="@+id/view"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/comment_2_dip"
+    <ImageView
         android:layout_below="@id/ic_title"
-        android:background="@color/alpha_15_black" />
-
+        android:id="@+id/img_group_title"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/comment_150_dip"
+        android:src="@drawable/icon_home_spellgroup"
+        />
     <android.support.design.widget.TabLayout
+
         android:id="@+id/tab_home_fightalone"
         android:layout_width="match_parent"
         app:tabMode="scrollable"
@@ -28,7 +28,7 @@
         app:tabPaddingStart="-1dp"
         app:tabPaddingEnd="-1dp"
         android:layout_height="wrap_content"
-        android:layout_below="@id/view" />
+        android:layout_below="@id/img_group_title" />
 
     <com.ainisi.queenmirror.queenmirrorcduan.utils.NoScrollViewPager
         android:id="@+id/pager_home_fightalone"

@@ -183,6 +183,7 @@ public class ShopMallFragment extends BaseFragment {
         pop.setAnimationStyle(R.style.CustomPopWindowStyle);
         pop.setOnDismissListener(new PopupWindow.OnDismissListener() {
             @Override
+
             public void onDismiss() {
                 ivsort.setVisibility(View.VISIBLE);
                 ivsort1.setVisibility(View.GONE);
@@ -190,10 +191,8 @@ public class ShopMallFragment extends BaseFragment {
             }
         });
     }
-
     /**
      * 设置添加屏幕的背景透明度
-     *
      * @param bgAlpha 屏幕透明度0.0-1.0 1表示完全不透明
      */
     public void setBackgroundAlpha(float bgAlpha) {
@@ -202,7 +201,6 @@ public class ShopMallFragment extends BaseFragment {
         lp.alpha = bgAlpha;
         getActivity().getWindow().setAttributes(lp);
     }
-
     private void initDate() {
         List<Integer> images = new ArrayList<>();
         for (int i = 0; i < 4; i++) {

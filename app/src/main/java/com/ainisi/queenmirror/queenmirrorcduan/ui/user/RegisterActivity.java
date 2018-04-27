@@ -4,6 +4,7 @@ import android.os.CountDownTimer;
 import android.support.v4.content.ContextCompat;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -14,8 +15,10 @@ import com.ainisi.queenmirror.queenmirrorcduan.api.ACTION;
 import com.ainisi.queenmirror.queenmirrorcduan.api.HttpCallBack;
 import com.ainisi.queenmirror.queenmirrorcduan.api.HttpUtils;
 import com.ainisi.queenmirror.queenmirrorcduan.base.BaseNewActivity;
+import com.ainisi.queenmirror.queenmirrorcduan.ui.user.bean.LoginCeshiBean;
 import com.ainisi.queenmirror.queenmirrorcduan.ui.user.bean.VerifyBean;
 import com.ainisi.queenmirror.queenmirrorcduan.utilnomal.GsonUtil;
+import com.ainisi.queenmirror.queenmirrorcduan.utilnomal.L;
 import com.ainisi.queenmirror.queenmirrorcduan.utilnomal.T;
 import com.lzy.okgo.cache.CacheMode;
 
@@ -26,7 +29,11 @@ import java.util.HashMap;
 import butterknife.Bind;
 import butterknife.OnClick;
 
+/**
+ * 注册
+ */
 public class RegisterActivity extends BaseNewActivity implements HttpCallBack {
+    private static final String TAG ="RegisterActivity" ;
     @Bind(R.id.title_title)
     TextView registerTitle;
     @Bind(R.id.tv_phonenumber)
@@ -48,9 +55,10 @@ public class RegisterActivity extends BaseNewActivity implements HttpCallBack {
     @Override
     protected void initView() {
         super.initView();
-        myCountDownTimer = new MyCountDownTimer(30000,1000);
+        myCountDownTimer = new MyCountDownTimer(30000, 1000);
         inidTitle();
     }
+
     @Override
     protected void initData() {
         super.initData();
@@ -63,7 +71,7 @@ public class RegisterActivity extends BaseNewActivity implements HttpCallBack {
         registerTitle.setText(R.string.register);
     }
 
-    @OnClick({R.id.title_back, R.id.tv_validation,R.id.iv_remove_text,R.id.iv_login_see})
+    @OnClick({R.id.title_back, R.id.tv_validation, R.id.iv_remove_text, R.id.iv_login_see})
     public void click(View view) {
         switch (view.getId()) {
             case R.id.title_back:
@@ -77,21 +85,19 @@ public class RegisterActivity extends BaseNewActivity implements HttpCallBack {
                 phoneNumber.setText("");
                 break;
             case R.id.iv_login_see:
-                if(click){
+                //判断第一次选中和第二次选中状态
+                if (click) {
                     loginSee.setImageResource(R.drawable.icon_login_nosee);
                     passWord.setTransformationMethod(PasswordTransformationMethod.getInstance());
-                    click=false;
-                }else {
+                    click = false;
+                } else {
                     loginSee.setImageResource(R.drawable.icon_login_see);
                     //如果选中，显示密码
                     passWord.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
-                    click=true;
+                    click = true;
                 }
                 break;
-
         }
-
-
     }
 
     private void initValidation() {
@@ -99,20 +105,19 @@ public class RegisterActivity extends BaseNewActivity implements HttpCallBack {
         params.put("telNo", phoneNumber.getText().toString().trim());
         HttpUtils.doPost(ACTION.VERIFY, params, CacheMode.REQUEST_FAILED_READ_CACHE, true, this);
     }
-
     @Override
     public void onSuccess(int action, String res) {
-        switch (action){
+        switch (action) {
             case ACTION.VERIFY://获取验证码
-                VerifyBean verifyBean= GsonUtil.toObj(res,VerifyBean.class);
+                Log.i(TAG,res);
 
-                break;
+
+
         }
     }
 
     @Override
     public void showLoadingDialog() {
-
     }
 
     @Override
@@ -132,7 +137,7 @@ public class RegisterActivity extends BaseNewActivity implements HttpCallBack {
         public void onTick(long l) {
             //防止计时过程中重复点击  
             validation.setClickable(false);
-            validation.setText((l/1000)+"s后重新获取");
+            validation.setText((l / 1000) + "s后重新获取");
 
         }
 
