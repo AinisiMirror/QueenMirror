@@ -4,37 +4,48 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
 
-    android:fitsSystemWindows="true"
     android:layout_height="match_parent"
     android:background="@color/white"
+    android:fitsSystemWindows="true"
     tools:context=".ui.mine.activity.MineMyFootActivity">
 
     <include
 
         android:id="@+id/ic_title"
         layout="@layout/layout_title" />
+
     <RelativeLayout
         android:id="@+id/rc_region"
 
-        android:background="@color/white"
-        android:layout_below="@+id/ic_title"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-    <TextView
-        android:id="@+id/tv_region"
-
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/ic_title"
+        android:background="@color/white">
 
-        android:layout_margin="@dimen/comment_10_dip"
-        android:text="1月15号"
-        />
+        <TextView
+            android:id="@+id/tv_region"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_margin="@dimen/comment_10_dip"
+            android:text="1月15号" />
     </RelativeLayout>
-    <android.support.v7.widget.RecyclerView
 
-        android:layout_marginTop="@dimen/comment_10_dip"
-        android:layout_below="@+id/rc_region"
-        android:id="@+id/mine_foot_recycler"
+    <com.ainisi.queenmirror.queenmirrorcduan.utils.customview.RefreshLoadMoreLayout
+        android:id="@+id/rlm"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:layout_below="@+id/rc_region"
+        app:rll_header_hint_normal="下拉给我试试看"
+        app:rll_header_hint_ready="主淫我已经准备好了">
+
+        <android.support.v7.widget.RecyclerView
+
+            android:id="@+id/mine_foot_recycler"
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/comment_10_dip" />
+    </com.ainisi.queenmirror.queenmirrorcduan.utils.customview.RefreshLoadMoreLayout>
 </RelativeLayout>

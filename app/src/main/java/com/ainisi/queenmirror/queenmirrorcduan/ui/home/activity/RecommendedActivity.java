@@ -65,7 +65,7 @@ public class RecommendedActivity extends BaseNewActivity implements RefreshLoadM
     }
     @Override
     public void onRefresh() {
-        XLog.v("onRefresh");
+
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
@@ -77,7 +77,6 @@ public class RecommendedActivity extends BaseNewActivity implements RefreshLoadM
 
     @Override
     public void onLoadMore() {
-        XLog.v("onLoadMore");
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {

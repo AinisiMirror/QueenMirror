@@ -39,10 +39,6 @@ public class OrderMessageActivity extends BaseNewActivity implements RefreshLoad
         context.startActivity(new Intent(context, OrderMessageActivity.class));
     }
 
-    //    @Override
-//    public int getLayoutId() {
-//        return R.layout.activity_order_mgs;
-//    }
     @Override
     protected int getLayoutId() {
         return R.layout.activity_order_mgs;

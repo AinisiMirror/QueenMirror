@@ -2,6 +2,7 @@ package com.ainisi.queenmirror.queenmirrorcduan.ui.mine.activity;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Handler;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -10,7 +11,10 @@ import android.widget.TextView;
 import com.ainisi.queenmirror.common.base.BaseActivity;
 import com.ainisi.queenmirror.queenmirrorcduan.R;
 import com.ainisi.queenmirror.queenmirrorcduan.adapter.MyAdapter;
+import com.ainisi.queenmirror.queenmirrorcduan.base.BaseNewActivity;
 import com.ainisi.queenmirror.queenmirrorcduan.bean.SortBean;
+import com.ainisi.queenmirror.queenmirrorcduan.utilnomal.T;
+import com.ainisi.queenmirror.queenmirrorcduan.utils.customview.RefreshLoadMoreLayout;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,7 +23,7 @@ import butterknife.Bind;
 import butterknife.OnClick;
 
 //我的足迹
-public class MineMyFootActivity extends BaseActivity {
+public class MineMyFootActivity extends BaseNewActivity implements RefreshLoadMoreLayout.CallBack {
 
     @Bind(R.id.mine_foot_recycler)
     RecyclerView recycler;
@@ -27,6 +31,9 @@ public class MineMyFootActivity extends BaseActivity {
     TextView folltitle;
     @Bind(R.id.title_right)
     TextView titleRight;
+    @Bind(R.id.rlm)
+    RefreshLoadMoreLayout mRefreshLoadMoreLayout;
+    private Handler handler = new Handler();
     List<SortBean> sortlist = new ArrayList<>();
 
     public static void startActivity(Context context) {
@@ -38,13 +45,10 @@ public class MineMyFootActivity extends BaseActivity {
         return R.layout.activity_mine_my_foot;
     }
 
-    @Override
-    public void initPresenter() {
-
-    }
 
     @Override
-    public void initView() {
+    protected void initView() {
+        super.initView();
         folltitle.setText("我的足迹");
         titleRight.setText("编辑");
 
@@ -64,6 +68,19 @@ public class MineMyFootActivity extends BaseActivity {
 
     }
 
+    @Override
+    protected void initData() {
+        super.initData();
+        mRefreshLoadMoreLayout.init(new RefreshLoadMoreLayout.Config(this).canRefresh(true)
+                .canLoadMore(true)
+                .autoLoadMore()
+
+                .showLastRefreshTime(
+                        RefreshLoadMoreLayout.class,
+                        "yyyy-MM-dd")
+                .multiTask());
+    }
+
     @OnClick({R.id.title_back
     })
     public void click(View view) {
@@ -76,5 +93,27 @@ public class MineMyFootActivity extends BaseActivity {
         }
 
 
+    }
+
+    @Override
+    public void onRefresh() {
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                T.show("下拉成功");
+                mRefreshLoadMoreLayout.stopRefresh();
+            }
+        }, 200);
+    }
+
+    @Override
+    public void onLoadMore() {
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                T.show("上拉成功");
+                mRefreshLoadMoreLayout.stopLoadMore();
+            }
+        }, 1000);
     }
 }

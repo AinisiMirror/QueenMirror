@@ -650,7 +650,6 @@ public class RefreshLoadMoreLayout extends ViewGroup {
         public boolean mCanLoadMore = true;
         public boolean mAutoLoadMore = false;
         public boolean mMultiTask = false;
-
         public Config(CallBack callBack) {
             this.mCallBack = callBack;
         }
@@ -753,7 +752,7 @@ public class RefreshLoadMoreLayout extends ViewGroup {
         mFooterLayout.setFooterHeight(0);
         addView(mFooterLayout);
     }
-
+    //开始自动刷新
     public void startAutoRefresh() {
         startAutoRefresh(500);
     }
@@ -780,7 +779,7 @@ public class RefreshLoadMoreLayout extends ViewGroup {
         });
 
     }
-
+    //停止刷新
     public void stopRefresh() {
         stopRefresh(true, false, 0);
     }
@@ -792,7 +791,7 @@ public class RefreshLoadMoreLayout extends ViewGroup {
     public void stopRefresh(boolean canRefresh) {
         stopRefresh(canRefresh, false, 0);
     }
-
+    //停止刷新没有数据。
     public void stopRefreshNoMoreData(boolean noMoreData) {
         stopRefresh(true, noMoreData, 0);
     }

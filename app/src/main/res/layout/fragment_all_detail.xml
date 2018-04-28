@@ -1,8 +1,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="com.ainisi.queenmirror.queenmirrorcduan.ui.home.fragment.AllDetailFragment">
 
     <RelativeLayout
@@ -10,6 +10,7 @@
         android:id="@+id/relativeLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
         <TextView
             android:id="@+id/tv_month"
             android:layout_width="wrap_content"
@@ -35,27 +36,36 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignTop="@+id/tv_expenditure"
-            android:layout_marginStart="@dimen/comment_30_dip"
             android:layout_marginBottom="@dimen/comment_11_dip"
+            android:layout_marginStart="@dimen/comment_30_dip"
             android:layout_toEndOf="@+id/tv_expenditure"
             android:text="收入¥121.50"
-            android:textSize="@dimen/comment_12_size"
-            />
+            android:textSize="@dimen/comment_12_size" />
 
         <ImageView
             android:id="@+id/imageView3"
             android:layout_width="@dimen/comment_20_dip"
-            android:layout_marginRight="@dimen/comment_10_dip"
             android:layout_height="@dimen/comment_20_dip"
-            android:layout_centerVertical="true"
             android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/comment_10_dip"
             app:srcCompat="@drawable/icon_home_submit" />
     </RelativeLayout>
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/rc_all_detail"
-        android:background="@color/white"
-        android:layout_below="@+id/relativeLayout"
+
+    <com.ainisi.queenmirror.queenmirrorcduan.utils.customview.RefreshLoadMoreLayout
+        android:id="@+id/rlm"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        android:layout_below="@+id/relativeLayout"
+        app:rll_header_hint_normal="下拉给我试试看"
+        app:rll_header_hint_ready="主淫我已经准备好了">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rc_all_detail"
+            android:layout_width="match_parent"
+
+            android:layout_height="match_parent"
+            android:background="@color/white" />
+    </com.ainisi.queenmirror.queenmirrorcduan.utils.customview.RefreshLoadMoreLayout>
 
 </RelativeLayout>
