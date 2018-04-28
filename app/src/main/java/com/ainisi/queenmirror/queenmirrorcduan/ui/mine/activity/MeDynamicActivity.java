@@ -1,11 +1,13 @@
 package com.ainisi.queenmirror.queenmirrorcduan.ui.mine.activity;
 
+import android.view.View;
 import android.widget.TextView;
 
 import com.ainisi.queenmirror.common.base.BaseActivity;
 import com.ainisi.queenmirror.queenmirrorcduan.R;
 
 import butterknife.Bind;
+import butterknife.OnClick;
 
 /**
  * 我的动态（是否让看）
@@ -29,5 +31,22 @@ public class MeDynamicActivity extends BaseActivity {
     public void initView() {
         title=getIntent().getStringExtra("dynamic");
         meTitle.setText(title);
+    }
+
+    @OnClick({R.id.iv_back
+    })
+    public void click(View view) {
+
+        switch (view.getId()) {
+            case R.id.iv_back:
+                finish();
+                break;
+            default:
+                break;
+
+
+        }
+
+
     }
 }

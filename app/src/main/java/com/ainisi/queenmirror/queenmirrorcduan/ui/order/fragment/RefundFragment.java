@@ -1,5 +1,6 @@
 package com.ainisi.queenmirror.queenmirrorcduan.ui.order.fragment;
 
+import android.os.Handler;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -10,6 +11,8 @@ import com.ainisi.queenmirror.common.base.BaseFragment;
 import com.ainisi.queenmirror.queenmirrorcduan.R;
 import com.ainisi.queenmirror.queenmirrorcduan.adapter.MyAdapter;
 import com.ainisi.queenmirror.queenmirrorcduan.bean.SortBean;
+import com.ainisi.queenmirror.queenmirrorcduan.utilnomal.T;
+import com.ainisi.queenmirror.queenmirrorcduan.utils.customview.RefreshLoadMoreLayout;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 
 import java.util.ArrayList;
@@ -22,10 +25,13 @@ import butterknife.Bind;
  * 退款
  */
 
-public class RefundFragment extends BaseFragment{
+public class RefundFragment extends BaseFragment implements RefreshLoadMoreLayout.CallBack {
     @Bind(R.id.rc_refund)
     RecyclerView refund;
     private List<SortBean> list=new ArrayList<>();
+    private Handler handler = new Handler();
+    @Bind(R.id.rlm)
+    RefreshLoadMoreLayout mRefreshLoadMoreLayout;
     @Override
     protected int getLayoutResource() {
         return R.layout.fragment_sort_refund;
@@ -33,7 +39,35 @@ public class RefundFragment extends BaseFragment{
 
     @Override
     public void initPresenter() {
+        mRefreshLoadMoreLayout.init(new RefreshLoadMoreLayout.Config(this).canRefresh(true)
+                .canLoadMore(true)
+                .autoLoadMore()
+                .showLastRefreshTime(
+                        RefreshLoadMoreLayout.class,
+                        "yyyy-MM-dd")
+                .multiTask());
+    }
 
+    @Override
+    public void onRefresh() {
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                T.show("下拉成功");
+                mRefreshLoadMoreLayout.stopRefresh();
+            }
+        }, 200);
+    }
+
+    @Override
+    public void onLoadMore() {
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                T.show("上拉成功");
+                mRefreshLoadMoreLayout.stopLoadMore();
+            }
+        }, 1000);
     }
 
     @Override

@@ -108,7 +108,7 @@ public class ShopMallFragment extends BaseFragment {
             R.drawable.icon_shop_medicalcare, R.drawable.icon_shop_motion, R.drawable.icon_shop_photography, R.drawable.icon_shop_service
             , R.drawable.icon_shop_train
     };
-    String[] textTitle = {"休闲娱乐", "银行保险", "珠宝首饰", "医疗保健", "运动健身",  "婚庆摄影", "汽车服务", "教育培训"};
+    String[] textTitle = {"休闲娱乐", "银行保险", "珠宝首饰", "医疗保健", "运动健身", "婚庆摄影", "汽车服务", "教育培训"};
     String[] problem = {"销量最高", "价格最低", "距离最近", "优惠最多", "满减优惠", "新用最好", "用户最好"};
 
     int hight;//标记ScrollView移动的距离
@@ -124,6 +124,8 @@ public class ShopMallFragment extends BaseFragment {
     public void initPresenter() {
 
     }
+
+
 
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
@@ -160,8 +162,8 @@ public class ShopMallFragment extends BaseFragment {
             shopBean.setTextName(textTitle[i]);
             shopList.add(shopBean);
         }
-        MyShopAdapter myShopAdapter=new MyShopAdapter(R.layout.re_shopmall_shop,shopList);
-        shopRecycle.setLayoutManager(new GridLayoutManager(getActivity(),4));
+        MyShopAdapter myShopAdapter = new MyShopAdapter(R.layout.re_shopmall_shop, shopList);
+        shopRecycle.setLayoutManager(new GridLayoutManager(getActivity(), 4));
         shopRecycle.setAdapter(myShopAdapter);
         myShopAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
             @Override
@@ -175,7 +177,6 @@ public class ShopMallFragment extends BaseFragment {
     private void initpopwindow() {
         pop = new PopupWindow(CollapsingToolbarLayout.LayoutParams.MATCH_PARENT, CollapsingToolbarLayout.LayoutParams.WRAP_CONTENT);
         popview1 = View.inflate(getActivity(), R.layout.pop_myitem, null);
-
         initpop(popview1);
         pop.setContentView(popview1);
         pop.setBackgroundDrawable(new ColorDrawable(0));
@@ -191,8 +192,10 @@ public class ShopMallFragment extends BaseFragment {
             }
         });
     }
+
     /**
      * 设置添加屏幕的背景透明度
+     *
      * @param bgAlpha 屏幕透明度0.0-1.0 1表示完全不透明
      */
     public void setBackgroundAlpha(float bgAlpha) {
@@ -201,6 +204,7 @@ public class ShopMallFragment extends BaseFragment {
         lp.alpha = bgAlpha;
         getActivity().getWindow().setAttributes(lp);
     }
+
     private void initDate() {
         List<Integer> images = new ArrayList<>();
         for (int i = 0; i < 4; i++) {
@@ -209,7 +213,6 @@ public class ShopMallFragment extends BaseFragment {
         banner.setImageLoader(new GlideImageLoader());
         banner.setImages(images);
         banner.start();
-
     }
 
     private void initpop(View popview1) {
@@ -221,7 +224,7 @@ public class ShopMallFragment extends BaseFragment {
             problemBean.setName(problem[i]);
             list.add(problemBean);
         }
-        ProblemAdapter problemAdapter = new ProblemAdapter(R.layout.item_pop_sort,list);
+        ProblemAdapter problemAdapter = new ProblemAdapter(R.layout.item_pop_sort, list);
         ce.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false));
         ce.setAdapter(problemAdapter);
         problemAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
@@ -233,11 +236,10 @@ public class ShopMallFragment extends BaseFragment {
         });
     }
 
-
     @OnClick({R.id.rb_sort, R.id.rb_sales, R.id.rb_distance, R.id.rb_screen
             , R.id.iv_sort, R.id.iv_sort1
             , R.id.bt_screen, R.id.li_sort_bottom, R.id.li_home_screen, R.id.li_home_screen_bottom
-            ,R.id.line_surface,R.id.line_uspension_surface,R.id.ed_keyword
+            , R.id.line_surface, R.id.line_uspension_surface, R.id.ed_keyword
     })
     public void click(View view) {
         //  FragmentTransaction transaction = fm.beginTransaction();
@@ -279,7 +281,6 @@ public class ShopMallFragment extends BaseFragment {
                     gridView.setAdapter(gridViewAdapter);
                     isClick = true;
                 }
-
                 break;
             case R.id.bt_screen:
 
@@ -298,7 +299,6 @@ public class ShopMallFragment extends BaseFragment {
                     sc_home_scroll.smoothScrollTo(0, 1180);
                     pop.showAsDropDown(hSort);
                 }
-
                 break;
             case R.id.iv_sort1:
                 pop.dismiss();

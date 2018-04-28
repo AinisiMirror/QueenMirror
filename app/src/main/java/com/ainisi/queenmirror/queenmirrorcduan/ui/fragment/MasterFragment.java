@@ -34,6 +34,7 @@ public class MasterFragment extends BaseFragment{
 
     }
 
+
     @Override
     protected void initView() {
         initDate();

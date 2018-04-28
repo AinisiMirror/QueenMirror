@@ -19,6 +19,8 @@ public class FullscreenFragment extends BaseFragment{
 
     }
 
+
+
     @Override
     protected void initView() {
 

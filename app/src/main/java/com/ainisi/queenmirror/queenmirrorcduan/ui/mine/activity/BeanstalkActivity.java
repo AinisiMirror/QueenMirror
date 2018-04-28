@@ -64,6 +64,8 @@ public class BeanstalkActivity extends BaseNewActivity implements HttpCallBack {
         initDate();
     }
 
+
+
     private void initText() {
         dateTitle.setText(R.string.Selectiontime);
         rightTitle.setText(R.string.complete);

@@ -48,6 +48,8 @@ public class PortraitActivity extends BaseNewActivity implements View.OnClickLis
         super.initView();
         init();
     }
+
+
     private void init() {
         // 1、创建LQRPhotoSelectUtils（一个Activity对应一个LQRPhotoSelectUtils）
         mLqrPhotoSelectUtils = new LQRPhotoSelectUtils(this, new LQRPhotoSelectUtils.PhotoSelectListener() {

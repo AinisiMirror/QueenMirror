@@ -57,6 +57,7 @@ public class ForgetcipherActivity extends BaseNewActivity implements HttpCallBac
         passWord.setTransformationMethod(PasswordTransformationMethod.getInstance());
     }
 
+
     private void initText() {
         loginTitle.setText(R.string.forgetcipher);
     }

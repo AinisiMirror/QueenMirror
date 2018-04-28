@@ -111,7 +111,6 @@ public class MineFragment extends BaseFragment {
                 break;
             //我的钱包
             case R.id.ly_mine_wallet:
-
                 MineMyWalletActivity.startActivity(getActivity());
                 break;
             //我的魔豆

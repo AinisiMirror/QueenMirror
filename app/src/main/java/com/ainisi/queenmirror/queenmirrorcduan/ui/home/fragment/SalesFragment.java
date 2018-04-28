@@ -19,6 +19,7 @@ public class SalesFragment extends BaseFragment{
 
     }
 
+
     @Override
     protected void initView() {
 

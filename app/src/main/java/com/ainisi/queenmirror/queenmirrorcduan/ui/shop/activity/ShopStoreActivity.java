@@ -60,6 +60,8 @@ public class ShopStoreActivity extends BaseNewActivity{
 
 
     }
+
+
     @Override
     protected void initData() {
         super.initData();

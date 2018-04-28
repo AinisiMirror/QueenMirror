@@ -164,6 +164,7 @@ public class EstheticsActivity extends BaseActivity {
 //            case R.id.full_guijiao:
 //                startActivity(new Intent(this, FullActivity.class));
 //                break;
+            //更多
             case R.id.tv_more:
                 startActivity(new Intent(this,RecommendedActivity.class));
                 break;

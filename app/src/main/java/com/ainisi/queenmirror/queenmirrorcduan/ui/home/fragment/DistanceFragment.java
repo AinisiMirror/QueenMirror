@@ -19,6 +19,7 @@ public class DistanceFragment extends BaseFragment{
 
     }
 
+
     @Override
     protected void initView() {
 

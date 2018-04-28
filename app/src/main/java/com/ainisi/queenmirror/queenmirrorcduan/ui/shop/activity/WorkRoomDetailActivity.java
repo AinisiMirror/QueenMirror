@@ -80,6 +80,7 @@ public class WorkRoomDetailActivity extends BaseNewActivity implements HttpCallB
         whs_workroom_scroll.setOnScrollListener(this);
     }
 
+
     private void initTab() {
         listView.setVisibility(View.VISIBLE);
         listadapter = new WorkRoomAdapter(WorkRoomDetailActivity.this);

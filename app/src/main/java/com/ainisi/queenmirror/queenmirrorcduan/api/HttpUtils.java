@@ -126,9 +126,9 @@ public class HttpUtils {
                     @Override
                     public void onSuccess(String s, Call call, Response response) {
                         try {
-                            //JSONObject jsonObject = new JSONObject(s);
-                            // int state = jsonObject.getInt("state");
-                            //String res = jsonObject.getString("list");
+                            JSONObject jsonObject = new JSONObject(s);
+                             int state = jsonObject.getInt("state");
+                            String res = jsonObject.getString("list");
                           /*  //失败
                             if (state != 200) {
                                 httpCallBack.showErrorMessage(res);

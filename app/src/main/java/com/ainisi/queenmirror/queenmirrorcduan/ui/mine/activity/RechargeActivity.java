@@ -27,7 +27,6 @@ public class RechargeActivity extends BaseActivity {
 
     @Override
     public void initPresenter() {
-
     }
 
     @Override

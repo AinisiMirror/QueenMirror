@@ -7,7 +7,8 @@ import android.widget.TextView;
 import com.ainisi.queenmirror.queenmirrorcduan.R;
 import com.ainisi.queenmirror.queenmirrorcduan.api.HttpCallBack;
 import com.ainisi.queenmirror.queenmirrorcduan.base.BaseNewActivity;
-import com.ainisi.queenmirror.queenmirrorcduan.utilnomal.T;;
+import com.ainisi.queenmirror.queenmirrorcduan.utilnomal.T;
+import com.ainisi.queenmirror.queenmirrorcduan.utils.CustomRatingBar;;
 
 import butterknife.Bind;
 import butterknife.OnClick;
@@ -34,6 +35,7 @@ public class ScoreActivity extends BaseNewActivity implements HttpCallBack {
         initTitle();
         initDate();
     }
+
 
     private void initDate() {
         customRatingBar.setTouchAble(true);

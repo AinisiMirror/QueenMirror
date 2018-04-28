@@ -88,6 +88,7 @@ public class ShoppingCartActivity extends BaseNewActivity implements HttpCallBac
         initEvents();
     }
 
+
     private void initEvents() {
 
         mcontext = this;

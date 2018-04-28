@@ -2,12 +2,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="com.ainisi.queenmirror.queenmirrorcduan.ui.home.fragment.FullSortFragment">
-
+    <com.ainisi.queenmirror.queenmirrorcduan.utils.customview.RefreshLoadMoreLayout
+        android:id="@+id/rlm"
+        android:layout_below="@id/ic_title"
+        android:layout_width="match_parent"
+        app:rll_header_hint_normal="下拉给我试试看"
+        app:rll_header_hint_ready="主淫我已经准备好了"
+        android:layout_height="match_parent">
     <!-- TODO: Update blank fragment layout -->
     <android.support.v7.widget.RecyclerView
         android:id="@+id/full_sore_recycler"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
+    </com.ainisi.queenmirror.queenmirrorcduan.utils.customview.RefreshLoadMoreLayout>
 
 </FrameLayout>

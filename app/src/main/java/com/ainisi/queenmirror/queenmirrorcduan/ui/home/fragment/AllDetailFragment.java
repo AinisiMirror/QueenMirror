@@ -35,6 +35,8 @@ public class AllDetailFragment extends BaseFragment {
 
     }
 
+
+
     @Override
     protected void initView() {
         for (int i = 0; i <8 ; i++) {

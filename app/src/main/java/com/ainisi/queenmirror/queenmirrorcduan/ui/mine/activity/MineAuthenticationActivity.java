@@ -34,6 +34,7 @@ public class MineAuthenticationActivity extends BaseNewActivity implements HttpC
         tv_common_title.setText("我要认证");
     }
 
+
     @OnClick({R.id.iv_common_back})
     public void onClick(View view){
         switch (view.getId()){

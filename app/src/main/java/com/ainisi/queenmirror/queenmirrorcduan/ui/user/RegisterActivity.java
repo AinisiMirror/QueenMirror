@@ -1,28 +1,20 @@
 package com.ainisi.queenmirror.queenmirrorcduan.ui.user;
 
 import android.os.CountDownTimer;
-import android.support.v4.content.ContextCompat;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.ainisi.queenmirror.queenmirrorcduan.R;
 import com.ainisi.queenmirror.queenmirrorcduan.api.ACTION;
 import com.ainisi.queenmirror.queenmirrorcduan.api.HttpCallBack;
 import com.ainisi.queenmirror.queenmirrorcduan.api.HttpUtils;
 import com.ainisi.queenmirror.queenmirrorcduan.base.BaseNewActivity;
-import com.ainisi.queenmirror.queenmirrorcduan.ui.user.bean.LoginCeshiBean;
-import com.ainisi.queenmirror.queenmirrorcduan.ui.user.bean.VerifyBean;
-import com.ainisi.queenmirror.queenmirrorcduan.utilnomal.GsonUtil;
-import com.ainisi.queenmirror.queenmirrorcduan.utilnomal.L;
-import com.ainisi.queenmirror.queenmirrorcduan.utilnomal.T;
 import com.lzy.okgo.cache.CacheMode;
-
-import org.w3c.dom.Text;
 
 import java.util.HashMap;
 
@@ -58,6 +50,7 @@ public class RegisterActivity extends BaseNewActivity implements HttpCallBack {
         myCountDownTimer = new MyCountDownTimer(30000, 1000);
         inidTitle();
     }
+
 
     @Override
     protected void initData() {
@@ -109,10 +102,7 @@ public class RegisterActivity extends BaseNewActivity implements HttpCallBack {
     public void onSuccess(int action, String res) {
         switch (action) {
             case ACTION.VERIFY://获取验证码
-                Log.i(TAG,res);
-
-
-
+                Toast.makeText(this, res.toString().trim(), Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -146,7 +136,8 @@ public class RegisterActivity extends BaseNewActivity implements HttpCallBack {
         public void onFinish() {
             //重新给textview设置文字
             validation.setText("重新获取验证码");
-            //设置可点击  
+            //设置可点击
+            initValidation();
             validation.setClickable(true);
         }
     }

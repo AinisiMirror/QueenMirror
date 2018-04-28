@@ -30,6 +30,8 @@ public class MessageActivity extends BaseNewActivity implements HttpCallBack{
         initText();
 
     }
+
+
     private void initText() {
         title.setText(R.string.message_center);
         title.setTextColor(ContextCompat.getColor(this,R.color.alpha_95_black));

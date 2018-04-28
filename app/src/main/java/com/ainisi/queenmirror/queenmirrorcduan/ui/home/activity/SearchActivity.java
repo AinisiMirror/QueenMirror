@@ -62,6 +62,9 @@ public class SearchActivity extends BaseNewActivity {
         initHistory();
         initHotTag();
     }
+
+
+
     private void initHot() {
 
     }

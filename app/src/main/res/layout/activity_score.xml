@@ -54,7 +54,7 @@
             android:textColor="@color/alpha_95_black"
             android:textSize="@dimen/comment_13_size" />
 
-        <com.ainisi.queenmirror.queenmirrorcduan.ui.order.activity.CustomRatingBar
+        <com.ainisi.queenmirror.queenmirrorcduan.utils.CustomRatingBar
             android:id="@+id/score_custom"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -188,7 +188,7 @@
             android:layout_marginTop="@dimen/comment_19_dip"
             android:text="@string/serviceattitude" />
 
-        <com.ainisi.queenmirror.queenmirrorcduan.ui.order.activity.CustomRatingBar
+        <com.ainisi.queenmirror.queenmirrorcduan.utils.CustomRatingBar
             android:id="@+id/service_custom"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -213,7 +213,7 @@
             android:layout_marginTop="@dimen/comment_19_dip"
             android:text="@string/tv_commodity_grade" />
 
-        <com.ainisi.queenmirror.queenmirrorcduan.ui.order.activity.CustomRatingBar
+        <com.ainisi.queenmirror.queenmirrorcduan.utils.CustomRatingBar
             android:id="@+id/commodity_custom"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -238,7 +238,7 @@
             android:layout_marginTop="@dimen/comment_19_dip"
             android:text="@string/store_environment" />
 
-        <com.ainisi.queenmirror.queenmirrorcduan.ui.order.activity.CustomRatingBar
+        <com.ainisi.queenmirror.queenmirrorcduan.utils.CustomRatingBar
             android:id="@+id/store_custom"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

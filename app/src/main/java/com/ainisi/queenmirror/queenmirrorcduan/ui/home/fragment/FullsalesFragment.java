@@ -19,6 +19,9 @@ public class FullsalesFragment extends BaseFragment{
 
     }
 
+
+
+
     @Override
     protected void initView() {
 

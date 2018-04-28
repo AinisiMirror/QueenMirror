@@ -46,6 +46,7 @@ public class OrderDetailActivity extends BaseNewActivity implements HttpCallBack
         rv_orderdetail_order.setAdapter(sbmitWholeAdapter);
     }
 
+
     @OnClick({R.id.iv_common_back})
     public void onClick(View view){
         switch (view.getId()){

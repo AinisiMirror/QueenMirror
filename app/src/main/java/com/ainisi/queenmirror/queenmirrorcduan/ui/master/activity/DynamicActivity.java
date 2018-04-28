@@ -29,6 +29,8 @@ public class DynamicActivity extends BaseNewActivity {
         super.initView();
     }
 
+
+
     @Override
     protected void initData() {
         super.initData();

@@ -1,4 +1,4 @@
-package com.ainisi.queenmirror.queenmirrorcduan.ui.order.activity;
+package com.ainisi.queenmirror.queenmirrorcduan.utils;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -13,7 +13,6 @@ import android.view.MotionEvent;
 import android.view.View;
 
 import com.ainisi.queenmirror.queenmirrorcduan.R;
-import com.ainisi.queenmirror.queenmirrorcduan.utils.DensityUtils;
 
 
 /**

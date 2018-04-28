@@ -28,6 +28,8 @@ public class IncomeDetailsFragment extends BaseFragment{
 
     }
 
+
+
     @Override
     protected void initView() {
 

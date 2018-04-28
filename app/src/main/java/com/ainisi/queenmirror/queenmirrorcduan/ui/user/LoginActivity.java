@@ -41,6 +41,7 @@ public class LoginActivity extends BaseNewActivity implements HttpCallBack {
         initTitle();
     }
 
+
     private void initTitle() {
         loginTitle.setText(R.string.login);
         loginRighrTitle.setText(R.string.register);

@@ -50,7 +50,6 @@ public abstract class BaseNewActivity extends SwipeActivity {
 
     protected void initView() {
     }
-
     protected void initData() {
     }
 

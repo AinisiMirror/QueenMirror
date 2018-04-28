@@ -19,6 +19,7 @@ public class ScreenFragment extends BaseFragment{
 
     }
 
+
     @Override
     protected void initView() {
 
