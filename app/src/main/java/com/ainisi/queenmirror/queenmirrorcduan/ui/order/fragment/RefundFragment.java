@@ -1,5 +1,6 @@
 package com.ainisi.queenmirror.queenmirrorcduan.ui.order.fragment;
 
+import android.content.Intent;
 import android.os.Handler;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -11,6 +12,7 @@ import com.ainisi.queenmirror.common.base.BaseFragment;
 import com.ainisi.queenmirror.queenmirrorcduan.R;
 import com.ainisi.queenmirror.queenmirrorcduan.adapter.MyAdapter;
 import com.ainisi.queenmirror.queenmirrorcduan.bean.SortBean;
+import com.ainisi.queenmirror.queenmirrorcduan.ui.order.activity.ArefundActivity;
 import com.ainisi.queenmirror.queenmirrorcduan.utilnomal.T;
 import com.ainisi.queenmirror.queenmirrorcduan.utils.customview.RefreshLoadMoreLayout;
 import com.chad.library.adapter.base.BaseQuickAdapter;
@@ -82,7 +84,8 @@ public class RefundFragment extends BaseFragment implements RefreshLoadMoreLayou
         sbmitWholeAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
-             Toast.makeText(getActivity(), "aofjiawejgiejtgiwahei", Toast.LENGTH_SHORT).show();
+                //退款
+                startActivity(new Intent(getActivity(), ArefundActivity.class));
             }
         });
 

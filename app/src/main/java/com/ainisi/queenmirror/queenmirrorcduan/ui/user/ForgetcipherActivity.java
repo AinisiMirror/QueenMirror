@@ -3,6 +3,7 @@ package com.ainisi.queenmirror.queenmirrorcduan.ui.user;
 import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
 import android.view.View;
@@ -16,6 +17,7 @@ import com.ainisi.queenmirror.queenmirrorcduan.api.ACTION;
 import com.ainisi.queenmirror.queenmirrorcduan.api.HttpCallBack;
 import com.ainisi.queenmirror.queenmirrorcduan.api.HttpUtils;
 import com.ainisi.queenmirror.queenmirrorcduan.base.BaseNewActivity;
+import com.ainisi.queenmirror.queenmirrorcduan.utilnomal.T;
 import com.lzy.okgo.cache.CacheMode;
 
 import java.util.HashMap;
@@ -62,7 +64,7 @@ public class ForgetcipherActivity extends BaseNewActivity implements HttpCallBac
         loginTitle.setText(R.string.forgetcipher);
     }
 
-    @OnClick({R.id.title_back, R.id.iv_remove_text, R.id.iv_login_see, R.id.tv_validation})
+    @OnClick({R.id.title_back, R.id.iv_remove_text, R.id.iv_login_see, R.id.tv_validation,R.id.user_reg_reg_view})
     public void click(View view) {
         switch (view.getId()) {
             case R.id.title_back:
@@ -72,8 +74,13 @@ public class ForgetcipherActivity extends BaseNewActivity implements HttpCallBac
                 phoneNumber.setText("");
                 break;
             case R.id.tv_validation:
-                initValidation();
-                myCountDownTimer.start();
+                if(TextUtils.isEmpty(phoneNumber.getText().toString().trim())){
+                    T.show("手机号不能为空");
+                }else {
+                    initValidation();
+                    myCountDownTimer.start();
+                }
+
                 break;
             //密码是否可见
             case R.id.iv_login_see:
@@ -88,6 +95,13 @@ public class ForgetcipherActivity extends BaseNewActivity implements HttpCallBac
                     passWord.setSelection(passWord.getText().length());
                     passWord.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
                     click = true;
+                }
+                break;
+            case R.id.user_reg_reg_view:
+                if(TextUtils.isEmpty(phoneNumber.getText().toString())||TextUtils.isEmpty(validation.getText().toString())||TextUtils.isEmpty(passWord.getText().toString())){
+                    T.show("请输入完整信息");
+                }else {
+                    T.show("登陆成功");
                 }
                 break;
         }

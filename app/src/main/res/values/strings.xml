@@ -215,6 +215,13 @@
     <string name="rll_header_time_minutes">分钟以前</string>
     <string name="rll_header_time_houxrs">小时以前</string>
     <string name="rll_header_time_days">天以前</string>
+    <string name="arefund">申请退款</string>
+    <string name="confirm_arefund">确认退款</string>
+    <string name="arefund_reason">退款原因</string>
+    <string name="tv_arefund_select">请选择</string>
+    <string name="_refund_amount">退款金额：</string>
+    <string name="refund_instructions">退款说明：</string>
+    <string name="refund_credentials">上传凭证</string>
 
 
 </resources>

@@ -59,6 +59,7 @@
         <activity android:name=".ui.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -292,8 +293,11 @@
         <activity android:name=".ui.shop.activity.ProductActivity" />
         <activity android:name=".ui.home.activity.RecommendedActivity" />
         <activity android:name=".ui.master.activity.DynamicActivity" />
-        <activity android:name=".ui.master.activity.WriteCommentActivity"></activity>
-        <activity android:name="com.ainisi.queenmirror.queenmirrorcduan.ui.HomePageActivity"/>
+        <activity android:name=".ui.master.activity.WriteCommentActivity" />
+        <activity android:name=".ui.HomePageActivity" />
+        <activity android:name=".ui.order.activity.ArefundActivity" />
+        <activity android:name=".ui.order.activity.ConfirmRefundActivity" />
+        <activity android:name=".ui.order.activity.RefundReasonActivity"></activity>
     </application>
 
 </manifest>

@@ -129,7 +129,7 @@
             app:srcCompat="@drawable/icon_full_right" />
     </RelativeLayout>
         <ListView
-
+            android:divider="@color/white"
             android:id="@+id/list_order"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>

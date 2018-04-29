@@ -77,7 +77,6 @@ public class EstheticsActivity extends BaseActivity {
     public void initPresenter() {
 
     }
-
     @Override
     public void initView() {
         initDate();
@@ -210,10 +209,7 @@ public class EstheticsActivity extends BaseActivity {
                 break;
 
         }
-
-
     }
-
     private void initview(final View popview) {
         TextView eliminateTv = popview.findViewById(R.id.tv_eliminate);
         TextView okTv = popview.findViewById(R.id.tv_ok);
